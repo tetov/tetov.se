@@ -1,13 +1,9 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
-        "target": "es6",
+        "incremental": true,
+        "module": "ESNext",
+        "target": "ES2018",
         "jsx": "preserve",
-        "lib": [
-            "dom",
-            "es2015",
-            "es2017"
-        ],
         "strict": true,
         "noEmit": true,
         "isolatedModules": true,
@@ -15,9 +11,17 @@
         "skipLibCheck": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        "removeComments": false
+        "sourceMap": true,
+        "removeComments": true,
+        "declaration": true,
+        "outDir": "./build",
+        "importHelpers": true,
+        "downlevelIteration": true,
+        "alwaysStrict": true,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "rootDir": "./src"
+
     },
-    "include": [
-        "./src/**/*"
-    ]
 }
