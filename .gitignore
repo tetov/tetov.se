@@ -67,3 +67,4 @@ public
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+!.yarn/unplugged
