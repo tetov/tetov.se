@@ -20,7 +20,7 @@ jobs:
     - name: Install yarn
       run: npm install -g yarn
 
-    - name: Install\ deps
+    - name: Install deps
       run: yarn run build
 
     - name: Deploy on gh-pages
@@ -28,4 +28,6 @@ jobs:
       with:
         target_branch: gh-pages
         build_dir: public
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
