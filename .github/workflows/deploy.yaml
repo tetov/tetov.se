@@ -1,0 +1,31 @@
+name: Deploy website
+
+on: 
+  push:
+    branches:
+      - "main"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up node
+      uses: actions/setup-node@v2.1.5
+      with:
+        node-version: '14'
+
+    - name: Install yarn
+      run: npm install -g yarn
+
+    - name: Install\ deps
+      run: yarn run build
+
+    - name: Deploy on gh-pages
+      uses: crazy-max/ghaction-github-pages@b8f8d291c97fe0edd9fb4ee73018163593418e8f
+      with:
+        target_branch: gh-pages
+        build_dir: public
+
