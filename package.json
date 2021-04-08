@@ -71,7 +71,7 @@
     "react-is": "^17.0.2",
     "standard-http-error": "^2.0.1",
     "styled-components": "^5.2.3",
-    "tailwindcss": "^2.0.4",
+    "tailwindcss": "^2.1.1",
     "ts-node": "^9.1.1",
     "twin.macro": "^2.3.2",
     "typescript": "^4.2.3",
