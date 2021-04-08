@@ -30,7 +30,7 @@
     "@types/react-dom": "^17.0.3",
     "@types/react-helmet": "^6.1.0",
     "@types/standard-http-error": "^2.0.1",
-    "@typescript-eslint/eslint-plugin": "^4.20.0",
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
     "@typescript-eslint/parser": "^4.20.0",
     "@yarnpkg/pnpify": "^2.4.0",
     "autoprefixer": "^10.2.5",
