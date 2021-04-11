@@ -7,33 +7,23 @@
 
 import React from "react"
 import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
-interface SEOProps {
-  description?: string,
-  lang?: string,
-  meta?: Array<{name: string, content: string}>,
+import useSiteMetadata from "../helpers/hook-use-site-metadata"
+export interface SEOProps {
+  description?: string
+  lang?: string
+  meta?: Array<{ name: string; content: string }>
   title: string
 }
 
-const SEO = ({ description='', lang='en', meta=[], title }: SEOProps) => {
-  const { site }: any = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            social {
-              twitter
-            }
-          }
-        }
-      }
-    `
-  )
+// TODO: Add ogImage
 
-  const metaDescription: string = description || site.siteMetadata.description
-  const defaultTitle: string = site.siteMetadata?.title
+const SEO: React.FC<SEOProps> = ({ description = "", lang: pageLang, meta = [], title }) => {
+  const { siteMetadata } = useSiteMetadata()
+
+  const metaDescription: string = description || siteMetadata.description
+  const defaultTitle: string = siteMetadata?.title
+  const defaultLang: string = siteMetadata.lang || "en"
+  const lang: string = pageLang || defaultLang
 
   return (
     <Helmet
@@ -65,7 +55,7 @@ const SEO = ({ description='', lang='en', meta=[], title }: SEOProps) => {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata?.social?.twitter || ``,
+          content: siteMetadata?.social?.twitter || ``,
         },
         {
           name: `twitter:title`,
@@ -79,6 +69,5 @@ const SEO = ({ description='', lang='en', meta=[], title }: SEOProps) => {
     />
   )
 }
-
 
 export default SEO
