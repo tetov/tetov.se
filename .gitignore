@@ -68,3 +68,6 @@ public
 !.yarn/sdks
 !.yarn/versions
 !.yarn/unplugged
+
+# gatsby-plugin-typegen
+src/__generated__
