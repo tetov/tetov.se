@@ -71,3 +71,6 @@ public
 
 # gatsby-plugin-typegen
 src/__generated__
+
+# vscode
+.vscode

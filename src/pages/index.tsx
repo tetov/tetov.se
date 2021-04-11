@@ -1,64 +1,31 @@
-import * as React from "react"
-import { Link, graphql, PageProps } from "gatsby"
+import { graphql } from "gatsby"
+import React from "react"
 
-import Bio from "../components/bio"
+import ContentPreview from "../components/content-preview"
+import HeroProj from "../components/hero-proj"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import useSiteMetadata from "../helpers/hook-use-site-metadata"
 
+const BlogIndex = ({ data, location }) => {
+  const { title } = useSiteMetadata()
 
-const BlogIndex = ({ data, location }: PageProps) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+  const contentNodes: any[] = data.allMarkdownRemark.nodes
 
-  if (posts.length === 0) {
-    return (
-      <Layout location={location} title={siteTitle}>
-        <SEO title="All posts" />
-        <Bio />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </Layout>
-    )
-  }
+  const [heroProj, ...projNodes] = contentNodes.filter(
+    (node) => node.fields.category == "proj"
+  )
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <Bio />
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
+    <Layout location={location} title={title}>
+      <HeroProj content={heroProj} />
 
-          return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
-          )
-        })}
+      <ol>
+        {projNodes.map((node, idx) => (
+          <li key={idx}>
+            <ContentPreview content={node} />
+          </li>
+        ))}
+        )
       </ol>
     </Layout>
   )
@@ -66,23 +33,24 @@ const BlogIndex = ({ data, location }: PageProps) => {
 
 export default BlogIndex
 
+// Query with /(DIR)/
 export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+  query indexQuery {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 7
+    ) {
       nodes {
-        excerpt
+        excerpt(pruneLength: 160)
+        id
         fields {
           slug
+          category
         }
         frontmatter {
-          date(formatString: "MMMM DD, YYYY")
           title
           description
+          date(formatString: "YYYY-MM")
         }
       }
     }

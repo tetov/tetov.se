@@ -1,40 +1,29 @@
-import React, { ReactNode } from "react"
-import { Link } from "gatsby"
+import * as React from 'react'
 
-interface Props {
-  location: Location
-  title: string
-  children?: ReactNode
+import Footer from './footer'
+import Header from './header'
+import NavDefault from './nav-default'
+import NavIndex from './nav-index'
+import SEO, { SEOProps } from './seo'
+
+interface LayoutProps extends SEOProps {
+  location: any
+  children: any
 }
 
-const Layout = ({ location, title, children }: Props) => {
+const Layout: React.FC<LayoutProps> = ({location, children, ...seoProps}) => {
+
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
-  let header
-
-  if (isRootPath) {
-    header = (
-      <h1 className="main-heading">
-        <Link to="/">{title}</Link>
-      </h1>
-    )
-  } else {
-    header = (
-      <Link className="header-link-home" to="/">
-        {title}
-      </Link>
-    )
-  }
+  let Nav: React.FC = isRootPath ? NavIndex : NavDefault
 
   return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">{header}</header>
+    <div className="global-wrapper min-h-screen" data-is-root-path={isRootPath}>
+      <SEO {...seoProps} />
+      <Header />
+      <Nav />
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer>
+      <Footer />
     </div>
   )
 }
