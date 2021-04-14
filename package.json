@@ -46,7 +46,7 @@
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "event-source-polyfill": "^1.0.22",
-    "gatsby": "^3.2.1",
+    "gatsby": "^3.3.0",
     "gatsby-legacy-polyfills": "^1.2.0",
     "gatsby-link": "^3.2.0",
     "gatsby-plugin-csp": "^1.1.3",
