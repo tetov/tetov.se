@@ -11,18 +11,19 @@ const BlogIndex = ({ data, location }) => {
 
   const contentNodes: any[] = data.allMarkdownRemark.nodes
 
-  const [heroProj, ...projNodes] = contentNodes.filter(
-    (node) => node.fields.category == "proj"
-  )
+  const [heroProj, ...projNodes] = contentNodes
+  // const [heroProj, ...projNodes] = contentNodes.filter(
+  // (node) => node.fields.category == "proj"
+  // )
 
   return (
     <Layout location={location} title={title}>
-      <HeroProj content={heroProj} />
+      <HeroProj {...heroProj} />
 
       <ol>
         {projNodes.map((node, idx) => (
           <li key={idx}>
-            <ContentPreview content={node} />
+            <ContentPreview {...node} />
           </li>
         ))}
         )
@@ -37,21 +38,13 @@ export default BlogIndex
 export const pageQuery = graphql`
   query indexQuery {
     allMarkdownRemark(
+      filter: { fields: {category: {eq: "projs"}}}
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 7
     ) {
       nodes {
-        excerpt(pruneLength: 160)
-        id
-        fields {
-          slug
-          category
-        }
-        frontmatter {
-          title
-          description
-          date(formatString: "YYYY-MM")
-        }
+        ...ContentPreviewQuery
+        ...HeroProjQuery
       }
     }
   }

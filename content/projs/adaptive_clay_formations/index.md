@@ -1,8 +1,8 @@
 ---
 title: Adaptive Clay Formations
 date: 2020-08-03
-heroImg: /img/rcf_brunnen/total_station_brunnen.png
-images: [""]
+heroImgPath: /img/rcf_brunnen/total_station_brunnen.png
+imgPaths: [""]
 ---
 Text
 <!-- excerptEnd -->
@@ -11,9 +11,9 @@ More.
 | Test | test |
 | ------ | ------ |
 | Test | test |
-| | Test | 
+| | Test |
 
-> A block quote with ~strikethrough~ and a URL: https://reactjs.org.
+> A block quote with ~strikethrough~ and a URL: <https://reactjs.org>.
 
 * Lists
 * [ ] todo

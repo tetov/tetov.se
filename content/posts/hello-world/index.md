@@ -2,8 +2,8 @@
 title: Hello World
 date: "2015-05-01T22:12:03.284Z"
 description: "Hello World"
-heroImg: ""
-images: [""]
+heroImgPath: ""
+imgPaths: [""]
 ---
 
 This is my first post on my new fake blog! How exciting!
@@ -93,7 +93,7 @@ This is a paragraph.
 
     > Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
 
-> ## This is a header.
+> ## This is a header
 >
 > 1. This is the first list item.
 > 2. This is the second list item.
@@ -114,9 +114,9 @@ This is a paragraph.
 - Green
 - Blue
 
-* Red
-* Green
-* Blue
+- Red
+- Green
+- Blue
 
 - Red
 - Green
