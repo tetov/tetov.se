@@ -1,8 +1,8 @@
 ---
 title: SEMusicLab clay wall mockup
 date: 2020-08-30
-heroImg: /img/rcf_brunnen/total_station_brunnen.png
-images: [""]
+heroImgPath: /img/rcf_brunnen/total_station_brunnen.png
+imgPaths: [""]
 ---
 Test
 <!-- excerptEnd -->

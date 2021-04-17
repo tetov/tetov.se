@@ -67,7 +67,6 @@
     "exclude": [
         "node_modules",
         "public",
-        ".cache",
-        "src/__generated__"
+        ".cache"
     ]
 }

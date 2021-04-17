@@ -1,3 +1,5 @@
+import React from "react"
+
 const Footer: React.FC = () => {
   return (
     <footer className="bg-accent-1 border-t border-accent-2">
@@ -15,7 +17,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
