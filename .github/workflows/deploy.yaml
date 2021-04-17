@@ -18,9 +18,11 @@ jobs:
         node-version: '14'
 
     - name: Install yarn
-      run: npm install -g yarn
+      run: |
+        npm install -g yarn
+        yarn set version berry
 
-    - name: Install deps
+    - name: Build
       run: yarn run build
 
     - name: Deploy on gh-pages
