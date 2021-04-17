@@ -39,7 +39,7 @@
     "babel-preset-gatsby": "^1.2.0",
     "core-js": "^3.10.1",
     "css.escape": "^1.5.1",
-    "eslint": "^7.23.0",
+    "eslint": "^7.24.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-graphql": "^4.0.0",
     "eslint-plugin-prettier": "^3.3.1",
