@@ -77,7 +77,7 @@ export default {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `./src/images/site_icon.png`, // This path is relative to the root of the site.
+        icon: `./src/images/dangerous-tex-oot.svg`,
       },
     },
     `gatsby-plugin-react-helmet`,
