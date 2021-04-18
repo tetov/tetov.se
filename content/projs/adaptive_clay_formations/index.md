@@ -1,8 +1,6 @@
 ---
 title: Adaptive Clay Formations
 date: 2020-08-03
-heroImgPath: /img/rcf_brunnen/total_station_brunnen.png
-imgPaths: [""]
 ---
 Text
 <!-- excerptEnd -->
