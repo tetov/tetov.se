@@ -62,9 +62,11 @@ public
 # Yarn (zero-installs)
 .yarn/*
 !.yarn/cache
-!.yarn/releases
+!.yarn/patches
 !.yarn/plugins
+!.yarn/releases
 !.yarn/sdks
+!.yarn/unplugged
 !.yarn/versions
 
 # gatsby-plugin-typegen
