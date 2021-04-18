@@ -23,11 +23,9 @@ const onPreExtractQueries: GatsbyNode["onPreExtractQueries"] = async ({
 
   const imgParsedPaths = {}
   allImgNodes.forEach((n) => (imgParsedPaths[n.id] = parseNodePath(n, getNode)))
-  
 
   docNodes.forEach((docN) => {
-    const { name: docName, dir: docDir } = parseNodePath(docN, getNode)
-    console.log(`Name: ${docName} Dir: ${docDir}`)
+    const docDir = parseNodePath(docN, getNode).dir
 
     let _imgNodes = allImgNodes.filter(
       (imgN) => imgParsedPaths[imgN.id].dir === docDir
@@ -35,30 +33,39 @@ const onPreExtractQueries: GatsbyNode["onPreExtractQueries"] = async ({
 
     // Found no images
     if (_imgNodes.length < 1) return
-    
+
     // https://stackoverflow.com/a/35092754/15398307
     _imgNodes.sort((a, b) =>
-    imgParsedPaths[a.id].name.localeCompare(imgParsedPaths[b.id].name)
+      imgParsedPaths[a.id].name.localeCompare(imgParsedPaths[b.id].name)
     )
-    
-    if (_imgNodes.length === 1 && (docN.fields.isPageBundle || imgParsedPaths[_imgNodes[0].id].name === docN.name)) {
+
+    if (
+      _imgNodes.length === 1 &&
+      (docN.fields.isPageBundle ||
+        imgParsedPaths[_imgNodes[0].id].name === docN.name)
+    ) {
       // Only use found image for hero if page bundle or named same as doc file
-      if (!docN.fields.isPageBundle && imgParsedPaths[_imgNodes[0].id].name !== docN.name)
+      if (
+        !docN.fields.isPageBundle &&
+        imgParsedPaths[_imgNodes[0].id].name !== docN.name
+      )
         return
 
-      createNodeField({node: docN, name: "hero", value: _imgNodes[0]})
+      createNodeField({ node: docN, name: "hero", value: _imgNodes[0] })
       return
     }
 
-    const heroNodeIdx = _imgNodes.findIndex(n => imgParsedPaths[n.id].name === "hero") 
-    
+    const heroNodeIdx = _imgNodes.findIndex(
+      (n) => imgParsedPaths[n.id].name === "hero"
+    )
+
     // No image with name hero found, just use the first in (sorted) list
     if (heroNodeIdx === -1) {
-      createNodeField({node: docN, name: "hero", value: _imgNodes[0]})
-      createNodeField({node: docN, name: "imgs", value: _imgNodes.slice(1)})
+      createNodeField({ node: docN, name: "hero", value: _imgNodes[0] })
+      createNodeField({ node: docN, name: "imgs", value: _imgNodes.slice(1) })
       return
     }
-    
+
     const heroNode = _imgNodes[heroNodeIdx]
     _imgNodes.splice(heroNodeIdx, 1)
 
@@ -67,7 +74,7 @@ const onPreExtractQueries: GatsbyNode["onPreExtractQueries"] = async ({
       name: `hero`,
       value: heroNode,
     })
-  
+
     createNodeField({
       node: docN,
       name: `imgs`,
