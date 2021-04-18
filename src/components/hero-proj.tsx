@@ -4,8 +4,11 @@ import React from "react"
 
 const HeroProj: React.FC<GatsbyTypes.HeroProjQueryFragment> = ({
   excerpt,
-  fields: { slug, hero: {gatsbyImageData} },
-  frontmatter: { title, date, description},
+  fields: {
+    slug,
+    hero: { gatsbyImageData },
+  },
+  frontmatter: { title, date, description },
 }) => (
   <section>
     <div className="mb-8 md:mb-16">
@@ -27,7 +30,9 @@ const HeroProj: React.FC<GatsbyTypes.HeroProjQueryFragment> = ({
         </h3>
         <div className="mb-4 md:mb-0 text-lg">{date}</div>
       </div>
-      <div className="mb-4">{description || excerpt}</div>
+      <div>
+        <p className="text-lg leading-relaxed mb-4">{description || excerpt}</p>
+      </div>
     </div>
   </section>
 )
@@ -40,7 +45,7 @@ export const query = graphql`
     fields {
       slug
       hero {
-        gatsbyImageData(width: 600, placeholder: BLURRED)
+        gatsbyImageData(width: 2400, placeholder: BLURRED)
       }
     }
     frontmatter {
@@ -50,4 +55,3 @@ export const query = graphql`
     }
   }
 `
-

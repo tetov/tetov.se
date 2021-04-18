@@ -18,11 +18,13 @@ const Layout: React.FC<ILayoutProp> = ({ location, children, ...seoProps }) => {
 
   return (
     <div className="global-wrapper min-h-screen" data-is-root-path={isRootPath}>
-      <SEO {...seoProps} />
-      <Header />
-      <Nav />
-      <main>{children}</main>
-      <Footer />
+      <div className="container mx-auto px-5">
+        <SEO {...seoProps} />
+        <Header />
+        <Nav />
+        <main>{children}</main>
+        <Footer />
+      </div>
     </div>
   )
 }
