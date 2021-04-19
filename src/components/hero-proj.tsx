@@ -1,12 +1,12 @@
-import { graphql, Link } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 import React from "react"
 
-const HeroProj: React.FC<GatsbyTypes.HeroProjQueryFragment> = ({
+const HeroProj: React.FC<GatsbyTypes.IndexComponentsFragment> = ({
   excerpt,
   fields: {
     slug,
-    hero: { gatsbyImageData },
+    heroImg: {img}
   },
   frontmatter: { title, date, description },
 }) => (
@@ -15,7 +15,7 @@ const HeroProj: React.FC<GatsbyTypes.HeroProjQueryFragment> = ({
       <Link to={slug}>
         <GatsbyImage
           alt={`Cover image for ${title}`}
-          image={getImage(gatsbyImageData)}
+          image={img}
           loading="eager"
           imgClassName="shadow-sm hover:shadow-md transition-shadow duration-200"
         />
@@ -38,20 +38,3 @@ const HeroProj: React.FC<GatsbyTypes.HeroProjQueryFragment> = ({
 )
 
 export default HeroProj
-
-export const query = graphql`
-  fragment HeroProjQuery on MarkdownRemark {
-    excerpt(pruneLength: 160)
-    fields {
-      slug
-      hero {
-        gatsbyImageData(width: 2400, placeholder: BLURRED)
-      }
-    }
-    frontmatter {
-      title
-      date(formatString: "YYYY-MM")
-      description
-    }
-  }
-`

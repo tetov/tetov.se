@@ -1,6 +1,7 @@
 ---
 title: Adaptive Clay Formations
 date: 2020-08-03
+hero: robot
 ---
 Text
 <!-- excerptEnd -->

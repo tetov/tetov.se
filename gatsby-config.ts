@@ -13,7 +13,6 @@ export default {
     },
   },
   plugins: [
-    /*
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -34,7 +33,7 @@ export default {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.nodes.map((node) => {
                 return Object.assign({}, node.frontmatter, {
-                  description: node.excerpt,
+                  description: node.frontmatter.description || node.excerpt,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
@@ -56,6 +55,7 @@ export default {
                     frontmatter {
                       title
                       date
+                      description
                     }
                   }
                 }
@@ -66,8 +66,6 @@ export default {
         ],
       },
     },
-    */
-    `gatsby-plugin-image`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -81,12 +79,6 @@ export default {
       },
     },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        defaultQuality: 75,
-      },
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -139,9 +131,22 @@ export default {
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
+        excerpt_separator: `<!-- excerptEnd -->`,
       },
     },
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaultQuality: 75,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-sharp`,
+      options: {
+        useMozJpeg: true
+      }
+    },
     `gatsby-plugin-typescript`,
   ],
 }

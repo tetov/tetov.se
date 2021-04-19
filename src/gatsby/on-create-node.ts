@@ -2,7 +2,7 @@ import { GatsbyNode } from "gatsby"
 import { createFilePath } from "gatsby-source-filesystem"
 import path from "path"
 
-import parseNodePath from "../helpers/parse-node-path"
+import { parseNodePath } from "../helpers/node-path-operations"
 
 const onCreateNode: GatsbyNode["onCreateNode"] = async ({
   actions: { createNodeField },
@@ -28,21 +28,14 @@ const onCreateNode: GatsbyNode["onCreateNode"] = async ({
   const { dir, name } = parseNodePath(node, getNode)
   const dirArray = dir.split(path.sep)
 
-  // Category and isPageBundle
+  // Category 
 
   // Check if node is part of a page bundle,
   // i.e. placed in its own dir and named index
-  const isPageBundle = name === "index"
   // category is two steps up from page bundle
-  const category = isPageBundle
+  const category = name === "index"
     ? dirArray[dirArray.length - 2]
     : dirArray[dirArray.length - 1]
-
-  createNodeField({
-    node: node,
-    name: `isPageBundle`,
-    value: isPageBundle,
-  })
 
   createNodeField({
     node: node,

@@ -33,12 +33,12 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = async
       description: String
       date: Date @dateformat
       lang: String
+      hero: String
     }
     type Fields {
       slug: String
       category: String
-      hero: ImageSharp
-      imgs: [ImageSharp]
+      heroImg: ImageSharp
     }
   `)
 }

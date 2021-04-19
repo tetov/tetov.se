@@ -1,86 +1,33 @@
 import { GatsbyNode } from "gatsby"
 
-import parseNodePath from "../helpers/parse-node-path"
+import { parseNodePath } from "../helpers/node-path-operations"
 
-import type { Node } from "gatsby"
-
-type PreQueryImageSharp = Node & {
-  parent: Node
-}
-
-type PreQueryMarkdownRemark = Node & {
-  parent: Node
-  fields: { isPageBundle: Boolean }
-}
+import type {PreQueryMarkdownRemark} from "../helpers/types"
 
 const onPreExtractQueries: GatsbyNode["onPreExtractQueries"] = async ({
   actions: { createNodeField },
   getNode,
   getNodesByType,
 }) => {
-  const allImgNodes = getNodesByType("ImageSharp") as PreQueryImageSharp[]
+  const allImgNodes = getNodesByType("ImageSharp") 
   const docNodes = getNodesByType("MarkdownRemark") as PreQueryMarkdownRemark[]
 
-  const imgParsedPaths = {}
-  allImgNodes.forEach((n) => (imgParsedPaths[n.id] = parseNodePath(n, getNode)))
-
-  docNodes.forEach((docN) => {
-    const docDir = parseNodePath(docN, getNode).dir
-
-    let _imgNodes = allImgNodes.filter(
-      (imgN) => imgParsedPaths[imgN.id].dir === docDir
-    )
-
-    // Found no images
-    if (_imgNodes.length < 1) return
-
-    // https://stackoverflow.com/a/35092754/15398307
-    _imgNodes.sort((a, b) =>
-      imgParsedPaths[a.id].name.localeCompare(imgParsedPaths[b.id].name)
-    )
-
-    if (
-      _imgNodes.length === 1 &&
-      (docN.fields.isPageBundle ||
-        imgParsedPaths[_imgNodes[0].id].name === docN.name)
-    ) {
-      // Only use found image for hero if page bundle or named same as doc file
-      if (
-        !docN.fields.isPageBundle &&
-        imgParsedPaths[_imgNodes[0].id].name !== docN.name
-      )
-        return
-
-      createNodeField({ node: docN, name: "hero", value: _imgNodes[0] })
-      return
-    }
-
-    const heroNodeIdx = _imgNodes.findIndex(
-      (n) => imgParsedPaths[n.id].name === "hero"
-    )
-
-    // No image with name hero found, just use the first in (sorted) list
-    if (heroNodeIdx === -1) {
-      createNodeField({ node: docN, name: "hero", value: _imgNodes[0] })
-      createNodeField({ node: docN, name: "imgs", value: _imgNodes.slice(1) })
-      return
-    }
-
-    const heroNode = _imgNodes[heroNodeIdx]
-    _imgNodes.splice(heroNodeIdx, 1)
-
-    createNodeField({
-      node: docN,
-      name: `hero`,
-      value: heroNode,
+  docNodes.forEach((docNode) => {
+    
+    const heroName = docNode.frontmatter.hero || "hero"
+    
+    const docDir = parseNodePath(docNode, getNode).dir
+    
+    const candidates = allImgNodes.filter(n => {
+      const {name, dir} = parseNodePath(n, getNode)
+      return dir === docDir && name === heroName
     })
+    if (candidates.length === 0) return
 
-    createNodeField({
-      node: docN,
-      name: `imgs`,
-      value: _imgNodes,
+    if (candidates.length > 1) throw new Error(`More than one matching hero image. Mathces: ${candidates}`)
+
+    createNodeField({node: docNode, name: "heroImg", value: candidates[0]})
     })
-  })
-}
+  }
 
 export default onPreExtractQueries

@@ -6,10 +6,10 @@ import HeroProj from "../components/hero-proj"
 import Layout from "../components/layout"
 import useSiteMetadata from "../helpers/hook-use-site-metadata"
 
-const Index = ({ data, location }) => {
+const Index: GatsbyPage<GatsbyTypes.IndexQuery, string> = ({ data, location }) => {
   const { title, description } = useSiteMetadata()
 
-  const contentNodes: any[] = data.allMarkdownRemark.nodes
+  const contentNodes = data.allMarkdownRemark.nodes
 
   const [heroProj, ...projNodes] = contentNodes
   // const [heroProj, ...projNodes] = contentNodes.filter(
@@ -29,14 +29,9 @@ const Index = ({ data, location }) => {
       <HeroProj {...heroProj} />
 
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
-        <ol>
-          {projNodes.map((node, idx) => (
-            <li key={idx}>
-              <ContentPreview {...node} />
-            </li>
+          {projNodes.map((node) => (
+              <ContentPreview key={node.id} {...node} />
           ))}
-          )
-        </ol>
       </div>
     </Layout>
   )
@@ -44,18 +39,39 @@ const Index = ({ data, location }) => {
 
 export default Index
 
+
 // Query with /(DIR)/
 export const pageQuery = graphql`
-  query indexQuery {
+  query Index{
     allMarkdownRemark(
       filter: { fields: { category: { eq: "projs" } } }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 7
     ) {
       nodes {
-        ...ContentPreviewQuery
-        ...HeroProjQuery
+        id
+        ...IndexComponents
+        }
+
       }
     }
-  }
+  fragment IndexComponents on MarkdownRemark {
+    excerpt(pruneLength: 160)
+    fields {
+      slug
+      heroImg {
+            img: gatsbyImageData(
+              width:1200
+              placeholder: BLURRED
+              ) 
+          }
+        }
+        frontmatter {
+          title
+          date(formatString: "YYYY-MM")
+          description
+        }
+    
+    }
+  
 `

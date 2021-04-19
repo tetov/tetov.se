@@ -1,11 +1,11 @@
 import { GatsbyNode } from "gatsby"
 import path from "path"
 
-import { IMarkdownRemarkNode } from "../helpers/types"
+import type { PreQueryMarkdownRemark } from "../helpers/types"
 
-interface IQueryResult {
+type QueryResult = {
     allMarkdownRemark: {
-        nodes: IMarkdownRemarkNode[]
+        nodes: PreQueryMarkdownRemark[]
     }
 }
 
@@ -15,7 +15,7 @@ const createPages: GatsbyNode["createPages"] = async ({
   reporter,
 }) => {
   // Get all markdown blog posts sorted by date
-  const result = await graphql<IQueryResult>(
+  const result = await graphql<QueryResult>(
     `
       {
         allMarkdownRemark(
