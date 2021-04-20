@@ -1,21 +1,21 @@
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import React from "react"
 
-const ContentPreview: React.FC<GatsbyTypes.IndexComponentsFragment> = ({
+const ContentPreview: React.FC<GatsbyTypes.ContentPreviewFragment> =({
   excerpt,
   fields: { 
     slug,
     heroImg: {
-      img
+      previewImg
     }},
   frontmatter: { title, date, description },
 }) => (
-  <div>
+  <div className="hover:bg-accent-1">
     <div className="mb-5">
       <GatsbyImage
         alt={`Cover image for ${title}`}
-        image={img}
+        image={previewImg}
         loading="lazy"
         imgClassName="shadow-sm hover:shadow-md transition-shadow duration-200"
       />
@@ -33,3 +33,17 @@ const ContentPreview: React.FC<GatsbyTypes.IndexComponentsFragment> = ({
 )
 
 export default ContentPreview
+
+export const fragmen = graphql`
+  fragment ContentPreview on MarkdownRemark {
+    ...ProjMetaData
+    fields {
+      heroImg {
+            previewImg: gatsbyImageData(
+              aspectRatio: 1.33
+              placeholder: BLURRED
+              ) 
+          }
+        }
+  }
+    `

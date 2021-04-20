@@ -1,21 +1,21 @@
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import React from "react"
 
-const HeroProj: React.FC<GatsbyTypes.IndexComponentsFragment> = ({
+const HeroProj: React.FC<GatsbyTypes.HeroProjFragment> = ({
   excerpt,
   fields: {
     slug,
-    heroImg: {img}
+    heroImg: { heroImgData },
   },
   frontmatter: { title, date, description },
 }) => (
-  <section>
+  <section className="hover:border border:black">
     <div className="mb-8 md:mb-16">
       <Link to={slug}>
         <GatsbyImage
           alt={`Cover image for ${title}`}
-          image={img}
+          image={heroImgData}
           loading="eager"
           imgClassName="shadow-sm hover:shadow-md transition-shadow duration-200"
         />
@@ -38,3 +38,14 @@ const HeroProj: React.FC<GatsbyTypes.IndexComponentsFragment> = ({
 )
 
 export default HeroProj
+
+export const HeroProjFragment = graphql`
+  fragment HeroProj on MarkdownRemark {
+    ...ProjMetaData
+    fields {
+      heroImg {
+        ...HeroImg
+      }
+    }
+  }
+`

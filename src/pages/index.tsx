@@ -50,28 +50,10 @@ export const pageQuery = graphql`
     ) {
       nodes {
         id
-        ...IndexComponents
+        ...ContentPreview
+        ...HeroProj
         }
 
       }
     }
-  fragment IndexComponents on MarkdownRemark {
-    excerpt(pruneLength: 160)
-    fields {
-      slug
-      heroImg {
-            img: gatsbyImageData(
-              width:1200
-              placeholder: BLURRED
-              ) 
-          }
-        }
-        frontmatter {
-          title
-          date(formatString: "YYYY-MM")
-          description
-        }
-    
-    }
-  
-`
+    `
