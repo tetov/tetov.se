@@ -82,22 +82,9 @@ export default {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `page`,
-        path: `${__dirname}/content/pages/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `post`,
-        path: `${__dirname}/content/posts/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `proj`,
-        path: `${__dirname}/content/projs/`,
+        name: `content`,
+        path: `${__dirname}/content/`,
+        ignore: ["process.env.NODE_ENV === `production` && [`**/draft-*`]"],
       },
     },
     {
@@ -143,9 +130,6 @@ export default {
     },
     {
       resolve: `gatsby-transformer-sharp`,
-      options: {
-        useMozJpeg: true
-      }
     },
     `gatsby-plugin-typescript`,
   ],
