@@ -12,13 +12,13 @@
     "url": "https://github.com/tetov/xyz"
   },
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "yarn node --no-lazy `yarn bin gatsby` develop --inspect-brk",
     "lint": "tsc --skipLibCheck && eslint --fix \"**/*.{ts,tsx,js,jsx,json}\"",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
+    "build": "yarn run gatsby build",
+    "serve": "yarn run gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \" && exit 1",
-    "clean": "gatsby clean"
+    "clean": "yarn run gatsby clean"
   },
   "engines": {
     "node": ">=10.12.0"

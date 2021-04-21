@@ -35,7 +35,7 @@ jobs:
           npm install -g yarn
 
       - name: Build
-        run: yarn run build
+        run: npm run build
 
       - name: Deploy on gh-pages
         if: github.ref == 'refs/heads/main'
