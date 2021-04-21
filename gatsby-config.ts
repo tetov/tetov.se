@@ -13,6 +13,7 @@ export default {
     },
   },
   plugins: [
+    `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -84,7 +85,13 @@ export default {
       options: {
         name: `content`,
         path: `${__dirname}/content/`,
-        ignore: ["process.env.NODE_ENV === `production` && [`**/draft-*`]"],
+        //  string, regex or function matching any part of abs/rel path
+        // https://github.com/micromatch/anymatch
+        ignore: [
+          (p: string): Boolean =>
+            process.env.NODE_ENV === "production" && /\/draft-/i.test(p),
+          /\/_\w+/,
+        ],
       },
     },
     {
@@ -109,28 +116,10 @@ export default {
               height: "auto",
               preload: "lazy",
               muted: false,
-              autoplay: false,
+              autoplay: true,
               playsinline: true,
               controls: true,
               loop: false,
-            },
-          },
-          {
-            resolve: "gatsby-remark-embed-video",
-            options: {
-              width: 800,
-              ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
-              related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
-              // noIframeBorder: true, //Optional: Disable insertion of <style> border: 0
-              loadingStrategy: "lazy", //Optional: Enable support for lazy-load offscreen iframes. Default is disabled.
-              urlOverrides: [
-                {
-                  id: "youtube",
-                  embedURL: (videoId) =>
-                    `https://www.youtube-nocookie.com/embed/${videoId}`,
-                },
-              ], //Optional: Override URL of a service provider, e.g to enable youtube-nocookie support
-              containerClass: "embedVideo-container", //Optional: Custom CSS class for iframe container, for multiple classes separate them by space
             },
           },
           {
@@ -139,6 +128,7 @@ export default {
               maxWidth: 800,
             },
           },
+          `gatsby-remark-autolink-headers`,
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
