@@ -1,35 +1,29 @@
 ---
 title: Adaptive Clay Formations
 date: 2020-08-03
-hero: robot
+weight: 100
 ---
-Text
 
-Deserunt id nobis qui aut voluptatem eligendi. Laboriosam sunt excepturi pariatur non amet sint facere praesentium. Quia rerum debitis molestiae et molestiae. Mollitia ut nostrum atque rerum saepe nihil. Impedit qui et iste consectetur qui rerum. Corporis ex velit quod et non et.
-
-Sed quia rerum debitis ullam. Sed voluptas nulla optio autem perspiciatis porro incidunt natus. Et maxime vel dolorem expedita illo quia.
-
-Numquam quos libero sed. Laudantium nostrum reprehenderit quidem. Qui sit voluptatem voluptatem.
-
-Quibusdam libero cum voluptates et. Quibusdam dolorem quia et tempora vero est quasi et. Provident maiores expedita quis facere. Voluptates aspernatur non rerum tenetur voluptatum eveniet. Et officia sit dolorem et fugit tenetur quia porro.
-
-Omnis facere est hic et pariatur optio suscipit voluptatem. Architecto itaque optio ratione nemo nihil voluptatum non dignissimos. Nihil aut laudantium ut voluptas.
+Thesis project where a robotic clay aggregation method developed at MAS DFAB was
+further explored and refined.
+The project resulted in a 3.2 m long and 1.2 m high wall segment built using a
+six axis industrial robot mounted on a movable platform, and built with the
+robot re-localized three times.
 
 <!-- excerptEnd -->
-More.
 
-| Test | test |
-| ---- | ---- |
-| Test | test |
-|      | Test |
+In this project we refined robot end effector, we experimented with feedback
+driven fabrication and trajectory planning for the robotic arm.
 
-> A block quote with ~strikethrough~ and a URL: <https://reactjs.org>.
+|                   |                                                                                                                      |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Year              | 2020                                                                                                                 |
+| Context           | Master of Advanced Studies in Architecture & Digital Fabrication (MAS DFAB) thesis project, ETH, Zürich, Switzerland |
+| Collaborator      | Edurne Morales Zúñiga                                                                                                |
+| Tutors            | David Jenny, Coralie Ming, Nicholas Feihl & Gonzalo Casas at Gramazio Kohler Resarch, ETH Zürich                     |
+| Industry partners | Lehmag AG & Brauchli Ziegelei AG                                                                                     |
 
-* Lists
-* [ ] todo
-* [x] done
+Thesis available on
+[LUP student papers](http://lup.lub.lu.se/student-papers/record/9041159).
 
-A table:
-
-| a   | b   |
-| --- | --- |
+`video: title: "Fabrication video": ./video.webm`
