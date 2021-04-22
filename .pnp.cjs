@@ -48,6 +48,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["anser", "npm:2.0.1"],
             ["autoprefixer", "virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:10.2.5"],
             ["babel-preset-gatsby", "virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:1.3.0"],
+            ["classnames", "npm:2.3.1"],
             ["core-js", "npm:3.10.1"],
             ["css.escape", "npm:1.5.1"],
             ["eslint", "npm:7.24.0"],
@@ -93,6 +94,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["query-string", "npm:7.0.0"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:17.0.2"],
+            ["react-feather", "virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:2.0.9"],
             ["react-helmet", "virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:6.1.0"],
             ["shallow-compare", "npm:1.2.2"],
             ["source-map-support", "npm:0.5.19"],
@@ -7790,6 +7792,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["define-property", "npm:0.2.5"],
             ["isobject", "npm:3.0.1"],
             ["static-extend", "npm:0.1.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["classnames", [
+        ["npm:2.3.1", {
+          "packageLocation": "./.yarn/cache/classnames-npm-2.3.1-f2ae0a8d3c-14db8889d5.zip/node_modules/classnames/",
+          "packageDependencies": [
+            ["classnames", "npm:2.3.1"]
           ],
           "linkType": "HARD",
         }]
@@ -20291,6 +20302,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["react-feather", [
+        ["npm:2.0.9", {
+          "packageLocation": "./.yarn/cache/react-feather-npm-2.0.9-dfaf59df54-8535541c10.zip/node_modules/react-feather/",
+          "packageDependencies": [
+            ["react-feather", "npm:2.0.9"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:2.0.9", {
+          "packageLocation": "./.yarn/__virtual__/react-feather-virtual-e23251e512/0/cache/react-feather-npm-2.0.9-dfaf59df54-8535541c10.zip/node_modules/react-feather/",
+          "packageDependencies": [
+            ["react-feather", "virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:2.0.9"],
+            ["@types/react", "npm:17.0.3"],
+            ["prop-types", "npm:15.7.2"],
+            ["react", "npm:17.0.2"]
+          ],
+          "packagePeers": [
+            "@types/react",
+            "react"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["react-helmet", [
         ["npm:6.1.0", {
           "packageLocation": "./.yarn/cache/react-helmet-npm-6.1.0-20fd5447ff-a4998479da.zip/node_modules/react-helmet/",
@@ -22964,6 +22998,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["anser", "npm:2.0.1"],
             ["autoprefixer", "virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:10.2.5"],
             ["babel-preset-gatsby", "virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:1.3.0"],
+            ["classnames", "npm:2.3.1"],
             ["core-js", "npm:3.10.1"],
             ["css.escape", "npm:1.5.1"],
             ["eslint", "npm:7.24.0"],
@@ -23009,6 +23044,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["query-string", "npm:7.0.0"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:17.0.2"],
+            ["react-feather", "virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:2.0.9"],
             ["react-helmet", "virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:6.1.0"],
             ["shallow-compare", "npm:1.2.2"],
             ["source-map-support", "npm:0.5.19"],
