@@ -14,16 +14,16 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = async
       description: String
       siteUrl: String!
       lang: String
-      social: Social
+      social: [ContactDetail]
       logo: String
     }
-    type Social {
-      twitter: String
-      matrix: String
-      instagram: String
-      mastodon: String
-      email: String
+    type ContactDetail {
+      text: String
+      url: String
+      icon: String
+      hcard: String
     }
+
     type MarkdownRemark implements Node {
       frontmatter: Frontmatter
       fields: Fields
@@ -34,6 +34,7 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = async
       date: Date @dateformat
       lang: String
       hero: String
+      weight: Int
     }
     type Fields {
       slug: String

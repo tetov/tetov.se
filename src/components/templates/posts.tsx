@@ -1,38 +1,42 @@
 import { graphql } from "gatsby"
 import React from "react"
 
-import { ILayoutProp } from "../layout"
-import BaseTemplate from "./_base"
+import ContentBody from "../content-body"
+import Layout from "../layout"
 
 const TemplatePost: GatsbyPage<GatsbyTypes.PostPropQuery> = ({
-  data,
+  data: {
+    html,
+    excerpt,
+    frontmatter: { title, description, lang, date },
+  },
   location,
-}) => {
-  const { html, excerpt } = data.markdownRemark
-  const { title, description, lang, date } = data.markdownRemark.frontmatter
-
-  const baseProp: ILayoutProp = {
-    location: location,
-    title: title,
-    description: description || excerpt,
-    lang: lang,
-  }
-
-  return (
-    <BaseTemplate {...baseProp}>
-      <article itemScope itemType="http://schema.org/BlogPosting">
-        <header>
-          <h3 itemProp="headline" className="mb-4 text-4xl lg:text-6xl leading-tight">{title}</h3>
-          <p itemProp="dateCreated" className="mb-4 text-4xl lg:text-6xl leading-tight">{date}</p>
-        </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: html }}
-          itemProp="articleBody"
-        />
-      </article>
-    </BaseTemplate>
-  )
-}
+}) => (
+  <Layout
+    location={location}
+    title={title}
+    description={description || excerpt}
+    lang={lang}
+  >
+    <article itemScope itemType="http://schema.org/BlogPosting">
+      <header>
+        <h3
+          itemProp="headline"
+          className="mb-4 text-4xl lg:text-6xl leading-tight"
+        >
+          {title}
+        </h3>
+        <p
+          itemProp="dateCreated"
+          className="mb-4 text-4xl lg:text-6xl leading-tight"
+        >
+          {date}
+        </p>
+      </header>
+      <ContentBody content={html} itemProp="articleBody" />
+    </article>
+  </Layout>
+)
 
 export default TemplatePost
 
@@ -40,7 +44,7 @@ export const pageQuery = graphql`
   query PostProp($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
-      excerpt(pruneLength: 160)
+      excerpt(pruneLength: 160, format: MARKDOWN)
       html
       frontmatter {
         title

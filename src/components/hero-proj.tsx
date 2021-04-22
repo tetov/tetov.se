@@ -8,11 +8,11 @@ const HeroProj: React.FC<GatsbyTypes.HeroProjFragment> = ({
     slug,
     heroImg: { heroImgData },
   },
-  frontmatter: { title, date, description },
+  frontmatter: { title, description },
 }) => (
   <section className="hover:border border:black">
     <div className="mb-8 md:mb-16">
-      <Link to={slug}>
+      <Link to={`/${slug}`} className="link-style-alt">
         <GatsbyImage
           alt={`Cover image for ${title}`}
           image={heroImgData}
@@ -24,11 +24,10 @@ const HeroProj: React.FC<GatsbyTypes.HeroProjFragment> = ({
     <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
       <div>
         <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
-          <Link to={slug} className="hover:underline">
+          <Link to={`/${slug}`} className="link-style-alt">
             {title}
           </Link>
         </h3>
-        <div className="mb-4 md:mb-0 text-lg">{date}</div>
       </div>
       <div>
         <p className="text-lg leading-relaxed mb-4">{description || excerpt}</p>

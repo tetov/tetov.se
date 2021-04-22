@@ -1,7 +1,7 @@
 import { GatsbyNode } from "gatsby"
 import path from "path"
 
-import type { PreQueryMarkdownRemark } from "../helpers/types"
+import type { PreQueryMarkdownRemark } from "../types"
 
 type QueryResult = {
     allMarkdownRemark: {

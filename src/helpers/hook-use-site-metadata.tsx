@@ -9,12 +9,13 @@ const useSiteMetadata = () => {
             title
             siteUrl
             social {
-              twitter
-              matrix
-              instagram
-              mastodon
-              email
-            }
+              
+               text 
+                icon
+                url
+                hcard
+              }
+            
             description
             logo
           }

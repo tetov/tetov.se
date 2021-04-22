@@ -4,13 +4,54 @@ export default {
     description: `Project and blog`,
     siteUrl: `https://tetov.xyz`,
     logo: "",
-    social: {
-      twitter: "https://twitter.com/antontetov",
-      matrix: "https://matrix.to/#/@tetov:tetov.xyz",
-      instagram: "https://www.instagram.com/antontetov/",
-      mastodon: "https://vis.social/@tetov",
-      email: "anton@tetov.xyz",
-    },
+    lang: "en_US",
+    social: [
+      {
+        text: "anton@tetov.xyz",
+        icon: "Mail",
+        url: "mailto:anton@tetov.xyz",
+        hcard: "u-email",
+      },
+      {
+        text: "337D DB57 4A88 34DB",
+        icon: "Key",
+        url:
+          "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2b4d0035aff0f7dace5b29d7337ddb574a8834db",
+        hcard: "u-key",
+      },
+      {
+        text: "+46 70-363 56 67",
+        icon: "Smartphone",
+        url: "tel:+46703635667",
+        hcard: "u-tel",
+      },
+      { text: "github", icon: "GitHub", url: "https://github.com/tetov" },
+      {
+        text: "instagram",
+        icon: "Instagram",
+        url: "https://www.instagram.com/antontetov/",
+      },
+      {
+        text: "twitter",
+        icon: "Twitter",
+        url: "https://twitter.com/antontetov",
+      },
+      {
+        icon: "Briefcase",
+        url: "https://www.linkedin.com/in/tetov/",
+        text: "linkedin",
+      },
+      {
+        text: "matrix",
+        url: "https://matrix.to/#/@tetov:tetov.xyz",
+        icon: "MessageCircle",
+      },
+      {
+        text: "mastodon",
+        url: "https://vis.social/@tetov",
+        icon: "Hash",
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-catch-links`,
@@ -146,7 +187,8 @@ export default {
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
-        defaultQuality: 75,
+        useMozJpeg: true,
+        defaultQuality: 50,
       },
     },
     {

@@ -14,7 +14,7 @@ export interface ISEOProp {
   description?: string
   lang?: string
   meta?: Array<{ name: string; content: string }>
-  title: string
+  title?: string
 }
 
 // TODO: Add ogImage
@@ -28,9 +28,8 @@ const SEO: React.FC<ISEOProp> = ({
   const siteMetadata = useSiteMetadata()
 
   const metaDescription: string = description || siteMetadata.description
-  const defaultTitle: string = siteMetadata?.title
-  const defaultLang: string = siteMetadata.lang || "en"
-  const lang: string = pageLang || defaultLang
+  const metaTitle: string = title || siteMetadata.title
+  const lang: string = pageLang || siteMetadata.lang
 
   return (
     <Helmet
@@ -38,7 +37,8 @@ const SEO: React.FC<ISEOProp> = ({
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
+      titleTemplate={`%s | ${siteMetadata.title}`}
+      defaultTitle={siteMetadata.title}
       meta={[
         {
           name: `description`,
@@ -46,7 +46,7 @@ const SEO: React.FC<ISEOProp> = ({
         },
         {
           property: `og:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           property: `og:description`,
@@ -55,6 +55,10 @@ const SEO: React.FC<ISEOProp> = ({
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          name: `og:site_name`,
+          content: `tetov.xyz`,
         },
         {
           name: `twitter:card`,
@@ -66,7 +70,7 @@ const SEO: React.FC<ISEOProp> = ({
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           name: `twitter:description`,

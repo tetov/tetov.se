@@ -2,7 +2,7 @@ import { GatsbyNode } from "gatsby"
 
 import { parseNodePath } from "../helpers/node-path-operations"
 
-import type {PreQueryMarkdownRemark} from "../helpers/types"
+import type {PreQueryMarkdownRemark} from "../types"
 
 const onPreExtractQueries: GatsbyNode["onPreExtractQueries"] = async ({
   actions: { createNodeField },
