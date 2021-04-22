@@ -6,12 +6,12 @@
  * Smooth scrolling on the whole document
   https://gomakethings.com/smooth-scrolling-links-with-only-css/
  */
-#content-container {
+html {
   scroll-behavior: smooth;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-  #content-container {
+  html {
     scroll-behavior: auto;
   }
 }
