@@ -21,10 +21,10 @@ const Header: React.FC = () => {
           {title}
         </h1>
       </Link>
-      <p className="mt-4 lg:px-64 md:px-32 text-xl md:text-2xl font-light h-card inline-block">
-        I'm <span className="p-name text-purple">Anton Tetov</span> (
-        <span className="p-gender-identity">they/them</span>) and these are some
-        of my projects. If you need to contact me you'll find my{" "}
+      <p className="mt-4 lg:px-64 md:px-32 text-xl md:text-2xl font-light inline-block">
+        I'm <span className="text-purple">Anton Tetov</span> (
+        <span className="text-purple">they/them</span>) and these are some of my
+        projects. If you need to contact me you'll find my{" "}
         <Link to="#contact" className="link-style">
           contact details below
         </Link>
