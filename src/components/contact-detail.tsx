@@ -20,7 +20,7 @@ const ContactDetail: React.FC<ContactDetailProp> = ({
   const wrapperProp = {
     children: (
       <>
-        {Icon && <Icon {...iconProp} />}
+        {Icon && <Icon aria-hidden={true} {...iconProp} />}
         {text || ""}
       </>
     ),

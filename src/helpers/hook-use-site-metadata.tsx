@@ -8,14 +8,14 @@ const useSiteMetadata = () => {
           siteMetadata {
             title
             siteUrl
+            lang
             social {
-              
-               text 
-                icon
-                url
-                hcard
-              }
-            
+              text
+              icon
+              url
+              hcard
+            }
+
             description
             logo
           }

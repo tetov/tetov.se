@@ -18,11 +18,11 @@ const Layout: React.FC<ILayoutProp> = ({ location, children, ...seoProps }) => {
       className="global-wrapper min-h-screen bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text"
       data-is-root-path={isRootPath}
     >
-      <div className="container mx-auto px-5 space-y-6" id="content-container">
+      <div className="container mx-auto px-5 space-y-6">
         <SEO {...seoProps} />
         <Header />
         <main>{children}</main>
-        <Footer />
+        <Footer isRootPath={isRootPath} />
       </div>
     </div>
   )

@@ -4,9 +4,9 @@ import path from "path"
 import type { PreQueryMarkdownRemark } from "../types"
 
 type QueryResult = {
-    allMarkdownRemark: {
-        nodes: PreQueryMarkdownRemark[]
-    }
+  allMarkdownRemark: {
+    nodes: PreQueryMarkdownRemark[]
+  }
 }
 
 const createPages: GatsbyNode["createPages"] = async ({

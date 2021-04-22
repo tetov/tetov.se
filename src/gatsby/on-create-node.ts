@@ -15,20 +15,19 @@ const onCreateNode: GatsbyNode["onCreateNode"] = async ({
   const { dir, name } = parseNodePath(node, getNode)
   const dirArray = dir.split(path.sep)
 
-  // Slug & Category 
+  // Slug & Category
 
   // Check if node is part of a page bundle,
   // i.e. placed in its own dir and named index
   // category is two steps up from page bundle
   const isPageBundle = name === "index"
-  
+
   const slug = isPageBundle ? dirArray[dirArray.length - 1] : name
 
   createNodeField({
     node: node,
     name: `slug`,
-    value: slug
-
+    value: slug,
   })
 
   const category = isPageBundle
@@ -40,8 +39,6 @@ const onCreateNode: GatsbyNode["onCreateNode"] = async ({
     name: `category`,
     value: category,
   })
-  
-
 }
 
 export default onCreateNode

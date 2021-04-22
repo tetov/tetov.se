@@ -13,12 +13,8 @@ type FileNode = Node & {
   base: string
 }
 
-const getFileNode = (
-  node: any,
-  getNodeFunc: GetNodeFunctionType
-): FileNode => (
-    node.internal.type !== "File" ? getNodeFunc(node.parent) : node
-)
+const getFileNode = (node: any, getNodeFunc: GetNodeFunctionType): FileNode =>
+  node.internal.type !== "File" ? getNodeFunc(node.parent) : node
 
 export const parseNodePath = (
   node: Node,
@@ -31,5 +27,4 @@ export const parseNodePath = (
 export const getNodeAbsolutePath = (
   node: Node,
   getNodeFunc: GetNodeFunctionType
-): string => (getFileNode(node, getNodeFunc).absolutePath)
-
+): string => getFileNode(node, getNodeFunc).absolutePath

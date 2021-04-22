@@ -20,12 +20,12 @@ const TemplatePost: GatsbyPage<GatsbyTypes.PostPropQuery> = ({
   >
     <article itemScope itemType="http://schema.org/BlogPosting">
       <header>
-        <h3
+        <h2
           itemProp="headline"
           className="mb-4 text-4xl lg:text-6xl leading-tight"
         >
           {title}
-        </h3>
+        </h2>
         <p
           itemProp="dateCreated"
           className="mb-4 text-4xl lg:text-6xl leading-tight"

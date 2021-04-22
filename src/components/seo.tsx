@@ -29,7 +29,7 @@ const SEO: React.FC<ISEOProp> = ({
 
   const metaDescription: string = description || siteMetadata.description
   const metaTitle: string = title || siteMetadata.title
-  const lang: string = pageLang || siteMetadata.lang
+  const lang: string = pageLang || siteMetadata.lang || "en_US"
 
   return (
     <Helmet
@@ -66,7 +66,8 @@ const SEO: React.FC<ISEOProp> = ({
         },
         {
           name: `twitter:creator`,
-          content: siteMetadata?.social?.twitter || ``,
+          // FIXME
+          content: "antontetov",
         },
         {
           name: `twitter:title`,

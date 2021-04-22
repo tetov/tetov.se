@@ -26,14 +26,14 @@ const TemplateProj: GatsbyPage<GatsbyTypes.ProjPropQuery> = ({
     lang={lang}
   >
     <article itemScope itemType="http://schema.org/CreativeWork">
-      <header>
+      <header id="proj">
         <Link to={`/${slug}`} className="link-style-alt">
-          <h3
+          <h2
             itemProp="headline"
             className="mb-4 text-4xl lg:text-6xl leading-tight link-style-alt"
           >
             {title}
-          </h3>
+          </h2>
         </Link>
       </header>
       <div className="mb-8 md:mb-16">

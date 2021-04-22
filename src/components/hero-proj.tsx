@@ -9,32 +9,36 @@ const HeroProj: React.FC<GatsbyTypes.HeroProjFragment> = ({
     heroImg: { heroImgData },
   },
   frontmatter: { title, description },
-}) => (
-  <section className="hover:border border:black">
-    <div className="mb-8 md:mb-16">
-      <Link to={`/${slug}`} className="link-style-alt">
-        <GatsbyImage
-          alt={`Cover image for ${title}`}
-          image={heroImgData}
-          loading="eager"
-          imgClassName="shadow-sm hover:shadow-md transition-shadow duration-200"
-        />
-      </Link>
-    </div>
-    <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
-      <div>
-        <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
-          <Link to={`/${slug}`} className="link-style-alt">
-            {title}
-          </Link>
-        </h3>
+}) => {
+  const url = `/${slug}#proj`
+  return (
+    <section>
+      <div className="mb-8 md:mb-16">
+        <Link to={url} className="link-style-alt">
+          <GatsbyImage
+            alt={`Cover image for ${title}`}
+            image={heroImgData}
+            loading="eager"
+          />
+        </Link>
       </div>
-      <div>
-        <p className="text-lg leading-relaxed mb-4">{description || excerpt}</p>
+      <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
+        <div>
+          <h2 className="mb-4 text-4xl lg:text-6xl leading-tight">
+            <Link to={url} className="link-style-alt">
+              {title}
+            </Link>
+          </h2>
+        </div>
+        <div>
+          <p className="text-lg leading-relaxed mb-4">
+            {description || excerpt}
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
-)
+    </section>
+  )
+}
 
 export default HeroProj
 
