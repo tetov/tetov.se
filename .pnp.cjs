@@ -83,6 +83,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-source-filesystem", "virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:3.3.0"],
             ["gatsby-transformer-remark", "virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:4.0.0"],
             ["gatsby-transformer-sharp", "virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:3.3.0"],
+            ["gatsby-transformer-yaml", "virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:3.3.0"],
             ["graphql", "npm:15.5.0"],
             ["lodash", "npm:4.17.21"],
             ["mitt", "npm:2.1.0"],
@@ -12749,6 +12750,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["gatsby-transformer-yaml", [
+        ["npm:3.3.0", {
+          "packageLocation": "./.yarn/cache/gatsby-transformer-yaml-npm-3.3.0-79c37c0c13-a0da535e11.zip/node_modules/gatsby-transformer-yaml/",
+          "packageDependencies": [
+            ["gatsby-transformer-yaml", "npm:3.3.0"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:3.3.0", {
+          "packageLocation": "./.yarn/__virtual__/gatsby-transformer-yaml-virtual-5c14a9817f/0/cache/gatsby-transformer-yaml-npm-3.3.0-79c37c0c13-a0da535e11.zip/node_modules/gatsby-transformer-yaml/",
+          "packageDependencies": [
+            ["gatsby-transformer-yaml", "virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:3.3.0"],
+            ["@babel/runtime", "npm:7.13.10"],
+            ["@types/gatsby", null],
+            ["gatsby", "virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:3.3.0"],
+            ["js-yaml", "npm:3.14.1"],
+            ["lodash", "npm:4.17.21"],
+            ["unist-util-select", "npm:1.5.0"]
+          ],
+          "packagePeers": [
+            "@types/gatsby",
+            "gatsby"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["gauge", [
         ["npm:2.7.4", {
           "packageLocation": "./.yarn/cache/gauge-npm-2.7.4-2189a73529-a89b53cee6.zip/node_modules/gauge/",
@@ -23033,6 +23060,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-source-filesystem", "virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:3.3.0"],
             ["gatsby-transformer-remark", "virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:4.0.0"],
             ["gatsby-transformer-sharp", "virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:3.3.0"],
+            ["gatsby-transformer-yaml", "virtual:40c4f37150407ffd9c5aaeac9a9319d79ea8a7839df166425511e2463d387b78e5540db791f4e6601592804ad16f8dc0148709d8c9cb266aa1f9ffcc6a3e7952#npm:3.3.0"],
             ["graphql", "npm:15.5.0"],
             ["lodash", "npm:4.17.21"],
             ["mitt", "npm:2.1.0"],
@@ -23907,6 +23935,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["unist-util-select", [
+        ["npm:1.5.0", {
+          "packageLocation": "./.yarn/cache/unist-util-select-npm-1.5.0-3f3c98667b-1968187414.zip/node_modules/unist-util-select/",
+          "packageDependencies": [
+            ["unist-util-select", "npm:1.5.0"],
+            ["css-selector-parser", "npm:1.4.1"],
+            ["debug", "virtual:9bd72802b436b244c109274939c05d094921b103f3fbb44e90acf6ce02dba014c0c2c4d292969e0013067fdc606df3ffd061b2f4a86ef83eb0d2158360a8331f#npm:2.6.9"],
+            ["nth-check", "npm:1.0.2"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:3.0.4", {
           "packageLocation": "./.yarn/cache/unist-util-select-npm-3.0.4-445176384c-e6bdb4c790.zip/node_modules/unist-util-select/",
           "packageDependencies": [

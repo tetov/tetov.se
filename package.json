@@ -12,7 +12,7 @@
     "url": "https://github.com/tetov/xyz"
   },
   "scripts": {
-    "develop": "yarn node --no-lazy `yarn bin gatsby` develop --inspect-brk",
+    "develop": "GATSBY_GRAPHQL_IDE=playground yarn node --no-lazy `yarn bin gatsby` develop --inspect-brk",
     "lint": "tsc --skipLibCheck && eslint --fix \"**/*.{ts,tsx,js,jsx,json}\"",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "build": "yarn run gatsby build",
@@ -72,6 +72,7 @@
     "gatsby-source-filesystem": "^3.3.0",
     "gatsby-transformer-remark": "^4.0.0",
     "gatsby-transformer-sharp": "^3.3.0",
+    "gatsby-transformer-yaml": "^3.3.0",
     "graphql": "^15.5.0",
     "lodash": "^4.17.21",
     "mitt": "^2.1.0",

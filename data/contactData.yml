@@ -1,0 +1,68 @@
+contactDataList:
+  - hcard: p-name u-url u-uid
+    service: Name
+    text: Anton Tetov Johansson
+    url: /
+    icon: Coffee
+
+  - hcard: p-gender-identity
+    service: gender-identity
+    text: (they/them)
+    url: https://en.wikipedia.org/wiki/Non-binary_gender
+
+  - hcard: u-email
+    icon: Mail
+    service: E-Mail
+    text: anton@tetov.xyz
+    url: mailto:anton@tetov.xyz
+    username: anton@tetov.xyz
+
+  - hcard: u-key
+    icon: Key
+    service: OpenPGP
+    text: 337D DB57 4A88 34DB
+    url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2b4d0035aff0f7dace5b29d7337ddb574a8834db
+    username: anton@tetov.se
+
+  - hcard: u-tel
+    icon: Smartphone
+    service: Telephone
+    text: +46 70-363 56 67
+    url: tel:+46703635667
+    username: +46 70-363 56 67
+
+  - icon: GitHub
+    service: GitHub
+    text: github
+    url: https://github.com/tetov
+    username: tetov
+
+  - icon: Instagram
+    service: Instagram
+    text: instagram
+    url: https://www.instagram.com/antontetov/
+    username: antontetov
+
+  - icon: Twitter
+    service: Twitter
+    text: twitter
+    url: https://twitter.com/antontetov
+    username: antontetov
+
+  - icon: Briefcase
+    service: LinkedIn
+    text: linkedin
+    url: https://www.linkedin.com/in/tetov/
+    username: tetov
+
+  - icon: MessageCircle
+    service: Matrix
+    text: matrix
+    url: https://matrix.to/#/@tetov:tetov.xyz
+    username: "@tetov:tetov.xyz"
+
+  - icon: Hash
+    service: Mastodon
+    text: mastodon
+    url: https://vis.social/@tetov
+    username: tetov@vis.social

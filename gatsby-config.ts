@@ -3,78 +3,7 @@ export default {
     title: `tetov xyz`,
     description: `Project and blog`,
     siteUrl: `https://tetov.xyz`,
-    logo: "",
     lang: "en",
-    social: [
-      {
-        service: "E-Mail",
-        username: "anton@tetov.xyz",
-        url: "mailto:anton@tetov.xyz",
-        hcard: "u-email",
-        text: "anton@tetov.xyz",
-        icon: "Mail",
-      },
-      {
-        service: "OpenPGP",
-        // TODO: Should add anton@tetov.xyz
-        username: "anton@tetov.se",
-        url:
-          "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2b4d0035aff0f7dace5b29d7337ddb574a8834db",
-        hcard: "u-key",
-        text: "337D DB57 4A88 34DB",
-        icon: "Key",
-      },
-      {
-        service: "Telephone",
-        username: "+46 70-363 56 67",
-        url: "tel:+46703635667",
-        hcard: "u-tel",
-        text: "+46 70-363 56 67",
-        icon: "Smartphone",
-      },
-      {
-        service: "GitHub",
-        username: "tetov",
-        url: "https://github.com/tetov",
-        text: "github",
-        icon: "GitHub",
-      },
-      {
-        service: "Instagram",
-        username: "antontetov",
-        url: "https://www.instagram.com/antontetov/",
-        text: "instagram",
-        icon: "Instagram",
-      },
-      {
-        service: "Twitter",
-        username: "antontetov",
-        url: "https://twitter.com/antontetov",
-        text: "twitter",
-        icon: "Twitter",
-      },
-      {
-        service: "LinkedIn",
-        username: "tetov",
-        url: "https://www.linkedin.com/in/tetov/",
-        text: "linkedin",
-        icon: "Briefcase",
-      },
-      {
-        service: "Matrix",
-        url: "https://matrix.to/#/@tetov:tetov.xyz",
-        username: "@tetov:tetov.xyz",
-        text: "matrix",
-        icon: "MessageCircle",
-      },
-      {
-        service: "Mastodon",
-        username: "tetov@vis.social",
-        url: "https://vis.social/@tetov",
-        text: "mastodon",
-        icon: "Hash",
-      },
-    ],
   },
   plugins: [
     `gatsby-plugin-catch-links`,
@@ -88,7 +17,6 @@ export default {
                 title
                 description
                 siteUrl
-                site_url: siteUrl
               }
             }
           }
@@ -159,6 +87,10 @@ export default {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: { name: `data`, path: `${__dirname}/data/` },
+    },
+    {
       resolve: `gatsby-plugin-typegen`,
       options: {
         emitSchema: {
@@ -217,6 +149,7 @@ export default {
     {
       resolve: `gatsby-transformer-sharp`,
     },
+    `gatsby-transformer-yaml`,
     `gatsby-plugin-typescript`,
   ],
 }

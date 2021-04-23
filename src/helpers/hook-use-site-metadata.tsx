@@ -9,17 +9,7 @@ const useSiteMetadata = () => {
             title
             siteUrl
             lang
-            social {
-              text
-              icon
-              url
-              hcard
-              service
-              username
-            }
-
             description
-            logo
           }
         }
       }

@@ -23,8 +23,3 @@ export const parseNodePath = (
   const n = getFileNode(node, getNodeFunc)
   return { name: n.name, dir: n.dir, ext: n.ext, root: n.root, base: n.base }
 }
-
-export const getNodeAbsolutePath = (
-  node: Node,
-  getNodeFunc: GetNodeFunctionType
-): string => getFileNode(node, getNodeFunc).absolutePath

@@ -5,6 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
+import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import { Helmet } from "react-helmet"
 
@@ -25,15 +26,29 @@ const SEO: React.FC<ISEOProp> = ({
   meta = [],
   title,
 }) => {
-  const siteMetadata = useSiteMetadata()
+  const {
+    description: siteDesc,
+    title: siteTitle,
+    lang: siteLang,
+  } = useSiteMetadata()
 
-  const metaDescription: string = description || siteMetadata.description
-  const metaTitle: string = title || siteMetadata.title
-  const lang: string = pageLang || siteMetadata.lang || "en"
+  const {
+    allContactData: { nodes },
+  } = useStaticQuery<GatsbyTypes.TwitterUsernameQuery>(graphql`
+    query TwitterUsername {
+      allContactData(filter: { service: { eq: "Twitter" } }, limit: 1) {
+        nodes {
+          username
+        }
+      }
+    }
+  `)
 
-  const twitterUsername = siteMetadata.social.find(
-    (s) => s.service === "twitter"
-  ).username
+  const twitterUsername = nodes.length > 0 ? nodes[0].username : ""
+
+  const metaDescription: string = description || siteDesc
+  const metaTitle: string = title || siteTitle
+  const lang: string = pageLang || siteLang || "en"
 
   return (
     <Helmet
@@ -41,8 +56,8 @@ const SEO: React.FC<ISEOProp> = ({
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${siteMetadata.title}`}
-      defaultTitle={siteMetadata.title}
+      titleTemplate={`%s | ${siteTitle}`}
+      defaultTitle={siteTitle}
       meta={[
         {
           name: `description`,
@@ -62,7 +77,7 @@ const SEO: React.FC<ISEOProp> = ({
         },
         {
           name: `og:site_name`,
-          content: `tetov.xyz`,
+          content: siteTitle,
         },
         {
           name: `twitter:card`,
@@ -71,7 +86,7 @@ const SEO: React.FC<ISEOProp> = ({
         {
           name: `twitter:creator`,
           // FIXME
-          content: twitterUsername || "",
+          content: twitterUsername,
         },
         {
           name: `twitter:title`,

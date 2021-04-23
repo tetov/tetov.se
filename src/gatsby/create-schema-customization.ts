@@ -15,18 +15,7 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = async
       description: String
       siteUrl: String!
       lang: String
-      social: [ContactDetail]
-      logo: String
     }
-    type ContactDetail {
-      text: String
-      url: String
-      icon: String
-      hcard: String
-      service: String
-      username: String
-    }
-
     type MarkdownRemark implements Node {
       frontmatter: Frontmatter
       fields: Fields
@@ -44,6 +33,14 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = async
       category: String
       heroImg: ImageSharp
     }
+    type ContactData implements Node {
+      hcard: String
+      icon: String
+      service: String!
+      text: String
+      url: String
+      username: String
+}
   `)
 }
 

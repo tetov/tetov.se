@@ -6083,7 +6083,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-selector-parser@npm:^1.0.0":
+"css-selector-parser@npm:^1.0.0, css-selector-parser@npm:^1.1.0":
   version: 1.4.1
   resolution: "css-selector-parser@npm:1.4.1"
   checksum: 31948754e579eedb918c2fb2d5a4c643ec769ff4a0d03a7bd10b43b25d44973f8cbe86d7ec00c4494269f7ff38b3d2ab0f6ea801cece0ef0974e74469dff770c
@@ -9205,6 +9205,20 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"gatsby-transformer-yaml@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "gatsby-transformer-yaml@npm:3.3.0"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+    js-yaml: ^3.14.1
+    lodash: ^4.17.21
+    unist-util-select: ^1.5.0
+  peerDependencies:
+    gatsby: ^3.0.0-next.0
+  checksum: a0da535e11d3d489d52015c78d5c5c084c844324ddd0d2e5486de53f7dce9d5c7473815e84309e4b8944a8a5e8ab31506eceff12431f4c33004d8f6ddfcb5e25
+  languageName: node
+  linkType: hard
+
 "gatsby@npm:^3.3.0":
   version: 3.3.0
   resolution: "gatsby@npm:3.3.0"
@@ -11736,7 +11750,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"js-yaml@npm:^3.10.0, js-yaml@npm:^3.11.0, js-yaml@npm:^3.13.1":
+"js-yaml@npm:^3.10.0, js-yaml@npm:^3.11.0, js-yaml@npm:^3.13.1, js-yaml@npm:^3.14.1":
   version: 3.14.1
   resolution: "js-yaml@npm:3.14.1"
   dependencies:
@@ -13711,7 +13725,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"nth-check@npm:^1.0.2":
+"nth-check@npm:^1.0.1, nth-check@npm:^1.0.2":
   version: 1.0.2
   resolution: "nth-check@npm:1.0.2"
   dependencies:
@@ -18397,6 +18411,7 @@ resolve@^2.0.0-next.3:
     gatsby-source-filesystem: ^3.3.0
     gatsby-transformer-remark: ^4.0.0
     gatsby-transformer-sharp: ^3.3.0
+    gatsby-transformer-yaml: ^3.3.0
     graphql: ^15.5.0
     lodash: ^4.17.21
     mitt: ^2.1.0
@@ -19119,6 +19134,17 @@ typescript@^4.2.4:
   dependencies:
     unist-util-is: ^4.0.0
   checksum: 16a0b7a3f45f883f164083797e0e4ff9cd23d3a4ae79e8f5c2812cfc91353e699659572b21d0237bea7045d44998bbcbad05232cdf293c98eedfe78e473553a9
+  languageName: node
+  linkType: hard
+
+"unist-util-select@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "unist-util-select@npm:1.5.0"
+  dependencies:
+    css-selector-parser: ^1.1.0
+    debug: ^2.2.0
+    nth-check: ^1.0.1
+  checksum: 19681874146213fc151d3faecfbb2999bbc63722b0e3cda06e769dd153f128d9bfc9350aa574878a64e322fb5de8179a87fb32ff71f0262838ef8361ac8c540c
   languageName: node
   linkType: hard
 

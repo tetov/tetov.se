@@ -22,7 +22,7 @@ const Layout: React.FC<ILayoutProp> = ({ location, children, ...seoProps }) => {
         <SEO {...seoProps} />
         <Header />
         <main>{children}</main>
-        <Footer isRootPath={isRootPath} />
+        <Footer />
       </div>
     </div>
   )

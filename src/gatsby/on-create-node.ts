@@ -3,15 +3,11 @@ import path from "path"
 
 import { parseNodePath } from "../helpers/node-path-operations"
 
-const onCreateNode: GatsbyNode["onCreateNode"] = async ({
+const onCreateMarkdownRemarkNode: GatsbyNode["onCreateNode"] = async ({
   actions: { createNodeField },
   node,
   getNode,
 }) => {
-  if (node.internal.type !== "MarkdownRemark") {
-    return
-  }
-
   const { dir, name } = parseNodePath(node, getNode)
   const dirArray = dir.split(path.sep)
 
@@ -39,6 +35,48 @@ const onCreateNode: GatsbyNode["onCreateNode"] = async ({
     name: `category`,
     value: category,
   })
+}
+interface IContactDataList {
+  service: string
+  username?: string
+  url?: string
+  hcard?: string
+  text?: string
+  icon?: string
+}
+
+const onCreateDataYamlNode: GatsbyNode["onCreateNode"] = async ({
+  actions: { createNode },
+  node,
+  createNodeId,
+  createContentDigest,
+}) => {
+  if (!node?.contactDataList) {
+    return
+  }
+  for (const data of node.contactDataList as IContactDataList[]) {
+    createNode({
+      ...data,
+      id: createNodeId(data.service),
+      parent: node.id,
+      internal: {
+        contentDigest: createContentDigest(data),
+        type: "ContactData",
+      },
+    })
+  }
+}
+
+const onCreateNode: GatsbyNode["onCreateNode"] = async (args) => {
+  const typeFuncMapping = {
+    MarkdownRemark: onCreateMarkdownRemarkNode,
+    DataYaml: onCreateDataYamlNode,
+  }
+  const type_ = args.node.internal.type
+
+  if (type_ in typeFuncMapping) {
+    typeFuncMapping[type_](args)
+  }
 }
 
 export default onCreateNode
