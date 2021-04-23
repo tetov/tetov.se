@@ -23,6 +23,8 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = async
       url: String
       icon: String
       hcard: String
+      service: String
+      username: String
     }
 
     type MarkdownRemark implements Node {

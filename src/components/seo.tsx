@@ -29,7 +29,11 @@ const SEO: React.FC<ISEOProp> = ({
 
   const metaDescription: string = description || siteMetadata.description
   const metaTitle: string = title || siteMetadata.title
-  const lang: string = pageLang || siteMetadata.lang || "en_US"
+  const lang: string = pageLang || siteMetadata.lang || "en"
+
+  const twitterUsername = siteMetadata.social.find(
+    (s) => s.service === "twitter"
+  ).username
 
   return (
     <Helmet
@@ -67,7 +71,7 @@ const SEO: React.FC<ISEOProp> = ({
         {
           name: `twitter:creator`,
           // FIXME
-          content: "antontetov",
+          content: twitterUsername || "",
         },
         {
           name: `twitter:title`,

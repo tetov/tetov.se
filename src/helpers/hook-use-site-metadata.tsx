@@ -14,6 +14,8 @@ const useSiteMetadata = () => {
               icon
               url
               hcard
+              service
+              username
             }
 
             description
