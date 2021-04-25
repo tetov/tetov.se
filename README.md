@@ -7,4 +7,6 @@ Things used:
 - react-icons for icons
 - tailwind
 
--
+## Next
+
+- Light/dark toggle
