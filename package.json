@@ -1,7 +1,7 @@
 {
   "name": "tetov-xyz",
   "private": true,
-  "description": "Projects and blog",
+  "description": "Projects & blog",
   "version": "0.1.0",
   "author": {
     "name": "Anton Tetov",
@@ -84,8 +84,8 @@
     "query-string": "^7.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-feather": "^2.0.9",
     "react-helmet": "^6.1.0",
+    "react-icons": "^4.2.0",
     "shallow-compare": "^1.2.2",
     "source-map-support": "^0.5.19",
     "stack-trace": "^0.0.10",

@@ -2,20 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/**
- * Smooth scrolling on the whole document
-  https://gomakethings.com/smooth-scrolling-links-with-only-css/
- */
-html {
-  scroll-behavior: smooth;
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
-
 @layer utilities {
   .link-style {
     @apply text-purple hover:text-light-text dark:hover:text-dark-text;

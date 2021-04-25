@@ -10,7 +10,7 @@ const ContentPreview: React.FC<GatsbyTypes.ContentPreviewFragment> = ({
   },
   frontmatter: { title, description },
 }) => {
-  const url = `/${slug}#proj`
+  const url = `/${slug}`
   return (
     <div>
       <div className="mb-5">
@@ -22,11 +22,11 @@ const ContentPreview: React.FC<GatsbyTypes.ContentPreviewFragment> = ({
           />
         </Link>
       </div>
-      <h2 className="text-3xl mb-3 leading-snug">
+      <h3 className="text-3xl mb-3 leading-snug">
         <Link to={url} className="link-style-alt">
           {title}
         </Link>
-      </h2>
+      </h3>
       <div className="mb-4">
         <p className="text-lg leading-relaxed mb-4">{description || excerpt}</p>
       </div>

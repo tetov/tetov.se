@@ -1,7 +1,7 @@
 export default {
   siteMetadata: {
     title: `tetov xyz`,
-    description: `Project and blog`,
+    description: `Projects & blog`,
     siteUrl: `https://tetov.xyz`,
     lang: "en",
   },

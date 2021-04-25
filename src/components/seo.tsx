@@ -36,7 +36,7 @@ const SEO: React.FC<ISEOProp> = ({
     allContactData: { nodes },
   } = useStaticQuery<GatsbyTypes.TwitterUsernameQuery>(graphql`
     query TwitterUsername {
-      allContactData(filter: { service: { eq: "Twitter" } }, limit: 1) {
+      allContactData(filter: { label: { eq: "twitter" } }, limit: 1) {
         nodes {
           username
         }
@@ -85,7 +85,6 @@ const SEO: React.FC<ISEOProp> = ({
         },
         {
           name: `twitter:creator`,
-          // FIXME
           content: twitterUsername,
         },
         {

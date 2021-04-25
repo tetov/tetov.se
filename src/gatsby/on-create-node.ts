@@ -3,6 +3,8 @@ import path from "path"
 
 import { parseNodePath } from "../helpers/node-path-operations"
 
+import type { IContactData } from "../types"
+
 const onCreateMarkdownRemarkNode: GatsbyNode["onCreateNode"] = async ({
   actions: { createNodeField },
   node,
@@ -36,14 +38,6 @@ const onCreateMarkdownRemarkNode: GatsbyNode["onCreateNode"] = async ({
     value: category,
   })
 }
-interface IContactDataList {
-  service: string
-  username?: string
-  url?: string
-  hcard?: string
-  text?: string
-  icon?: string
-}
 
 const onCreateDataYamlNode: GatsbyNode["onCreateNode"] = async ({
   actions: { createNode },
@@ -54,10 +48,10 @@ const onCreateDataYamlNode: GatsbyNode["onCreateNode"] = async ({
   if (!node?.contactDataList) {
     return
   }
-  for (const data of node.contactDataList as IContactDataList[]) {
+  for (const data of node.contactDataList as Node & IContactData[]) {
     createNode({
       ...data,
-      id: createNodeId(data.service),
+      id: createNodeId(data.label),
       parent: node.id,
       internal: {
         contentDigest: createContentDigest(data),

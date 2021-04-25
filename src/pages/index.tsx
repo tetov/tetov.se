@@ -1,30 +1,43 @@
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import React from "react"
 
+import ContactDetail from "../components/contact-detail"
 import ContentPreview from "../components/content-preview"
+import Header from "../components/header"
 import HeroProj from "../components/hero-proj"
 import Layout from "../components/layout"
 
-const Index: GatsbyPage<GatsbyTypes.IndexQuery, string> = ({
-  data,
-  location,
-}) => {
+const Index: GatsbyPage<GatsbyTypes.IndexQuery> = ({ data }) => {
   const contentNodes = data.allMarkdownRemark.nodes
 
   const [heroProj, ...projNodes] = contentNodes
-  // const [heroProj, ...projNodes] = contentNodes.filter(
-  // (node) => node.fields.category == "proj"
-  // )
 
   return (
-    <Layout location={location}>
-      <HeroProj {...heroProj} />
+    <Layout>
+      <>
+        <Header>
+          Hi! I'm Anton Tetov, I'm an architect, programmer and maker. These are
+          some of my projects.{" "}
+          <Link to="/contact" className="link-style">
+            Want to say hi?
+          </Link>
+        </Header>
+        <HeroProj {...heroProj} />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-8">
-        {projNodes.map((node) => (
-          <ContentPreview key={node.id} {...node} />
-        ))}
-      </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-8">
+          {projNodes.map((node) => (
+            <ContentPreview key={node.id} {...node} />
+          ))}
+        </div>
+        {/* Hidden h-card */}
+        <div className="hidden" aria-hidden={true}>
+          {data.allContactData.nodes
+            .filter((n) => n.url || n.hcard)
+            .map((n) => (
+              <ContactDetail key={n.id} contactData={n} />
+            ))}
+        </div>
+      </>
     </Layout>
   )
 }
@@ -43,6 +56,14 @@ export const pageQuery = graphql`
         id
         ...ContentPreview
         ...HeroProj
+      }
+    }
+    allContactData {
+      nodes {
+        id
+        url
+        hcard
+        text
       }
     }
   }

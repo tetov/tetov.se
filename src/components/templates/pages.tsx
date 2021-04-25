@@ -2,6 +2,7 @@ import { graphql } from "gatsby"
 import React from "react"
 
 import ContentBody from "../content-body"
+import Header from "../header"
 import Layout from "../layout"
 
 const TemplatePage: GatsbyPage<GatsbyTypes.PagePropQuery> = ({
@@ -10,18 +11,10 @@ const TemplatePage: GatsbyPage<GatsbyTypes.PagePropQuery> = ({
     excerpt,
     frontmatter: { title, description, lang },
   },
-  location,
 }) => (
-  <Layout
-    location={location}
-    title={title}
-    description={description || excerpt}
-    lang={lang}
-  >
+  <Layout title={title} description={description || excerpt} lang={lang}>
     <article itemScope itemType="http://schema.org/WebPage">
-      <header>
-        <h1 itemProp="name">{title}</h1>
-      </header>
+      <Header>{title}</Header>
       <ContentBody content={html} itemProp="mainContentOfPage" />
     </article>
   </Layout>

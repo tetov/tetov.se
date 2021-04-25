@@ -10,14 +10,8 @@ const TemplatePost: GatsbyPage<GatsbyTypes.PostPropQuery> = ({
     excerpt,
     frontmatter: { title, description, lang, date },
   },
-  location,
 }) => (
-  <Layout
-    location={location}
-    title={title}
-    description={description || excerpt}
-    lang={lang}
-  >
+  <Layout title={title} description={description || excerpt} lang={lang}>
     <article itemScope itemType="http://schema.org/BlogPosting">
       <header>
         <h2

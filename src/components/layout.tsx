@@ -1,30 +1,23 @@
 import React from "react"
 
 import Footer from "./footer"
-import Header from "./header"
 import SEO, { ISEOProp as ISEOProp } from "./seo"
 
 export interface ILayoutProp extends ISEOProp {
-  location: any
-  children?: any
+  children?: JSX.Element
 }
 
-const Layout: React.FC<ILayoutProp> = ({ location, children, ...seoProps }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  const isRootPath = location.pathname === rootPath
-
+const Layout: React.FC<ILayoutProp> = ({ children, ...seoProps }) => {
   return (
-    <div
-      className="global-wrapper min-h-screen bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text"
-      data-is-root-path={isRootPath}
-    >
-      <div className="container mx-auto px-5 space-y-6">
-        <SEO {...seoProps} />
-        <Header />
-        <main>{children}</main>
-        <Footer />
+    <>
+      <SEO {...seoProps} />
+      <div className="global-wrapper min-h-screen bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text">
+        <div className="container mx-auto px-5 space-y-6">
+          <main>{children}</main>
+          <Footer />
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

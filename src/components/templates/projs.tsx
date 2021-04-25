@@ -3,6 +3,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import React from "react"
 
 import ContentBody from "../content-body"
+import Header from "../header"
 import Layout from "../layout"
 
 const TemplateProj: GatsbyPage<GatsbyTypes.ProjPropQuery> = ({
@@ -17,25 +18,14 @@ const TemplateProj: GatsbyPage<GatsbyTypes.ProjPropQuery> = ({
       frontmatter: { title, description, lang },
     },
   },
-  location,
 }) => (
-  <Layout
-    location={location}
-    title={title}
-    description={description || excerpt}
-    lang={lang}
-  >
+  <Layout title={title} description={description || excerpt} lang={lang}>
     <article itemScope itemType="http://schema.org/CreativeWork">
-      <header id="proj">
+      <Header>
         <Link to={`/${slug}`} className="link-style-alt">
-          <h2
-            itemProp="headline"
-            className="mb-4 text-4xl lg:text-6xl leading-tight link-style-alt"
-          >
-            {title}
-          </h2>
+          {title}
         </Link>
-      </header>
+      </Header>
       <div className="mb-8 md:mb-16">
         <GatsbyImage
           alt={`Cover image for ${title}`}

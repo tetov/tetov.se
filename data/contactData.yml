@@ -1,68 +1,98 @@
 contactDataList:
   - hcard: p-name u-url u-uid
-    service: Name
+    label: name
     text: Anton Tetov Johansson
     url: /
-    icon: Coffee
+    icon:
+      set: ri
+      name: RiUserSmileFill
 
   - hcard: p-gender-identity
-    service: gender-identity
+    label: gender-identity
     text: (they/them)
     url: https://en.wikipedia.org/wiki/Non-binary_gender
+    icon:
+      set: ri
+      name: RiGenderlessFill
 
   - hcard: u-email
-    icon: Mail
-    service: E-Mail
+    label: e-mail
     text: anton@tetov.xyz
     url: mailto:anton@tetov.xyz
     username: anton@tetov.xyz
+    icon:
+      set: ri
+      name: RiMailFill
 
   - hcard: u-key
-    icon: Key
-    service: OpenPGP
+    label: openpgp
     text: 337D DB57 4A88 34DB
     url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2b4d0035aff0f7dace5b29d7337ddb574a8834db
     username: anton@tetov.se
+    icon:
+      set: ri
+      name: RiKey2Fill
 
   - hcard: u-tel
-    icon: Smartphone
-    service: Telephone
+    label: telephone
     text: +46 70-363 56 67
     url: tel:+46703635667
-    username: +46 70-363 56 67
+    username: "+46703635667"
+    icon:
+      set: ri
+      name: RiSmartphoneFill
 
-  - icon: GitHub
-    service: GitHub
+  - label: github
     text: github
     url: https://github.com/tetov
     username: tetov
+    icon:
+      set: ri
+      name: RiGithubFill
 
-  - icon: Instagram
-    service: Instagram
+  - label: instagram
     text: instagram
     url: https://www.instagram.com/antontetov/
     username: antontetov
+    icon:
+      set: ri
+      name: RiInstagramFill
 
-  - icon: Twitter
-    service: Twitter
+  - label: twitter
     text: twitter
     url: https://twitter.com/antontetov
     username: antontetov
+    icon:
+      set: ri
+      name: RiTwitterFill
 
-  - icon: Briefcase
-    service: LinkedIn
+  - label: linkedin
     text: linkedin
     url: https://www.linkedin.com/in/tetov/
     username: tetov
+    icon:
+      set: ri
+      name: RiLinkedinBoxFill
 
-  - icon: MessageCircle
-    service: Matrix
+  - label: matrix
     text: matrix
     url: https://matrix.to/#/@tetov:tetov.xyz
     username: "@tetov:tetov.xyz"
+    icon:
+      set: si
+      name: SiMatrix
 
-  - icon: Hash
-    service: Mastodon
+  - label: signal
+    text: +46 70-363 56 67
+    username: "+46703635667"
+    icon:
+      set: si
+      name: SiSignal
+
+  - label: mastodon
     text: mastodon
     url: https://vis.social/@tetov
     username: tetov@vis.social
+    icon:
+      set: ri
+      name: RiMastodonFill
