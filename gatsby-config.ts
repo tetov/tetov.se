@@ -112,7 +112,7 @@ export default {
               height: "auto",
               preload: "lazy",
               muted: false,
-              autoplay: true,
+              autoplay: false,
               playsinline: true,
               controls: true,
               loop: false,
