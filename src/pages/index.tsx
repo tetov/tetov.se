@@ -30,7 +30,7 @@ const Index: GatsbyPage<GatsbyTypes.IndexQuery> = ({ data }) => {
           ))}
         </div>
         {/* Hidden h-card */}
-        <div className="hidden" aria-hidden={true}>
+        <div className="h-card hidden" aria-hidden={true}>
           {data.allContactData.nodes
             .filter((n) => n.url || n.hcard)
             .map((n) => (
