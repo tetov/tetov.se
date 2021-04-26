@@ -16,8 +16,8 @@ contactDataList:
       name: RiGenderlessFill
 
   - hcard: u-email
-    label: e-mail
-    text: anton@tetov.xyz
+    label: email
+    text: email
     url: mailto:anton@tetov.xyz
     username: anton@tetov.xyz
     icon:
@@ -26,7 +26,7 @@ contactDataList:
 
   - hcard: u-key
     label: openpgp
-    text: 337D DB57 4A88 34DB
+    text: openpgp public key
     url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2b4d0035aff0f7dace5b29d7337ddb574a8834db
     username: anton@tetov.se
     icon:
@@ -35,7 +35,7 @@ contactDataList:
 
   - hcard: u-tel
     label: telephone
-    text: +46 70-363 56 67
+    text: phone number
     url: tel:+46703635667
     username: "+46703635667"
     icon:
@@ -83,7 +83,8 @@ contactDataList:
       name: SiMatrix
 
   - label: signal
-    text: +46 70-363 56 67
+    text: signal
+    url: "tel:+46703635667"
     username: "+46703635667"
     icon:
       set: si
