@@ -15,7 +15,7 @@ const Header: React.FC = ({ children }) => {
       </Link>{" "}
       <h2
         itemProp="headline"
-        className="mt-4 lg:px-64 md:px-32 text-2xl md:text-4xl font-light inline-block leading-relaxed"
+        className="mt-4 w-2/3 text-2xl md:text-4xl font-light inline-block leading-relaxed"
       >
         {children}
       </h2>
