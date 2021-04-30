@@ -62,13 +62,13 @@ export default {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `tetov-xyz`,
-        short_name: `tetov-xyz`,
+        name: `tetov xyz`,
+        short_name: `tetov xyz`,
         start_url: `/`,
-        background_color: `#663399`,
+        background_color: `#111111`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `./src/images/dangerous-tex-oot.svg`,
+        icon: `./src/images/icon.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
