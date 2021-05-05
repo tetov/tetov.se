@@ -44,16 +44,13 @@ const SEO: React.FC<ISEOProp> = ({
     }
   `)
 
-  const twitterUsername = nodes.length > 0 ? nodes[0].username : ""
-
   const metaDescription: string = description || siteDesc
-  const metaTitle: string = title || siteTitle
-  const lang: string = pageLang || siteLang || "en"
+  const metaTitle: string = title || description
 
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: pageLang || siteLang || "en",
       }}
       title={title}
       titleTemplate={`%s | ${siteTitle}`}
@@ -85,7 +82,7 @@ const SEO: React.FC<ISEOProp> = ({
         },
         {
           name: `twitter:creator`,
-          content: twitterUsername,
+          content: nodes[0].username || "",
         },
         {
           name: `twitter:title`,
