@@ -25,31 +25,35 @@ const setImportMapping = {
   si: SiIcons,
 }
 
-type IconType = (prop: IconPropWithNameAndSet) => JSX.Element
-const getIcon: IconType = ({ set, name, prop }) => {
+const getIcon = ({ set, name, prop }: IconPropWithNameAndSet) => {
   const Icon = setImportMapping[set][name]
 
   return <Icon {...prop} />
 }
-const ContactLink: React.FC<JSX.IntrinsicElements["a"]> = ({
-  children,
-  ...prop
-}) => (
+
+type ContactLinkProp = JSX.IntrinsicElements["a"] & {
+  children: React.ReactNode
+}
+
+type ContactNotLinkProp = JSX.IntrinsicElements["span"] & {
+  children: React.ReactNode
+}
+
+const ContactLink = ({ children, ...prop }: ContactLinkProp) => (
   <a rel="me external" {...prop}>
     {children}
   </a>
 )
 
-const ContactNotLink: React.FC<JSX.IntrinsicElements["span"]> = ({
-  children,
-  ...prop
-}) => <span {...prop}>{children}</span>
+const ContactNotLink = ({ children, ...prop }: ContactNotLinkProp) => (
+  <span {...prop}>{children}</span>
+)
 
-const ContactDetail: React.FC<ContactDetailProp> = ({
+const ContactDetail = ({
   contactData: { text, url, icon, hcard },
   className,
   iconProp = {},
-}) => {
+}: ContactDetailProp) => {
   iconProp["aria-hidden"] = true
   const Icon = icon ? getIcon({ prop: iconProp, ...icon }) : undefined
 

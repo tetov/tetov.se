@@ -4,7 +4,7 @@ import React from "react"
 
 import ContactDetail from "./contact-detail"
 
-const ContactDetails: React.FC = () => {
+const ContactDetails = () => {
   const {
     allContactData: { nodes },
   } = useStaticQuery<GatsbyTypes.ContactDetailsQuery>(graphql`

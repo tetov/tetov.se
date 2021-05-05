@@ -3,11 +3,13 @@ import React from "react"
 
 import * as markdownStyles from "./markdown-styles.module.css"
 
-const ContentBody: React.FC<{
+type Props = {
   content: string
   itemProp: string
   className?: string
-}> = ({ content, itemProp, className }) => (
+}
+
+const ContentBody = ({ content, itemProp, className }: Props) => (
   <section
     className={classnames(
       "e-content max-w-2xl mx-auto",
