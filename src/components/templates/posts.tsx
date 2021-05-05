@@ -3,30 +3,30 @@ import React from "react"
 
 import ContentBody from "../content-body"
 import Layout from "../layout"
+import PageHeader from "../page-header"
 
 const TemplatePost: GatsbyPage<GatsbyTypes.PostPropQuery> = ({
   data: {
     html,
     excerpt,
-    frontmatter: { title, description, lang, date },
+    frontmatter: { title, description, lang, date, machineReadableDate },
+    fields: { slug },
   },
 }) => (
   <Layout title={title} description={description || excerpt} lang={lang}>
-    <article itemScope itemType="http://schema.org/BlogPosting">
-      <header>
-        <h2
-          itemProp="headline"
-          className="mb-4 text-4xl lg:text-6xl leading-tight"
-        >
-          {title}
-        </h2>
-        <p
-          itemProp="dateCreated"
-          className="mb-4 text-4xl lg:text-6xl leading-tight"
-        >
+    <article
+      className="h-entry"
+      itemScope
+      itemType="http://schema.org/BlogPosting"
+    >
+      <PageHeader itemProp="headline" url={`/${slug}`}>
+        {title}
+      </PageHeader>
+      <p className="mb-4 text-4xl lg:text-6xl leading-tight">
+        <time itemProp="dateCreated" dateTime={machineReadableDate}>
           {date}
-        </p>
-      </header>
+        </time>
+      </p>
       <ContentBody content={html} itemProp="articleBody" />
     </article>
   </Layout>
@@ -42,9 +42,13 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "YYYY-MM-DD")
         description
         lang
+        date(formatString: "YYYY-MM-DD")
+        machineReadableDate: date
+      }
+      fields {
+        slug
       }
     }
   }

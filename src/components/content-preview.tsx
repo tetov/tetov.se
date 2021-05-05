@@ -13,15 +13,14 @@ const ContentPreview: React.FC<GatsbyTypes.ContentPreviewFragment> = ({
   const url = `/${slug}`
   return (
     <div>
-      <div className="mb-5">
         <Link to={url}>
           <GatsbyImage
             alt={`Cover image for ${title}`}
             image={previewImg}
             loading="lazy"
+            className="mb-5"
           />
         </Link>
-      </div>
       <h3 className="text-3xl mb-3 leading-snug">
         <Link to={url} className="link-style-alt">
           {title}

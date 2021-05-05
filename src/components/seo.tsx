@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet"
 
 import useSiteMetadata from "../helpers/hook-use-site-metadata"
 
-export interface ISEOProp {
+export type SEOProp = {
   description?: string
   lang?: string
   meta?: Array<{ name: string; content: string }>
@@ -20,12 +20,12 @@ export interface ISEOProp {
 
 // TODO: Add ogImage
 
-const SEO: React.FC<ISEOProp> = ({
+const SEO = ({
   description = "",
   lang: pageLang,
   meta = [],
   title,
-}) => {
+}: SEOProp) => {
   const {
     description: siteDesc,
     title: siteTitle,

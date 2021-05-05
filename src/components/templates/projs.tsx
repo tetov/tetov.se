@@ -1,10 +1,10 @@
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import React from "react"
 
 import ContentBody from "../content-body"
-import Header from "../header"
 import Layout from "../layout"
+import PageHeader from "../page-header"
 
 const TemplateProj: GatsbyPage<GatsbyTypes.ProjPropQuery> = ({
   data: {
@@ -20,20 +20,19 @@ const TemplateProj: GatsbyPage<GatsbyTypes.ProjPropQuery> = ({
   },
 }) => (
   <Layout title={title} description={description || excerpt} lang={lang}>
-    <article itemScope itemType="http://schema.org/CreativeWork">
-      <Header>
-        <Link to={`/${slug}`} className="link-style-alt">
-          {title}
-        </Link>
-      </Header>
-      <div className="mb-8 md:mb-16">
-        <GatsbyImage
-          alt={`Cover image for ${title}`}
-          image={heroImgData}
-          loading="eager"
-          imgClassName="shadow-sm hover:shadow-md transition-shadow duration-200"
-        />
-      </div>
+    <article
+      className="h-entry"
+      itemScope
+      itemType="http://schema.org/CreativeWork"
+    >
+      <PageHeader url={`/${slug}`}>{title}</PageHeader>
+      <GatsbyImage
+        alt={`Cover image for ${title}`}
+        image={heroImgData}
+        loading="eager"
+        className="mb-8 md:mb-16"
+        imgClassName="shadow-sm hover:shadow-md transition-shadow duration-200"
+      />
       <ContentBody content={html} itemProp="about" />
     </article>
   </Layout>
@@ -48,13 +47,9 @@ export const pageQuery = graphql`
       ...ProjMetaData
       html
       fields {
-        slug
         heroImg {
           ...HeroImg
         }
-      }
-      frontmatter {
-        lang
       }
     }
   }
