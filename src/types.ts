@@ -19,5 +19,5 @@ export interface IContactData {
   url?: string
   hcard?: string
   text?: string
-  icon?: { set: string; name: string }
+  icon?: string
 }
