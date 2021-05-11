@@ -23,7 +23,7 @@ const ContactDetails = () => {
   `)
   return (
     <div id="contact" className="h-card md:px-44 text-center text-lg">
-      {nodes.map((n) => (
+      {nodes.map((n: GatsbyTypes.ContactData) => (
         <ContactDetail
           contactData={n}
           key={n.id}
