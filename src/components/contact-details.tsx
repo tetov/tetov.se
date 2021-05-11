@@ -16,10 +16,7 @@ const ContactDetails = () => {
           url
           hcard
           text
-          icon {
-            name
-            set
-          }
+          icon
         }
       }
     }
