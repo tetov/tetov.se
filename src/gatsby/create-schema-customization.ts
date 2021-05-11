@@ -33,11 +33,6 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = async
       category: String
       heroImg: ImageSharp
     }
-    type Icon {
-      set: String!
-      name: String!
-
-    }
     type ContactData implements Node {
       hcard: String
       icon: String
@@ -45,7 +40,7 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = async
       text: String
       url: String
       username: String
-      icon: Icon
+      icon: String
 }
   `)
 }

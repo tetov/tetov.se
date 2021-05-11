@@ -3,97 +3,73 @@ contactDataList:
     label: name
     text: Anton Tetov Johansson
     url: /
-    icon:
-      set: ri
-      name: RiUserSmileFill
+    icon: RiUserSmileFill
 
   - hcard: p-gender-identity
     label: gender-identity
     text: (they/them)
     url: https://en.wikipedia.org/wiki/Non-binary_gender
-    icon:
-      set: ri
-      name: RiGenderlessFill
+    icon: RiGenderlessFill
 
   - hcard: u-email
     label: email
     text: email
     url: mailto:anton@tetov.xyz
     username: anton@tetov.xyz
-    icon:
-      set: ri
-      name: RiMailFill
+    icon: RiMailFill
 
   - hcard: u-key
     label: openpgp
     text: openpgp public key
     url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2b4d0035aff0f7dace5b29d7337ddb574a8834db
     username: anton@tetov.se
-    icon:
-      set: ri
-      name: RiKey2Fill
+    icon: RiKey2Fill
 
   - hcard: u-tel
     label: telephone
     text: phone number
     url: tel:+46703635667
     username: "+46703635667"
-    icon:
-      set: ri
-      name: RiSmartphoneFill
+    icon: RiSmartphoneFill
 
   - label: github
     text: github
     url: https://github.com/tetov
     username: tetov
-    icon:
-      set: ri
-      name: RiGithubFill
+    icon: RiGithubFill
 
   - label: instagram
     text: instagram
     url: https://www.instagram.com/antontetov/
     username: antontetov
-    icon:
-      set: ri
-      name: RiInstagramFill
+    icon: RiInstagramFill
 
   - label: twitter
     text: twitter
     url: https://twitter.com/antontetov
     username: antontetov
-    icon:
-      set: ri
-      name: RiTwitterFill
+    icon: RiTwitterFill
 
   - label: linkedin
     text: linkedin
     url: https://www.linkedin.com/in/tetov/
     username: tetov
-    icon:
-      set: ri
-      name: RiLinkedinBoxFill
+    icon: RiLinkedinBoxFill
 
   - label: matrix
     text: matrix
     url: https://matrix.to/#/@tetov:tetov.xyz
     username: "@tetov:tetov.xyz"
-    icon:
-      set: si
-      name: SiMatrix
+    icon: SiMatrix
 
   - label: signal
     text: signal
     url: "tel:+46703635667"
     username: "+46703635667"
-    icon:
-      set: si
-      name: SiSignal
+    icon: SiSignal
 
   - label: mastodon
     text: mastodon
     url: https://vis.social/@tetov
     username: tetov@vis.social
-    icon:
-      set: ri
-      name: RiMastodonFill
+    icon: RiMastodonFill
