@@ -2,8 +2,8 @@ name: Deploy website to gh-pages
 
 on:
   push:
-    branches:
-      - main
+    branches-ignore:
+      - "gh-pages"
 
 jobs:
   build:
@@ -17,8 +17,19 @@ jobs:
         with:
           node-version: "14"
 
-      - name: Install yarn
-        run: npm install -g yarn
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+
+      - name: Restore NPM cache
+        uses: actions/cache@v2
+        id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
+        with:
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Restore Gatsby cache
         uses: actions/cache@v2
@@ -27,9 +38,12 @@ jobs:
           path: |
             ./.cache
             ./public
-          key: ${{ runner.os }}-${{ github.ref }}-gatsby-cache
+          key: ${{ runner.os }}-gatsby-${{ github.sha }}
           restore-keys: |
-            ${{ runner.os }}-refs/heads/main-gatsby-cache
+            ${{ runner.os }}-gatsby-
+
+      - name: Install
+        run: npm ci
 
       - name: Build
         run: npm run build
