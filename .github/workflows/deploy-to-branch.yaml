@@ -16,6 +16,9 @@ jobs:
         uses: actions/setup-node@v2.1.5
         with:
           node-version: "14"
+            
+      - name: Update npm
+        run: npm install -g npm@latest
 
       - name: Get npm cache directory
         id: npm-cache-dir
