@@ -1,9 +1,12 @@
+import Layout from "components/layout";
+import { MetaContent } from "components/meta";
 import React from "react";
-import Layout from "../components/layout";
 
-const NotFoundPage: GatsbyPage = () => {
+const NotFoundPage: GatsbyPage = ({location: {pathname}}) => {
+  const title = "404: Not found"
   return (
-    <Layout title="404: Not found" subHeading="404: Not found">
+    <Layout pathName={pathname} subHeading={title}>
+    <MetaContent title="404: Not found" />
       <p className="text-center">
         You just hit a route that doesn&#39;t exist...
       </p>

@@ -1,12 +1,11 @@
+import { ContentBody, ContentHeader } from "components/content";
+import Layout from "components/layout";
+import { MetaContent } from "components/meta";
 import { graphql } from "gatsby";
 import React from "react";
-import ContentBody from "../components/content/body";
-import ContentHead from "../components/content/head";
-import ContentHeader from "../components/content/header";
-import Layout from "../components/layout";
 
 const TemplatePage: GatsbyPage<GatsbyTypes.PagePropQuery> = ({
-  location,
+  location: { pathname },
   data: {
     html,
     excerpt,
@@ -14,8 +13,8 @@ const TemplatePage: GatsbyPage<GatsbyTypes.PagePropQuery> = ({
     fields: { slug },
   },
 }) => (
-  <Layout pathName={location.pathname}>
-    <ContentHead title={title} excerpt={excerpt} lang={lang} />
+  <Layout pathName={pathname}>
+    <MetaContent title={title} excerpt={description || excerpt} lang={lang} />
     <article itemScope itemType="http://schema.org/WebPage">
       <ContentHeader itemProp="headline" url={`/${slug}`}>
         {title}

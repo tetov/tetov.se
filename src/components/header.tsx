@@ -1,6 +1,6 @@
 import { Link } from "gatsby";
 import React from "react";
-import useSiteMetadata from "../helpers/hook-use-site-metadata";
+import querySiteMetadata from "../hooks/query-site-metadata";
 
 export type HeaderProp = {
   subHeading?: React.ReactNode;
@@ -10,7 +10,7 @@ const Header = ({ subHeading }: HeaderProp) => (
   <header className="text-center md:justify-between pt-12 mb-16 md:mb-12">
     <Link to="/">
       <h1 className="text-7xl md:text-8xl font-bold tracking-tighter leading-tight">
-        {useSiteMetadata().title}
+        {querySiteMetadata().title}
       </h1>
     </Link>{" "}
     {subHeading && (

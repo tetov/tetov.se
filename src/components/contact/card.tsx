@@ -1,13 +1,13 @@
 import classNames from "classnames";
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
-import ContactDetail from "./contact-detail";
+import { ContactDetail } from ".";
 
-const ContactDetails = () => {
+const ContactCard = () => {
   const {
     allContactData: { nodes },
-  } = useStaticQuery<GatsbyTypes.ContactDetailsQuery>(graphql`
-    query ContactDetails {
+  } = useStaticQuery<GatsbyTypes.ContactCardQuery>(graphql`
+    query ContactCard {
       allContactData {
         nodes {
           id
@@ -38,4 +38,4 @@ const ContactDetails = () => {
   );
 };
 
-export default ContactDetails;
+export default ContactCard;

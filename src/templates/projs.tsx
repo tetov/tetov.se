@@ -1,11 +1,12 @@
+import { ContentBody, ContentHeader } from "components/content";
+import Layout from "components/layout";
+import { MetaContent, MetaImage } from "components/meta";
 import { graphql } from "gatsby";
 import { GatsbyImage, getSrc } from "gatsby-plugin-image";
 import React from "react";
-import { ContentBody, ContentHead, ContentHeader } from "../components/content";
-import Layout from "../components/layout";
 
 const TemplateProj: GatsbyPage<GatsbyTypes.ProjPropQuery> = ({
-  location,
+  location: { pathname },
   data: {
     markdownRemark: {
       html,
@@ -18,14 +19,14 @@ const TemplateProj: GatsbyPage<GatsbyTypes.ProjPropQuery> = ({
     },
   },
 }) => (
-  <Layout pathName={location.pathname}>
-    <ContentHead
+  <Layout pathName={pathname}>
+    <MetaContent
       title={title}
       excerpt={description || excerpt}
       lang={lang}
-      imgSrc={getSrc(heroImgData)}
       type="article"
     />
+    <MetaImage src={getSrc(heroImgData)} />
     <article
       className="h-entry"
       itemScope

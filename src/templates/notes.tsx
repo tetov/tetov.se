@@ -1,11 +1,12 @@
+import { ContentBody } from "components/content";
+import Layout from "components/layout";
+import { MetaContent } from "components/meta";
 import { graphql, Link } from "gatsby";
-import { GatsbyImage, getSrc } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
-import { ContentBody, ContentHead } from "../components/content";
-import Layout from "../components/layout";
 
 const TemplateNote: GatsbyPage<GatsbyTypes.NotePropQuery> = ({
-  location,
+  location: { pathname },
   data: {
     markdownRemark: {
       html,
@@ -18,11 +19,10 @@ const TemplateNote: GatsbyPage<GatsbyTypes.NotePropQuery> = ({
     },
   },
 }) => (
-  <Layout pathName={location.pathname} subHeading="a note">
-    <ContentHead
+  <Layout pathName={pathname} subHeading="a note">
+    <MetaContent
       title={`A note posted ${date}`}
       excerpt={excerpt}
-      imgSrc={getSrc(heroImgData)}
       lang={lang}
     />
     <article
@@ -39,8 +39,12 @@ const TemplateNote: GatsbyPage<GatsbyTypes.NotePropQuery> = ({
         imgClassName="shadow-sm hover:shadow-md transition-shadow duration-200 u-photo"
         itemProp="sharedContent"
       />
-      <Link to={`./notes/${slug}`} className="alt-link-style">
-        <time itemProp="dateCreated" dateTime={machineReadableDate}>
+      <Link to={`./notes/${slug}`} className="alt-link-style u-url">
+        <time
+          className="dt-published"
+          itemProp="dateCreated"
+          dateTime={machineReadableDate}
+        >
           {date}
         </time>
       </Link>

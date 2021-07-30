@@ -1,22 +1,18 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-type ContentLayoutProp = {
+type Prop = {
   title: string;
   excerpt?: string;
-  imgSrc?: string;
   lang?: string;
   type?: string;
-  imgAlt?: string;
   dateCreated?: string;
 };
 
-const ContentHead: React.FC<ContentLayoutProp> = ({
+const MetaContent: React.FC<Prop> = ({
   title,
   excerpt,
   type,
-  imgSrc,
-  imgAlt,
   lang,
   dateCreated,
 }) => (
@@ -31,13 +27,10 @@ const ContentHead: React.FC<ContentLayoutProp> = ({
 
     {type && <meta property="og:type" content={type} />}
 
-    {imgSrc && <meta property="og:image:url" content={imgSrc} />}
-    {imgSrc && imgAlt && <meta property="og:image:alt" content={imgAlt} />}
-
     {dateCreated && type === "article" && (
       <meta property="article:published_time" content={dateCreated} />
     )}
   </Helmet>
 );
 
-export default ContentHead;
+export default MetaContent;

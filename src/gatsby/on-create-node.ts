@@ -1,7 +1,7 @@
 import { GatsbyNode } from "gatsby";
 import path from "path";
-import { parseNodePath } from "../helpers/node-path-operations";
-import type { IContactData } from "../types";
+import type { IContactData } from "types";
+import { parseNodePath } from "../utils/node-path-operations";
 
 const onCreateMarkdownRemarkNode: GatsbyNode["onCreateNode"] = async ({
   actions: { createNodeField },

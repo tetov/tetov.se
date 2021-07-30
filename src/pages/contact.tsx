@@ -1,14 +1,12 @@
+import { ContactCard } from "components/contact";
+import Layout from "components/layout";
+import { MetaContent } from "components/meta";
 import React from "react";
-import ContactDetails from "../components/contact-details";
-import Layout from "../components/layout";
 
-const Contact: GatsbyPage = () => (
-  <Layout
-    title="Contact"
-    description="Anton Tetov's contact details"
-    subHeading="Want to say hi?"
-  >
-    <ContactDetails />
+const Contact: GatsbyPage = ({ location }) => (
+  <Layout pathName={location.pathname} subHeading="Want to say hi?">
+    <MetaContent title="Contact" excerpt="Anton Tetov's contact details" />
+    <ContactCard />
   </Layout>
 );
 

@@ -1,14 +1,11 @@
+import { ContentBody, ContentHeader } from "components/content";
+import Layout from "components/layout";
+import { MetaContent } from "components/meta";
 import { graphql } from "gatsby";
 import React from "react";
-import {
-  ContentBody,
-  ContentHead,
-  ContentHeader,
-} from "../components/content/";
-import Layout from "../components/layout";
 
 const TemplatePost: GatsbyPage<GatsbyTypes.PostPropQuery> = ({
-  location,
+  location: { pathname },
   data: {
     html,
     excerpt,
@@ -16,11 +13,10 @@ const TemplatePost: GatsbyPage<GatsbyTypes.PostPropQuery> = ({
     fields: { slug },
   },
 }) => (
-  <Layout pathName={location.pathname}>
-    {" "}
-    <ContentHead
+  <Layout pathName={pathname}>
+    <MetaContent
       title={title}
-      excerpt={excerpt}
+      excerpt={description || excerpt}
       lang={lang}
       dateCreated={machineReadableDate}
     />
@@ -33,7 +29,11 @@ const TemplatePost: GatsbyPage<GatsbyTypes.PostPropQuery> = ({
         {title}
       </ContentHeader>
       <p className="mb-4 text-4xl lg:text-6xl leading-tight">
-        <time itemProp="dateCreated" dateTime={machineReadableDate}>
+        <time
+          className="dt-published"
+          itemProp="dateCreated"
+          dateTime={machineReadableDate}
+        >
           {date}
         </time>
       </p>

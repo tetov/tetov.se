@@ -7,6 +7,16 @@ module.exports = {
     "prettier",
   ],
   settings: {
+    "import/resolver": {
+      alias: [
+        ["components", "./src/components"],
+        ["hooks", "./src/hooks"],
+        ["images", "./src/images"],
+        ["icons", "./src/icons"],
+        ["types", "./src/types"],
+        ["utils", "./src/utils"],
+      ],
+    },
     react: {
       version: "detect",
     },

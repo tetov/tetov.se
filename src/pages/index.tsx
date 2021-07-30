@@ -1,12 +1,11 @@
+import { HiddenCard } from "components/contact";
+import { ContentPreview } from "components/content";
+import HeroProj from "components/hero-proj";
+import Layout from "components/layout";
+import { MetaImage } from "components/meta";
 import { graphql, Link } from "gatsby";
 import { getSrc } from "gatsby-plugin-image";
 import React from "react";
-import { Helmet } from "react-helmet";
-import ContactDetail from "../components/contact-detail";
-import { ContentPreview } from "../components/content";
-import HeroProj from "../components/hero-proj";
-import Layout from "../components/layout";
-import useSiteMetadata from "../helpers/hook-use-site-metadata";
 
 const Index: GatsbyPage<GatsbyTypes.IndexQuery> = ({ data, location }) => {
   const contentNodes = data.allMarkdownRemark.nodes;
@@ -22,29 +21,17 @@ const Index: GatsbyPage<GatsbyTypes.IndexQuery> = ({ data, location }) => {
     </>
   );
 
-  const heroImgSrc =
-    useSiteMetadata().siteURL + getSrc(heroProj.fields.heroImg.heroImgData);
-
   return (
     <Layout pathName={location.pathname} subHeading={subHeading}>
       <>
-        <Helmet>
-          <meta property="og:image" content={heroImgSrc} />
-        </Helmet>
+        <MetaImage src={getSrc(heroProj.fields.heroImg.heroImgData)} />
         <HeroProj {...heroProj} />
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-8">
           {projNodes.map((node) => (
             <ContentPreview key={node.id} {...node} />
           ))}
         </div>
-        {/* Hidden h-card */}
-        <div className="h-card hidden" aria-hidden={true}>
-          {data.allContactData.nodes
-            .filter((n) => n.url || n.hcard)
-            .map((n) => (
-              <ContactDetail key={n.id} contactData={n} />
-            ))}
-        </div>
+        <HiddenCard />
       </>
     </Layout>
   );
