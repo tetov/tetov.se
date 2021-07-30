@@ -1,6 +1,3 @@
-import ContentBody from "./body";
-import ContentHead from "./head";
-import ContentHeader from "./header";
-import ContentPreview from "./preview";
-
-export { ContentBody, ContentPreview, ContentHead, ContentHeader };
+export { default as ContentBody } from "./body";
+export { default as ContentHead } from "./head";
+export { default as ContentHeader } from "./header";
