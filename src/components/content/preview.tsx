@@ -1,6 +1,6 @@
-import { graphql, Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
-import React from "react"
+import { graphql, Link } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
+import React from "react";
 
 const ContentPreview = ({
   excerpt,
@@ -24,9 +24,9 @@ const ContentPreview = ({
       <p className="text-lg leading-relaxed mb-4">{description || excerpt}</p>
     </div>
   </div>
-)
+);
 
-export default ContentPreview
+export default ContentPreview;
 
 export const fragmen = graphql`
   fragment ContentPreview on MarkdownRemark {
@@ -42,4 +42,4 @@ export const fragmen = graphql`
       }
     }
   }
-`
+`;

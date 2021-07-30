@@ -1,6 +1,10 @@
 import { graphql } from "gatsby";
 import React from "react";
-import {ContentBody, ContentHead, ContentHeader} from "../components/content/";
+import {
+  ContentBody,
+  ContentHead,
+  ContentHeader,
+} from "../components/content/";
 import Layout from "../components/layout";
 
 const TemplatePost: GatsbyPage<GatsbyTypes.PostPropQuery> = ({
@@ -12,8 +16,14 @@ const TemplatePost: GatsbyPage<GatsbyTypes.PostPropQuery> = ({
     fields: { slug },
   },
 }) => (
-  <Layout pathName={location.pathname}> <ContentHead title={title} excerpt={excerpt} lang={lang} dateCreated={machineReadableDate} />
-
+  <Layout pathName={location.pathname}>
+    {" "}
+    <ContentHead
+      title={title}
+      excerpt={excerpt}
+      lang={lang}
+      dateCreated={machineReadableDate}
+    />
     <article
       className="h-entry"
       itemScope

@@ -1,8 +1,7 @@
-import classNames from "classnames"
-import { graphql, useStaticQuery } from "gatsby"
-import React from "react"
-
-import ContactDetail from "./contact-detail"
+import classNames from "classnames";
+import { graphql, useStaticQuery } from "gatsby";
+import React from "react";
+import ContactDetail from "./contact-detail";
 
 const ContactDetails = () => {
   const {
@@ -20,7 +19,7 @@ const ContactDetails = () => {
         }
       }
     }
-  `)
+  `);
   return (
     <div id="contact" className="h-card md:px-44 text-center text-lg">
       {nodes.map((n: GatsbyTypes.ContactData) => (
@@ -36,7 +35,7 @@ const ContactDetails = () => {
         />
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default ContactDetails
+export default ContactDetails;

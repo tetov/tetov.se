@@ -1,7 +1,6 @@
-import React from "react"
-
-import ContactDetails from "../components/contact-details"
-import Layout from "../components/layout"
+import React from "react";
+import ContactDetails from "../components/contact-details";
+import Layout from "../components/layout";
 
 const Contact: GatsbyPage = () => (
   <Layout
@@ -11,6 +10,6 @@ const Contact: GatsbyPage = () => (
   >
     <ContactDetails />
   </Layout>
-)
+);
 
-export default Contact
+export default Contact;

@@ -1,4 +1,4 @@
-import { graphql } from "gatsby"
+import { graphql } from "gatsby";
 
 export const ProjMetaData = graphql`
   fragment ProjMetaData on MarkdownRemark {
@@ -13,4 +13,4 @@ export const ProjMetaData = graphql`
       lang
     }
   }
-`
+`;

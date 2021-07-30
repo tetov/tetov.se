@@ -1,4 +1,4 @@
-import { graphql } from "gatsby"
+import { graphql } from "gatsby";
 
 export const HeroImg = graphql`
   fragment HeroImg on ImageSharp {
@@ -8,4 +8,4 @@ export const HeroImg = graphql`
       transformOptions: { cropFocus: CENTER }
     )
   }
-`
+`;

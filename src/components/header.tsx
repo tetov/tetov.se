@@ -1,11 +1,10 @@
-import { Link } from "gatsby"
-import React from "react"
-
-import useSiteMetadata from "../helpers/hook-use-site-metadata"
+import { Link } from "gatsby";
+import React from "react";
+import useSiteMetadata from "../helpers/hook-use-site-metadata";
 
 export type HeaderProp = {
-  subHeading?: React.ReactNode
-}
+  subHeading?: React.ReactNode;
+};
 
 const Header = ({ subHeading }: HeaderProp) => (
   <header className="text-center md:justify-between pt-12 mb-16 md:mb-12">
@@ -20,6 +19,6 @@ const Header = ({ subHeading }: HeaderProp) => (
       </h2>
     )}
   </header>
-)
+);
 
-export default Header
+export default Header;

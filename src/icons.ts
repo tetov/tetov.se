@@ -9,5 +9,5 @@ export {
   RiSmartphoneFill,
   RiTwitterFill,
   RiUserSmileFill,
-} from "react-icons/ri"
-export { SiMatrix, SiSignal } from "react-icons/si"
+} from "react-icons/ri";
+export { SiMatrix, SiSignal } from "react-icons/si";

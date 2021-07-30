@@ -1,6 +1,5 @@
-import React from "react"
-
-import Layout from "../components/layout"
+import React from "react";
+import Layout from "../components/layout";
 
 const NotFoundPage: GatsbyPage = () => {
   return (
@@ -9,7 +8,7 @@ const NotFoundPage: GatsbyPage = () => {
         You just hit a route that doesn&#39;t exist...
       </p>
     </Layout>
-  )
-}
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;
