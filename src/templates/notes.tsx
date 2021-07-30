@@ -1,11 +1,11 @@
-import { graphql, Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
-import React from "react"
-
-import ContentBody from "../content-body"
-import Layout from "../layout"
+import { graphql, Link } from "gatsby";
+import { GatsbyImage, getSrc } from "gatsby-plugin-image";
+import React from "react";
+import { ContentBody, ContentHead } from "../components/content";
+import Layout from "../components/layout";
 
 const TemplateNote: GatsbyPage<GatsbyTypes.NotePropQuery> = ({
+  location,
   data: {
     markdownRemark: {
       html,
@@ -18,7 +18,13 @@ const TemplateNote: GatsbyPage<GatsbyTypes.NotePropQuery> = ({
     },
   },
 }) => (
-  <Layout description={excerpt} lang={lang} subHeading="a note">
+  <Layout pathName={location.pathname} subHeading="a note">
+    <ContentHead
+      title={`A note posted ${date}`}
+      excerpt={excerpt}
+      imgSrc={getSrc(heroImgData)}
+      lang={lang}
+    />
     <article
       className="h-entry"
       itemScope
@@ -40,9 +46,9 @@ const TemplateNote: GatsbyPage<GatsbyTypes.NotePropQuery> = ({
       </Link>
     </article>
   </Layout>
-)
+);
 
-export default TemplateNote
+export default TemplateNote;
 
 export const pageQuery = graphql`
   query NoteProp($id: String!) {
@@ -63,4 +69,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

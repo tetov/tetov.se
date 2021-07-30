@@ -1,11 +1,12 @@
-import { graphql } from "gatsby"
-import React from "react"
-
-import ContentBody from "../content-body"
-import Layout from "../layout"
-import PageHeader from "../page-header"
+import { graphql } from "gatsby";
+import React from "react";
+import ContentBody from "../components/content/body";
+import ContentHead from "../components/content/head";
+import ContentHeader from "../components/content/header";
+import Layout from "../components/layout";
 
 const TemplatePage: GatsbyPage<GatsbyTypes.PagePropQuery> = ({
+  location,
   data: {
     html,
     excerpt,
@@ -13,17 +14,18 @@ const TemplatePage: GatsbyPage<GatsbyTypes.PagePropQuery> = ({
     fields: { slug },
   },
 }) => (
-  <Layout title={title} description={description || excerpt} lang={lang}>
+  <Layout pathName={location.pathname}>
+    <ContentHead title={title} excerpt={excerpt} lang={lang} />
     <article itemScope itemType="http://schema.org/WebPage">
-      <PageHeader itemProp="headline" url={`/${slug}`}>
+      <ContentHeader itemProp="headline" url={`/${slug}`}>
         {title}
-      </PageHeader>
+      </ContentHeader>
       <ContentBody content={html} itemProp="mainContentOfPage" />
     </article>
   </Layout>
-)
+);
 
-export default TemplatePage
+export default TemplatePage;
 
 export const pageQuery = graphql`
   query PageProp($id: String!) {
@@ -41,4 +43,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

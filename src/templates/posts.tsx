@@ -1,11 +1,10 @@
-import { graphql } from "gatsby"
-import React from "react"
-
-import ContentBody from "../content-body"
-import Layout from "../layout"
-import PageHeader from "../page-header"
+import { graphql } from "gatsby";
+import React from "react";
+import {ContentBody, ContentHead, ContentHeader} from "../components/content/";
+import Layout from "../components/layout";
 
 const TemplatePost: GatsbyPage<GatsbyTypes.PostPropQuery> = ({
+  location,
   data: {
     html,
     excerpt,
@@ -13,15 +12,16 @@ const TemplatePost: GatsbyPage<GatsbyTypes.PostPropQuery> = ({
     fields: { slug },
   },
 }) => (
-  <Layout title={title} description={description || excerpt} lang={lang}>
+  <Layout pathName={location.pathname}> <ContentHead title={title} excerpt={excerpt} lang={lang} dateCreated={machineReadableDate} />
+
     <article
       className="h-entry"
       itemScope
       itemType="http://schema.org/BlogPosting"
     >
-      <PageHeader itemProp="headline" url={`/${slug}`}>
+      <ContentHeader itemProp="headline" url={`/${slug}`}>
         {title}
-      </PageHeader>
+      </ContentHeader>
       <p className="mb-4 text-4xl lg:text-6xl leading-tight">
         <time itemProp="dateCreated" dateTime={machineReadableDate}>
           {date}
@@ -30,9 +30,9 @@ const TemplatePost: GatsbyPage<GatsbyTypes.PostPropQuery> = ({
       <ContentBody content={html} itemProp="articleBody" />
     </article>
   </Layout>
-)
+);
 
-export default TemplatePost
+export default TemplatePost;
 
 export const pageQuery = graphql`
   query PostProp($id: String!) {
@@ -52,4 +52,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

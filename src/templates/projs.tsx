@@ -1,12 +1,11 @@
-import { graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
-import React from "react"
-
-import ContentBody from "../content-body"
-import Layout from "../layout"
-import PageHeader from "../page-header"
+import { graphql } from "gatsby";
+import { GatsbyImage, getSrc } from "gatsby-plugin-image";
+import React from "react";
+import { ContentBody, ContentHead, ContentHeader } from "../components/content";
+import Layout from "../components/layout";
 
 const TemplateProj: GatsbyPage<GatsbyTypes.ProjPropQuery> = ({
+  location,
   data: {
     markdownRemark: {
       html,
@@ -19,13 +18,20 @@ const TemplateProj: GatsbyPage<GatsbyTypes.ProjPropQuery> = ({
     },
   },
 }) => (
-  <Layout title={title} description={description || excerpt} lang={lang}>
+  <Layout pathName={location.pathname}>
+    <ContentHead
+      title={title}
+      excerpt={description || excerpt}
+      lang={lang}
+      imgSrc={getSrc(heroImgData)}
+      type="article"
+    />
     <article
       className="h-entry"
       itemScope
       itemType="http://schema.org/CreativeWork"
     >
-      <PageHeader url={`/${slug}`}>{title}</PageHeader>
+      <ContentHeader url={`/${slug}`}>{title}</ContentHeader>
       <GatsbyImage
         alt={`Cover image for ${title}`}
         image={heroImgData}
@@ -36,9 +42,9 @@ const TemplateProj: GatsbyPage<GatsbyTypes.ProjPropQuery> = ({
       <ContentBody content={html} itemProp="about" />
     </article>
   </Layout>
-)
+);
 
-export default TemplateProj
+export default TemplateProj;
 
 export const pageQuery = graphql`
   query ProjProp($id: String!) {
@@ -53,4 +59,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

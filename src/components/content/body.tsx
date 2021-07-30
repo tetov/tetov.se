@@ -1,13 +1,12 @@
-import classnames from "classnames"
-import React from "react"
-
-import * as markdownStyles from "./markdown-styles.module.css"
+import classnames from "classnames";
+import React from "react";
+import * as markdownStyles from "../../markdown-styles.module.css";
 
 type Props = {
-  content: string
-  itemProp: string
-  className?: string
-}
+  content: string;
+  itemProp: string;
+  className?: string;
+};
 
 const ContentBody = ({ content, itemProp, className }: Props) => (
   <section
@@ -19,6 +18,6 @@ const ContentBody = ({ content, itemProp, className }: Props) => (
     dangerouslySetInnerHTML={{ __html: content }}
     itemProp={itemProp}
   />
-)
+);
 
-export default ContentBody
+export default ContentBody;

@@ -1,28 +1,36 @@
-import { graphql, Link } from "gatsby"
-import React from "react"
+import { graphql, Link } from "gatsby";
+import { getSrc } from "gatsby-plugin-image";
+import React from "react";
+import { Helmet } from "react-helmet";
+import ContactDetail from "../components/contact-detail";
+import { ContentPreview } from "../components/content";
+import HeroProj from "../components/hero-proj";
+import Layout from "../components/layout";
+import useSiteMetadata from "../helpers/hook-use-site-metadata";
 
-import ContactDetail from "../components/contact-detail"
-import ContentPreview from "../components/content-preview"
-import HeroProj from "../components/hero-proj"
-import Layout from "../components/layout"
+const Index: GatsbyPage<GatsbyTypes.IndexQuery> = ({ data, location }) => {
+  const contentNodes = data.allMarkdownRemark.nodes;
 
-const Index: GatsbyPage<GatsbyTypes.IndexQuery> = ({ data }) => {
-  const contentNodes = data.allMarkdownRemark.nodes
+  const [heroProj, ...projNodes] = contentNodes;
+  const subHeading = (
+    <>
+      Hi! I'm Anton Tetov, I'm an architect, programmer and maker. These are
+      some of my projects.{" "}
+      <Link to="/contact" className="link-style">
+        Want to say hi?
+      </Link>
+    </>
+  );
 
-  const [heroProj, ...projNodes] = contentNodes
-          const subHeading= (
-          <>
-            Hi! I'm Anton Tetov, I'm an architect, programmer and maker. These
-            are some of my projects.{" "}
-            <Link to="/contact" className="link-style">
-              Want to say hi?
-            </Link>
-          </>
-          )
+  const heroImgSrc =
+    useSiteMetadata().siteURL + getSrc(heroProj.fields.heroImg.heroImgData);
 
   return (
-    <Layout subHeading={subHeading}>
+    <Layout pathName={location.pathname} subHeading={subHeading}>
       <>
+        <Helmet>
+          <meta property="og:image" content={heroImgSrc} />
+        </Helmet>
         <HeroProj {...heroProj} />
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-8">
           {projNodes.map((node) => (
@@ -39,10 +47,10 @@ const Index: GatsbyPage<GatsbyTypes.IndexQuery> = ({ data }) => {
         </div>
       </>
     </Layout>
-  )
-}
+  );
+};
 
-export default Index
+export default Index;
 
 // Query with /(DIR)/
 export const pageQuery = graphql`
@@ -67,4 +75,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
