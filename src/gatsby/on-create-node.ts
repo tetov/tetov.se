@@ -62,7 +62,7 @@ const onCreateDataYamlNode: GatsbyNode["onCreateNode"] = async ({
 const onCreateNode: GatsbyNode["onCreateNode"] = async (args) => {
   const typeFuncMapping = {
     MarkdownRemark: onCreateMarkdownRemarkNode,
-    DataYaml: onCreateDataYamlNode,
+    ContentYaml: onCreateDataYamlNode,
   };
   const type_ = args.node.internal.type;
 

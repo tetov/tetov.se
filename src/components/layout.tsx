@@ -16,8 +16,9 @@ const getTwitterUsername: () => string = () => {
         }
       }
     `);
-
-  return allContactData.nodes[0].username;
+  return allContactData.nodes.length !== 1
+    ? ""
+    : allContactData.nodes[0].username;
 };
 
 type LayoutProp = HeaderProp & {
@@ -51,8 +52,8 @@ const Layout: React.FC<LayoutProp> = ({ children, subHeading, pathName }) => {
         <meta property="og:description" content={description} />
 
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content={twitterUsername} />
-        <meta name="twitter:creator" content={twitterUsername} />
+        <meta name="twitter:site" content={"@" + twitterUsername} />
+        <meta name="twitter:creator" content={"@" + twitterUsername} />
       </Helmet>
       <div className="global-wrapper min-h-screen bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text">
         <div className="w-full md:w-3/4 lg:w-1/2 mx-auto px-5 space-y-6">
