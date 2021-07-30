@@ -13,7 +13,7 @@ const HeroProj: React.FC<GatsbyTypes.HeroProjFragment> = ({
   return (
     <>
       <div>
-        <Link to={`/${slug}}`} className="link-style-alt">
+        <Link to={`/${slug}`} className="link-style-alt">
           <GatsbyImage
             alt={`Cover image for ${title}`}
             image={heroImgData}
