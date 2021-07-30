@@ -3,6 +3,7 @@ title: SEMusicLab clay wall mockup
 date: 2020-08-30
 weight: 90
 ---
+
 Gramazio Kohler Research's MAS DFAB pavilion project 2019/2020.
 
 Quarter of circular undulating clay wall 5 m high with a 6 m radius built using
@@ -12,13 +13,13 @@ construction height and openings. The structure was built by a small team in
 
 <!-- excerptEnd -->
 
-| | |
-| --- | --- |
-| Year | 2020 |
-| Location | Lehmag, Brunnen, Switzerland |
-| Role | Student, robot control lead |
-| Team | David Jenny, Coralie Ming, Edurne Morales Zúñiga, Jomana Baddad, Indra Santosa, Tsai Ping, Eliott Sounigo & Anton Tetov Johansson |
-| Industry partners | Lehmag AG & Brauchli Ziegelei AG |
+|                   |                                                                                                                                   |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Year              | 2020                                                                                                                              |
+| Location          | Lehmag, Brunnen, Switzerland                                                                                                      |
+| Role              | Student, robot control lead                                                                                                       |
+| Team              | David Jenny, Coralie Ming, Edurne Morales Zúñiga, Jomana Baddad, Indra Santosa, Tsai Ping, Eliott Sounigo & Anton Tetov Johansson |
+| Industry partners | Lehmag AG & Brauchli Ziegelei AG                                                                                                  |
 
 ![Loading of material at Brauchli Ziegelei. Photo by Jomana Baddad](./loading_jb.jpg)
 
