@@ -4,6 +4,7 @@ contactDataList:
     text: Anton Tetov Johansson
     icon: RiUserSmileFill
     rel: [me]
+    weight: 10
 
   - hcard: p-gender-identity
     label: gender-identity
@@ -11,6 +12,7 @@ contactDataList:
     url: https://en.wikipedia.org/wiki/Non-binary_gender
     icon: RiGenderlessFill
     rel: [external]
+    weight: 11
 
   - hcard: u-email
     label: email
@@ -19,6 +21,7 @@ contactDataList:
     username: anton@tetov.xyz
     icon: RiMailFill
     rel: [me]
+    weight: 20
 
   - hcard: u-key
     label: openpgp
@@ -27,44 +30,51 @@ contactDataList:
     username: anton@tetov.se
     icon: RiKey2Fill
     rel: [pgpkey, authn, key, me]
+    weight: 21
 
   - hcard: u-tel
     label: telephone
-    text: phone number
+    text: "+46 70-363 56 67"
     url: tel:+46703635667
     username: "+46703635667"
     icon: RiSmartphoneFill
     rel: [me]
+    weight: 30
 
   - label: github
     text: github
     url: https://github.com/tetov
     username: tetov
     icon: RiGithubFill
+    weight: 40
 
   - label: instagram
     text: instagram
     url: https://www.instagram.com/antontetov
     username: antontetov
     icon: RiInstagramFill
+    weight: 40
 
   - label: twitter
     text: twitter
     url: https://twitter.com/antontetov
     username: antontetov
     icon: RiTwitterFill
+    weight: 40
 
   - label: linkedin
     text: linkedin
     url: https://www.linkedin.com/in/tetov
     username: tetov
     icon: RiLinkedinBoxFill
+    weight: 40
 
   - label: matrix
     text: matrix
     url: https://matrix.to/#/@tetov:matrix.org
     username: "@tetov:matrix.org"
     icon: SiMatrix
+    weight: 40
 
   - label: signal
     text: signal
@@ -72,9 +82,11 @@ contactDataList:
     username: "+46703635667"
     icon: SiSignal
     rel: [me]
+    weight: 40
 
   - label: mastodon
     text: mastodon
     url: https://vis.social/@tetov
     username: tetov@vis.social
     icon: RiMastodonFill
+    weight: 40

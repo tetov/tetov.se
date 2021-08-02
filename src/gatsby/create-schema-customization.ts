@@ -41,6 +41,7 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
       username: String
       icon: String
       rel: [String]
+      weight: Int
 }
   `);
   };

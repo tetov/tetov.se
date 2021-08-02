@@ -1,14 +1,19 @@
-import { HiddenCard } from "components/contact";
+import ContactDetail from "components/contact-detail";
 import { ContentPreview } from "components/content";
 import HeroProj from "components/hero-proj";
 import Layout from "components/layout";
 import { graphql, Link } from "gatsby";
 import React from "react";
 
-const Index: GatsbyPage<GatsbyTypes.IndexQuery> = ({ data, location }) => {
-  const contentNodes = data.allMarkdownRemark.nodes;
+const Index: GatsbyPage<GatsbyTypes.IndexQuery> = ({
+  data: {
+    allMarkdownRemark: { nodes: mdNodes },
+    allContactData: { nodes: contactDataNodes },
+  },
+  location,
+}) => {
+  const [heroProj, ...projNodes] = mdNodes;
 
-  const [heroProj, ...projNodes] = contentNodes;
   const subHeading = (
     <>
       Hi! I'm Anton Tetov, I'm an architect, programmer and maker. These are
@@ -21,15 +26,19 @@ const Index: GatsbyPage<GatsbyTypes.IndexQuery> = ({ data, location }) => {
 
   return (
     <Layout pathName={location.pathname} subHeading={subHeading}>
-      <>
-        <HeroProj {...heroProj} />
-        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-8">
-          {projNodes.map((node) => (
-            <ContentPreview key={node.id} {...node} />
+      <HeroProj {...heroProj} />
+      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-8">
+        {projNodes.map((node) => (
+          <ContentPreview key={node.id} {...node} />
+        ))}
+      </div>
+      <div className="h-card hidden" aria-hidden={true}>
+        {contactDataNodes
+          .filter((n) => n.url || n.hcard)
+          .map((n) => (
+            <ContactDetail key={n.id} contactData={n} useIcon={false} />
           ))}
-        </div>
-        <HiddenCard />
-      </>
+      </div>
     </Layout>
   );
 };
@@ -48,6 +57,15 @@ export const pageQuery = graphql`
         id
         ...ContentPreview
         ...HeroProj
+      }
+    }
+    allContactData {
+      nodes {
+        id
+        url
+        hcard
+        text
+        rel
       }
     }
   }
