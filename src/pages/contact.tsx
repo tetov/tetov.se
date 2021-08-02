@@ -18,10 +18,9 @@ const Contact: GatsbyPage<GatsbyTypes.ContactQuery> = ({
         <ContactDetail
           contactData={n}
           key={n.id}
-          className={classNames(
-            "align-middle inline-block mx-4 whitespace-nowrap",
-            { "hover:text-purple": Boolean(n.url) }
-          )}
+          className={classNames("inline-block mx-4 whitespace-nowrap", {
+            "hover:text-purple": Boolean(n.url),
+          })}
           iconProp={{ size: "2em", className: "p-2 inline-block" }}
         />
       ))}

@@ -1,5 +1,5 @@
 contactDataList:
-  - hcard: p-name u-url u-uid
+  - hcard: p-name
     label: name
     text: Anton Tetov Johansson
     icon: RiUserSmileFill
@@ -12,7 +12,7 @@ contactDataList:
     url: https://en.wikipedia.org/wiki/Non-binary_gender
     icon: RiGenderlessFill
     rel: [external]
-    weight: 11
+    weight: 12
 
   - hcard: u-email
     label: email
@@ -90,3 +90,9 @@ contactDataList:
     username: tetov@vis.social
     icon: RiMastodonFill
     weight: 40
+
+  - hcard: u-url u-uid
+    label: url
+    url: https://tetov.xyz
+    rel: [me]
+    weight: 99
