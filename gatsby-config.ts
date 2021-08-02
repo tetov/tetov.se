@@ -68,7 +68,7 @@ export default {
         background_color: `#111111`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `./src/images/icon.png`,
+        icon: `./src/images/logo.png`,
       },
     },
     `gatsby-plugin-react-helmet`,

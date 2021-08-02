@@ -1,5 +1,6 @@
 import querySiteMetadata from "hooks/query-site-metadata";
 import queryTwitterUname from "hooks/query-twitter-uname";
+import logo from "images/logo.png";
 import React from "react";
 import { Helmet } from "react-helmet";
 
@@ -26,6 +27,8 @@ const MetaSiteWide: React.FC<MetaSiteWide> = ({ pathName }) => {
 
       <meta name="description" content={description.trim()} />
       <meta property="og:description" content={description.trim()} />
+
+      <meta property="og:image" content={logo} />
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content={twitterUsername} />
