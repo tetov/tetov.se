@@ -13,13 +13,14 @@ const HiddenCard: React.FC = () => {
           url
           hcard
           text
+          rel
         }
       }
     }
   `);
 
   return (
-    <div className="h-card hidden" aria-hidden={true}>
+    <div className="h-card" aria-hidden={true}>
       {nodes
         .filter((n) => n.url || n.hcard)
         .map((n) => (

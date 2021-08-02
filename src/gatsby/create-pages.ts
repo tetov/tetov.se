@@ -14,24 +14,22 @@ const createPages: GatsbyNode["createPages"] = async ({
   reporter,
 }) => {
   // Get all markdown blog posts sorted by date
-  const result = await graphql<QueryResult>(
-    `
-      {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: ASC }
-          limit: 1000
-        ) {
-          nodes {
-            id
-            fields {
-              slug
-              category
-            }
+  const result = await graphql<QueryResult>(`
+    query CreatePages {
+      allMarkdownRemark(
+        sort: { fields: [frontmatter___date], order: ASC }
+        limit: 1000
+      ) {
+        nodes {
+          id
+          fields {
+            slug
+            category
           }
         }
       }
-    `
-  );
+    }
+  `);
 
   if (result.errors || !result.data) {
     reporter.panicOnBuild(

@@ -3,13 +3,12 @@ import classNames from "classnames";
 import * as Icons from "icons";
 import React from "react";
 import type { IconBaseProps } from "react-icons/lib";
-import type { IContactData } from "types";
 
 type Prop = {
-  contactData: Partial<IContactData>;
+  contactData: Partial<GatsbyTypes.ContactData>;
   className?: classNamesArgument;
   iconProp?: Partial<IconBaseProps>;
-  hidden: boolean;
+  hidden?: boolean;
 };
 
 type JSXSpan = JSX.IntrinsicElements["span"];
@@ -27,7 +26,7 @@ const HiddenDetail: React.FC<JSXLink> = (prop) => (
 );
 
 const ContactDetail: React.FC<Prop> = ({
-  contactData: { text, url, icon, hcard },
+  contactData: { text, url, icon, hcard, rel },
   className,
   iconProp = {},
   hidden = false,
@@ -42,9 +41,12 @@ const ContactDetail: React.FC<Prop> = ({
     </>
   ) : undefined;
 
+  const relAttribute = rel ? rel.join(" ") : "me external";
+
   const prop = {
-    className: (hcard || className) && classNames(hcard, className),
+    className: classNames(hcard, className),
     href: url || undefined,
+    rel: relAttribute,
     children,
   };
 

@@ -2,14 +2,15 @@ contactDataList:
   - hcard: p-name u-url u-uid
     label: name
     text: Anton Tetov Johansson
-    url: /
     icon: RiUserSmileFill
+    rel: [me]
 
   - hcard: p-gender-identity
     label: gender-identity
     text: (they/them)
     url: https://en.wikipedia.org/wiki/Non-binary_gender
     icon: RiGenderlessFill
+    rel: [external]
 
   - hcard: u-email
     label: email
@@ -17,13 +18,15 @@ contactDataList:
     url: mailto:anton@tetov.xyz
     username: anton@tetov.xyz
     icon: RiMailFill
+    rel: [me]
 
   - hcard: u-key
     label: openpgp
     text: openpgp public key
-    url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2b4d0035aff0f7dace5b29d7337ddb574a8834db
+    url: /key.txt
     username: anton@tetov.se
     icon: RiKey2Fill
+    rel: [pgpkey, authn, key, me]
 
   - hcard: u-tel
     label: telephone
@@ -31,6 +34,7 @@ contactDataList:
     url: tel:+46703635667
     username: "+46703635667"
     icon: RiSmartphoneFill
+    rel: [me]
 
   - label: github
     text: github
@@ -40,7 +44,7 @@ contactDataList:
 
   - label: instagram
     text: instagram
-    url: https://www.instagram.com/antontetov/
+    url: https://www.instagram.com/antontetov
     username: antontetov
     icon: RiInstagramFill
 
@@ -52,14 +56,14 @@ contactDataList:
 
   - label: linkedin
     text: linkedin
-    url: https://www.linkedin.com/in/tetov/
+    url: https://www.linkedin.com/in/tetov
     username: tetov
     icon: RiLinkedinBoxFill
 
   - label: matrix
     text: matrix
-    url: https://matrix.to/#/@tetov:tetov.xyz
-    username: "@tetov:tetov.xyz"
+    url: https://matrix.to/#/@tetov:matrix.org
+    username: "@tetov:matrix.org"
     icon: SiMatrix
 
   - label: signal
@@ -67,6 +71,7 @@ contactDataList:
     url: "tel:+46703635667"
     username: "+46703635667"
     icon: SiSignal
+    rel: [me]
 
   - label: mastodon
     text: mastodon

@@ -16,6 +16,7 @@ const ContactCard = () => {
           hcard
           text
           icon
+          rel
         }
       }
     }
@@ -27,7 +28,6 @@ const ContactCard = () => {
           contactData={n}
           key={n.id}
           className={classNames(
-            n.hcard,
             "align-middle inline-block mx-4 whitespace-nowrap",
             { "hover:text-purple": Boolean(n.url) }
           )}

@@ -40,6 +40,7 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
       url: String
       username: String
       icon: String
+      rel: [String]
 }
   `);
   };
