@@ -13,7 +13,7 @@ const MetaSiteWide: React.FC<MetaSiteWide> = ({ pathName }) => {
     <Helmet titleTemplate={`%s | ${title}`} defaultTitle={title}>
       <html lang={lang || "en"} prefix="og: http://ogp.me/ns#" />
 
-      <link rel="micropub" href={`${siteURL}/micropub`} />
+      <link rel="micropub" href="https://micropub.tetov.xyz/micropub" />
       <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
       <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
 
