@@ -13,54 +13,39 @@ type Prop = {
 
 type JSXSpan = JSX.IntrinsicElements["span"];
 type JSXA = JSX.IntrinsicElements["a"];
-type JSXLink = JSX.IntrinsicElements["link"];
 
-const LinkedDetail: React.FC<JSXA> = (prop) => (
-  <a rel="me external" {...prop}></a>
+const Detail: React.FC<JSXSpan> = ({ className, children }) => (
+  <span className={className}>{children}</span>
 );
 
-const Detail: React.FC<JSXSpan> = (prop) => <span {...prop} />;
-
-const HiddenDetail: React.FC<JSXLink> = (prop) => (
-  <link rel="me external" {...prop} />
-);
+const LinkedDetail: React.FC<JSXA> = ({ className, href, rel, children }) => {
+  return <a {...{ className, href, rel, children }} />;
+};
 
 const ContactDetail: React.FC<Prop> = ({
   contactData: { text, url, icon, hcard, rel },
   className,
   iconProp = {},
-  hidden = false,
+  hidden,
 }) => {
   iconProp["aria-hidden"] = true;
   const Icon = icon ? Icons[icon] : undefined;
 
-  const children = !hidden ? (
-    <>
-      {icon && <Icon {...iconProp} />}
-      {text || ""}
-    </>
-  ) : undefined;
-
   const relAttribute = rel ? rel.join(" ") : "me external";
 
-  const prop = {
-    className: classNames(hcard, className),
-    href: url || undefined,
+  const prop: JSXA | JSXSpan = {
+    className: classNames(hcard, className, { hidden }),
+    href: url,
     rel: relAttribute,
-    children,
+    children: (
+      <>
+        {icon && !hidden && <Icon {...iconProp} />}
+        {text}
+      </>
+    ),
   };
 
-  let Component: React.FC<JSXA | JSXSpan | JSXLink>;
-
-  if (url) {
-    if (hidden) {
-      Component = HiddenDetail;
-    } else {
-      Component = LinkedDetail;
-    }
-  } else {
-    Component = Detail;
-  }
+  const Component = url ? LinkedDetail : Detail;
 
   return <Component {...prop} />;
 };
