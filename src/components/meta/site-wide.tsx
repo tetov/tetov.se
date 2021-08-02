@@ -19,7 +19,7 @@ const MetaSiteWide: React.FC<MetaSiteWide> = ({ pathName }) => {
 
       <meta property="og:site_name" content={title} />
 
-      <meta property="og:url" content={`${siteURL}${pathName}`} />
+      <meta property="og:url" content={siteURL + pathName} />
 
       <meta property="og:type" content="website" />
 
@@ -28,7 +28,7 @@ const MetaSiteWide: React.FC<MetaSiteWide> = ({ pathName }) => {
       <meta name="description" content={description.trim()} />
       <meta property="og:description" content={description.trim()} />
 
-      <meta property="og:image" content={logo} />
+      <meta property="og:image" content={siteURL + logo} />
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content={twitterUsername} />
