@@ -12,12 +12,3 @@ export type PreQueryMarkdownRemark = Node & {
     hero: string;
   };
 };
-
-export interface IContactData {
-  label: string;
-  username?: string;
-  url?: string;
-  hcard?: string;
-  text?: string;
-  icon?: string;
-}

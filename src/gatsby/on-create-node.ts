@@ -1,6 +1,5 @@
 import { GatsbyNode } from "gatsby";
 import path from "path";
-import type { IContactData } from "types";
 import { parseNodePath } from "../utils/node-path-operations";
 
 const onCreateMarkdownRemarkNode: GatsbyNode["onCreateNode"] = async ({
@@ -36,6 +35,16 @@ const onCreateMarkdownRemarkNode: GatsbyNode["onCreateNode"] = async ({
     value: category,
   });
 };
+
+interface IContactData {
+  label: string;
+  username?: string;
+  url?: string;
+  hcard?: string;
+  text?: string;
+  icon?: string;
+  rel?: string[];
+}
 
 const onCreateDataYamlNode: GatsbyNode["onCreateNode"] = async ({
   actions: { createNode },

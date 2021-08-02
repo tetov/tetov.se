@@ -50,13 +50,5 @@ export const pageQuery = graphql`
         ...HeroProj
       }
     }
-    allContactData {
-      nodes {
-        id
-        url
-        hcard
-        text
-      }
-    }
   }
 `;
