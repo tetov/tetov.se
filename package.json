@@ -44,7 +44,7 @@
     "gatsby-remark-video": "^1.2.5",
     "gatsby-source-filesystem": "^3.12.0",
     "gatsby-transformer-remark": "^4.9.0",
-    "gatsby-transformer-sharp": "^3.12.0",
+    "gatsby-transformer-sharp": "^3.13.0",
     "gatsby-transformer-yaml": "^3.12.0",
     "postcss-nested": "^5.0.6",
     "prismjs": "^1.24.1",
