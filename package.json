@@ -54,7 +54,7 @@
     "react-icons": "^4.2.0",
     "react-side-effect": "^2.1.1",
     "source-map-support": "^0.5.19",
-    "tailwindcss": "^2.2.8",
+    "tailwindcss": "^2.2.14",
     "ts-node": "^10.2.1",
     "typescript": "^4.4.2"
   },
