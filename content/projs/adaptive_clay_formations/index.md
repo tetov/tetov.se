@@ -26,4 +26,8 @@ driven fabrication and trajectory planning for the robotic arm.
 Thesis available on
 [LUP student papers](http://lup.lub.lu.se/student-papers/record/9041159).
 
-`video: title: "Fabrication video": ./video.webm`
+<video controls width="800" height="auto" preload="lazy" title="Fabrication video">
+    <source src="fabrication.webm" type="video/webm">
+    <source src="fabrication.mp4" type="video/mp4">
+    Sorry, your browser doesn't support HTML5 video elements.
+</video>
