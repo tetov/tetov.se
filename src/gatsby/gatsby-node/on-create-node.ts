@@ -1,6 +1,6 @@
 import { GatsbyNode } from "gatsby";
 import path from "path";
-import { parseNodePath } from "../utils/node-path-operations";
+import { parseNodePath } from "../../utils";
 
 const onCreateMarkdownRemarkNode: GatsbyNode["onCreateNode"] = async ({
   actions: { createNodeField },

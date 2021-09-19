@@ -1,7 +1,7 @@
-import Footer from "components/footer";
-import Header, { HeaderProp } from "components/header";
-import type { MetaProp } from "components/meta";
-import { MetaSiteWide } from "components/meta";
+import Footer from "~/components/footer";
+import Header, { HeaderProp } from "~/components/header";
+import type { MetaProp } from "~/components/meta";
+import { MetaSiteWide } from "~/components/meta";
 import React from "react";
 
 const Layout: React.FC<HeaderProp & MetaProp> = ({

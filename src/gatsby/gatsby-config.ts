@@ -71,12 +71,18 @@ export default {
         icon: `./src/images/logo.png`,
       },
     },
+    /*
+    {
+      resolve: `gatsby-plugin-module-resolver`,
+      options: { root: "./", aliases: { "~": "./src" } },
+    },
+    */
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
-        path: `${__dirname}/content/`,
+        path: `${__dirname}/../../content/`,
         //  string, regex or function matching any part of abs/rel path
         // https://github.com/micromatch/anymatch
         ignore: [

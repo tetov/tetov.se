@@ -1,4 +1,4 @@
-import querySiteMetadata from "hooks/query-site-metadata";
+import querySiteMetadata from "~/hooks/query-site-metadata";
 import React from "react";
 import { Helmet } from "react-helmet";
 

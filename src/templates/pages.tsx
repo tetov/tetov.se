@@ -1,8 +1,8 @@
-import { ContentBody, ContentHeader } from "components/content";
-import Layout from "components/layout";
-import { MetaContent } from "components/meta";
 import { graphql } from "gatsby";
 import React from "react";
+import { ContentBody, ContentHeader } from "~/components/content";
+import Layout from "~/components/layout";
+import { MetaContent } from "~/components/meta";
 
 const TemplatePage: GatsbyPage<GatsbyTypes.PagePropQuery> = ({
   location: { pathname },

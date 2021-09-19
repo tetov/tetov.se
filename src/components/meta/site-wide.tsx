@@ -1,6 +1,6 @@
-import querySiteMetadata from "hooks/query-site-metadata";
-import queryTwitterUname from "hooks/query-twitter-uname";
-import logo from "images/logo.png";
+import querySiteMetadata from "~/hooks/query-site-metadata";
+import queryTwitterUname from "~/hooks/query-twitter-uname";
+import logo from "~/images/logo.png";
 import React from "react";
 import { Helmet } from "react-helmet";
 

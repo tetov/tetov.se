@@ -1,6 +1,6 @@
-import { ContentBody } from "components/content";
-import Layout from "components/layout";
-import { MetaContent } from "components/meta";
+import { ContentBody } from "~/components/content";
+import Layout from "~/components/layout";
+import { MetaContent } from "~/components/meta";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
