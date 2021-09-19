@@ -12,7 +12,7 @@
     "url": "https://github.com/tetov/xyz"
   },
   "scripts": {
-    "dev": "gatsby develop --inspect",
+    "dev": "gatsby develop",
     "lint": "tsc --skipLibCheck && eslint --fix \"**/*.{ts,tsx,js,jsx,json}\"",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "build": "gatsby build",
@@ -64,6 +64,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "gatsby-plugin-ts-config": "^2.1.2",
+    "path-browserify": "^1.0.1",
     "prettier": "2.4.1",
     "prettier-plugin-organize-imports": "^2.3.3"
   }

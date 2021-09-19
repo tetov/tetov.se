@@ -28,7 +28,7 @@ const ContentPreview = ({
 
 export default ContentPreview;
 
-export const fragmen = graphql`
+export const fragment = graphql`
   fragment ContentPreview on MarkdownRemark {
     ...ProjMetaData
     fields {

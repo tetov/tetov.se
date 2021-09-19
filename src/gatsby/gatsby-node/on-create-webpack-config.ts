@@ -9,6 +9,9 @@ const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({
       alias: {
         "~": path.resolve(srcDir),
       },
+      fallback: {
+        path: require.resolve("path-browserify")
+      }
     },
   });
 };

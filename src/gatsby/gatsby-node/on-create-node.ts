@@ -18,7 +18,7 @@ const onCreateMarkdownRemarkNode: GatsbyNode["onCreateNode"] = async ({
   const isPageBundle = name === "index";
 
   const slug = isPageBundle ? dirArray[dirArray.length - 1] : name;
-
+  
   createNodeField({
     node: node,
     name: `slug`,
