@@ -21,8 +21,8 @@
     "clean": "gatsby clean"
   },
   "engines": {
-    "node": "^14.17.3",
-    "npm": "^7.20.0"
+    "node": "^14.18.1",
+    "npm": "^8.1.0"
   },
   "dependencies": {
     "classnames": "^2.3.1",
