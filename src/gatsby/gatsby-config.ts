@@ -54,6 +54,7 @@ export default {
                 }
               }
             `,
+            title: "Anton Tetov's projects",
             output: "/rss.xml",
           },
         ],
