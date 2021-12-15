@@ -37,7 +37,7 @@
     "gatsby-plugin-typegen": "^2.2.4",
     "gatsby-remark-autolink-headers": "^5.1.0",
     "gatsby-remark-copy-linked-files": "^5.1.0",
-    "gatsby-remark-images": "^6.1.0",
+    "gatsby-remark-images": "^6.4.0",
     "gatsby-remark-prismjs": "^6.1.0",
     "gatsby-remark-responsive-iframe": "^5.1.0",
     "gatsby-remark-smartypants": "^5.1.0",
