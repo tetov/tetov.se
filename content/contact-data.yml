@@ -17,8 +17,8 @@ contactDataList:
   - hcard: u-email
     label: email
     text: email
-    url: mailto:anton@tetov.xyz
-    username: anton@tetov.xyz
+    url: mailto:anton@tetov.se
+    username: anton@tetov.se
     icon: RiMailFill
     rel: [me]
     weight: 20
@@ -93,6 +93,6 @@ contactDataList:
 
   - hcard: u-url u-uid
     label: url
-    url: https://tetov.xyz
+    url: https://tetov.se
     rel: [me]
     weight: 99

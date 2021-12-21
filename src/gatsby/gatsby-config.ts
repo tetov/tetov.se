@@ -1,8 +1,8 @@
 export default {
   siteMetadata: {
-    title: `tetov.xyz`,
-    description: `Projects & blog`,
-    siteURL: `https://tetov.xyz`,
+    title: `tetov's projects & more`,
+    description: `there no 'more', is there?`,
+    siteURL: `https://tetov.se`,
     lang: "en",
   },
   plugins: [
@@ -63,8 +63,8 @@ export default {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `tetov xyz`,
-        short_name: `tetov xyz`,
+        name: `Anton Tetov's projects & more`,
+        short_name: `tetov`,
         start_url: `/`,
         background_color: `#111111`,
         theme_color: `#663399`,

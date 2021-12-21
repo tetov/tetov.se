@@ -1,4 +1,4 @@
-# Source for my site [tetov.xyz](https://tetov.xyz/)
+# Source for my [site]](https://tetov.se/)
 
 Things used:
 
