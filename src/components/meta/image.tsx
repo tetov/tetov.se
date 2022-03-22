@@ -1,6 +1,6 @@
-import querySiteMetadata from "~/hooks/query-site-metadata";
 import React from "react";
 import { Helmet } from "react-helmet";
+import querySiteMetadata from "src/hooks/query-site-metadata";
 
 type Prop = {
   src?: string;

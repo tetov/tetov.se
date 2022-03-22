@@ -1,9 +1,9 @@
 import { graphql } from "gatsby";
 import { GatsbyImage, getSrc } from "gatsby-plugin-image";
 import React from "react";
-import { ContentBody, ContentHeader } from "~/components/content";
-import Layout from "~/components/layout";
-import { MetaContent, MetaImage } from "~/components/meta";
+import { ContentBody, ContentHeader } from "src/components/content";
+import Layout from "src/components/layout";
+import { MetaContent, MetaImage } from "src/components/meta";
 
 const TemplateProj: GatsbyPage<GatsbyTypes.ProjPropQuery> = ({
   location: { pathname },

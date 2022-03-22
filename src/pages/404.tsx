@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "~/components/layout";
-import { MetaContent } from "~/components/meta";
+import Layout from "src/components/layout";
+import { MetaContent } from "src/components/meta";
 
 const NotFoundPage: GatsbyPage = ({ location: { pathname } }) => {
   const title = "404: Not found";

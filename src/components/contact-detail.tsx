@@ -1,8 +1,8 @@
 import type { Argument as classNamesArgument } from "classnames";
 import classNames from "classnames";
-import * as Icons from "~/icons";
 import React from "react";
 import type { IconBaseProps } from "react-icons/lib";
+import * as Icons from "src/icons";
 
 type JSXSpan = JSX.IntrinsicElements["span"];
 type JSXA = JSX.IntrinsicElements["a"];

@@ -1,8 +1,8 @@
-import querySiteMetadata from "~/hooks/query-site-metadata";
-import queryTwitterUname from "~/hooks/query-twitter-uname";
-import logo from "~/images/logo.png";
 import React from "react";
 import { Helmet } from "react-helmet";
+import querySiteMetadata from "src/hooks/query-site-metadata";
+import queryTwitterUname from "src/hooks/query-twitter-uname";
+import logo from "src/images/logo.png";
 
 export type MetaSiteWide = { pathName: string };
 

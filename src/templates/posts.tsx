@@ -1,8 +1,8 @@
 import { graphql } from "gatsby";
 import React from "react";
-import { ContentBody, ContentHeader } from "~/components/content";
-import Layout from "~/components/layout";
-import { MetaContent } from "~/components/meta";
+import { ContentBody, ContentHeader } from "src/components/content";
+import Layout from "src/components/layout";
+import { MetaContent } from "src/components/meta";
 
 const TemplatePost: GatsbyPage<GatsbyTypes.PostPropQuery> = ({
   location: { pathname },

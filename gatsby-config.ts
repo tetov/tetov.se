@@ -1,4 +1,7 @@
-export default {
+import type { GatsbyConfig } from "gatsby";
+import path from "path";
+
+const config: GatsbyConfig = {
   siteMetadata: {
     title: `tetov's projects & more`,
     description: `there no 'more', is there?`,
@@ -72,18 +75,13 @@ export default {
         icon: `./src/images/logo.png`,
       },
     },
-    /*
-    {
-      resolve: `gatsby-plugin-module-resolver`,
-      options: { root: "./", aliases: { "~": "./src" } },
-    },
-    */
+
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
-        path: `${__dirname}/../../content/`,
+        path: path.resolve(`content`),
         //  string, regex or function matching any part of abs/rel path
         // https://github.com/micromatch/anymatch
         ignore: [
@@ -149,10 +147,11 @@ export default {
         defaultQuality: 50,
       },
     },
-    {
-      resolve: `gatsby-transformer-sharp`,
-    },
+    "gatsby-plugin-root-import",  // allows absolute imports
+    `gatsby-transformer-sharp`,
     `gatsby-transformer-yaml`,
     `gatsby-plugin-typescript`,
   ],
 };
+
+export default config;

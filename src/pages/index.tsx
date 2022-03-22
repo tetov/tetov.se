@@ -1,9 +1,9 @@
 import { graphql, Link } from "gatsby";
 import React from "react";
-import ContactDetail from "~/components/contact-detail";
-import { ContentPreview } from "~/components/content";
-import HeroProj from "~/components/hero-proj";
-import Layout from "~/components/layout";
+import ContactDetail from "src/components/contact-detail";
+import { ContentPreview } from "src/components/content";
+import HeroProj from "src/components/hero-proj";
+import Layout from "src/components/layout";
 
 const Index: GatsbyPage<GatsbyTypes.IndexQuery> = ({
   data: {

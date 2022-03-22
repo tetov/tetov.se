@@ -1,9 +1,9 @@
 import classNames from "classnames";
 import { graphql } from "gatsby";
 import React from "react";
-import ContactDetail from "~/components/contact-detail";
-import Layout from "~/components/layout";
-import { MetaContent } from "~/components/meta";
+import ContactDetail from "src/components/contact-detail";
+import Layout from "src/components/layout";
+import { MetaContent } from "src/components/meta";
 
 const Contact: GatsbyPage<GatsbyTypes.ContactQuery> = ({
   location,
