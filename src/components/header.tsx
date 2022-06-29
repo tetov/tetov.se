@@ -22,16 +22,21 @@ export const PureHeader: React.FC<HeaderProp> = ({ title, subHeading }) => (
 );
 
 const Header: React.FC<{ subHeading?: React.ReactNode }> = ({ subHeading }) => {
-  const {
-    site: {
-      siteMetadata: { title },
-    },
-  } = useStaticQuery(
+  const data: GatsbyTypes.HeaderQuery = useStaticQuery(
     graphql`
-      query Header {site: {siteMetadata: {title}}}`
+      query Header {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `
   );
 
-  return <PureHeader title={title} subHeading={subHeading} />;
+  return (
+    <PureHeader title={data.site.siteMetadata.title} subHeading={subHeading} />
+  );
 };
 
 export default Header;
