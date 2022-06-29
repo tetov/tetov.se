@@ -3,8 +3,8 @@ import path from "path";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Anton Tetov Johansson site`,
-    description: `Projects in architecture, digital fabrication and robotics. `,
+    title: `Anton Tetov Johansson`,
+    description: `Projects in architecture, digital fabrication and robotics.`,
     siteURL: `https://tetov.se`,
     lang: "en",
   },
