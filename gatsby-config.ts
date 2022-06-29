@@ -3,8 +3,8 @@ import path from "path";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `tetov's projects & more`,
-    description: `there no 'more', is there?`,
+    title: `Anton Tetov Johansson site`,
+    description: `Projects in architecture, digital fabrication and robotics. `,
     siteURL: `https://tetov.se`,
     lang: "en",
   },
@@ -147,7 +147,7 @@ const config: GatsbyConfig = {
         defaultQuality: 50,
       },
     },
-    "gatsby-plugin-root-import",  // allows absolute imports
+    "gatsby-plugin-root-import", // allows absolute imports
     `gatsby-transformer-sharp`,
     `gatsby-transformer-yaml`,
     `gatsby-plugin-typescript`,
