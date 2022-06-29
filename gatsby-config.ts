@@ -26,17 +26,15 @@ const config: GatsbyConfig = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.nodes.map((node) => {
-                return Object.assign({}, node.frontmatter, {
-                  description: node.frontmatter.description || node.excerpt,
-                  date: node.frontmatter.date,
-                  url: site.siteMetadata.siteURL + node.fields.slug,
-                  guid: site.siteMetadata.siteURL + node.fields.slug,
-                  custom_elements: [{ "content:encoded": node.html }],
-                });
+            serialize: ({ query: { site, allMarkdownRemark } }) => allMarkdownRemark.nodes.map((node: GatsbyTypes.MarkdownRemark) => {
+              return Object.assign({}, node.frontmatter, {
+                description: node.frontmatter.description || node.excerpt,
+                date: node.frontmatter.date,
+                url: site.siteMetadata.siteURL + node.fields.slug,
+                guid: site.siteMetadata.siteURL + node.fields.slug,
+                custom_elements: [{ "content:encoded": node.html }],
               });
-            },
+            }),
             query: `
               {
                 allMarkdownRemark(
