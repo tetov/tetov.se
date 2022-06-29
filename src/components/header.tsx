@@ -1,16 +1,16 @@
-import { Link } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import React from "react";
-import querySiteMetadata from "../hooks/query-site-metadata";
 
-export type HeaderProp = {
+type HeaderProp = {
+  title: string;
   subHeading?: React.ReactNode;
 };
 
-const Header = ({ subHeading }: HeaderProp) => (
+export const PureHeader: React.FC<HeaderProp> = ({ title, subHeading }) => (
   <header className="text-center md:justify-between pt-12 mb-16 md:mb-12">
     <Link to="/">
       <h1 className="text-7xl md:text-8xl font-bold tracking-tighter leading-tight">
-        {querySiteMetadata().title}
+        {title}
       </h1>
     </Link>{" "}
     {subHeading && (
@@ -20,5 +20,18 @@ const Header = ({ subHeading }: HeaderProp) => (
     )}
   </header>
 );
+
+const Header: React.FC<{ subHeading?: React.ReactNode }> = ({ subHeading }) => {
+  const {
+    site: {
+      siteMetadata: { title },
+    },
+  } = useStaticQuery(
+    graphql`
+      query Header {site: {siteMetadata: {title}}}`
+  );
+
+  return <PureHeader title={title} subHeading={subHeading} />;
+};
 
 export default Header;

@@ -17,7 +17,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \" && exit 1",
+    "test": "jest",
     "clean": "gatsby clean"
   },
   "engines": {
@@ -58,14 +58,21 @@
     "typescript": "^4.7.4"
   },
   "devDependencies": {
+    "@types/jest": "^28.1.3",
     "@types/react-helmet": "^6.1.5",
+    "@types/react-test-renderer": "^18.0.0",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^28.1.1",
+    "babel-preset-gatsby": "^2.17.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "gatsby-plugin-root-import": "^2.0.8",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^28.1.1",
     "npm-check-updates": "^14.1.1",
     "path-browserify": "^1.0.1",
     "prettier": "2.7.1",
-    "prettier-plugin-organize-imports": "^3.0.0"
+    "prettier-plugin-organize-imports": "^3.0.0",
+    "react-test-renderer": "^18.2.0"
   }
 }
