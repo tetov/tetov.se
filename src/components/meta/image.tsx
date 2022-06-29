@@ -1,19 +1,43 @@
+import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import { Helmet } from "react-helmet";
-import querySiteMetadata from "src/hooks/query-site-metadata";
 
-type Prop = {
+type MetaImageProp = {
   src?: string;
   alt?: string;
 };
 
-const MetaImage: React.FC<Prop> = ({ src, alt }) => {
-  const { siteURL } = querySiteMetadata();
+type PureMetaImageProp = MetaImageProp & {
+  siteURL: string;
+};
+
+export const PureMetaImage: React.FC<PureMetaImageProp> = ({
+  src,
+  alt,
+  siteURL,
+}) => (
+  <Helmet>
+    {src && <meta property="og:image" content={siteURL + src} />}
+    {src && alt && <meta property="og:image:alt" content={alt} />}
+  </Helmet>
+);
+
+const MetaImage: React.FC<MetaImageProp> = ({ src, alt }) => {
+  const data = useStaticQuery<GatsbyTypes.SiteURLQuery>(graphql`
+    query SiteURL {
+      site {
+        siteMetadata {
+          siteURL
+        }
+      }
+    }
+  `);
   return (
-    <Helmet>
-      {src && <meta property="og:image" content={siteURL + src} />}
-      {src && alt && <meta property="og:image:alt" content={alt} />}
-    </Helmet>
+    <PureMetaImage
+      src={src}
+      alt={alt}
+      siteURL={data.site.siteMetadata.siteURL}
+    />
   );
 };
 

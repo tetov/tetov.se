@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MetaImage src: content/projs/adaptive_clay_formations/hero.jpg alt: Alt text 1`] = `
+<div
+  className="mock-helmet"
+>
+  <meta
+    content="https://tetov.se/content/projs/adaptive_clay_formations/hero.jpg"
+    property="og:image"
+  />
+  <meta
+    content="Alt text"
+    property="og:image:alt"
+  />
+</div>
+`;
+
+exports[`MetaImage src: content/projs/adaptive_clay_formations/hero.jpg alt: undefined 1`] = `
+<div
+  className="mock-helmet"
+>
+  <meta
+    content="https://tetov.se/content/projs/adaptive_clay_formations/hero.jpg"
+    property="og:image"
+  />
+</div>
+`;
+
+exports[`MetaImage src: undefined alt: Alt text 1`] = `
+<div
+  className="mock-helmet"
+/>
+`;
+
+exports[`MetaImage src: undefined alt: undefined 1`] = `
+<div
+  className="mock-helmet"
+/>
+`;
