@@ -34,7 +34,7 @@
     "gatsby-plugin-react-helmet": "^5.17.0",
     "gatsby-plugin-sharp": "^4.17.0",
     "gatsby-plugin-typegen": "^3.0.0",
-    "gatsby-remark-autolink-headers": "^5.17.0",
+    "gatsby-remark-autolink-headers": "^5.20.0",
     "gatsby-remark-copy-linked-files": "^5.17.0",
     "gatsby-remark-images": "^6.17.0",
     "gatsby-remark-prismjs": "^6.17.0",
