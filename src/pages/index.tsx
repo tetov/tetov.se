@@ -1,9 +1,9 @@
 import { graphql, Link } from "gatsby";
-import React from "react";
 import ContactDetail from "src/components/contact-detail";
 import { ContentPreview } from "src/components/content";
 import HeroProj from "src/components/hero-proj";
 import Layout from "src/components/layout";
+import SEO from "src/components/seo";
 
 const Index: GatsbyPage<GatsbyTypes.IndexQuery> = ({
   data: {
@@ -25,7 +25,7 @@ const Index: GatsbyPage<GatsbyTypes.IndexQuery> = ({
   );
 
   return (
-    <Layout pathName={location.pathname} subHeading={subHeading}>
+    <Layout subHeading={subHeading}>
       <HeroProj {...heroProj} />
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-8">
         {projNodes.map((node) => (
@@ -42,6 +42,7 @@ const Index: GatsbyPage<GatsbyTypes.IndexQuery> = ({
     </Layout>
   );
 };
+export const Head = () => <SEO pathname={location.pathname} />;
 
 export default Index;
 

@@ -6,7 +6,8 @@ const config: GatsbyConfig = {
     title: `Anton Tetov Johansson`,
     description: `Projects in architecture, digital fabrication and robotics.`,
     siteURL: `https://tetov.se`,
-    lang: "en",
+    lang: `en`,
+    image: `/logo.png`,
   },
   plugins: [
     `gatsby-plugin-catch-links`,
@@ -26,15 +27,18 @@ const config: GatsbyConfig = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => allMarkdownRemark.nodes.map((node: GatsbyTypes.MarkdownRemark) => {
-              return Object.assign({}, node.frontmatter, {
-                description: node.frontmatter.description || node.excerpt,
-                date: node.frontmatter.date,
-                url: site.siteMetadata.siteURL + node.fields.slug,
-                guid: site.siteMetadata.siteURL + node.fields.slug,
-                custom_elements: [{ "content:encoded": node.html }],
-              });
-            }),
+            serialize: ({ query: { site, allMarkdownRemark } }) =>
+              allMarkdownRemark.nodes.map(
+                (node: GatsbyTypes.MarkdownRemark) => {
+                  return Object.assign({}, node.frontmatter, {
+                    description: node.frontmatter.description || node.excerpt,
+                    date: node.frontmatter.date,
+                    url: site.siteMetadata.siteURL + node.fields.slug,
+                    guid: site.siteMetadata.siteURL + node.fields.slug,
+                    custom_elements: [{ "content:encoded": node.html }],
+                  });
+                }
+              ),
             query: `
               {
                 allMarkdownRemark(
@@ -73,8 +77,6 @@ const config: GatsbyConfig = {
         icon: `./src/images/logo.png`,
       },
     },
-
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

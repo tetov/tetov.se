@@ -1,9 +1,8 @@
 import classNames from "classnames";
 import { graphql } from "gatsby";
-import React from "react";
 import ContactDetail from "src/components/contact-detail";
 import Layout from "src/components/layout";
-import { MetaContent } from "src/components/meta";
+import SEO from "src/components/seo";
 
 const Contact: GatsbyPage<GatsbyTypes.ContactQuery> = ({
   location,
@@ -11,8 +10,7 @@ const Contact: GatsbyPage<GatsbyTypes.ContactQuery> = ({
     allContactData: { nodes },
   },
 }) => (
-  <Layout pathName={location.pathname} subHeading="Want to say hi?">
-    <MetaContent title="Contact" excerpt="Anton Tetov's contact details" />
+  <Layout subHeading="Want to say hi?">
     <div className="h-card md:px-44 text-center text-lg">
       {nodes.map((n) => (
         <ContactDetail
@@ -26,6 +24,14 @@ const Contact: GatsbyPage<GatsbyTypes.ContactQuery> = ({
       ))}
     </div>
   </Layout>
+);
+
+export const Head = () => (
+  <SEO
+    pageTitle="Contact"
+    description="Anton Tetov's contact details"
+    pathname={location.pathname}
+  />
 );
 
 export default Contact;
