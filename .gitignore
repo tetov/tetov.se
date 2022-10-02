@@ -73,4 +73,8 @@ public
 src/__generated__
 
 # vscode
-.vscode
+.vscode/*
+!.vscode/launch.json
+!.vscode/settings.json
+
+src/gatsby-types.d.ts

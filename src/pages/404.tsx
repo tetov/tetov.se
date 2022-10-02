@@ -1,7 +1,8 @@
+import { HeadFC } from "gatsby";
+import { Head as HeadComponent } from "src/components/head";
 import Layout from "src/components/layout";
-import SEO from "src/components/seo";
 
-const NotFoundPage: GatsbyPage = ({ location: { pathname } }) => {
+const NotFoundPage: GatsbyPage = () => {
   const title = "404: Not found";
   return (
     <Layout subHeading={title}>
@@ -12,8 +13,8 @@ const NotFoundPage: GatsbyPage = ({ location: { pathname } }) => {
   );
 };
 
-export const Head = () => (
-  <SEO pageTitle="404: Not found" pathname={location.pathname} />
-);
-
 export default NotFoundPage;
+
+export const Head: HeadFC = ({location}) => (
+  <HeadComponent pageTitle="404: Not found" pathname={location.pathname} />
+);

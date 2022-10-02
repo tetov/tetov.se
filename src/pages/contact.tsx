@@ -1,10 +1,10 @@
 import classNames from "classnames";
-import { graphql } from "gatsby";
+import { graphql, HeadFC } from "gatsby";
 import ContactDetail from "src/components/contact-detail";
+import { Head as HeadComponent } from "src/components/head";
 import Layout from "src/components/layout";
-import SEO from "src/components/seo";
 
-const Contact: GatsbyPage<GatsbyTypes.ContactQuery> = ({
+const Contact: GatsbyPage<Queries.ContactQuery> = ({
   location,
   data: {
     allContactData: { nodes },
@@ -26,8 +26,8 @@ const Contact: GatsbyPage<GatsbyTypes.ContactQuery> = ({
   </Layout>
 );
 
-export const Head = () => (
-  <SEO
+export const Head: HeadFC = ({ location }) => (
+  <HeadComponent
     pageTitle="Contact"
     description="Anton Tetov's contact details"
     pathname={location.pathname}
