@@ -9,6 +9,7 @@ const config: GatsbyConfig = {
     lang: `en`,
     image: `/logo.png`,
   },
+  graphqlTypegen: true,
   plugins: [
     `gatsby-plugin-catch-links`,
     {
@@ -28,17 +29,15 @@ const config: GatsbyConfig = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) =>
-              allMarkdownRemark.nodes.map(
-                (node: GatsbyTypes.MarkdownRemark) => {
-                  return Object.assign({}, node.frontmatter, {
-                    description: node.frontmatter.description || node.excerpt,
-                    date: node.frontmatter.date,
-                    url: site.siteMetadata.siteURL + node.fields.slug,
-                    guid: site.siteMetadata.siteURL + node.fields.slug,
-                    custom_elements: [{ "content:encoded": node.html }],
-                  });
-                }
-              ),
+              allMarkdownRemark.nodes.map((node) => {
+                return Object.assign({}, node.frontmatter, {
+                  description: node.frontmatter.description || node.excerpt,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.siteURL + node.fields.slug,
+                  guid: site.siteMetadata.siteURL + node.fields.slug,
+                  custom_elements: [{ "content:encoded": node.html }],
+                });
+              }),
             query: `
               {
                 allMarkdownRemark(
@@ -74,7 +73,7 @@ const config: GatsbyConfig = {
         background_color: `#111111`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `./src/images/logo.png`,
+        icon: `./static/logo.png`,
       },
     },
     {
@@ -89,17 +88,6 @@ const config: GatsbyConfig = {
             process.env.NODE_ENV === "production" && /\/draft-/i.test(p),
           /\/_\w+/,
         ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-typegen`,
-      options: {
-        emitSchema: {
-          "src/__generated__/gatsby-introspection.json": true,
-        },
-        emitPluginDocuments: {
-          "src/__generated__/gatsby-plugin-documents.graphql": true,
-        },
       },
     },
     {

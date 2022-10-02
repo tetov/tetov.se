@@ -1,16 +1,15 @@
-import { graphql, Link } from "gatsby";
+import { graphql, HeadFC, Link } from "gatsby";
 import ContactDetail from "src/components/contact-detail";
 import { ContentPreview } from "src/components/content";
+import { Head as HeadComponent } from "src/components/head";
 import HeroProj from "src/components/hero-proj";
 import Layout from "src/components/layout";
-import SEO from "src/components/seo";
 
-const Index: GatsbyPage<GatsbyTypes.IndexQuery> = ({
+const Index: GatsbyPage<Queries.IndexQuery> = ({
   data: {
     allMarkdownRemark: { nodes: mdNodes },
     allContactData: { nodes: contactDataNodes },
   },
-  location,
 }) => {
   const [heroProj, ...projNodes] = mdNodes;
 
@@ -42,9 +41,12 @@ const Index: GatsbyPage<GatsbyTypes.IndexQuery> = ({
     </Layout>
   );
 };
-export const Head = () => <SEO pathname={location.pathname} />;
 
 export default Index;
+
+export const Head: HeadFC = ({ location }) => (
+  <HeadComponent pathname={location.pathname} />
+);
 
 // Query with /(DIR)/
 export const pageQuery = graphql`

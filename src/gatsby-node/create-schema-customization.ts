@@ -14,6 +14,7 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
       description: String
       siteURL: String!
       lang: String
+      image: String
     }
     type MarkdownRemark implements Node {
       frontmatter: Frontmatter
