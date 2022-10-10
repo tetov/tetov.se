@@ -64,7 +64,6 @@ const onCreateDataYamlNode: OnCreateNodeLimitedArgs = async ({
 };
 
 const onCreateNode: GatsbyNode["onCreateNode"] = async (args) => {
-  console.log(args.node.internal.type);
   switch (args.node.internal.type) {
     case "MarkdownRemark":
       onCreateMarkdownRemarkNode(args);
