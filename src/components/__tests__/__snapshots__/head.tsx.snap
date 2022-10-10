@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeadComponent renders correctly 1`] = `
+Array [
+  <title>
+    We have a lot of rain in June. - Iðunn Gunda
+  </title>,
+  <meta
+    content="We have a lot of rain in June."
+    property="og:title"
+  />,
+  <meta
+    content="Iðunn Gunda"
+    property="og:site_name"
+  />,
+  <meta
+    content="The dead trees waited to be ignited by the smallest spark and seek their revenge."
+    id="description"
+    name="description"
+  />,
+  <meta
+    content="The dead trees waited to be ignited by the smallest spark and seek their revenge."
+    id="description"
+    property="og:description"
+  />,
+  <meta
+    content="https://uiuc.eduhttp://runte.org/velit-porro-sapiente-id-aut-error-quis.png"
+    property="og:image"
+  />,
+  <meta
+    content="https://uiuc.eduwe-have-a-lot"
+    property="og:url"
+  />,
+  <meta
+    content="website"
+    id="og:type"
+    property="og:type"
+  />,
+  <meta
+    content="summary"
+    name="twitter:card"
+  />,
+  <meta
+    content="@twttr"
+    name="twitter:site"
+  />,
+  <meta
+    content="@twttr"
+    name="twitter:creator"
+  />,
+  <meta
+    content="article"
+    id="og:type"
+    property="og:type"
+  />,
+  <meta
+    content="2022-03-22T12:57:14Z"
+    property="og:article:published_time"
+  />,
+]
+`;

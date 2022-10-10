@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { graphql, HeadFC, PageProps } from "gatsby";
 import * as React from "react";
 import ContactDetail from "src/components/contact-detail";
-import { Head as HeadComponent } from "src/components/head";
+import HeadComponent from "src/components/head";
 import Layout from "src/components/layout";
 
 const Contact: React.FC<PageProps<Queries.ContactQuery>> = ({

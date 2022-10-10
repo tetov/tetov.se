@@ -1,6 +1,6 @@
 import { HeadFC } from "gatsby";
 import * as React from "react";
-import { Head as HeadComponent } from "src/components/head";
+import HeadComponent from "src/components/head";
 import Layout from "src/components/layout";
 
 const NotFoundPage: React.FC = () => (

@@ -1,8 +1,9 @@
 import { graphql, HeadFC, PageProps } from "gatsby";
+import { getSrc } from "gatsby-plugin-image";
 import * as React from "react";
 import type { ArticleProp } from "src/components/article";
 import Article from "src/components/article";
-import { Head as HeadComponent } from "src/components/head";
+import HeadComponent from "src/components/head";
 import Layout from "src/components/layout";
 
 type GatsbyMarkdownPage = React.FC<PageProps<Queries.MarkdownPageQuery>>;
@@ -57,26 +58,27 @@ export default MarkdownPage;
 export const Head: HeadFC<Queries.MarkdownPageQuery> = ({
   location: { pathname },
   data: {
-    markdownRemark: { frontmatter, excerpt },
+    markdownRemark: {
+      frontmatter: { title, description, image, machineReadableDate },
+      excerpt,
+    },
   },
-}) => {
-  const imageUrl = frontmatter.image;
-  const pageDate = frontmatter.machineReadableDate;
-
-  return (
-    <HeadComponent
-      pathname={pathname}
-      imageUrl={imageUrl}
-      pageTitle={frontmatter.title}
-      description={frontmatter.description || excerpt || ""}
-    >
-      <meta property="og:type" content="article" id="og:type" />
-      {pageDate && (
-        <meta property="og:article:published_time" content={pageDate} />
-      )}
-    </HeadComponent>
-  );
-};
+}) => (
+  <HeadComponent
+    pathname={pathname}
+    imageUrl={getSrc(image)}
+    pageTitle={title}
+    description={description || excerpt || ""}
+  >
+    <meta property="og:type" content="article" id="og:type" />
+    {machineReadableDate && (
+      <meta
+        property="og:article:published_time"
+        content={machineReadableDate}
+      />
+    )}
+  </HeadComponent>
+);
 
 export const query = graphql`
   query MarkdownPage($id: String!) {

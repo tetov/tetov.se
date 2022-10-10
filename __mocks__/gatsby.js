@@ -33,5 +33,12 @@ module.exports = {
         image: `/logo.png`,
       },
     },
+    allContactData: {
+      nodes: [
+        {
+          username: "twttr",
+        },
+      ],
+    },
   })),
 };

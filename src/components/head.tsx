@@ -2,16 +2,14 @@ import * as React from "react";
 import querySiteMetadata from "src/hooks/query-site-metadata";
 import queryTwitterUname from "src/hooks/query-twitter-uname";
 
-export const Head: React.FC<
+const HeadComponent: React.FC<
   React.PropsWithChildren<{
-    pathname?: string;
+    pathname: string;
     pageTitle?: string;
     description?: string;
     imageUrl?: string;
-    pageDate?: string;
-    pageType?: string;
   }>
-> = ({ pageTitle, description, imageUrl: image, pathname, children }) => {
+> = ({ pageTitle, description, imageUrl, pathname, children }) => {
   const {
     title: siteTitle,
     description: defaultDescription,
@@ -21,7 +19,7 @@ export const Head: React.FC<
   const twitterUsername = queryTwitterUname();
 
   const metaDescription = description || defaultDescription;
-  const metaImage = `${siteURL}${image || defaultImage}`;
+  const metaImage = `${siteURL}${imageUrl || defaultImage}`;
 
   return (
     <>
@@ -55,3 +53,5 @@ export const Head: React.FC<
     </>
   );
 };
+
+export default HeadComponent;

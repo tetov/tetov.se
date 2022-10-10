@@ -2,7 +2,7 @@ import { graphql, HeadFC, Link, PageProps } from "gatsby";
 import * as React from "react";
 import { ArticlePreview } from "src/components/article";
 import ContactDetail from "src/components/contact-detail";
-import { Head as HeadComponent } from "src/components/head";
+import HeadComponent from "src/components/head";
 import HeroProj from "src/components/hero-proj";
 import Layout from "src/components/layout";
 
