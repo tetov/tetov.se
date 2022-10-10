@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 const queryTwitterUname = () => {
   const { allContactData } =
-    useStaticQuery<GatsbyTypes.TwitterUsernameQuery>(graphql`
+    useStaticQuery<Queries.TwitterUsernameQuery>(graphql`
       query TwitterUsername {
         allContactData(filter: { label: { eq: "twitter" } }, limit: 1) {
           nodes {

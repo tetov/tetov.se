@@ -1,6 +1,6 @@
 import type { Argument as classNamesArgument } from "classnames";
 import classNames from "classnames";
-import React from "react";
+import * as React from "react";
 import type { IconBaseProps } from "react-icons/lib";
 import * as Icons from "src/icons";
 
@@ -16,7 +16,7 @@ const LinkedDetail: React.FC<JSXA> = ({ className, href, rel, children }) => {
 };
 
 type Prop = {
-  contactData: Partial<GatsbyTypes.ContactData>;
+  contactData: Partial<Queries.ContactData>;
   className?: classNamesArgument;
   iconProp?: Partial<IconBaseProps>;
   useIcon?: boolean;
@@ -35,7 +35,7 @@ const ContactDetail: React.FC<Prop> = ({
 
   const prop: JSXA | JSXSpan = {
     className: classNames(hcard, className) || undefined,
-    href: url,
+    href: url ?? undefined,
     rel: relAttribute,
     children: (
       <>

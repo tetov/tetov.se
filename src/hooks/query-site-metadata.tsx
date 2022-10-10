@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 
 const querySiteMetadata = () => {
-  const { site } = useStaticQuery<GatsbyTypes.SiteMetaDataQuery>(
+  const { site } = useStaticQuery<Queries.SiteMetaDataQuery>(
     graphql`
       query SiteMetaData {
         site {
@@ -10,6 +10,7 @@ const querySiteMetadata = () => {
             siteURL
             lang
             description
+            image
           }
         }
       }

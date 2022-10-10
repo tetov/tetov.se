@@ -1,18 +1,16 @@
 import classNames from "classnames";
-import { graphql } from "gatsby";
-import React from "react";
+import { graphql, HeadFC, PageProps } from "gatsby";
+import * as React from "react";
 import ContactDetail from "src/components/contact-detail";
+import { Head as HeadComponent } from "src/components/head";
 import Layout from "src/components/layout";
-import { MetaContent } from "src/components/meta";
 
-const Contact: GatsbyPage<GatsbyTypes.ContactQuery> = ({
-  location,
+const Contact: React.FC<PageProps<Queries.ContactQuery>> = ({
   data: {
     allContactData: { nodes },
   },
 }) => (
-  <Layout pathName={location.pathname} subHeading="Want to say hi?">
-    <MetaContent title="Contact" excerpt="Anton Tetov's contact details" />
+  <Layout subHeading="Want to say hi?">
     <div className="h-card md:px-44 text-center text-lg">
       {nodes.map((n) => (
         <ContactDetail
@@ -28,9 +26,17 @@ const Contact: GatsbyPage<GatsbyTypes.ContactQuery> = ({
   </Layout>
 );
 
+export const Head: HeadFC = ({ location }) => (
+  <HeadComponent
+    pageTitle="Contact"
+    description="Anton Tetov's contact details"
+    pathname={location.pathname}
+  />
+);
+
 export default Contact;
 
-export const contactQuery = graphql`
+export const query = graphql`
   query Contact {
     allContactData(sort: { fields: weight }) {
       nodes {

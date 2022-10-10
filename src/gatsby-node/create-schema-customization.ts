@@ -1,6 +1,6 @@
 import { GatsbyNode } from "gatsby";
 
-const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
+export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
   async ({ actions: { createTypes } }) => {
     // Explicitly define the siteMetadata {} object
     // This way those will always be defined even if removed from gatsby-config.js
@@ -9,28 +9,33 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
     // This way the "MarkdownRemark" queries will return `null` even when no
     // blog posts are stored inside "content/blog" instead of returning an error
     createTypes(`
-    type SiteMetadata {
+    extend type Site {
+      siteMetadata: SiteMetadata!
+    }
+    extend type SiteMetadata {
+      title: String!
+      description: String!
+      siteURL: String!
+      lang: String!
+      image: String!
+    }
+    extend type MarkdownRemark {
+      frontmatter: MarkdownRemarkFrontmatter!
+      fields: MarkdownRemarkFields!
+    }
+    extend type MarkdownRemarkFrontmatter {
       title: String!
       description: String
-      siteURL: String!
-      lang: String
-    }
-    type MarkdownRemark implements Node {
-      frontmatter: Frontmatter
-      fields: Fields
-    }
-    type Frontmatter {
-      title: String
-      description: String
-      date: Date @dateformat
+      date: Date! @dateformat
       lang: String
       hero: String
       weight: Int
+      image: File @fileByRelativePath
+      imageAlt: String
     }
-    type Fields {
-      slug: String
-      category: String
-      heroImg: ImageSharp
+    extend type MarkdownRemarkFields {
+      slug: String!
+      category: String!
     }
     type ContactData implements Node {
       hcard: String
@@ -45,5 +50,3 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
 }
   `);
   };
-
-export default createSchemaCustomization;
