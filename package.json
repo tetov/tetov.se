@@ -12,11 +12,11 @@
     "url": "https://github.com/tetov/xyz"
   },
   "scripts": {
-    "dev": "GATSBY_GRAPHQL_IDE=playground PARCEL_WORKERS=0 GATSBY_CPU_COUNT=1 node --nolazy --inspect=127.0.0.1:9232 node_modules/.bin/gatsby develop --verbose",
+    "dev": "GATSBY_GRAPHQL_IDE=playground PARCEL_WORKERS=0 GATSBY_CPU_COUNT=1 node --nolazy --inspect=127.0.0.1:9232 gatsby develop --verbose",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "test": "jest",
+    "test": "jest --coverage --collectCoverageFrom=\"src/**/*.{ts,tsx}\"",
     "clean": "gatsby clean"
   },
   "engines": {
