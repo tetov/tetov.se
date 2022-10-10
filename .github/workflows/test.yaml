@@ -1,10 +1,9 @@
-name: Deploy website to gh-pages
+name: Test repo
 
 on:
   push:
     branches-ignore:
       - "gh-pages"
-      - "test"
 
 jobs:
   build:
@@ -52,12 +51,5 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy on gh-pages
-        if: github.ref == 'refs/heads/main'
-        uses: crazy-max/ghaction-github-pages@b8f8d291c97fe0edd9fb4ee73018163593418e8f
-        with:
-          target_branch: gh-pages
-          build_dir: public
-          keep_history: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Test
+        run: npm test
