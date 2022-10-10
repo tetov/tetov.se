@@ -1,102 +1,74 @@
-import { graphql, HeadFC } from "gatsby";
-import { GatsbyImage, getSrc } from "gatsby-plugin-image";
-import { ContentBody, ContentHeader } from "src/components/content";
+import { graphql, HeadFC, PageProps } from "gatsby";
+import * as React from "react";
+import type { ArticleProp } from "src/components/article";
+import Article from "src/components/article";
 import { Head as HeadComponent } from "src/components/head";
 import Layout from "src/components/layout";
 
-const MarkdownPage: GatsbyPage<Queries.MarkdownPageQuery> = ({ data }) => {
-  const categoryComponentMapping = {
-    posts: PostPage,
-    projs: ProjPage,
+type GatsbyMarkdownPage = React.FC<PageProps<Queries.MarkdownPageQuery>>;
+
+const MarkdownPage: GatsbyMarkdownPage = (props) => {
+  const category = props.data.markdownRemark?.fields?.category;
+
+  if (!category) {
+    throw new Error("No category set on node's fields.");
+  }
+
+  const articlePropMapping: { [key: string]: Partial<ArticleProp> } = {
+    posts: {
+      articleClass: "h-entry",
+      articleType: "BlogEntry",
+      bodyItemProp: "articleBody",
+      date: props.data.markdownRemark?.frontmatter.date,
+    },
+    projs: {
+      articleClass: "h-entry",
+      articleType: "CreativeWork",
+      bodyItemProp: "about",
+    },
   };
-  const Component =
-    categoryComponentMapping[data.markdownRemark.fields.category];
-  return Component({ data });
-};
 
-const PostPage: GatsbyPage<Queries.MarkdownPageQuery> = ({
-  location: { pathname },
-  data: {
-    markdownRemark: {
-      html,
-      excerpt,
-      fields: {
-        heroImg: { heroImgData },
-        slug,
-      },
-      frontmatter: { title, description, lang, date, machineReadableDate },
-    },
-  },
-}) => (
-  <Layout>
-    <article
-      className="h-entry"
-      itemScope
-      itemType="http://schema.org/BlogPosting"
-    >
-      <ContentHeader itemProp="headline" url={`/${slug}`}>
-        {title}
-      </ContentHeader>
-      <p className="mb-4 text-4xl lg:text-6xl leading-tight">
-        <time
-          className="dt-published"
-          itemProp="dateCreated"
-          dateTime={machineReadableDate}
-        >
-          {date}
-        </time>
-      </p>
-      <ContentBody content={html} itemProp="articleBody" />
-    </article>
-  </Layout>
-);
+  const articleProp = articlePropMapping[category];
 
-const ProjPage: GatsbyPage<Queries.MarkdownPageQuery> = ({
-  location: { pathname },
-  data: {
-    markdownRemark: {
-      html,
-      fields: {
-        heroImg: { heroImgData },
-        slug,
-      },
-      frontmatter: { title },
-    },
-  },
-}) => (
-  <Layout>
-    <article
-      className="h-entry"
-      itemScope
-      itemType="http://schema.org/CreativeWork"
-    >
-      <ContentHeader url={`/${slug}`}>{title}</ContentHeader>
-      <GatsbyImage
-        alt={`Cover image for ${title}`}
-        image={heroImgData}
-        loading="eager"
-        className="mb-8 md:mb-16"
-        imgClassName="shadow-sm hover:shadow-md transition-shadow duration-200"
+  if (!articleProp) {
+    throw new Error(`No matching articleProp for category: ${category}`);
+  }
+
+  const markdownRemark = props.data.markdownRemark;
+
+  return (
+    <Layout>
+      <Article
+        pathname={props.location.pathname}
+        html={markdownRemark.html}
+        title={markdownRemark.frontmatter.title}
+        bannerImageData={
+          markdownRemark.frontmatter.image?.childImageSharp?.bannerImgData
+        }
+        imageAlt={markdownRemark?.frontmatter.imageAlt || undefined}
+        {...articleProp}
       />
-      <ContentBody content={html} itemProp="about" />
-    </article>
-  </Layout>
-);
+    </Layout>
+  );
+};
 
 export default MarkdownPage;
 
-export const Head: HeadFC<Queries.MarkdownPageQuery> = ({ location, data }) => {
-  const imageData = data.markdownRemark?.fields.heroImg?.heroImgData;
-  const frontmatter = data.markdownRemark?.frontmatter;
-
-  const pageDate = frontmatter?.machineReadableDate;
+export const Head: HeadFC<Queries.MarkdownPageQuery> = ({
+  location: { pathname },
+  data: {
+    markdownRemark: { frontmatter, excerpt },
+  },
+}) => {
+  const imageUrl = frontmatter.image;
+  const pageDate = frontmatter.machineReadableDate;
 
   return (
     <HeadComponent
-      pathname={location.pathname}
-      image={imageData && getSrc(imageData)}
-      pageTitle={frontmatter?.title}
-      description={frontmatter?.description || data.markdownRemark?.excerpt}
+      pathname={pathname}
+      imageUrl={imageUrl}
+      pageTitle={frontmatter.title}
+      description={frontmatter.description || excerpt || ""}
     >
       <meta property="og:type" content="article" id="og:type" />
       {pageDate && (
@@ -109,23 +81,23 @@ export const Head: HeadFC<Queries.MarkdownPageQuery> = ({ location, data }) => {
 export const query = graphql`
   query MarkdownPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      excerpt(pruneLength: 160, format: MARKDOWN)
+      excerpt(pruneLength: 160, format: PLAIN)
       id
       html
       fields {
         slug
         category
-        heroImg {
-          ...HeroImg
-        }
       }
       frontmatter {
         title
         date(formatString: "YYYY-MM-DD")
-        projDate: date(formatString: "YYYY-MM")
         machineReadableDate: date
         description
         lang
+        imageAlt
+        image {
+          ...BannerImg
+        }
       }
     }
   }

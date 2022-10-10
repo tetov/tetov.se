@@ -1,17 +1,16 @@
 {
   // https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
   "compilerOptions": {
-    "target": "ESNEXT",
-    "module": "commonjs",
-    "lib": ["dom", "esnext"],
-    "jsx": "preserve",
-    "noEmit": true,
-    "noUnusedLocals": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
     "baseUrl": "./",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react",
+    "lib": ["dom", "esnext"],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ESNext"
   },
-  "exclude": ["node_modules", "public", ".cache"],
-  "include": ["./src/**/*"]
+  "include": ["./src/**/*", "./gatsby-*.ts"]
 }

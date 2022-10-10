@@ -2,6 +2,7 @@
 title: Adaptive Clay Formations
 date: 2020-08-03
 weight: 100
+image: ./hero.jpg
 ---
 
 Thesis project where a robotic clay aggregation method developed at MAS DFAB was

@@ -2,6 +2,7 @@
 title: SEMusicLab clay wall mockup
 date: 2020-08-30
 weight: 90
+image: hero.jpg
 ---
 
 Gramazio Kohler Research's MAS DFAB pavilion project 2019/2020.

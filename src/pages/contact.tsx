@@ -1,11 +1,11 @@
 import classNames from "classnames";
-import { graphql, HeadFC } from "gatsby";
+import { graphql, HeadFC, PageProps } from "gatsby";
+import * as React from "react";
 import ContactDetail from "src/components/contact-detail";
 import { Head as HeadComponent } from "src/components/head";
 import Layout from "src/components/layout";
 
-const Contact: GatsbyPage<Queries.ContactQuery> = ({
-  location,
+const Contact: React.FC<PageProps<Queries.ContactQuery>> = ({
   data: {
     allContactData: { nodes },
   },
@@ -36,7 +36,7 @@ export const Head: HeadFC = ({ location }) => (
 
 export default Contact;
 
-export const contactQuery = graphql`
+export const query = graphql`
   query Contact {
     allContactData(sort: { fields: weight }) {
       nodes {

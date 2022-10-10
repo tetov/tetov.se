@@ -1,6 +1,19 @@
+import type { Node } from "gatsby";
 import { GatsbyNode } from "gatsby";
-import type { PreQueryMarkdownRemark } from "../types";
-import { parseNodePath } from "../utils";
+import { IGatsbyImageData } from "gatsby-plugin-image";
+import { parseNodeFilePath } from "./utils";
+
+type PreQueryMarkdownRemark = Node & {
+  fields: {
+    slug: string;
+    category: string;
+    heroImg: IGatsbyImageData;
+  };
+  frontmatter: {
+    title: string;
+    hero: string;
+  };
+};
 
 const onPreExtractQueries: GatsbyNode["onPreExtractQueries"] = async ({
   actions: { createNodeField },
@@ -13,17 +26,25 @@ const onPreExtractQueries: GatsbyNode["onPreExtractQueries"] = async ({
   docNodes.forEach((docNode) => {
     const heroName = docNode.frontmatter.hero || "hero";
 
-    const docDir = parseNodePath(docNode, getNode).dir;
+    const { category, slug } = docNode.fields;
 
     const candidates = allImgNodes.filter((n) => {
-      const { name, dir } = parseNodePath(n, getNode);
-      return dir === docDir && name === heroName;
+      const { name, dir } = parseNodeFilePath({ node: n, getNode });
+      return dir === `/${category}/${slug}` && name === heroName;
     });
-    if (candidates.length === 0) return;
+    if (candidates.length === 0) {
+      if (category === "projs") {
+        throw new Error(
+          "No image candidates found for hero image for proj node."
+        );
+      }
+      // if not projs we just ditch
+      return;
+    }
 
     if (candidates.length > 1)
       throw new Error(
-        `More than one matching hero image. Mathces: ${candidates}`
+        `More than one matching hero image. Matches: ${candidates}`
       );
 
     createNodeField({ node: docNode, name: "heroImg", value: candidates[0] });
