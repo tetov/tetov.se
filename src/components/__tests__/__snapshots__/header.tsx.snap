@@ -10,14 +10,16 @@ exports[`Header renders correctly 1`] = `
     <h1
       className="text-7xl md:text-8xl font-bold tracking-tighter leading-tight"
     >
-      tetov's projects and more
+      Nossnahoj Votet Notna
     </h1>
   </a>
    
   <h2
     className="mt-4 w-2/3 text-2xl md:text-4xl font-light inline-block leading-relaxed"
   >
-    <div />
+    <span>
+      Test
+    </span>
   </h2>
 </header>
 `;
