@@ -2,6 +2,7 @@
 title: Digital bamboo pavilion
 date: 2020-08-29
 weight: 80
+image: hero.jpg
 ---
 
 Description 40 m² pavilion made out of straight bamboo members and bespoke

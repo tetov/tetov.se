@@ -1,57 +1,38 @@
 module.exports = {
-  parser: "@typescript-eslint/parser",
-  extends: [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier",
-  ],
+  root: true,
   settings: {
-    "import/resolver": {
-      alias: [
-        ["components", "./src/components"],
-        ["hooks", "./src/hooks"],
-        ["images", "./src/images"],
-        ["icons", "./src/icons"],
-        ["types", "./src/types"],
-        ["utils", "./src/utils"],
-      ],
-    },
     react: {
       version: "detect",
     },
   },
-  env: {
-    browser: true,
-    node: true,
-    es6: true,
-  },
-  plugins: ["@typescript-eslint", "react", "graphql"],
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-      ecmaVersion: 2018,
-      sourceType: "module",
-    },
-    rules: {
-      "react/prop-types": "off",
-      "@typescript-eslint/explicit-function-return-type": "off",
-      "graphql/template-strings": [
-        error,
-        {
-          env: "relay",
-          tagName: "graphql",
-          schemaJsonFilepath: "./src/__generated__/gatsby-introspection.json",
-        },
-      ],
-    },
-    overrides: [
-      {
-        files: ["*.js"],
-        rules: {
-          "@typescript-eslint/no-var-requires": "off",
-        },
+  ignorePatterns: ["public/"],
+  overrides: [
+    {
+      files: ["*.ts", "*.tsx"],
+      processor: "@graphql-eslint/graphql",
+      parser: "@typescript-eslint/parser",
+      extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+      env: {
+        es6: true,
       },
-    ],
-  },
+    },
+    {
+      files: ["*.graphql"],
+      parser: "@graphql-eslint/eslint-plugin",
+      plugins: ["@graphql-eslint"],
+      rules: {
+        "@graphql-eslint/no-anonymous-operations": "error",
+        "@graphql-eslint/naming-convention": [
+          "error",
+          {
+            OperationDefinition: {
+              style: "PascalCase",
+              forbiddenPrefixes: ["Query", "Mutation", "Subscription", "Get"],
+              forbiddenSuffixes: ["Query", "Mutation", "Subscription"],
+            },
+          },
+        ],
+      },
+    },
+  ],
 };

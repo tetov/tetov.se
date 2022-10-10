@@ -1,33 +1,28 @@
-import { GatsbyNode } from "gatsby";
-import path from "path";
-import { parseNodePath } from "../utils";
+import type { CreateNodeArgs, GatsbyNode } from "gatsby";
+import { parseNodeFilePath } from "./utils";
 
-const onCreateMarkdownRemarkNode: GatsbyNode["onCreateNode"] = async ({
+type OnCreateNodeLimitedArgs = (args: CreateNodeArgs) => void | Promise<void>;
+
+const onCreateMarkdownRemarkNode: OnCreateNodeLimitedArgs = async ({
   actions: { createNodeField },
   node,
   getNode,
 }) => {
-  const { dir, name } = parseNodePath(node, getNode);
-  const dirArray = dir.split(path.sep);
+  const { dir, name } = parseNodeFilePath({
+    node,
+    getNode,
+    basePath: "content",
+    trailingSlash: false,
+  });
 
-  // Slug & Category
+  const slug = name;
+  const category = dir.replace("/", "");
 
-  // Check if node is part of a page bundle,
-  // i.e. placed in its own dir and named index
-  // category is two steps up from page bundle
-  const isPageBundle = name === "index";
-
-  const slug = isPageBundle ? dirArray[dirArray.length - 1] : name;
-  
   createNodeField({
     node: node,
     name: `slug`,
     value: slug,
   });
-
-  const category = isPageBundle
-    ? dirArray[dirArray.length - 2]
-    : dirArray[dirArray.length - 1];
 
   createNodeField({
     node: node,
@@ -46,7 +41,7 @@ interface IContactData {
   rel?: string[];
 }
 
-const onCreateDataYamlNode: GatsbyNode["onCreateNode"] = async ({
+const onCreateDataYamlNode: OnCreateNodeLimitedArgs = async ({
   actions: { createNode },
   node,
   createNodeId,
@@ -69,14 +64,14 @@ const onCreateDataYamlNode: GatsbyNode["onCreateNode"] = async ({
 };
 
 const onCreateNode: GatsbyNode["onCreateNode"] = async (args) => {
-  const typeFuncMapping = {
-    MarkdownRemark: onCreateMarkdownRemarkNode,
-    ContentYaml: onCreateDataYamlNode,
-  };
-  const type_ = args.node.internal.type;
-
-  if (type_ in typeFuncMapping) {
-    typeFuncMapping[type_](args);
+  console.log(args.node.internal.type);
+  switch (args.node.internal.type) {
+    case "MarkdownRemark":
+      onCreateMarkdownRemarkNode(args);
+      break;
+    case "ContentYaml":
+      onCreateDataYamlNode(args);
+      break;
   }
 };
 

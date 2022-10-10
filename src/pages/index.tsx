@@ -1,11 +1,12 @@
-import { graphql, HeadFC, Link } from "gatsby";
+import { graphql, HeadFC, Link, PageProps } from "gatsby";
+import * as React from "react";
+import { ArticlePreview } from "src/components/article";
 import ContactDetail from "src/components/contact-detail";
-import { ContentPreview } from "src/components/content";
 import { Head as HeadComponent } from "src/components/head";
 import HeroProj from "src/components/hero-proj";
 import Layout from "src/components/layout";
 
-const Index: GatsbyPage<Queries.IndexQuery> = ({
+const Index: React.FC<PageProps<Queries.IndexQuery>> = ({
   data: {
     allMarkdownRemark: { nodes: mdNodes },
     allContactData: { nodes: contactDataNodes },
@@ -28,7 +29,7 @@ const Index: GatsbyPage<Queries.IndexQuery> = ({
       <HeroProj {...heroProj} />
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-8">
         {projNodes.map((node) => (
-          <ContentPreview key={node.id} {...node} />
+          <ArticlePreview key={node.id} {...node} />
         ))}
       </div>
       <div className="h-card hidden" aria-hidden={true}>
@@ -49,7 +50,7 @@ export const Head: HeadFC = ({ location }) => (
 );
 
 // Query with /(DIR)/
-export const pageQuery = graphql`
+export const query = graphql`
   query Index {
     allMarkdownRemark(
       filter: { fields: { category: { eq: "projs" } } }
@@ -58,8 +59,8 @@ export const pageQuery = graphql`
     ) {
       nodes {
         id
-        ...ContentPreview
-        ...HeroProj
+        ...ArticlePreview
+        ...HeroProjPreview
       }
     }
     allContactData {

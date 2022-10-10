@@ -1,5 +1,5 @@
 import { Link } from "gatsby";
-import React from "react";
+import * as React from "react";
 
 type Prop = {
   url: string;
@@ -7,7 +7,7 @@ type Prop = {
   children: React.ReactNode;
 };
 
-const ContentHeader: React.FC<Prop> = ({
+const ArticleHeader: React.FC<Prop> = ({
   url,
   itemProp = "headline",
   children,
@@ -25,4 +25,4 @@ const ContentHeader: React.FC<Prop> = ({
   </header>
 );
 
-export default ContentHeader;
+export default ArticleHeader;

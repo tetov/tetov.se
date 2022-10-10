@@ -18,5 +18,13 @@
     "titleBar.inactiveBackground": "#2aafb899",
     "titleBar.inactiveForeground": "#15202b99"
   },
-  "peacock.color": "#2aafb8"
+  "peacock.color": "#2aafb8",
+  "cSpell.words": [
+    "hcard",
+    "iframe",
+    "JSXA",
+    "playsinline",
+    "prismjs",
+    "Typegen"
+  ]
 }

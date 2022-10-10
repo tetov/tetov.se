@@ -6,7 +6,11 @@
       "type": "pwa-node",
       "request": "launch",
       "program": "${workspaceRoot}/node_modules/.bin/gatsby",
-      "args": ["develop"],
+      "args": ["develop", "--verbose"],
+      "env": {
+        "PARCEL_WORKERS": "0",
+        "GATSBY_CPU_COUNT": "1"
+      },
       "runtimeArgs": ["--nolazy"],
       "console": "integratedTerminal"
     },
@@ -15,9 +19,34 @@
       "type": "pwa-node",
       "request": "launch",
       "program": "${workspaceRoot}/node_modules/.bin/gatsby",
-      "args": ["build"],
+      "args": ["build", "--verbose"],
+      "env": {
+        "PARCEL_WORKERS": "0",
+        "GATSBY_CPU_COUNT": "1"
+      },
       "runtimeArgs": ["--nolazy"],
       "console": "integratedTerminal"
     }
+    // {
+
+    //   "name": "Gatsby develop",
+    //   "type": "node",
+    //   "request": "launch",
+    //   "runtimeExecutable": "npm",
+    //   "runtimeArgs": ["run-script", "build"],
+    //   "skipFiles": ["<node_internals>/**"],
+    //   "nodeVersionHint": 16,
+    //   "console": "integratedTerminal"
+    // },
+    // {
+    //   "name": "Gatsby build",
+    //   "type": "node",
+    //   "request": "launch",
+    //   "runtimeExecutable": "npm",
+    //   "runtimeArgs": ["run-script", "build"],
+    //   "skipFiles": ["<node_internals>/**"],
+    //   "nodeVersionHint": 16,
+    //   "console": "integratedTerminal"
+    // }
   ]
 }

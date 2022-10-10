@@ -1,20 +1,18 @@
 import { HeadFC } from "gatsby";
+import * as React from "react";
 import { Head as HeadComponent } from "src/components/head";
 import Layout from "src/components/layout";
 
-const NotFoundPage: GatsbyPage = () => {
-  const title = "404: Not found";
-  return (
-    <Layout subHeading={title}>
-      <p className="text-center">
-        You just hit a route that doesn&#39;t exist...
-      </p>
-    </Layout>
-  );
-};
+const NotFoundPage: React.FC = () => (
+  <Layout subHeading="404: Not found">
+    <p className="text-center">
+      You just hit a route that doesn&#39;t exist...
+    </p>
+  </Layout>
+);
 
 export default NotFoundPage;
 
-export const Head: HeadFC = ({location}) => (
-  <HeadComponent pageTitle="404: Not found" pathname={location.pathname} />
+export const Head: HeadFC = ({ location: { pathname } }) => (
+  <HeadComponent pageTitle="404: Not found" pathname={pathname} />
 );

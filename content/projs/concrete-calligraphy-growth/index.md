@@ -2,6 +2,7 @@
 title: Concrete Calligraphy - growth()
 date: 2019-12-20
 weight: 50
+image: ./hero.png
 ---
 
 Design and research project into robotic concrete 3D-printing of facade

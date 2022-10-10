@@ -9,7 +9,7 @@ const config: GatsbyConfig = {
     lang: `en`,
     image: `/logo.png`,
   },
-  graphqlTypegen: true,
+  graphqlTypegen: { typesOutputPath: `gatsby-types.d.ts` },
   plugins: [
     `gatsby-plugin-catch-links`,
     {
@@ -84,7 +84,7 @@ const config: GatsbyConfig = {
         //  string, regex or function matching any part of abs/rel path
         // https://github.com/micromatch/anymatch
         ignore: [
-          (p: string): Boolean =>
+          (p: string): boolean =>
             process.env.NODE_ENV === "production" && /\/draft-/i.test(p),
           /\/_\w+/,
         ],
@@ -135,7 +135,7 @@ const config: GatsbyConfig = {
         defaultQuality: 50,
       },
     },
-    "gatsby-plugin-root-import", // allows absolute imports
+    "gatsby-plugin-root-import", // setup absolute imports for webpack
     `gatsby-transformer-sharp`,
     `gatsby-transformer-yaml`,
     `gatsby-plugin-typescript`,

@@ -1,12 +1,12 @@
 import { Link } from "gatsby";
-import React from "react";
-import querySiteMetadata from "../hooks/query-site-metadata";
+import * as React from "react";
+import querySiteMetadata from "src/hooks/query-site-metadata";
 
 export type HeaderProp = {
-  subHeading?: React.ReactNode;
+  subHeading?: JSX.Element | string;
 };
 
-const Header = ({ subHeading }: HeaderProp) => (
+const Header: React.FC<HeaderProp> = ({ subHeading }) => (
   <header className="text-center md:justify-between pt-12 mb-16 md:mb-12">
     <Link to="/">
       <h1 className="text-7xl md:text-8xl font-bold tracking-tighter leading-tight">
