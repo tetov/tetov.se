@@ -10,7 +10,7 @@ exports[`Header renders correctly 1`] = `
     <h1
       className="text-7xl md:text-8xl font-bold tracking-tighter leading-tight"
     >
-      Nossnahoj Votet Notna
+      Iðunn Gunda
     </h1>
   </a>
    

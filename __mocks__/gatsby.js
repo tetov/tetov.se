@@ -1,5 +1,6 @@
 const React = require("react");
 const gatsby = jest.requireActual("gatsby");
+
 module.exports = {
   ...gatsby,
   graphql: jest.fn(),
@@ -21,24 +22,16 @@ module.exports = {
         href: to,
       })
   ),
-  StaticQuery: jest.fn().mockImplementation(() => ({
-    data: {
-      site: {
-        siteMetadata: {
-          title: "tetov's projects & more",
-          siteURL: "https://tetov.se",
-          lang: "en",
-          description: "there no 'more', is there?",
-        },
-      },
-      allContactData: {
-        nodes: [
-          {
-            username: "antontetov",
-          },
-        ],
+  StaticQuery: jest.fn(),
+  useStaticQuery: jest.fn().mockImplementation(() => ({
+    site: {
+      siteMetadata: {
+        title: `Iðunn Gunda`,
+        description: `Bechley Industries personnel manager, Jim Johnston.`,
+        siteURL: `https://uiuc.edu`,
+        lang: `fi`,
+        image: `/logo.png`,
       },
     },
   })),
-  useStaticQuery: jest.fn(),
 };
