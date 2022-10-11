@@ -15,23 +15,24 @@ const LinkedDetail: React.FC<JSXA> = ({ className, href, rel, children }) => {
   return <a {...{ className, href, rel, children }} />;
 };
 
-type Prop = {
+export type ContactDetailProp = {
+  id?: string, // from graphql node used for key attribute
   text: string,
   url?: string,
   icon?: string,
   hcard?: string,
-  rel?: string[],
+  rel?: string,
   className?: classNamesArgument;
   iconProp?: Partial<IconBaseProps>;
   useIcon?: boolean;
 };
 
-const ContactDetail: React.FC<Prop> = ({
+const ContactDetail: React.FC<ContactDetailProp> = ({
   text,
   url,
   icon,
   hcard,
-  rel= ["me", "external"],
+  rel,
   className,
   iconProp = {},
   useIcon = true,
@@ -41,7 +42,7 @@ const ContactDetail: React.FC<Prop> = ({
   const prop: JSXA | JSXSpan = {
     className: classNames(hcard, className) || undefined,
     href: url ?? undefined,
-    rel: rel.join(" "),
+    rel: rel ?? "me external",
     children: (
       <>
         {icon && useIcon && <Icon {...iconProp} aria-hidden />}

@@ -36,9 +36,9 @@ interface IContactData {
   username?: string;
   url?: string;
   hcard?: string;
-  text?: string;
+  text: string;
   icon?: string;
-  rel?: string[];
+  rel?: string;
 }
 
 const onCreateDataYamlNode: OnCreateNodeLimitedArgs = async ({
@@ -51,8 +51,11 @@ const onCreateDataYamlNode: OnCreateNodeLimitedArgs = async ({
     return;
   }
   for (const data of node.contactDataList as Node & IContactData[]) {
+    const {text, ...restOfData} = data
+
     createNode({
-      ...data,
+      ...restOfData,
+      text: text || "",
       id: createNodeId(data.label),
       parent: node.id,
       internal: {

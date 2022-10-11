@@ -14,12 +14,15 @@ const Contact: React.FC<PageProps<Queries.ContactQuery>> = ({
     <div className="h-card md:px-44 text-center text-lg">
       {nodes.map((n) => (
         <ContactDetail
-          contactData={n}
-          key={n.id}
           className={classNames("inline-block mx-4 whitespace-nowrap", {
             "hover:text-purple": Boolean(n.url),
           })}
           iconProp={{ size: "2em", className: "p-2 inline-block" }}
+          {...n}
+          url={n.url ?? undefined}
+          hcard={n.hcard ?? undefined}
+          rel={n.rel ?? undefined}
+          key={n.id}
         />
       ))}
     </div>

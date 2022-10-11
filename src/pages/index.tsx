@@ -1,7 +1,7 @@
 import { graphql, HeadFC, Link, PageProps } from "gatsby";
 import * as React from "react";
 import { ArticlePreview } from "src/components/article";
-import ContactDetail from "src/components/contact-detail";
+import HCard from "src/components/hcard";
 import HeadComponent from "src/components/head";
 import HeroProj from "src/components/hero-proj";
 import Layout from "src/components/layout";
@@ -25,19 +25,15 @@ const Index: React.FC<PageProps<Queries.IndexQuery>> = ({
   );
 
   return (
-    <Layout subHeading={subHeading}>
+    <Layout
+      subHeading={subHeading}
+      footerChildren={<HCard nodes={contactDataNodes} />}
+    >
       <HeroProj {...heroProj} />
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-8">
         {projNodes.map((node) => (
           <ArticlePreview key={node.id} {...node} />
         ))}
-      </div>
-      <div className="h-card hidden" aria-hidden={true}>
-        {contactDataNodes
-          .filter((n) => n.url || n.hcard)
-          .map((n) => (
-            <ContactDetail key={n.id} contactData={n} useIcon={false} />
-          ))}
       </div>
     </Layout>
   );
@@ -65,11 +61,7 @@ export const query = graphql`
     }
     allContactData {
       nodes {
-        id
-        url
-        hcard
-        text
-        rel
+        ...HCard
       }
     }
   }

@@ -41,11 +41,11 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       hcard: String
       icon: String
       label: String!
-      text: String
+      text: String!
       url: String
       username: String
       icon: String
-      rel: [String]
+      rel: String
       weight: Int
 }
   `);

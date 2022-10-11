@@ -3,7 +3,7 @@ contactDataList:
     label: name
     text: Anton Tetov Johansson
     icon: RiUserSmileFill
-    rel: [me]
+    rel: me
     weight: 10
 
   - hcard: p-gender-identity
@@ -11,7 +11,7 @@ contactDataList:
     text: (they/them)
     url: https://en.wikipedia.org/wiki/Non-binary_gender
     icon: RiGenderlessFill
-    rel: [external]
+    rel: external
     weight: 12
 
   - hcard: u-email
@@ -20,7 +20,7 @@ contactDataList:
     url: mailto:anton@tetov.se
     username: anton@tetov.se
     icon: RiMailFill
-    rel: [me]
+    rel: me
     weight: 20
 
   - hcard: u-key
@@ -29,7 +29,7 @@ contactDataList:
     url: /key.txt
     username: anton@tetov.se
     icon: RiKey2Fill
-    rel: [pgpkey, authn, key, me]
+    rel: pgpkey authn key me
     weight: 21
 
   - hcard: u-tel
@@ -38,7 +38,7 @@ contactDataList:
     url: tel:+46703635667
     username: "+46703635667"
     icon: RiSmartphoneFill
-    rel: [me]
+    rel: me
     weight: 30
 
   - label: github
@@ -81,7 +81,7 @@ contactDataList:
     url: "tel:+46703635667"
     username: "+46703635667"
     icon: SiSignal
-    rel: [me]
+    rel: me
     weight: 40
 
   - label: mastodon
@@ -94,5 +94,6 @@ contactDataList:
   - hcard: u-url u-uid
     label: url
     url: https://tetov.se
-    rel: [me]
+    rel: me
     weight: 99
+    text: ""
