@@ -4,6 +4,8 @@ on:
   push:
     branches-ignore:
       - "gh-pages"
+  schedule:
+    - "* * * * 1"  # every tuesday
 
 jobs:
   build:

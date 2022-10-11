@@ -1,0 +1,27 @@
+name: Test website for regressions
+
+on:
+  schedule:
+    - "* * * * 1"  # every Tuesday
+    - "* * * * 4"  # every Friday
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Test if microformat 2 looks the same on live page.
+        # To create new output if anything changes run:
+
+        # curl "http://pin13.net/mf2/?url=tetov.se" | \
+        # sed -E -e 's/\?v=[0-9a-z]+//' -e 's/email-protection#[0-9a-z]+//' \
+        # > mf2.json
+
+        run: >
+          diff
+            <(curl "http://pin13.net/mf2/?url=tetov.se"
+              sed -E -e 's/\?v=[0-9a-z]+//'
+                     -e 's/email-protection#[0-9a-z]+//')
+            .github/workflows/mf2.json
