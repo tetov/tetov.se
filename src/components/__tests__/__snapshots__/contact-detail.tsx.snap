@@ -13,7 +13,7 @@ exports[`ContactDetail renders correctly with icon & url 1`] = `
     stroke="currentColor"
     strokeWidth="0"
     style={
-      Object {
+      {
         "color": undefined,
       }
     }
@@ -46,7 +46,7 @@ exports[`ContactDetail renders correctly with icon but without url 1`] = `
     stroke="currentColor"
     strokeWidth="0"
     style={
-      Object {
+      {
         "color": undefined,
       }
     }
