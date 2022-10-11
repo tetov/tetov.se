@@ -2,9 +2,8 @@ name: Deploy website to gh-pages
 
 on:
   push:
-    branches-ignore:
-      - "gh-pages"
-      - "test"
+    branches:
+      - main
 
 jobs:
   build:
