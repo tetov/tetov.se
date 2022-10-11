@@ -16,30 +16,35 @@ const LinkedDetail: React.FC<JSXA> = ({ className, href, rel, children }) => {
 };
 
 type Prop = {
-  contactData: Partial<Queries.ContactData>;
+  text: string,
+  url?: string,
+  icon?: string,
+  hcard?: string,
+  rel?: string[],
   className?: classNamesArgument;
   iconProp?: Partial<IconBaseProps>;
   useIcon?: boolean;
 };
 
 const ContactDetail: React.FC<Prop> = ({
-  contactData: { text, url, icon, hcard, rel },
+  text,
+  url,
+  icon,
+  hcard,
+  rel= ["me", "external"],
   className,
   iconProp = {},
   useIcon = true,
 }) => {
-  iconProp["aria-hidden"] = true;
   const Icon = icon ? Icons[icon] : undefined;
-
-  const relAttribute = rel ? rel.join(" ") : "me external";
 
   const prop: JSXA | JSXSpan = {
     className: classNames(hcard, className) || undefined,
     href: url ?? undefined,
-    rel: relAttribute,
+    rel: rel.join(" "),
     children: (
       <>
-        {icon && useIcon && <Icon {...iconProp} />}
+        {icon && useIcon && <Icon {...iconProp} aria-hidden />}
         {text}
       </>
     ),
