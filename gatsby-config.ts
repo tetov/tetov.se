@@ -64,6 +64,7 @@ const config: GatsbyConfig = {
         ],
       },
     },
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -76,6 +77,16 @@ const config: GatsbyConfig = {
         icon: `./static/logo.png`,
       },
     },
+    `gatsby-plugin-postcss`, // required by tailwind css
+    `gatsby-plugin-root-import`, // setup absolute imports for webpack
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        useMozJpeg: true,
+        defaultQuality: 50,
+      },
+    },
+    `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -127,18 +138,8 @@ const config: GatsbyConfig = {
         excerpt_separator: `<!-- excerptEnd -->`,
       },
     },
-    `gatsby-plugin-image`,
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        useMozJpeg: true,
-        defaultQuality: 50,
-      },
-    },
-    "gatsby-plugin-root-import", // setup absolute imports for webpack
     `gatsby-transformer-sharp`,
     `gatsby-transformer-yaml`,
-    `gatsby-plugin-typescript`,
   ],
 };
 
