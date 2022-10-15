@@ -6,6 +6,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        sm: "0 5px 10px rgba(0, 0, 0, 0.12)",
+        md: "0 8px 30px rgba(0, 0, 0, 0.12)",
+      },
       colors: {
         "light-bg": "#FAFAFA",
         "light-text": "#333",
@@ -15,8 +19,11 @@ module.exports = {
         "light-alt": "#DDD",
         purple: "#988ADE",
       },
-      spacing: {
-        28: "7rem",
+      fontSize: {
+        "5xl": "2.5rem",
+        "6xl": "2.75rem",
+        "7xl": "4.5rem",
+        "8xl": "6.25rem",
       },
       letterSpacing: {
         tighter: "-.04em",
@@ -24,15 +31,8 @@ module.exports = {
       lineHeight: {
         tight: 1.2,
       },
-      fontSize: {
-        "5xl": "2.5rem",
-        "6xl": "2.75rem",
-        "7xl": "4.5rem",
-        "8xl": "6.25rem",
-      },
-      boxShadow: {
-        sm: "0 5px 10px rgba(0, 0, 0, 0.12)",
-        md: "0 8px 30px rgba(0, 0, 0, 0.12)",
+      spacing: {
+        28: "7rem",
       },
     },
   },
