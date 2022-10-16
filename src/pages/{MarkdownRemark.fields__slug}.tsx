@@ -38,7 +38,7 @@ const MarkdownPage: GatsbyMarkdownPage = (props) => {
   const markdownRemark = props.data.markdownRemark;
 
   return (
-    <Layout>
+    <Layout pathname={props.location.pathname}>
       <Article
         pathname={props.location.pathname}
         html={markdownRemark.html}

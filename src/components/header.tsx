@@ -1,20 +1,15 @@
-import { Link } from "gatsby";
 import * as React from "react";
-import querySiteMetadata from "src/hooks/query-site-metadata";
+import NavBar, { NavBarProp } from "src/components/nav-bar";
 
-export type HeaderProp = {
+export type HeaderProp = NavBarProp & {
   subHeading?: JSX.Element | string;
 };
 
-const Header: React.FC<HeaderProp> = ({ subHeading }) => (
-  <header className="text-center md:justify-between pt-12 mb-16 md:mb-12">
-    <Link to="/">
-      <h1 className="text-7xl md:text-8xl font-bold tracking-tighter leading-tight">
-        {querySiteMetadata().title}
-      </h1>
-    </Link>{" "}
+const Header: React.FC<HeaderProp> = ({ subHeading, pathname }) => (
+  <header className="text-center md:justify-between mb-8">
+    <NavBar pathname={pathname} />
     {subHeading && (
-      <h2 className="mt-4 w-2/3 text-2xl md:text-4xl font-light inline-block leading-relaxed">
+      <h2 className="mt-4 w-2/3 text-4xl font-light inline-block leading-relaxed">
         {subHeading}
       </h2>
     )}

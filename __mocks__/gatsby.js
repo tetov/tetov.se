@@ -31,6 +31,12 @@ module.exports = {
         siteURL: `https://uiuc.edu`,
         lang: `fi`,
         image: `/logo.png`,
+        navigation: [
+          { text: "Projects", url: "/" },
+          { text: "Posts", url: "/posts" },
+          { text: "About", url: "/about" },
+          { text: "Contact", url: "/contact" },
+        ],
       },
     },
     allContactData: {

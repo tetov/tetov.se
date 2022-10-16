@@ -7,6 +7,7 @@ import HeroProj from "src/components/hero-proj";
 import Layout from "src/components/layout";
 
 const Index: React.FC<PageProps<Queries.IndexQuery>> = ({
+  location: {pathname},
   data: {
     allMarkdownRemark: { nodes: mdNodes },
     allContactData: { nodes: contactDataNodes },
@@ -28,6 +29,7 @@ const Index: React.FC<PageProps<Queries.IndexQuery>> = ({
     <Layout
       subHeading={subHeading}
       footerChildren={<HCard nodes={contactDataNodes} />}
+      pathname={pathname}
     >
       <HeroProj {...heroProj} />
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-8">

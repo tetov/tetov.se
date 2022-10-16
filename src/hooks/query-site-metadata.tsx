@@ -11,6 +11,10 @@ const querySiteMetadata = () => {
             lang
             description
             image
+            navigation {
+              text
+              url
+            }
           }
         }
       }

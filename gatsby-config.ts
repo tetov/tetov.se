@@ -3,11 +3,15 @@ import path from "path";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Anton Tetov Johansson`,
+    title: `tetov's hideout`,
     description: `Projects in architecture, digital fabrication and robotics.`,
     siteURL: `https://tetov.se`,
     lang: `en`,
     image: `/logo.png`,
+    navigation: [
+      { text: "Projects", url: "/" },
+      { text: "Contact", url: "/contact" },
+    ],
   },
   graphqlTypegen: { typesOutputPath: `gatsby-types.d.ts` },
   plugins: [
@@ -85,6 +89,10 @@ const config: GatsbyConfig = {
         useMozJpeg: true,
         defaultQuality: 50,
       },
+    },
+    {
+      resolve: `gatsby-plugin-react-svg`,
+      options: { rule: { include: /\.inline\.svg$/ } },
     },
     `gatsby-plugin-typescript`,
     {

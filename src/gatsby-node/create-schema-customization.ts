@@ -18,6 +18,11 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       siteURL: String!
       lang: String!
       image: String!
+      navigation: [Navigation]!
+    }
+    type Navigation {
+      test: String! 
+      url: String!
     }
     extend type MarkdownRemark {
       frontmatter: MarkdownRemarkFrontmatter!

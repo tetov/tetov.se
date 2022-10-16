@@ -6,12 +6,13 @@ import HeadComponent from "src/components/head";
 import Layout from "src/components/layout";
 
 const Contact: React.FC<PageProps<Queries.ContactQuery>> = ({
+  location: { pathname },
   data: {
     allContactData: { nodes },
   },
 }) => (
-  <Layout subHeading="Want to say hi?">
-    <div className="h-card md:px-44 text-center text-lg">
+  <Layout location={pathname} subHeading="Want to say hi?">
+    <div className="h-card text-center text-lg">
       {nodes.map((n) => (
         <ContactDetail
           className={classNames("inline-block mx-4 whitespace-nowrap", {
