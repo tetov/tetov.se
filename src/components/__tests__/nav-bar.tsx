@@ -1,11 +1,11 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import Header from "src/components/header";
+import NavBar from "src/components/nav-bar";
 
-describe("Header", () => {
+describe("NavBar", () => {
   it("renders correctly", () => {
     const tree = renderer
-      .create(<Header pathname={"/"} subHeading={<span>Test</span>} />)
+      .create(<NavBar pathname="/" />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

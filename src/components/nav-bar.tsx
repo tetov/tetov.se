@@ -1,5 +1,4 @@
 import { Disclosure, Transition } from "@headlessui/react";
-import { useLocation } from "@reach/router";
 import classNames from "classnames";
 import { Link } from "gatsby";
 import React from "react";
@@ -13,7 +12,8 @@ export type NavBarProp = {
 const NavBar: React.FC<NavBarProp> = ({ pathname }) => {
   const { title, navigation } = querySiteMetadata();
 
-  const commonNavLinkClassNames = "px-3 py-2 font-medium link-style-alt text-base";
+  const commonNavLinkClassNames =
+    "px-3 py-2 font-medium link-style-alt text-base";
 
   return (
     <Disclosure as="nav" className="border-b-2 border-purple">
@@ -69,7 +69,8 @@ const NavBar: React.FC<NavBarProp> = ({ pathname }) => {
                       key={text}
                       to={url}
                       className={classNames(
-                        { "bg-purple": useLocation().pathname === url }, commonNavLinkClassNames
+                        { "bg-purple": pathname === url },
+                        commonNavLinkClassNames
                       )}
                       aria-current={url === pathname ? "page" : undefined}
                     >
@@ -93,13 +94,13 @@ const NavBar: React.FC<NavBarProp> = ({ pathname }) => {
             <Disclosure.Panel>
               <div className="space-y-1 px-2 pt-2 pb-4 flex flex-col duration-500 gap-4">
                 {navigation.map(({ text, url }) => (
-                  <Disclosure.Button>
+                  <Disclosure.Button key={text}>
                     <Link
                       key={text}
                       to={url}
                       className={classNames(
-                        { "bg-purple": useLocation().pathname === url },
-                        commonNavLinkClassNames,
+                        { "bg-purple": pathname === url },
+                        commonNavLinkClassNames
                       )}
                       aria-current={url === pathname ? "page" : undefined}
                     >

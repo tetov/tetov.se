@@ -2,20 +2,112 @@
 
 exports[`Header renders correctly 1`] = `
 <header
-  className="text-center md:justify-between pt-12 mb-16 md:mb-12"
+  className="text-center md:justify-between mb-8"
 >
-  <a
-    href="/"
+  <nav
+    className="border-b-2 border-purple"
+    data-headlessui-state=""
   >
-    <h1
-      className="text-7xl md:text-8xl font-bold tracking-tighter leading-tight"
+    <div
+      className="mx-auto px-6 sm:px-6 lg:px-8"
     >
-      Iðunn Gunda
-    </h1>
-  </a>
-   
+      <div
+        className="relative flex h-16 items-center justify-start gap-x-6"
+      >
+        <div
+          className="flex flex-shrink-0"
+        >
+          <a
+            href="/"
+          >
+            <test-file-stub
+              className="h-8 w-auto flex flex-shrink-0"
+            />
+          </a>
+        </div>
+        <div
+          className="flex items-start "
+        >
+          <a
+            href="/"
+          >
+            <h1
+              className="text-xl font-bold tracking-tighter leading-tight whitespace-nowrap"
+            >
+              Iðunn Gunda
+            </h1>
+          </a>
+        </div>
+        <button
+          aria-expanded={false}
+          className="sm:hidden ml-auto rounded-md p-2 text-gray-400 hover:text-purple text-opacity-100"
+          data-headlessui-state=""
+          id="headlessui-disclosure-button-:r0:"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          type="button"
+        >
+          <span
+            className="sr-only"
+          >
+            Open navigation menu
+          </span>
+          <div
+            className="block w-5 left-1/2 top-1/2   transform  -translate-x-1/2 -translate-y-1/2"
+          >
+            <span
+              aria-hidden="true"
+              className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out -translate-y-1.5"
+            />
+            <span
+              aria-hidden="true"
+              className="block absolute  h-0.5 w-5 bg-current   transform transition duration-500 ease-in-out  "
+            />
+            <span
+              aria-hidden="true"
+              className="block absolute  h-0.5 w-5 bg-current transform  transition duration-500 ease-in-out translate-y-1.5"
+            />
+          </div>
+        </button>
+        <div
+          className="hidden sm:block ml-auto"
+        >
+          <div
+            className="flex space-x-4"
+          >
+            <a
+              aria-current="page"
+              className="bg-purple px-3 py-2 font-medium link-style-alt text-base"
+              href="/"
+            >
+              Projects
+            </a>
+            <a
+              className="px-3 py-2 font-medium link-style-alt text-base"
+              href="/posts"
+            >
+              Posts
+            </a>
+            <a
+              className="px-3 py-2 font-medium link-style-alt text-base"
+              href="/about"
+            >
+              About
+            </a>
+            <a
+              className="px-3 py-2 font-medium link-style-alt text-base"
+              href="/contact"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
   <h2
-    className="mt-4 w-2/3 text-2xl md:text-4xl font-light inline-block leading-relaxed"
+    className="mt-4 w-2/3 text-4xl font-light inline-block leading-relaxed"
   >
     <span>
       Test

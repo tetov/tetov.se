@@ -11,7 +11,7 @@ const Contact: React.FC<PageProps<Queries.ContactQuery>> = ({
     allContactData: { nodes },
   },
 }) => (
-  <Layout location={pathname} subHeading="Want to say hi?">
+  <Layout pathname={pathname} subHeading="Want to say hi?">
     <div className="h-card text-center text-lg">
       {nodes.map((n) => (
         <ContactDetail
