@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Anton Tetov's projects]]></title><description><![CDATA[Projects in architecture, digital fabrication and robotics.]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 16 Oct 2022 17:50:35 GMT</lastBuildDate><item><title><![CDATA[SEMusicLab clay wall mockup]]></title><description><![CDATA[Gramazio Kohler Research’s MAS DFAB pavilion project 2019/2020. Quarter of circular undulating clay wall 5 m high with a 6 m radius built using
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Anton Tetov's projects]]></title><description><![CDATA[Projects in architecture, digital fabrication and robotics.]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 16 Oct 2022 21:12:26 GMT</lastBuildDate><item><title><![CDATA[SEMusicLab clay wall mockup]]></title><description><![CDATA[Gramazio Kohler Research’s MAS DFAB pavilion project 2019/2020. Quarter of circular undulating clay wall 5 m high with a 6 m radius built using
 a method of robotic clay aggregation developed at MAS DFAB. Built to test
 construction height and openings. The structure was built by a small team in
 3 weeks.]]></description><link>https://tetov.sercf-brunnen</link><guid isPermaLink="false">https://tetov.sercf-brunnen</guid><pubDate>Sun, 30 Aug 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Gramazio Kohler Research’s MAS DFAB pavilion project 2019/2020.&lt;/p&gt;
@@ -6,7 +6,7 @@ construction height and openings. The structure was built by a small team in
 a method of robotic clay aggregation developed at MAS DFAB. Built to test
 construction height and openings. The structure was built by a small team in
 3 weeks.&lt;/p&gt;
-&lt;!-- excerptEnd --&gt;
+&lt;!-- more --&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -241,7 +241,7 @@ Technologies, ETH Zürich.]]></description><link>https://tetov.sedigital-bamboo-
 3D-printed nylon joints. Designed and built by the whole class of
 MAS DFAB 19/20, project led by Marirena Kladeftira at Digital Building
 Technologies, ETH Zürich.&lt;/p&gt;
-&lt;!-- excerptEnd --&gt;
+&lt;!-- more --&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -347,7 +347,7 @@ further explored and refined.
 The project resulted in a 3.2 m long and 1.2 m high wall segment built using a
 six axis industrial robot mounted on a movable platform, and built with the
 robot re-localized three times.&lt;/p&gt;
-&lt;!-- excerptEnd --&gt;
+&lt;!-- more --&gt;
 &lt;p&gt;In this project we refined robot end effector, we experimented with feedback
 driven fabrication and trajectory planning for the robotic arm.&lt;/p&gt;
 &lt;table&gt;
@@ -389,7 +389,7 @@ driven fabrication and trajectory planning for the robotic arm.&lt;/p&gt;
 &lt;/video&gt;</content:encoded></item><item><title><![CDATA[Concrete Calligraphy - growth()]]></title><description><![CDATA[Design and research project into robotic concrete 3D-printing of facade
 elements, built on Ana Anton’s (DBT) research into robotic concrete 3D-printing.]]></description><link>https://tetov.seconcrete-calligraphy-growth</link><guid isPermaLink="false">https://tetov.seconcrete-calligraphy-growth</guid><pubDate>Fri, 20 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Design and research project into robotic concrete 3D-printing of facade
 elements, built on Ana Anton’s (DBT) research into robotic concrete 3D-printing.&lt;/p&gt;
-&lt;!-- excerptEnd --&gt;
+&lt;!-- more --&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -558,7 +558,7 @@ elements, built on Ana Anton’s (DBT) research into robotic concrete 3D-printin
     &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Swallow's nest]]></title><description><![CDATA[Research project into bio-mimetics and clay printing where a method of discrete
 depositions of clay globules using an off-the-shelf 3D printer was developed.]]></description><link>https://tetov.seswallows-nest</link><guid isPermaLink="false">https://tetov.seswallows-nest</guid><pubDate>Thu, 20 Dec 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Research project into bio-mimetics and clay printing where a method of discrete
 depositions of clay globules using an off-the-shelf 3D printer was developed.&lt;/p&gt;
-&lt;!-- excerptEnd --&gt;
+&lt;!-- more --&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
