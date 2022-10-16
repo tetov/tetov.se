@@ -1,6 +1,6 @@
 import classnames from "classnames";
 import * as React from "react";
-import * as markdownStyles from "../../markdown-styles.module.css";
+import * as markdownStyles from "src/markdown-styles.module.css";
 
 type Props = {
   content: string;
@@ -8,7 +8,11 @@ type Props = {
   className?: string;
 };
 
-const ArticleBody: React.FC<Props> = ({ content, itemProp, className }) => (
+export const ArticleBody: React.FC<Props> = ({
+  content,
+  itemProp,
+  className,
+}) => (
   <section
     className={classnames(
       "e-content max-w-2xl mx-auto",
@@ -19,5 +23,3 @@ const ArticleBody: React.FC<Props> = ({ content, itemProp, className }) => (
     itemProp={itemProp}
   />
 );
-
-export default ArticleBody;

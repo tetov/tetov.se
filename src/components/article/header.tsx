@@ -7,7 +7,7 @@ type Prop = {
   children: React.ReactNode;
 };
 
-const ArticleHeader: React.FC<Prop> = ({
+export const ArticleHeader: React.FC<Prop> = ({
   url,
   itemProp = "headline",
   children,
@@ -25,4 +25,3 @@ const ArticleHeader: React.FC<Prop> = ({
   </header>
 );
 
-export default ArticleHeader;

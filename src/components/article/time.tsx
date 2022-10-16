@@ -6,7 +6,7 @@ type TimeProp = {
   machineReadableDate: string;
 };
 
-const Time: React.FC<React.PropsWithChildren<TimeProp>> = ({
+export const ArticleTime: React.FC<React.PropsWithChildren<TimeProp>> = ({
   children,
   machineReadableDate,
   className,
@@ -20,5 +20,3 @@ const Time: React.FC<React.PropsWithChildren<TimeProp>> = ({
     {children}
   </time>
 );
-
-export default Time;

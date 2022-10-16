@@ -2,7 +2,7 @@ import { graphql, Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import * as React from "react";
 
-const ArticlePreview: React.FC<Queries.ArticlePreviewFragment> = ({
+export const ArticlePreview: React.FC<Queries.ArticlePreviewFragment> = ({
   excerpt,
   fields: { slug, category },
   frontmatter: { title, description, image, imageAlt },
@@ -43,10 +43,9 @@ const ArticlePreview: React.FC<Queries.ArticlePreviewFragment> = ({
   );
 };
 
-export default ArticlePreview;
-
 export const fragment = graphql`
   fragment ArticlePreview on MarkdownRemark {
+    id
     excerpt(pruneLength: 160, format: HTML)
     fields {
       slug

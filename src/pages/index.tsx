@@ -1,6 +1,6 @@
 import { graphql, HeadFC, Link, PageProps } from "gatsby";
 import * as React from "react";
-import { ArticlePreview } from "src/components/article";
+import { ArticleListing } from "src/components/article";
 import HCard from "src/components/hcard";
 import HeadComponent from "src/components/head";
 import HeroProj from "src/components/hero-proj";
@@ -32,11 +32,7 @@ const Index: React.FC<PageProps<Queries.IndexQuery>> = ({
       pathname={pathname}
     >
       <HeroProj {...heroProj} />
-      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-8">
-        {projNodes.map((node) => (
-          <ArticlePreview key={node.id} {...node} />
-        ))}
-      </div>
+      <ArticleListing nodes={projNodes as Queries.MarkdownRemark[]} />
     </Layout>
   );
 };
