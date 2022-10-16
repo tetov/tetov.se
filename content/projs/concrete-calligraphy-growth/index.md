@@ -8,7 +8,7 @@ image: ./hero.png
 Design and research project into robotic concrete 3D-printing of facade
 elements, built on Ana Anton's (DBT) research into robotic concrete 3D-printing.
 
-<!-- excerptEnd -->
+<!-- more -->
 
 |              |                                                                                      |
 | ------------ | ------------------------------------------------------------------------------------ |

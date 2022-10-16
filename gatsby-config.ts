@@ -4,13 +4,15 @@ import path from "path";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `tetov's hideout`,
+    author: `Anton Tetov`,
     description: `Projects in architecture, digital fabrication and robotics.`,
     siteURL: `https://tetov.se`,
     lang: `en`,
     image: `/logo.png`,
     navigation: [
-      { text: "Projects", url: "/" },
-      { text: "Contact", url: "/contact" },
+      { text: "projects", url: "/projects" },
+      { text: "posts", url: "/posts" },
+      { text: "contact", url: "/contact" },
     ],
   },
   graphqlTypegen: { typesOutputPath: `gatsby-types.d.ts` },
@@ -112,6 +114,13 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
+        excerpt_separator: `<!-- more -->`,
+        footnotes: true,
+        gfm: true,
+        tableOfContents: {
+          heading: null,
+          maxDepth: 3,
+        },
         plugins: [
           {
             resolve: "gatsby-remark-video",
@@ -132,7 +141,13 @@ const config: GatsbyConfig = {
               maxWidth: 800,
             },
           },
-          `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              enableCustomId: true,
+              icon: false,
+            },
+          },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
@@ -143,7 +158,6 @@ const config: GatsbyConfig = {
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
-        excerpt_separator: `<!-- excerptEnd -->`,
       },
     },
     `gatsby-transformer-sharp`,

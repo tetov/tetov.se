@@ -12,7 +12,7 @@ a method of robotic clay aggregation developed at MAS DFAB. Built to test
 construction height and openings. The structure was built by a small team in
 3 weeks.
 
-<!-- excerptEnd -->
+<!-- more -->
 
 |                   |                                                                                                                                   |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------- |

@@ -4,6 +4,7 @@ import * as React from "react";
 import ContactDetail from "src/components/contact-detail";
 import HeadComponent from "src/components/head";
 import Layout from "src/components/layout";
+import PageTitle from "src/components/page-title";
 
 const Contact: React.FC<PageProps<Queries.ContactQuery>> = ({
   location: { pathname },
@@ -11,7 +12,8 @@ const Contact: React.FC<PageProps<Queries.ContactQuery>> = ({
     allContactData: { nodes },
   },
 }) => (
-  <Layout pathname={pathname} subHeading="Want to say hi?">
+  <Layout pathname={pathname}>
+    <PageTitle>Want to say hi?</PageTitle>
     <div className="h-card text-center text-lg">
       {nodes.map((n) => (
         <ContactDetail

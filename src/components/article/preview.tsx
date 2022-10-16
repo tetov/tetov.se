@@ -21,7 +21,7 @@ export const ArticlePreview: React.FC<Queries.ArticlePreviewFragment> = ({
 
   return (
     <div>
-      <Link to={`/${slug}/`} className="link-style-alt">
+      <Link to={`/${slug}/`} className="link-style">
         {/* Add fallback image for future */}
         {previewImg && (
           <GatsbyImage
@@ -31,7 +31,7 @@ export const ArticlePreview: React.FC<Queries.ArticlePreviewFragment> = ({
             className="mb-5"
           />
         )}
-        <h3 className="text-3xl mb-3 leading-snug">{title}</h3>
+        <h2 className="text-xl mb-3 leading-snug">{title}</h2>
       </Link>
       <div className="mb-4">
         <p

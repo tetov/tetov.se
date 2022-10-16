@@ -4,6 +4,7 @@ module.exports = {
     "./src/pages/*.{js,jsx,ts,tsx}",
     "./src/components/**/*.{js,jsx,ts,tsx}",
   ],
+  plugins: [require("@tailwindcss/typography")],
   theme: {
     extend: {
       boxShadow: {

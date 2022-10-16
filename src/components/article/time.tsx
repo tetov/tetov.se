@@ -4,11 +4,12 @@ type TimeProp = {
   className?: string;
   itemProp?: string;
   machineReadableDate: string;
+  humanReadableDate?: string;
 };
 
-export const ArticleTime: React.FC<React.PropsWithChildren<TimeProp>> = ({
-  children,
+export const ArticleTime: React.FC<TimeProp> = ({
   machineReadableDate,
+  humanReadableDate,
   className,
   itemProp,
 }) => (
@@ -17,6 +18,6 @@ export const ArticleTime: React.FC<React.PropsWithChildren<TimeProp>> = ({
     itemProp={itemProp || "dateCreated"}
     dateTime={machineReadableDate}
   >
-    {children}
+    {humanReadableDate}
   </time>
 );

@@ -16,7 +16,10 @@ const NavBar: React.FC<NavBarProp> = ({ pathname }) => {
     "px-3 py-2 font-medium link-style-alt text-base";
 
   return (
-    <Disclosure as="nav" className="border-b-2 border-purple">
+    <Disclosure
+      as="nav"
+      className="text-center md:justify-between mb-8 border-b-2 border-purple"
+    >
       {({ open }) => (
         <>
           <div className="mx-auto px-6 sm:px-6 lg:px-8">
@@ -28,9 +31,9 @@ const NavBar: React.FC<NavBarProp> = ({ pathname }) => {
               </div>
               <div className="flex items-start ">
                 <Link to="/">
-                  <h1 className="text-xl font-bold tracking-tighter leading-tight whitespace-nowrap">
+                  <span className="text-xl font-bold tracking-tighter leading-tight whitespace-nowrap">
                     {title}
-                  </h1>
+                  </span>
                 </Link>
               </div>
               {/* Mobile menu button*/}

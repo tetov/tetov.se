@@ -1,6 +1,5 @@
 import classnames from "classnames";
 import * as React from "react";
-import * as markdownStyles from "src/markdown-styles.module.css";
 
 type Props = {
   content: string;
@@ -15,9 +14,8 @@ export const ArticleBody: React.FC<Props> = ({
 }) => (
   <section
     className={classnames(
-      "e-content max-w-2xl mx-auto",
-      className,
-      markdownStyles["markdown"]
+      "e-content max-w-2xl mx-auto prose dark:prose-invert dark:prose-code:bg-purple",
+      className
     )}
     dangerouslySetInnerHTML={{ __html: content }}
     itemProp={itemProp}

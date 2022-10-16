@@ -2,7 +2,7 @@ import { graphql, HeadFC, PageProps } from "gatsby";
 import { getSrc } from "gatsby-plugin-image";
 import * as React from "react";
 import type { ArticleProp } from "src/components/article";
-import {Article} from "src/components/article";
+import { Article } from "src/components/article";
 import HeadComponent from "src/components/head";
 import Layout from "src/components/layout";
 

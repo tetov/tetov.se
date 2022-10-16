@@ -11,6 +11,7 @@ const querySiteMetadata = () => {
             lang
             description
             image
+            author
             navigation {
               text
               url

@@ -18,6 +18,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       siteURL: String!
       lang: String!
       image: String!
+      author: String!
       navigation: [Navigation]!
     }
     type Navigation {

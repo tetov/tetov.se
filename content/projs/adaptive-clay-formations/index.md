@@ -11,7 +11,7 @@ The project resulted in a 3.2 m long and 1.2 m high wall segment built using a
 six axis industrial robot mounted on a movable platform, and built with the
 robot re-localized three times.
 
-<!-- excerptEnd -->
+<!-- more -->
 
 In this project we refined robot end effector, we experimented with feedback
 driven fabrication and trajectory planning for the robotic arm.

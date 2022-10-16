@@ -1,4 +1,9 @@
-import {ArticleHeader, ArticleBody, ArticleTime} from "src/components/article";
+import {
+  ArticleBody,
+  ArticleFooter,
+  ArticleHeader,
+  ArticleTime,
+} from "src/components/article";
 
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import * as React from "react";
@@ -40,22 +45,22 @@ export const Article: React.FC<ArticleProp> = ({
       <ArticleHeader itemProp="headline" url={`/${pathname}`}>
         {title}
       </ArticleHeader>
-      <ArticleTime machineReadableDate={machineReadableDate}>
-        {date && (
-          <p className="mb-4 text-4xl lg:text-6xl leading-tight">{date}</p>
-        )}
-      </ArticleTime>
       {bannerImageData && (
         <GatsbyImage
           alt={imageAlt || `Cover image for ${title}`}
           image={bannerImageData}
           loading="eager"
-          className="mb-8 md:mb-16"
+          className="my-8"
           imgClassName="shadow-sm hover:shadow-md transition-shadow duration-200"
         />
       )}
       <ArticleBody content={html} itemProp={bodyItemProp} />
+      <ArticleFooter pathname={pathname}>
+        <ArticleTime
+          machineReadableDate={machineReadableDate}
+          humanReadableDate={date}
+        />
+      </ArticleFooter>
     </article>
   );
 };
-

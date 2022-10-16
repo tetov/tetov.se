@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import * as React from "react";
+import PageTitle from "src/components/page-title";
 
 type Prop = {
   url: string;
@@ -7,21 +8,12 @@ type Prop = {
   children: React.ReactNode;
 };
 
-export const ArticleHeader: React.FC<Prop> = ({
-  url,
-  itemProp = "headline",
-  children,
-}) => (
-  <header className="text-center md:justify-between mb-16 md:mb-12">
-    <h2 className="mt-4 w-2/3 text-2xl md:text-4xl font-light inline-block leading-relaxed">
-      <Link
-        to={url}
-        className="p-name link-style-alt u-url"
-        itemProp={itemProp}
-      >
+export const ArticleHeader: React.FC<Prop> = ({ url, itemProp, children }) => (
+  <header className="mb-2">
+    <PageTitle itemProp={itemProp} mfClass="p-name">
+      <Link to={url} className="link-style-alt u-url">
         {children}
       </Link>
-    </h2>
+    </PageTitle>
   </header>
 );
-

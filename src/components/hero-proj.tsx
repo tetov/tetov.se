@@ -16,7 +16,7 @@ const HeroProjPreview: React.FC<Queries.HeroProjPreviewFragment> = ({
   return (
     <>
       <div>
-        <Link to={`/${slug}/`} className="link-style-alt">
+        <Link to={`/${slug}/`} className="link-style">
           <GatsbyImage
             alt={imageAlt || `Banner image for ${title}`}
             image={bannerImgData}
@@ -25,11 +25,11 @@ const HeroProjPreview: React.FC<Queries.HeroProjPreviewFragment> = ({
           />
         </Link>
         <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
-          <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
+          <h2 className="mb-4 text-4xl lg:text-6xl leading-tight">
             <Link to={`/${slug}/`} className="link-style-alt">
               {title}
             </Link>
-          </h3>
+          </h2>
           <p
             className="text-lg leading-relaxed mb-4"
             dangerouslySetInnerHTML={{ __html: description || excerpt || "" }}
