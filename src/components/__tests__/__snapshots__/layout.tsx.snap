@@ -4,117 +4,108 @@ exports[`Layout renders correctly 1`] = `
 <div
   className="global-wrapper min-h-screen bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text"
 >
-  <header
-    className="text-center md:justify-between mb-8"
+  <nav
+    className="text-center md:justify-between mb-8 border-b-2 border-purple"
+    data-headlessui-state=""
   >
-    <nav
-      className="border-b-2 border-purple"
-      data-headlessui-state=""
+    <div
+      className="mx-auto px-6 sm:px-6 lg:px-8"
     >
       <div
-        className="mx-auto px-6 sm:px-6 lg:px-8"
+        className="relative flex h-16 items-center justify-start gap-x-6"
       >
         <div
-          className="relative flex h-16 items-center justify-start gap-x-6"
+          className="flex flex-shrink-0"
         >
-          <div
-            className="flex flex-shrink-0"
+          <a
+            href="/"
           >
-            <a
-              href="/"
-            >
-              <test-file-stub
-                className="h-8 w-auto flex flex-shrink-0"
-              />
-            </a>
-          </div>
-          <div
-            className="flex items-start "
-          >
-            <a
-              href="/"
-            >
-              <h1
-                className="text-xl font-bold tracking-tighter leading-tight whitespace-nowrap"
-              >
-                Iðunn Gunda
-              </h1>
-            </a>
-          </div>
-          <button
-            aria-expanded={false}
-            className="sm:hidden ml-auto rounded-md p-2 text-gray-400 hover:text-purple text-opacity-100"
-            data-headlessui-state=""
-            id="headlessui-disclosure-button-:r0:"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            type="button"
+            <test-file-stub
+              className="h-8 w-auto flex flex-shrink-0"
+            />
+          </a>
+        </div>
+        <div
+          className="flex items-start "
+        >
+          <a
+            href="/"
           >
             <span
-              className="sr-only"
+              className="text-xl font-bold tracking-tighter leading-tight whitespace-nowrap"
             >
-              Open navigation menu
+              Iðunn Gunda
             </span>
-            <div
-              className="block w-5 left-1/2 top-1/2   transform  -translate-x-1/2 -translate-y-1/2"
-            >
-              <span
-                aria-hidden="true"
-                className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out -translate-y-1.5"
-              />
-              <span
-                aria-hidden="true"
-                className="block absolute  h-0.5 w-5 bg-current   transform transition duration-500 ease-in-out  "
-              />
-              <span
-                aria-hidden="true"
-                className="block absolute  h-0.5 w-5 bg-current transform  transition duration-500 ease-in-out translate-y-1.5"
-              />
-            </div>
-          </button>
-          <div
-            className="hidden sm:block ml-auto"
+          </a>
+        </div>
+        <button
+          aria-expanded={false}
+          className="sm:hidden ml-auto rounded-md p-2 text-gray-400 hover:text-purple text-opacity-100"
+          data-headlessui-state=""
+          id="headlessui-disclosure-button-:r0:"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          type="button"
+        >
+          <span
+            className="sr-only"
           >
-            <div
-              className="flex space-x-4"
+            Open navigation menu
+          </span>
+          <div
+            className="block w-5 left-1/2 top-1/2   transform  -translate-x-1/2 -translate-y-1/2"
+          >
+            <span
+              aria-hidden="true"
+              className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out -translate-y-1.5"
+            />
+            <span
+              aria-hidden="true"
+              className="block absolute  h-0.5 w-5 bg-current   transform transition duration-500 ease-in-out  "
+            />
+            <span
+              aria-hidden="true"
+              className="block absolute  h-0.5 w-5 bg-current transform  transition duration-500 ease-in-out translate-y-1.5"
+            />
+          </div>
+        </button>
+        <div
+          className="hidden sm:block ml-auto"
+        >
+          <div
+            className="flex space-x-4"
+          >
+            <a
+              aria-current="page"
+              className="bg-purple px-3 py-2 font-medium link-style-alt text-base"
+              href="/"
             >
-              <a
-                aria-current="page"
-                className="bg-purple px-3 py-2 font-medium link-style-alt text-base"
-                href="/"
-              >
-                Projects
-              </a>
-              <a
-                className="px-3 py-2 font-medium link-style-alt text-base"
-                href="/posts"
-              >
-                Posts
-              </a>
-              <a
-                className="px-3 py-2 font-medium link-style-alt text-base"
-                href="/about"
-              >
-                About
-              </a>
-              <a
-                className="px-3 py-2 font-medium link-style-alt text-base"
-                href="/contact"
-              >
-                Contact
-              </a>
-            </div>
+              Projects
+            </a>
+            <a
+              className="px-3 py-2 font-medium link-style-alt text-base"
+              href="/posts"
+            >
+              Posts
+            </a>
+            <a
+              className="px-3 py-2 font-medium link-style-alt text-base"
+              href="/about"
+            >
+              About
+            </a>
+            <a
+              className="px-3 py-2 font-medium link-style-alt text-base"
+              href="/contact"
+            >
+              Contact
+            </a>
           </div>
         </div>
       </div>
-    </nav>
-    <h2
-      className="mt-4 w-2/3 text-4xl font-light inline-block leading-relaxed"
-    >
-      Test heading
-    </h2>
-  </header>
+    </div>
+  </nav>
   <main
     className="w-full md:w-3/4 lg:w-1/2 mx-auto px-5"
   >

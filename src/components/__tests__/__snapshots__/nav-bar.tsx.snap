@@ -2,7 +2,7 @@
 
 exports[`NavBar renders correctly 1`] = `
 <nav
-  className="border-b-2 border-purple"
+  className="text-center md:justify-between mb-8 border-b-2 border-purple"
   data-headlessui-state=""
 >
   <div
@@ -28,11 +28,11 @@ exports[`NavBar renders correctly 1`] = `
         <a
           href="/"
         >
-          <h1
+          <span
             className="text-xl font-bold tracking-tighter leading-tight whitespace-nowrap"
           >
             Iðunn Gunda
-          </h1>
+          </span>
         </a>
       </div>
       <button
