@@ -4,6 +4,8 @@ author: ["Anton Tetov Johansson"]
 date: 2022-10-16
 draft: false
 image: "taylor-vick-M5tzZtFCOfs-unsplash.jpg"
+imageAlt: "Photo of datacenter by Taylor Vick on Unsplashed"
+imageCaption: 'Photo by <a href="https://unsplash.com/photos/M5tzZtFCOfs">Taylor Vick</a> on <a href="https://unsplash.com/">Unsplash</a>.'
 ---
 
 Sometimes a route needs to be manually configured in order to reach network nodes behind gateways/firewalls.
@@ -46,7 +48,7 @@ Use [subnet mask](#subnet-mask), $SUBNET should be the route with 0 replacing va
 Use [CIDR notation](#cidr-notation).
 
 - Open a terminal
-- Run `sudo route -n add -net $SUBNET $GATEWAY`
+- Run `sh›sudo route -n add -net $SUBNET $GATEWAY`
 
 ### Linux {#linux}
 
@@ -55,23 +57,23 @@ Use [CIDR notation](#cidr-notation).
 #### Temporarily via ip route (Most distros) {#temporarily-via-ip-route--most-distros}
 
 - Open a terminal.
-- Find your preferred device using `ip link` (enp\* or eth\* for ethernet and wlp\* or wifi\* for wireless)
-- Store choosen interface by running `DEVICE=enpXsY`
+- Find your preferred device using `sh›ip link` (enp\* or eth\* for ethernet and wlp\* or wifi\* for wireless)
+- Store choosen interface by running `sh›DEVICE=enpXsY`
 
-`sudo ip route add $SUBNET via $GATEWAY dev "$DEVICE"`
+`sh›sudo ip route add $SUBNET via $GATEWAY dev "$DEVICE"`
 
 #### NetworkManager persistent (Most distros) {#networkmanager-persistent--most-distros}
 
 - Open a terminal.
-- Find your preferred connection using `nmcli connection show` (e.g. `Wired Connection 1`
-- Store chosen interface by running `CONNECTION="Wired Connection 1"`
+- Find your preferred connection using `sh›nmcli connection show` (e.g. `Wired Connection 1`
+- Store chosen interface by running `sh›CONNECTION="Wired Connection 1"`
 
-`sudo nmcli connection modify "$CONNECTION" +ipv4.routes "$SUBNET $GATEWAY"`
+`sh›sudo nmcli connection modify "$CONNECTION" +ipv4.routes "$SUBNET $GATEWAY"`
 
 #### Netplan persistent route (Ubuntu/cloud init) {#netplan-persistent-route--ubuntu-cloud-init}
 
 - Open a terminal.
-- Find your preferred device using `ip link` (enp\* or eth\* for ethernet and wlp\* or wifi\* for wireless).
+- Find your preferred device using `sh›ip link` (enp\* or eth\* for ethernet and wlp\* or wifi\* for wireless).
 - Replace enpXsY in YAML snippet below with chosen device.
 
 Add the following to `/etc/netplan/new_route.yaml` (needs to be edited with sudo, any file name is fine with extension yaml/yml)
@@ -86,4 +88,4 @@ network:
           via: $GATEWAY
 ```
 
-Then run `sudo netplan apply`.
+Then run `sh›sudo netplan apply`.

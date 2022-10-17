@@ -136,7 +136,13 @@ const config: GatsbyConfig = {
               maxWidth: 800,
             },
           },
-          `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              inlineCodeMarker: "›",
+              aliases: { sh: "bash" },
+            },
+          },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {

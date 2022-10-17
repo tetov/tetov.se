@@ -36,7 +36,6 @@ export const query = graphql`
       nodes {
         id
         ...ArticlePreview
-        ...HeroProjPreview
       }
     }
   }

@@ -35,7 +35,7 @@ module.exports = {
       spacing: {
         28: "7rem",
       },
-      transitionProperty: { opacity: "opacity" },
+      transitionProperty: { opacity: "opacity", shadow: "shadow" },
     },
   },
 };

@@ -46,7 +46,8 @@ const MarkdownPage: GatsbyMarkdownPage = (props) => {
         bannerImageData={
           markdownRemark.frontmatter.image?.childImageSharp?.bannerImgData
         }
-        imageAlt={markdownRemark?.frontmatter.imageAlt || undefined}
+        imageAlt={markdownRemark.frontmatter.imageAlt || undefined}
+        imageCaption={markdownRemark.frontmatter.imageCaption || undefined}
         {...articleProp}
       />
     </Layout>
@@ -97,6 +98,7 @@ export const query = graphql`
         description
         lang
         imageAlt
+        imageCaption
         image {
           ...BannerImg
         }

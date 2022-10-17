@@ -38,6 +38,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       weight: Int
       image: File @fileByRelativePath
       imageAlt: String
+      imageCaption: String
     }
     extend type MarkdownRemarkFields {
       slug: String!
