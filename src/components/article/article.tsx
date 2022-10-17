@@ -58,14 +58,14 @@ export const Article: React.FC<ArticleProp> = ({
           />
           {imageCaption && (
             <figcaption
-              className="mt-2 mb-4 text-xs font-thin italic text-center prose:invert"
+              className="mt-2 mb-4 italic prose-a:link-style prose:invert"
               dangerouslySetInnerHTML={{ __html: imageCaption }}
             />
           )}
         </figure>
       )}
       <div
-        className="e-content max-w-2xl mx-auto prose dark:prose-invert"
+        className="e-content max-w-2xl mx-auto prose dark:prose-invert prose-a:link-style"
         dangerouslySetInnerHTML={{ __html: html }}
         itemProp={bodyItemProp}
       />

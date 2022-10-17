@@ -72,7 +72,10 @@ const NavBar: React.FC<NavBarProp> = ({ pathname }) => {
                       key={text}
                       to={url}
                       className={classNames(
-                        { "bg-purple": pathname === url },
+                        {
+                          "bg-purple": pathname === url,
+                          "hover:bg-transparent": pathname === url,
+                        },
                         commonNavLinkClassNames
                       )}
                       aria-current={url === pathname ? "page" : undefined}
@@ -102,7 +105,10 @@ const NavBar: React.FC<NavBarProp> = ({ pathname }) => {
                       key={text}
                       to={url}
                       className={classNames(
-                        { "bg-purple": pathname === url },
+                        {
+                          "bg-purple": pathname === url,
+                          "hover:bg-transparent": pathname === url,
+                        },
                         commonNavLinkClassNames
                       )}
                       aria-current={url === pathname ? "page" : undefined}
