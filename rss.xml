@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Anton Tetov's projects]]></title><description><![CDATA[Projects in architecture, digital fabrication and robotics.]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 17 Oct 2022 09:31:35 GMT</lastBuildDate><item><title><![CDATA[Adding network routes on Windows, OS X and GNU/Linux]]></title><description><![CDATA[Sometimes a route needs to be manually configured in order to reach network nodes behind gateways/firewalls. To do this you specify that to…]]></description><link>https://tetov.senetwork-routes</link><guid isPermaLink="false">https://tetov.senetwork-routes</guid><pubDate>Sun, 16 Oct 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Sometimes a route needs to be manually configured in order to reach network nodes behind gateways/firewalls.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Anton Tetov's projects]]></title><description><![CDATA[Projects in architecture, digital fabrication and robotics.]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 17 Oct 2022 11:35:34 GMT</lastBuildDate><item><title><![CDATA[Adding network routes on Windows, OS X and GNU/Linux]]></title><description><![CDATA[Sometimes a route needs to be manually configured in order to reach network nodes behind gateways/firewalls. To do this you specify that to…]]></description><link>https://tetov.senetwork-routes</link><guid isPermaLink="false">https://tetov.senetwork-routes</guid><pubDate>Sun, 16 Oct 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Sometimes a route needs to be manually configured in order to reach network nodes behind gateways/firewalls.&lt;/p&gt;
 &lt;p&gt;To do this you specify that to reach a certain subnet you need to go through a certain gateway.&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;In the following sections &lt;code class=&quot;language-text&quot;&gt;$SUBNET&lt;/code&gt; should be replaced with subnet (ip range) using either CIDR notation or subnet mask.&lt;/p&gt;
@@ -26,28 +26,28 @@
 &lt;p&gt;Use &lt;a href=&quot;#cidr-notation&quot;&gt;CIDR notation&lt;/a&gt;.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Open a terminal&lt;/li&gt;
-&lt;li&gt;Run &lt;code class=&quot;language-text&quot;&gt;sudo route -n add -net $SUBNET $GATEWAY&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; route &lt;span class=&quot;token parameter variable&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-net&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$SUBNET&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$GATEWAY&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;linux&quot;&gt;Linux&lt;/h3&gt;
 &lt;p&gt;Use &lt;a href=&quot;#cidr-notation&quot;&gt;CIDR notation&lt;/a&gt;.&lt;/p&gt;
 &lt;h4 id=&quot;temporarily-via-ip-route--most-distros&quot;&gt;Temporarily via ip route (Most distros)&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Open a terminal.&lt;/li&gt;
-&lt;li&gt;Find your preferred device using &lt;code class=&quot;language-text&quot;&gt;ip link&lt;/code&gt; (enp* or eth* for ethernet and wlp* or wifi* for wireless)&lt;/li&gt;
-&lt;li&gt;Store choosen interface by running &lt;code class=&quot;language-text&quot;&gt;DEVICE=enpXsY&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Find your preferred device using &lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;ip&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;link&lt;/span&gt;&lt;/code&gt; (enp* or eth* for ethernet and wlp* or wifi* for wireless)&lt;/li&gt;
+&lt;li&gt;Store choosen interface by running &lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token assign-left variable&quot;&gt;DEVICE&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;enpXsY&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;sudo ip route add $SUBNET via $GATEWAY dev &quot;$DEVICE&quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;ip&lt;/span&gt; route &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$SUBNET&lt;/span&gt; via &lt;span class=&quot;token variable&quot;&gt;$GATEWAY&lt;/span&gt; dev &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$DEVICE&lt;/span&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 &lt;h4 id=&quot;networkmanager-persistent--most-distros&quot;&gt;NetworkManager persistent (Most distros)&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Open a terminal.&lt;/li&gt;
-&lt;li&gt;Find your preferred connection using &lt;code class=&quot;language-text&quot;&gt;nmcli connection show&lt;/code&gt; (e.g. &lt;code class=&quot;language-text&quot;&gt;Wired Connection 1&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Store chosen interface by running &lt;code class=&quot;language-text&quot;&gt;CONNECTION=&quot;Wired Connection 1&quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Find your preferred connection using &lt;code class=&quot;language-bash&quot;&gt;nmcli connection show&lt;/code&gt; (e.g. &lt;code class=&quot;language-text&quot;&gt;Wired Connection 1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Store chosen interface by running &lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token assign-left variable&quot;&gt;CONNECTION&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Wired Connection 1&quot;&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;sudo nmcli connection modify &quot;$CONNECTION&quot; +ipv4.routes &quot;$SUBNET $GATEWAY&quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; nmcli connection modify &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$CONNECTION&lt;/span&gt;&quot;&lt;/span&gt; +ipv4.routes &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$SUBNET&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$GATEWAY&lt;/span&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 &lt;h4 id=&quot;netplan-persistent-route--ubuntu-cloud-init&quot;&gt;Netplan persistent route (Ubuntu/cloud init)&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Open a terminal.&lt;/li&gt;
-&lt;li&gt;Find your preferred device using &lt;code class=&quot;language-text&quot;&gt;ip link&lt;/code&gt; (enp* or eth* for ethernet and wlp* or wifi* for wireless).&lt;/li&gt;
+&lt;li&gt;Find your preferred device using &lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;ip&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;link&lt;/span&gt;&lt;/code&gt; (enp* or eth* for ethernet and wlp* or wifi* for wireless).&lt;/li&gt;
 &lt;li&gt;Replace enpXsY in YAML snippet below with chosen device.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Add the following to &lt;code class=&quot;language-text&quot;&gt;/etc/netplan/new_route.yaml&lt;/code&gt; (needs to be edited with sudo, any file name is fine with extension yaml/yml)&lt;/p&gt;
@@ -58,7 +58,7 @@
       &lt;span class=&quot;token key atrule&quot;&gt;routes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
         &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $SUBNET
           &lt;span class=&quot;token key atrule&quot;&gt;via&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $GATEWAY&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Then run &lt;code class=&quot;language-text&quot;&gt;sudo netplan apply&lt;/code&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[SEMusicLab clay wall mockup]]></title><description><![CDATA[Gramazio Kohler Research’s MAS DFAB pavilion project 2019/2020. Quarter of circular undulating clay wall 5 m high with a 6 m radius built using
+&lt;p&gt;Then run &lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; netplan apply&lt;/code&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[SEMusicLab clay wall mockup]]></title><description><![CDATA[Gramazio Kohler Research’s MAS DFAB pavilion project 2019/2020. Quarter of circular undulating clay wall 5 m high with a 6 m radius built using
 a method of robotic clay aggregation developed at MAS DFAB. Built to test
 construction height and openings. The structure was built by a small team in
 3 weeks.]]></description><link>https://tetov.sercf-brunnen</link><guid isPermaLink="false">https://tetov.sercf-brunnen</guid><pubDate>Sun, 30 Aug 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Gramazio Kohler Research’s MAS DFAB pavilion project 2019/2020.&lt;/p&gt;
@@ -365,38 +365,7 @@ Technologies, ETH Zürich.&lt;/p&gt;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/b00d3dba551d41f16d94dcce1563fb7b/af3f0/AndreiJipa.webp&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 66.5%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAACwAwCdASoUAA0APtFUo0uoJKMhsAgBABoJQBOgA3Dg4zhzl8rPQAD+3LMBRaHcxwtUxwkjjoAyy5TwlxfsWbNBA94kISStO/lBPSp3Hy3PcwM9MMnkAnrcMNng29GQoRt7qcf6f9xa/rzxMTs2I5SpDmhbsbD/G7vgAA==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;Photo by Andrei Jipa&quot;
-        title=&quot;Photo by Andrei Jipa&quot;
-        src=&quot;/static/b00d3dba551d41f16d94dcce1563fb7b/d00b9/AndreiJipa.webp&quot;
-        srcset=&quot;/static/b00d3dba551d41f16d94dcce1563fb7b/ba381/AndreiJipa.webp 200w,
-/static/b00d3dba551d41f16d94dcce1563fb7b/7f61c/AndreiJipa.webp 400w,
-/static/b00d3dba551d41f16d94dcce1563fb7b/d00b9/AndreiJipa.webp 800w,
-/static/b00d3dba551d41f16d94dcce1563fb7b/92f8c/AndreiJipa.webp 1200w,
-/static/b00d3dba551d41f16d94dcce1563fb7b/af3f0/AndreiJipa.webp 1280w&quot;
-        sizes=&quot;(max-width: 800px) 100vw, 800px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/b00d3dba551d41f16d94dcce1563fb7b/AndreiJipa.webp&quot; alt=&quot;Photo by Andrei Jipa&quot;&gt;&lt;/p&gt;
 &lt;p&gt;See &lt;a href=&quot;https://dbt.arch.ethz.ch/project/digital-bamboo/&quot;&gt;project on DBT’s website&lt;/a&gt;
 for more information and videos.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Adaptive Clay Formations]]></title><description><![CDATA[Thesis project where a robotic clay aggregation method developed at MAS DFAB was
 further explored and refined.
@@ -476,20 +445,7 @@ elements, built on Ana Anton’s (DBT) research into robotic concrete 3D-printin
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;
-		&lt;video
-			src=/db8f25902f31da9f0407b2a2b836dcb0/print-video.webm
-			width=&quot;800&quot;
-			height=&quot;auto&quot;
-			preload=&quot;lazy&quot;
-			muted=&quot;false&quot;
-			title=&quot;Concrete Calligraphy: Growth() - Fabrication&quot;
-			
-			playsinline
-			controls
-			
-		&gt;&lt;/video&gt;
-	&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;video: title: &quot;Concrete Calligraphy: Growth() - Fabrication&quot;: ./print-video.webm&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; &quot;
