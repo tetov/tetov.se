@@ -17,11 +17,11 @@ jobs:
 
         # curl "http://pin13.net/mf2/?url=tetov.se" | \
         # sed -E -e 's/\?v=[0-9a-z]+//' -e 's/email-protection#[0-9a-z]+//' \
-        # > mf2.json
+        # > mf2.spec
         shell: bash
         run: |
           diff                                            \
             <(curl "http://pin13.net/mf2/?url=tetov.se" | \
               sed -E -e 's/\?v=[0-9a-z]+//'               \
                      -e 's/email-protection#[0-9a-z]+//') \
-            .github/workflows/mf2.json
+            .github/workflows/mf2.spec
