@@ -12,7 +12,11 @@ module.exports = {
       files: ["*.ts", "*.tsx"],
       processor: "@graphql-eslint/graphql",
       parser: "@typescript-eslint/parser",
-      extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+      extends: [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier",
+      ],
       env: {
         es6: true,
       },

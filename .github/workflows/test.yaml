@@ -5,7 +5,7 @@ on:
     branches-ignore:
       - "gh-pages"
   schedule:
-    - cron: "* * * * 1"  # every tuesday
+    - cron: "* * * * 1" # every tuesday
 
 jobs:
   build:
