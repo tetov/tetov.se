@@ -51,7 +51,7 @@ const onCreateDataYamlNode: OnCreateNodeLimitedArgs = async ({
     return;
   }
   for (const data of node.contactDataList as Node & IContactData[]) {
-    const {text, ...restOfData} = data
+    const { text, ...restOfData } = data;
 
     createNode({
       ...restOfData,

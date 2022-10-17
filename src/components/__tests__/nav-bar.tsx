@@ -4,9 +4,7 @@ import NavBar from "src/components/nav-bar";
 
 describe("NavBar", () => {
   it("renders correctly", () => {
-    const tree = renderer
-      .create(<NavBar pathname="/" />)
-      .toJSON();
+    const tree = renderer.create(<NavBar pathname="/" />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

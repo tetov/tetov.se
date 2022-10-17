@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+  extends: ["prettier"],
   settings: {
     react: {
       version: "detect",
@@ -11,7 +12,7 @@ module.exports = {
       files: ["*.ts", "*.tsx"],
       processor: "@graphql-eslint/graphql",
       parser: "@typescript-eslint/parser",
-      extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+      extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
       env: {
         es6: true,
       },

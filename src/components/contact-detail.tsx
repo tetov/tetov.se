@@ -16,12 +16,12 @@ const LinkedDetail: React.FC<JSXA> = ({ className, href, rel, children }) => {
 };
 
 export type ContactDetailProp = {
-  id?: string, // from graphql node used for key attribute
-  text: string,
-  url?: string,
-  icon?: string,
-  hcard?: string,
-  rel?: string,
+  id?: string; // from graphql node used for key attribute
+  text: string;
+  url?: string;
+  icon?: string;
+  hcard?: string;
+  rel?: string;
   className?: classNamesArgument;
   iconProp?: Partial<IconBaseProps>;
   useIcon?: boolean;
