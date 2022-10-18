@@ -9,10 +9,10 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
     // This way the "MarkdownRemark" queries will return `null` even when no
     // blog posts are stored inside "content/blog" instead of returning an error
     createTypes(`
-    extend type Site {
+    type Site {
       siteMetadata: SiteMetadata!
     }
-    extend type SiteMetadata {
+    type SiteMetadata {
       title: String!
       description: String!
       siteURL: String!
@@ -25,11 +25,11 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       test: String! 
       url: String!
     }
-    extend type MarkdownRemark {
+    type MarkdownRemark {
       frontmatter: MarkdownRemarkFrontmatter!
       fields: MarkdownRemarkFields!
     }
-    extend type MarkdownRemarkFrontmatter {
+    type MarkdownRemarkFrontmatter {
       title: String!
       description: String
       date: Date! @dateformat
@@ -39,8 +39,9 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       image: File @fileByRelativePath
       imageAlt: String
       imageCaption: String
+      author: String
     }
-    extend type MarkdownRemarkFields {
+    type MarkdownRemarkFields {
       slug: String!
       category: String!
     }
