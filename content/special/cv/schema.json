@@ -291,7 +291,7 @@
       }
     },
     "publications": {
-      "$schema": "https://raw.githubusercontent.com/citation-style-language/schema/master/schemas/input/csl-data.json"
+      "$ref": "https://raw.githubusercontent.com/citation-style-language/schema/master/schemas/input/csl-data.json"
     },
     "skills": {
       "type": "array",
