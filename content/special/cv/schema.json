@@ -291,13 +291,7 @@
       }
     },
     "publications": {
-      "type": "array",
-      "description": "Specify your publications through your career",
-      "additionalItems": false,
-      "items": {
-        "$schema": "https://raw.githubusercontent.com/citation-style-language/schema/master/schemas/input/csl-data.json",
-        "additionalProperties": true,
-      }
+      "$schema": "https://raw.githubusercontent.com/citation-style-language/schema/master/schemas/input/csl-data.json"
     },
     "skills": {
       "type": "array",
