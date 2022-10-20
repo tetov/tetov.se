@@ -75,7 +75,7 @@ exports[`NavBar renders correctly 1`] = `
         >
           <a
             aria-current="page"
-            className="bg-purple px-3 py-2 font-medium link-style-alt text-base"
+            className="bg-purple hover:bg-transparent px-3 py-2 font-medium link-style-alt text-base"
             href="/"
           >
             Projects

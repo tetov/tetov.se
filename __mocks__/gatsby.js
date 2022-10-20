@@ -31,6 +31,7 @@ module.exports = {
         siteURL: `https://uiuc.edu`,
         lang: `fi`,
         image: `/logo.png`,
+        twitterUsername: "twttr",
         navigation: [
           { text: "Projects", url: "/" },
           { text: "Posts", url: "/posts" },
@@ -38,13 +39,6 @@ module.exports = {
           { text: "Contact", url: "/contact" },
         ],
       },
-    },
-    allContactData: {
-      nodes: [
-        {
-          username: "twttr",
-        },
-      ],
     },
   })),
 };

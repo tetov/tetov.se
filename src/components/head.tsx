@@ -43,11 +43,12 @@ const HeadComponent: React.FC<
 
       <meta property="og:url" content={`${siteURL}${pathname || ``}`} />
 
+      {/* TODO: Overwrite this in posts and projs etc */}
       <meta property="og:type" content="website" id="og:type" />
 
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content={twitterUsername} />
-      <meta name="twitter:creator" content={twitterUsername} />
+      <meta name="twitter:site" content={`@${twitterUsername}`} />
+      <meta name="twitter:creator" content={`@${twitterUsername}`} />
       {children}
     </>
   );
