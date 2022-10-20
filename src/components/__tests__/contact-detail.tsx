@@ -9,7 +9,7 @@ describe("ContactDetail", () => {
         <ContactDetail
           text="MySpace"
           url="https://myspace.tk/tom"
-          icon="RiUserSmileFill"
+          label="name"
           useIcon
           className="where-is-he-now where-did-he-go"
           hcard="u-url"
@@ -26,6 +26,8 @@ describe("ContactDetail", () => {
           url="https://myspace.tk/tom"
           className="where-is-he-now where-did-he-go"
           hcard="u-url"
+          label="name"
+          useIcon={false}
         />
       )
       .toJSON();
@@ -38,8 +40,8 @@ describe("ContactDetail", () => {
           text="MySpace"
           className="where-is-he-now where-did-he-go"
           hcard="u-url"
-          icon="RiUserSmileFill"
           useIcon
+          label="name"
         />
       )
       .toJSON();
@@ -52,6 +54,8 @@ describe("ContactDetail", () => {
           text="MySpace"
           className="where-is-he-now where-did-he-go"
           hcard="u-url"
+          label="name"
+          useIcon={false}
         />
       )
       .toJSON();
