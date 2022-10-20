@@ -5,7 +5,7 @@ exports[`PageTitle PageTitle with custom prop and JSX child renders correctly 1`
   className="mt-4 mb-8"
 >
   <h1
-    className="JSX text-4xl font-light leading-relaxed text-center"
+    className="JSX text-4xl font-semibold leading-relaxed text-center"
     itemProp="JSX"
   >
     <a
@@ -22,7 +22,7 @@ exports[`PageTitle PageTitle with custom prop and string child renders correctly
   className="mt-4 mb-8"
 >
   <h1
-    className="p-name text-4xl font-light leading-relaxed text-center"
+    className="p-name text-4xl font-semibold leading-relaxed text-center"
     itemProp="testline"
   >
     Title
@@ -35,7 +35,7 @@ exports[`PageTitle PageTitle with default prop and JSX child renders correctly 1
   className="mt-4 mb-8"
 >
   <h1
-    className="p-name text-4xl font-light leading-relaxed text-center"
+    className="p-name text-4xl font-semibold leading-relaxed text-center"
     itemProp="headline"
   >
     <div
@@ -52,7 +52,7 @@ exports[`PageTitle PageTitle with default prop and string child renders correctl
   className="mt-4 mb-8"
 >
   <h1
-    className="p-name text-4xl font-light leading-relaxed text-center"
+    className="p-name text-4xl font-semibold leading-relaxed text-center"
     itemProp="headline"
   >
     Title

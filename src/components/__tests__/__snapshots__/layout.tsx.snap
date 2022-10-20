@@ -2,10 +2,10 @@
 
 exports[`Layout renders correctly 1`] = `
 <div
-  className="global-wrapper min-h-screen bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text"
+  className="global-wrapper min-h-screen bg-light-bg dark:bg-dark-bg print:bg-light-bg text-light-text dark:text-dark-text print:text-light-text"
 >
   <nav
-    className="text-center md:justify-between mb-8 border-b-2 border-purple"
+    className="text-center md:justify-between mb-8 border-b-2 border-purple print:hidden"
     data-headlessui-state=""
   >
     <div

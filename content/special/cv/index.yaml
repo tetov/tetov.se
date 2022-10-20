@@ -1,5 +1,5 @@
+---
 $schema: "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json"
-awards: []
 basics:
   email: anton@tetov.se
   image: https://tetov.se/headshot.jpg
@@ -239,7 +239,8 @@ projects:
     roles:
       - "design studio student"
 
-publications: # use https://resource.citationstyles.org/schema/latest/input/json/csl-citation.json
+# use https://resource.citationstyles.org/schema/latest/input/json/csl-citation.json
+publications:
   - id: johanssonAdaptiveClayFormations2021
     abstract: >-
       Rapid Clay Formations (RCF) is an ongoing research project investigating
@@ -366,3 +367,4 @@ skills:
 
 volunteer: []
 certificates: []
+awards: []

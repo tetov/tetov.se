@@ -32,7 +32,7 @@ const iconMapping = new Map([
   ["name", RiUserSmileFill],
   ["gender-identity", RiGenderlessFill],
   ["email", RiMailFill],
-  ["opengpg", RiKey2Fill],
+  ["openpgp", RiKey2Fill],
   ["telephone", RiSmartphoneFill],
   ["github", RiGithubFill],
   ["instagram", RiInstagramFill],
@@ -62,18 +62,21 @@ const ContactDetail = ({
   hcard,
   rel,
   className,
-  iconProp = {},
   useIcon = true,
 }: ContactDetailProp) => {
   const Icon = iconMapping.get(label);
 
-  const prop: JSXA | JSXSpan = {
+  const prop: React.PropsWithChildren<JSXA | JSXSpan> = {
     className: classNames(hcard, className) || undefined,
     href: url ?? undefined,
     rel: rel ?? "me external",
     children: (
       <>
-        {useIcon && Icon && <Icon {...iconProp} aria-hidden />}
+        {useIcon && Icon && (
+          <div className="motion-safe:group-hover:animate-pulse inline-block">
+            <Icon size="2em" className="p-2 inline-block" aria-hidden />
+          </div>
+        )}
         {text}
       </>
     ),
@@ -81,7 +84,11 @@ const ContactDetail = ({
 
   const Component = url ? LinkedDetail : Detail;
 
-  return <Component {...prop} />;
+  return (
+    <div className="inline-block group">
+      <Component {...prop} />
+    </div>
+  );
 };
 
 export default ContactDetail;

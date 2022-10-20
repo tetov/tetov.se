@@ -2,103 +2,128 @@ import classNames from "classnames";
 import { graphql, HeadFC, PageProps } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import React, { PropsWithChildren } from "react";
+import { cvFormatTimespan } from "src/components/cv";
 import HeadComponent from "src/components/head";
 import Layout from "src/components/layout";
 import PageTitle from "src/components/page-title";
 import querySiteMetadata from "src/hooks/query-site-metadata";
 
-/* FUNCS */
-
-const cvTimespan = ({
-  startDate,
-  endDate,
-}: {
-  startDate?: string;
-  endDate?: string;
-}) => {
-  // both are undefined
-  if (!startDate && !endDate) {
-    return "";
-  }
-
-  // if both are defined and unique
-  if (startDate && endDate && startDate !== endDate) {
-    return `${startDate} – ${endDate}`;
-  }
-
-  // if only one is defined, or they are both the same return either value
-  return startDate ?? endDate;
-};
-
-type CVTimeSpanKeyedEntryType = {
-  startDate?: string;
-  endDate?: string;
-  heading: JSX.Element;
-  url?: string;
-};
-
 /* COMPONENTS */
 
-const CVSection: React.FC<PropsWithChildren<{ title: string }>> = ({
+const CVSection = ({
   title,
   children,
-}) => (
+}: PropsWithChildren<{ title: string }>) => (
   <section>
-    <h3 className="text-xl">{title}</h3>
+    <div className="my-4 flex-row flex">
+      <div className="flex w-1/4"></div>
+      <div className="flex ml-2 w-full max-w-prose">
+        {" "}
+        {/* width set up like Keyed entry type*/}
+        <h2 className="text-3xl">{title}</h2>
+      </div>
+    </div>
     <hr className="my-2 border-gray-500" />
     <div className="border-collapse">{children}</div>
   </section>
 );
 
-const CVTimeSpanKeyedEntry: React.FC<
-  PropsWithChildren<CVTimeSpanKeyedEntryType>
-> = ({ startDate, endDate, heading, children }) => (
-  <div className="my-4 flex-row flex">
-    <div className="flex w-1/4 text-xs tracking-tight pt-1">
-      {cvTimespan({ startDate, endDate })}
+type CVTimeSpanKeyedEntryType = {
+  startDate?: string;
+  endDate?: string;
+  heading: React.ReactNode;
+  url?: string;
+};
+
+const CVTimeSpanKeyedEntry = ({
+  startDate,
+  endDate,
+  heading,
+  children,
+}: PropsWithChildren<CVTimeSpanKeyedEntryType>) => (
+  <div className="my-8 flex-row flex">
+    <div className="flex w-1/4 text-xs tracking-tight pt-1 mr-2">
+      {cvFormatTimespan({ startDate, endDate })}
     </div>
-    <div className="flex w-full flex-col pt-6">
+    <div className="flex w-full flex-col max-w-prose">
       <div className="flex">
-        <h3 className="mb-1 font-bold tracking-widest text-sm print:font-normal">
-          {heading}
-        </h3>
+        <h3 className="mb-1 font-bold tracking-widest text-lg">{heading}</h3>
       </div>
-      <div className="flex flex-col font-extralight italic">{children}</div>
+      <div className="flex flex-col">{children}</div>
     </div>
   </div>
 );
 
-const CVEntryBody: React.FC<
-  React.PropsWithChildren<{ description: JSX.Element | string }>
-> = ({ children, description }) => (
+const CVEntryBody = ({
+  children,
+  description,
+}: PropsWithChildren<{ description: JSX.Element | string }>) => (
   <>
-    <div className="flex max-w-prose">{description}</div>
+    <div className="flex max-w-prose font-light">{description}</div>
     <div className="flex min-w-full">{children}</div>
   </>
 );
 
-const CVPropTable: React.FC<{
+/* const CVPropTable: React.FC<{
+ *   tuples: [key: string, value: JSX.Element | string][];
+ * }> = ({ tuples }) => {
+ *   const sharedTableCellClassNames = "flex p-2 text-sm";
+ *
+ *   return (
+ *     <div className="flex flex-col pt-2 w-full">
+ *       {tuples.map(([key, value]) => (
+ *         <div className="flex flex-row border-b border-gray-500 last:border-b-0 justify-between">
+ *           <div className={classNames(sharedTableCellClassNames, "font-medium")}>
+ *             {key}
+ *           </div>
+ *           <div
+ *             className={classNames(
+ *               sharedTableCellClassNames,
+ *               "font-light w-3/5"
+ *             )}
+ *           >
+ *             {value}
+ *           </div>
+ *         </div>
+ *       ))}
+ *     </div>
+ *   );
+ * }; */
+
+{
+  /* <div className="prose dark:prose-invert w-full"> */
+}
+const CVPropTable = ({
+  tuples,
+}: {
   tuples: [key: string, value: JSX.Element | string][];
-}> = ({ tuples }) => {
-  const sharedTableCellClassNames = "flex p-2 text-sm";
+}) => {
+  /* const sharedTableCellClassNames = "flex p-2 text-sm"; */
+  const sharedTableCellClassNames = "text-sm px-2 py-2";
 
   return (
-    <div className="flex flex-col pt-2 w-full">
-      {tuples.map(([key, value]) => (
-        <div className="flex flex-row border-b border-gray-500 last:border-b-0 justify-between">
-          <div className={classNames(sharedTableCellClassNames, "font-medium")}>
-            {key}
-          </div>
-          <div
-            className={classNames(
-              sharedTableCellClassNames,
-              "font-light w-3/5"
-            )}
-          >
-            {value}
-          </div>
-        </div>
-      ))}
+    <div className="pt-4">
+      <table className="table-auto">
+        <tbody className="border-t-0 divide-y-0 border-gray-500">
+          {tuples.map(([key, value]) => (
+            <tr className="border-gray-500">
+              <td
+                className={classNames(
+                  sharedTableCellClassNames,
+                  "font-medium border-r-2 border-gray-500 text-right"
+                )}
+              >
+                {key}
+              </td>
+              <td
+                className={classNames(sharedTableCellClassNames, "font-light")}
+              >
+                {value}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
@@ -121,7 +146,7 @@ const CVWork: React.FC<Queries.CvYamlWork> = ({
     url={url ?? undefined}
     heading={
       url ? (
-        <a href={url} className="link-style-alt">
+        <a href={url} className="link-style">
           {name}
         </a>
       ) : (
@@ -154,15 +179,33 @@ const CVEducation: React.FC<Queries.CvYamlEducation> = ({
     endDate={endDate ?? undefined}
     key={studyType}
   >
-    {institutionUrl ? (
-      <a href={institutionUrl}>{institution}</a>
-    ) : (
-      <span>{institution}</span>
-    )}
+    <CVEntryBody
+      description={
+        institutionUrl ? (
+          <a href={institutionUrl}>{institution}</a>
+        ) : (
+          <span>{institution}</span>
+        )
+      }
+    />
   </CVTimeSpanKeyedEntry>
 );
-const CVSkills: React.FC<Queries.CvYamlSkills> = () => <></>;
-const CVLanguages: React.FC<Queries.CvYamlLanguages> = () => <></>;
+const CVSkills = ({ name, keywords }: Queries.CvYamlSkills) => (
+  <CVTimeSpanKeyedEntry heading={name}>
+    <div className="flex flex-row w-full font-light text-m">
+      <ul className="list-inside list-disc marker:text-purple">
+        {keywords.map((k) => (
+          <li>{k}</li>
+        ))}
+      </ul>
+    </div>
+  </CVTimeSpanKeyedEntry>
+);
+const CVLanguages = ({ language, fluency }: Queries.CvYamlLanguages) => (
+  <CVTimeSpanKeyedEntry heading={language}>
+    <CVEntryBody description={fluency} />
+  </CVTimeSpanKeyedEntry>
+);
 
 const CVProjects: React.FC<Queries.CvYamlProjects> = ({
   name,
@@ -196,7 +239,7 @@ const CVProjects: React.FC<Queries.CvYamlProjects> = ({
           [
             roles.length > 1 ? "Roles" : "Role",
             roles.length > 1 ? (
-              <ul className="list-inside list-disc">
+              <ul className="list-inside list-disc marker:text-purple">
                 {roles.map((role) => (
                   <li>{role}</li>
                 ))}
@@ -231,7 +274,7 @@ const CV: React.FC<PageProps<Queries.CvQuery>> = ({
         itemScope
         itemType="http://schema.org/Person"
       >
-        <PageTitle>Curriculum Vitae</PageTitle>
+        <PageTitle>CV</PageTitle>
         <header className="flex items-center mb-8 md:mb-11">
           <StaticImage
             src="../headshot.jpg"
@@ -242,12 +285,12 @@ const CV: React.FC<PageProps<Queries.CvQuery>> = ({
             objectPosition="top"
           />
           <div className="ml-3">
-            <h2 className="text-2xl font-semibold text-gray-750 pb-px">
+            <p className="text-2xl font-semibold text-gray-750 pb-px">
               {basics.name}
-            </h2>
-            <span className="leading-normal text-md text-gray-650 -mt-0.5">
+            </p>
+            <p className="leading-normal text-md text-gray-650 -mt-0.5">
               {basics.summary}
-            </span>
+            </p>
           </div>
         </header>
         <CVSection title="Work experience">

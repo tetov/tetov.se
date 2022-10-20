@@ -26,7 +26,6 @@ const Contact = ({
             className={classNames("inline-block mx-4 whitespace-nowrap", {
               "hover:text-purple": Boolean(n.url),
             })}
-            iconProp={{ size: "2em", className: "p-2 inline-block" }}
             text={n.text}
             url={n.url ?? undefined}
             hcard={n.hcard ?? undefined}
