@@ -5,12 +5,13 @@ import HeadComponent from "src/components/head";
 import Layout from "src/components/layout";
 import PageTitle from "src/components/page-title";
 
-const Index: React.FC<PageProps<Queries.IndexQuery>> = ({
+const Index = ({
   location: { pathname },
+
   data: {
     allContactData: { nodes: contactDataNodes },
   },
-}) => (
+}: PageProps<Queries.IndexQuery>) => (
   <Layout
     footerChildren={<HCard nodes={contactDataNodes} />}
     pathname={pathname}

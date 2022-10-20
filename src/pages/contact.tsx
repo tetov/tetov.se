@@ -6,12 +6,13 @@ import HeadComponent from "src/components/head";
 import Layout from "src/components/layout";
 import PageTitle from "src/components/page-title";
 
-const Contact: React.FC<PageProps<Queries.ContactQuery>> = ({
+const Contact = ({
   location: { pathname },
+
   data: {
     allContactData: { nodes },
   },
-}) => (
+}: PageProps<Queries.ContactQuery>) => (
   <Layout pathname={pathname}>
     <PageTitle>Want to say hi?</PageTitle>
     <div className="h-card text-center text-lg">

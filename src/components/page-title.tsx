@@ -6,11 +6,11 @@ type PageTitleProp = {
   mfClass?: string;
 };
 
-const PageTitle: React.FC<React.PropsWithChildren<PageTitleProp>> = ({
+const PageTitle = ({
   children,
   itemProp = "headline",
   mfClass = "p-name",
-}) => (
+}: React.PropsWithChildren<PageTitleProp>) => (
   <div className="mt-4 mb-8">
     <h1
       itemProp={itemProp}

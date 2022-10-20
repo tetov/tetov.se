@@ -2,11 +2,11 @@ import { graphql, Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import * as React from "react";
 
-const HeroProjPreview: React.FC<Queries.HeroProjPreviewFragment> = ({
+const HeroProjPreview = ({
   excerpt,
   fields: { slug },
   frontmatter: { title, description, image, imageAlt },
-}) => {
+}: Queries.HeroProjPreviewFragment) => {
   const bannerImgData = image?.childImageSharp?.bannerImgData;
 
   if (!bannerImgData) {

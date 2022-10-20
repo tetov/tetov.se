@@ -6,12 +6,13 @@ import HeroProj from "src/components/hero-proj";
 import Layout from "src/components/layout";
 import PageTitle from "src/components/page-title";
 
-const Projects: React.FC<PageProps<Queries.ProjectsQuery>> = ({
+const Projects = ({
   location: { pathname },
+
   data: {
     allMarkdownRemark: { nodes: mdNodes },
   },
-}) => {
+}: PageProps<Queries.ProjectsQuery>) => {
   const [heroProj, ...projNodes] = mdNodes;
 
   return (

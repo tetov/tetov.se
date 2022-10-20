@@ -7,11 +7,11 @@ import * as Icons from "src/icons";
 type JSXSpan = JSX.IntrinsicElements["span"];
 type JSXA = JSX.IntrinsicElements["a"];
 
-const Detail: React.FC<JSXSpan> = ({ className, children }) => (
+const Detail = ({ className, children }: JSXSpan) => (
   <span className={className}>{children}</span>
 );
 
-const LinkedDetail: React.FC<JSXA> = ({ className, href, rel, children }) => {
+const LinkedDetail = ({ className, href, rel, children }: JSXA) => {
   return <a {...{ className, href, rel, children }} />;
 };
 
@@ -27,7 +27,7 @@ export type ContactDetailProp = {
   useIcon?: boolean;
 };
 
-const ContactDetail: React.FC<ContactDetailProp> = ({
+const ContactDetail = ({
   text,
   url,
   icon,
@@ -36,7 +36,7 @@ const ContactDetail: React.FC<ContactDetailProp> = ({
   className,
   iconProp = {},
   useIcon = true,
-}) => {
+}: ContactDetailProp) => {
   const Icon = icon ? Icons[icon] : undefined;
 
   const prop: JSXA | JSXSpan = {

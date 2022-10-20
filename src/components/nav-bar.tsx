@@ -9,7 +9,7 @@ export type NavBarProp = {
   pathname?: string;
 };
 
-const NavBar: React.FC<NavBarProp> = ({ pathname }) => {
+const NavBar = ({ pathname }: NavBarProp) => {
   const { title, navigation } = querySiteMetadata();
 
   const commonNavLinkClassNames =

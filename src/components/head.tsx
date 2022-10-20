@@ -1,14 +1,18 @@
 import * as React from "react";
 import querySiteMetadata from "src/hooks/query-site-metadata";
 
-const HeadComponent: React.FC<
-  React.PropsWithChildren<{
-    pathname: string;
-    pageTitle?: string;
-    description?: string;
-    imageUrl?: string;
-  }>
-> = ({ pageTitle, description, imageUrl, pathname, children }) => {
+const HeadComponent = ({
+  pageTitle,
+  description,
+  imageUrl,
+  pathname,
+  children,
+}: React.PropsWithChildren<{
+  pathname: string;
+  pageTitle?: string;
+  description?: string;
+  imageUrl?: string;
+}>) => {
   const {
     title: siteTitle,
     description: defaultDescription,

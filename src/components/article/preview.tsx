@@ -2,11 +2,11 @@ import { graphql, Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import * as React from "react";
 
-export const ArticlePreview: React.FC<Queries.ArticlePreviewFragment> = ({
+export const ArticlePreview = ({
   excerpt,
   fields: { slug, category },
   frontmatter: { title, description, image, imageAlt },
-}) => {
+}: Queries.ArticlePreviewFragment) => {
   const previewImg = image?.childImageSharp?.previewImg;
 
   if (category === "projs" && !previewImg) {

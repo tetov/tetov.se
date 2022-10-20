@@ -5,12 +5,13 @@ import HeadComponent from "src/components/head";
 import Layout from "src/components/layout";
 import PageTitle from "src/components/page-title";
 
-const Posts: React.FC<PageProps<Queries.PostsQuery>> = ({
+const Posts = ({
   location: { pathname },
+
   data: {
     allMarkdownRemark: { nodes: postNodes },
   },
-}) => {
+}: PageProps<Queries.PostsQuery>) => {
   return (
     <Layout pathname={pathname}>
       <PageTitle>Posts</PageTitle>

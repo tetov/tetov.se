@@ -22,7 +22,7 @@ export type ArticleProp = ArticleMarkup & {
   imageCaption?: string;
 };
 
-export const Article: React.FC<ArticleProp> = ({
+export const Article = ({
   pathname,
   articleClass,
   articleType,
@@ -34,7 +34,7 @@ export const Article: React.FC<ArticleProp> = ({
   bannerImageData,
   imageAlt,
   imageCaption,
-}) => {
+}: ArticleProp) => {
   return (
     <article
       className={articleClass}

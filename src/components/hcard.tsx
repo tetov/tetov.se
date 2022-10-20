@@ -2,9 +2,7 @@ import { graphql } from "gatsby";
 import * as React from "react";
 import ContactDetail from "src/components/contact-detail";
 
-const HCard: React.FC<{ nodes: ReadonlyArray<Queries.HCardFragment> }> = ({
-  nodes,
-}) => {
+const HCard = ({ nodes }: { nodes: ReadonlyArray<Queries.HCardFragment> }) => {
   const filteredNodes = nodes.filter(
     ({ url, hcard }) => url || hcard
   ) as PureHCardProp[];
@@ -20,8 +18,10 @@ export type PureHCardProp = {
   rel?: string;
 };
 
-export const PureHCard: React.FC<{ contactDetails: PureHCardProp[] }> = ({
+export const PureHCard = ({
   contactDetails,
+}: {
+  contactDetails: PureHCardProp[];
 }) => (
   <div className="h-card hidden" aria-hidden>
     {contactDetails.map((n) => (
