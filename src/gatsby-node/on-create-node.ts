@@ -1,13 +1,15 @@
-import type { CreateNodeArgs, GatsbyNode } from "gatsby";
+import type { GatsbyNode } from "gatsby";
 import { parseNodeFilePath } from "./utils";
 
-type OnCreateNodeLimitedArgs = (args: CreateNodeArgs) => void | Promise<void>;
-
-const onCreateMarkdownRemarkNode: OnCreateNodeLimitedArgs = async ({
+const onCreateNode: GatsbyNode["onCreateNode"] = async ({
   actions: { createNodeField },
   node,
   getNode,
 }) => {
+  if (!(node.internal.type === "MarkdownRemark")) {
+    return;
+  }
+
   const { dir, name } = parseNodeFilePath({
     node,
     getNode,
@@ -29,52 +31,6 @@ const onCreateMarkdownRemarkNode: OnCreateNodeLimitedArgs = async ({
     name: `category`,
     value: category,
   });
-};
-
-interface IContactData {
-  label: string;
-  username?: string;
-  url?: string;
-  hcard?: string;
-  text: string;
-  icon?: string;
-  rel?: string;
-}
-
-const onCreateDataYamlNode: OnCreateNodeLimitedArgs = async ({
-  actions: { createNode },
-  node,
-  createNodeId,
-  createContentDigest,
-}) => {
-  if (!node?.contactDataList) {
-    return;
-  }
-  for (const data of node.contactDataList as Node & IContactData[]) {
-    const { text, ...restOfData } = data;
-
-    createNode({
-      ...restOfData,
-      text: text || "",
-      id: createNodeId(data.label),
-      parent: node.id,
-      internal: {
-        contentDigest: createContentDigest(data),
-        type: "ContactData",
-      },
-    });
-  }
-};
-
-const onCreateNode: GatsbyNode["onCreateNode"] = async (args) => {
-  switch (args.node.internal.type) {
-    case "MarkdownRemark":
-      onCreateMarkdownRemarkNode(args);
-      break;
-    case "ContentYaml":
-      onCreateDataYamlNode(args);
-      break;
-  }
 };
 
 export default onCreateNode;

@@ -9,7 +9,7 @@ const Index = ({
   location: { pathname },
 
   data: {
-    allContactData: { nodes: contactDataNodes },
+    allContactDataYaml: { nodes: contactDataNodes },
   },
 }: PageProps<Queries.IndexQuery>) => (
   <Layout
@@ -17,17 +17,15 @@ const Index = ({
     pathname={pathname}
   >
     <PageTitle>
-      <p>
-        Hi! I'm Anton Tetov, I'm an architect, programmer and maker. These are
-        some of my{" "}
-        <Link to="/projects" className="link-style">
-          projects
-        </Link>
-        .{" "}
-        <Link to="/contact" className="link-style">
-          Would you like to say hi?
-        </Link>
-      </p>
+      Hi! I'm Anton Tetov, I'm an architect, programmer and maker. These are
+      some of my{" "}
+      <Link to="/projects" className="link-style">
+        projects
+      </Link>
+      .{" "}
+      <Link to="/contact" className="link-style">
+        Would you like to say hi?
+      </Link>
     </PageTitle>
   </Layout>
 );
@@ -41,9 +39,11 @@ export const Head: HeadFC = ({ location }) => (
 // Query with /(DIR)/
 export const query = graphql`
   query Index {
-    allContactData {
+    allContactDataYaml {
       nodes {
-        ...HCard
+        contactDataList {
+          ...HCard
+        }
       }
     }
   }

@@ -8,47 +8,70 @@ import Layout from "src/components/layout";
 
 type GatsbyMarkdownPage = React.FC<PageProps<Queries.MarkdownPageQuery>>;
 
-const MarkdownPage: GatsbyMarkdownPage = (props) => {
-  const category = props.data.markdownRemark?.fields?.category;
+const MarkdownPage: GatsbyMarkdownPage = ({
+  data: { markdownRemark },
+  location: { pathname },
+}) => {
+  if (!markdownRemark) {
+    throw new TypeError("MarkdownRemark null on node.");
+  }
+
+  if (!markdownRemark.fields || !markdownRemark.frontmatter) {
+    throw new TypeError("Fields or FrontMatter null on node");
+  }
+
+  if (!markdownRemark.html) {
+    throw new Error("Content contains no HTML content.");
+  }
+
+  const category = markdownRemark.fields.category;
 
   if (!category) {
     throw new Error("No category set on node's fields.");
   }
 
-  const articlePropMapping: { [key: string]: Partial<ArticleProp> } = {
-    posts: {
-      articleClass: "h-entry",
+  const prop: Partial<ArticleProp> = {};
+
+  if (category === "special" && markdownRemark.fields.slug === "cv") {
+    prop["className"] = "cv-screen prose dark:prose-invert prose-a:link-style";
+    prop["articleMarkup"] = {
+      articleMF2Class: "h-resume",
+      articleType: "Person",
+    };
+    prop["date"] = markdownRemark.frontmatter.date;
+  } else if (category === "posts") {
+    prop["articleMarkup"] = {
+      articleMF2Class: "h-entry",
       articleType: "BlogEntry",
       bodyItemProp: "articleBody",
-      date: props.data.markdownRemark?.frontmatter.date,
-    },
-    projs: {
-      articleClass: "h-entry",
+    };
+    prop["date"] = markdownRemark.frontmatter.date;
+  } else if (category === "projs") {
+    prop["articleMarkup"] = {
+      articleMF2Class: "h-entry",
       articleType: "CreativeWork",
       bodyItemProp: "about",
-    },
-  };
-
-  const articleProp = articlePropMapping[category];
-
-  if (!articleProp) {
-    throw new Error(`No matching articleProp for category: ${category}`);
+    };
+  } else {
+    throw new Error("Node doesn't match any prop templates.");
   }
 
-  const markdownRemark = props.data.markdownRemark;
+  prop["className"] =
+    prop["className"] ?? "prose dark:prose-invert prose-a:link-style";
 
   return (
-    <Layout pathname={props.location.pathname}>
+    <Layout pathname={pathname}>
       <Article
-        pathname={props.location.pathname}
-        html={markdownRemark.html}
+        pathname={pathname}
+        html={markdownRemark.html ?? ""}
         title={markdownRemark.frontmatter.title}
         bannerImageData={
           markdownRemark.frontmatter.image?.childImageSharp?.bannerImgData
         }
         imageAlt={markdownRemark.frontmatter.imageAlt || undefined}
         imageCaption={markdownRemark.frontmatter.imageCaption || undefined}
-        {...articleProp}
+        machineReadableDate={markdownRemark.frontmatter.machineReadableDate}
+        {...prop}
       />
     </Layout>
   );
@@ -84,25 +107,7 @@ export const Head: HeadFC<Queries.MarkdownPageQuery> = ({
 export const query = graphql`
   query MarkdownPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      excerpt(pruneLength: 160, format: PLAIN)
-      id
-      html
-      fields {
-        slug
-        category
-      }
-      frontmatter {
-        title
-        date(formatString: "YYYY-MM-DD")
-        machineReadableDate: date
-        description
-        lang
-        imageAlt
-        imageCaption
-        image {
-          ...BannerImg
-        }
-      }
+      ...Article
     }
   }
 `;

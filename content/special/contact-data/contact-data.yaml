@@ -1,99 +1,74 @@
 contactDataList:
-  - hcard: p-name
+  - hcard: p-name # also in resume.yaml & gatsby-config.ts
     label: name
     text: Anton Tetov Johansson
-    icon: RiUserSmileFill
     rel: me
-    weight: 10
 
   - hcard: p-gender-identity
     label: gender-identity
     text: (they/them)
     url: https://en.wikipedia.org/wiki/Non-binary_gender
-    icon: RiGenderlessFill
     rel: external
-    weight: 12
 
-  - hcard: u-email
+  - hcard: u-email # also in resume.yaml & gatsby-config.ts
     label: email
     text: email
     url: mailto:anton@tetov.se
     username: anton@tetov.se
-    icon: RiMailFill
     rel: me
-    weight: 20
 
   - hcard: u-key
     label: openpgp
     text: openpgp public key
     url: /key.txt
     username: anton@tetov.se
-    icon: RiKey2Fill
     rel: pgpkey authn key me
-    weight: 21
 
-  - hcard: u-tel
+  - hcard: u-tel # also in resume.yaml
     label: telephone
     text: "+46 70-363 56 67"
     url: tel:+46703635667
     username: "+46703635667"
-    icon: RiSmartphoneFill
     rel: me
-    weight: 30
 
-  - label: github
+  - label: github # also in resume.yaml
     text: github
     url: https://github.com/tetov
     username: tetov
-    icon: RiGithubFill
-    weight: 40
 
-  - label: instagram
+  - label: instagram # also in resume.yaml
     text: instagram
     url: https://www.instagram.com/antontetov
     username: antontetov
-    icon: RiInstagramFill
-    weight: 40
 
-  - label: twitter
+  - label: twitter # also in resume.yaml & gastby-config.ts
     text: twitter
     url: https://twitter.com/antontetov
     username: antontetov
-    icon: RiTwitterFill
-    weight: 40
 
-  - label: linkedin
+  - label: linkedin # also in resume.yaml
     text: linkedin
     url: https://www.linkedin.com/in/tetov
     username: tetov
-    icon: RiLinkedinBoxFill
-    weight: 40
 
   - label: matrix
     text: matrix
     url: https://matrix.to/#/@tetov:matrix.org
     username: "@tetov:matrix.org"
-    icon: SiMatrix
-    weight: 40
 
-  - label: signal
+  - label: signal # also in resume.yaml
     text: signal
-    url: "tel:+46703635667"
+    url: https://signal.me/#p/+46703635667
     username: "+46703635667"
-    icon: SiSignal
     rel: me
-    weight: 40
 
-  - label: mastodon
+  - label: mastodon # also in resume.yaml
     text: mastodon
     url: https://vis.social/@tetov
     username: tetov@vis.social
-    icon: RiMastodonFill
-    weight: 40
 
-  - hcard: u-url u-uid
+  - hcard: u-url u-uid # also in resume.yaml & gatsby-config.ts
     label: url
     url: https://tetov.se
     rel: me
-    weight: 99
     text: ""

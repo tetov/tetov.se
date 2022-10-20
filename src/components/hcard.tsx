@@ -2,8 +2,16 @@ import { graphql } from "gatsby";
 import * as React from "react";
 import ContactDetail from "src/components/contact-detail";
 
-const HCard = ({ nodes }: { nodes: ReadonlyArray<Queries.HCardFragment> }) => {
-  const filteredNodes = nodes.filter(
+const HCard = ({
+  nodes,
+}: {
+  nodes: ReadonlyArray<Queries.ContactDataYaml>;
+}) => {
+  if (nodes.length !== 1) {
+    throw new Error("More or less than one ContactData node found");
+  }
+
+  const filteredNodes = nodes[0].contactDataList.filter(
     ({ url, hcard }) => url || hcard
   ) as PureHCardProp[];
 
@@ -11,7 +19,7 @@ const HCard = ({ nodes }: { nodes: ReadonlyArray<Queries.HCardFragment> }) => {
 };
 
 export type PureHCardProp = {
-  id: string;
+  label: string;
   url?: string;
   hcard?: string;
   text: string;
@@ -27,7 +35,8 @@ export const PureHCard = ({
     {contactDetails.map((n) => (
       <ContactDetail
         useIcon={false}
-        key={n.id}
+        key={n.label}
+        label={n.label}
         url={n.url}
         hcard={n.hcard}
         text={n.text}
@@ -40,11 +49,11 @@ export const PureHCard = ({
 export default HCard;
 
 export const fragment = graphql`
-  fragment HCard on ContactData {
-    id
+  fragment HCard on ContactDataYamlContactDataList {
     url
     hcard
     text
     rel
+    label
   }
 `;

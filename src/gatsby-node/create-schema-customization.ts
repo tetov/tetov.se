@@ -51,7 +51,12 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       slug: String!
       category: String!
     }
-    type ContactData implements Node {
+
+    type ContactDataYaml implements Node {
+      contactDataList: [ContactDataYamlContactDataList!]!
+    }
+
+    type ContactDataYamlContactDataList {
       hcard: String
       icon: String
       label: String!
@@ -60,7 +65,5 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       username: String
       icon: String
       rel: String
-      weight: Int
-}
   `);
   };

@@ -2,7 +2,20 @@ import type { Argument as classNamesArgument } from "classnames";
 import classNames from "classnames";
 import * as React from "react";
 import type { IconBaseProps } from "react-icons/lib";
-import * as Icons from "src/icons";
+
+import {
+  RiGenderlessFill,
+  RiGithubFill,
+  RiInstagramFill,
+  RiKey2Fill,
+  RiLinkedinBoxFill,
+  RiMailFill,
+  RiMastodonFill,
+  RiSmartphoneFill,
+  RiTwitterFill,
+  RiUserSmileFill,
+} from "react-icons/ri";
+import { SiMatrix, SiSignal } from "react-icons/si";
 
 type JSXSpan = JSX.IntrinsicElements["span"];
 type JSXA = JSX.IntrinsicElements["a"];
@@ -15,8 +28,23 @@ const LinkedDetail = ({ className, href, rel, children }: JSXA) => {
   return <a {...{ className, href, rel, children }} />;
 };
 
+const iconMapping = new Map([
+  ["name", RiUserSmileFill],
+  ["gender-identity", RiGenderlessFill],
+  ["email", RiMailFill],
+  ["opengpg", RiKey2Fill],
+  ["telephone", RiSmartphoneFill],
+  ["github", RiGithubFill],
+  ["instagram", RiInstagramFill],
+  ["twitter", RiTwitterFill],
+  ["linkedin", RiLinkedinBoxFill],
+  ["matrix", SiMatrix],
+  ["signal", SiSignal],
+  ["mastodon", RiMastodonFill],
+]);
+
 export type ContactDetailProp = {
-  id?: string; // from graphql node used for key attribute
+  label: string;
   text: string;
   url?: string;
   icon?: string;
@@ -28,16 +56,16 @@ export type ContactDetailProp = {
 };
 
 const ContactDetail = ({
+  label,
   text,
   url,
-  icon,
   hcard,
   rel,
   className,
   iconProp = {},
   useIcon = true,
 }: ContactDetailProp) => {
-  const Icon = icon ? Icons[icon] : undefined;
+  const Icon = iconMapping.get(label);
 
   const prop: JSXA | JSXSpan = {
     className: classNames(hcard, className) || undefined,
@@ -45,7 +73,7 @@ const ContactDetail = ({
     rel: rel ?? "me external",
     children: (
       <>
-        {icon && useIcon && <Icon {...iconProp} aria-hidden />}
+        {useIcon && Icon && <Icon {...iconProp} aria-hidden />}
         {text}
       </>
     ),

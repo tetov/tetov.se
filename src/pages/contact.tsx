@@ -8,30 +8,38 @@ import PageTitle from "src/components/page-title";
 
 const Contact = ({
   location: { pathname },
-
   data: {
-    allContactData: { nodes },
+    allContactDataYaml: { nodes },
   },
-}: PageProps<Queries.ContactQuery>) => (
-  <Layout pathname={pathname}>
-    <PageTitle>Want to say hi?</PageTitle>
-    <div className="h-card text-center text-lg">
-      {nodes.map((n) => (
-        <ContactDetail
-          className={classNames("inline-block mx-4 whitespace-nowrap", {
-            "hover:text-purple": Boolean(n.url),
-          })}
-          iconProp={{ size: "2em", className: "p-2 inline-block" }}
-          {...n}
-          url={n.url ?? undefined}
-          hcard={n.hcard ?? undefined}
-          rel={n.rel ?? undefined}
-          key={n.id}
-        />
-      ))}
-    </div>
-  </Layout>
-);
+}: PageProps<Queries.ContactQuery>) => {
+  if (nodes.length !== 1) {
+    throw new Error("More or less than one ContactData node found");
+  }
+  const { contactDataList } = nodes[0];
+
+  return (
+    <Layout pathname={pathname}>
+      <PageTitle>Want to say hi?</PageTitle>
+      <div className="h-card text-center text-lg">
+        {contactDataList.map((n) => (
+          <ContactDetail
+            className={classNames("inline-block mx-4 whitespace-nowrap", {
+              "hover:text-purple": Boolean(n.url),
+            })}
+            iconProp={{ size: "2em", className: "p-2 inline-block" }}
+            icon={n.icon ?? undefined}
+            text={n.text}
+            url={n.url ?? undefined}
+            hcard={n.hcard ?? undefined}
+            rel={n.rel ?? undefined}
+            key={n.label}
+            label={n.label}
+          />
+        ))}
+      </div>
+    </Layout>
+  );
+};
 
 export const Head: HeadFC = ({ location }) => (
   <HeadComponent
@@ -45,15 +53,16 @@ export default Contact;
 
 export const query = graphql`
   query Contact {
-    allContactData(sort: { fields: weight }) {
+    allContactDataYaml {
       nodes {
-        id
-        username
-        url
-        hcard
-        text
-        icon
-        rel
+        contactDataList {
+          url
+          hcard
+          text
+          icon
+          rel
+          label
+        }
       }
     }
   }
