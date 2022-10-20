@@ -1,0 +1,368 @@
+$schema: "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json"
+awards: []
+basics:
+  email: anton@tetov.se
+  image: https://tetov.se/headshot.jpg
+  label: Architect, programmer & maker.
+  name: Anton Tetov Johansson
+  phone: "+46703635667"
+  summary:
+    Architecture, design and digital fabrication. Ask me about 3D-printing,
+    scripting or how to manage loads of data!
+  url: https://tetov.se/ # also in gatsby-config.ts
+
+  location:
+    address: "Ehrensvärdsgatan 10 lgh 1101.212 13 Malmö"
+    countryCode: SE
+
+  profiles:
+    - network: LinkedIn # also in contact-data.yaml
+      url: https://www.linkedin.com/in/tetov/
+      username: tetov
+    - network: github # also in contact-data.yaml
+      url: https://github.com/tetov
+      username: tetov
+    - network: instagram # also in contact-data.yaml
+      url: https://www.instagram.com/antontetov
+      username: antontetov
+    - network: twitter # also in contact-data.yaml & gatsby-config.ts
+      url: https://twitter.com/antontetov
+      username: antontetov
+    - network: mastodon # also in contact-data.yaml
+      url: https://vis.social/@tetov
+      username: tetov@vis.social
+    - network: signal # also in contact-data.yaml
+      url: https://signal.me/#p/+46703635667
+      username: "+46703635667"
+
+education:
+  - area: Architecture
+    courses: []
+    endDate: "2021-01-01"
+    institution: "LTH, Lund University"
+    institutionUrl: https://www.lth.se/english/
+    score: ""
+    startDate: "2014-01-01"
+    studyType: Master of Architecture
+  - area: Architecture
+    courses: []
+    endDate: "2020-01-01"
+    institution: "ETH Zürich"
+    institutionUrl: https://ethz.ch/
+    score: ""
+    startDate: "2019-01-01"
+    studyType: Master of Advanced Studies in Architecture and Digital Fabrication
+interests: []
+
+languages:
+  - language: Swedish
+    fluency: Native Speaker
+  - language: English
+    fluency: Fluent
+
+work:
+  - name: Dept. of Architecture & Built Environment, LTH, Lund University.
+    startDate: "2021-05-31"
+    description:
+      a collaboration between the Department of Architecture & Built Environment
+      Department of Automatic Control and the Construction Robotics lab.
+    highlights: []
+    location: Lund, Sweden
+    position: Project Assistant
+    summary:
+      Working with the research project Biomimetic fabrication through robotic
+      3D-printing
+    url: https://abm.lth.se
+
+  - name: Dept. of Automatic Control, LTH, Lund University
+    startDate: "2022"
+    description:
+      a collaboration between the Department of Automatic Control and Proxima
+      Centauri ApS.
+    highlights: []
+    location: Lund, Sweden
+    position: Project Assistant
+    summary: Project assistant in the research project Eurostars SelectiCa
+    url: https://control.lth.se
+
+  - name: Dept. of Automatic Control, LTH, Lund University
+    description:
+      a collaboration between the Department of Automatic Control, IUC Syd/IUC
+      lab and SWEP international.
+    startDate: "2021-06-01"
+    endDate: "2022-01-31"
+    highlights: []
+    location: Lund, Sweden
+    position: Project Assistant
+    summary:
+      Project assistant in the research project Digitalisation and Standardisation
+      for Customized Mass Production
+    url: https://control.lth.se
+
+  - name: "Gramazio Kohler Research, ETH Zürich"
+    startDate: "2020-10-31"
+    endDate: "2020-12-31"
+    highlights: []
+    location: Bern, Switzerland
+    position: Trainee
+    url: https://gramaziokohler.arch.ethz.ch/
+    summary: Full scale on site construction of clay wall for SEMusicLab in Bern
+
+  - name: "Gramazio Kohler Research, ETH Zürich"
+    endDate: "2020-09-30"
+    highlights: []
+    location: "Zürich, Switzerland"
+    position: Student assistant
+    startDate: "2020-01-31"
+    url: https://gramaziokohler.arch.ethz.ch
+    summary: Code documentation and testing, assistance in acoustic experiments.
+
+  - name: "Digital Building Technologies, ETH Zürich"
+    startDate: "2020-03-31"
+    endDate: "2020-09-30"
+    highlights: []
+    location: "Zürich, Switzerland"
+    position: Student assistant
+    url: https://dbt.arch.ethz.ch/
+    summary: 3D-printer repair and maintenance.
+
+  - name: Sesam Arkitektkontor
+    startDate: "2017-09-30"
+    endDate: "2018-07-31"
+    highlights: []
+    location: Kristianstad, Sweden
+    position: Architect
+    url: https://sesam-ark.se
+    summary: Ten month internship working mostly in residential projects from proposal to tender.
+
+  - name: Dept. of Architecture & Built Environment, LTH Lund.
+    startDate: "2017-01-01"
+    endDate: "2019-01-01"
+    highlights: []
+    location: Lund, Sweden
+    position: Teaching assistant
+    summary: Assisting and teaching in digital tool courses for architecture students in year 1–3.
+
+  # - name: Library of Architecture & Design, LTH
+  #   startDate: "2016-09-30"
+  #   endDate: "2017-06-30"
+  #   highlights: []
+  #   location: Lund, Sweden
+  #   position: Library assistant
+  #   summary:
+  #   url: https://www.lth.se/english/library/
+
+  - name: Accent Arkitekter
+    endDate: "2016-07-31"
+    highlights: []
+    location: "Värnamo, Sweden"
+    position: Architect trainee
+    startDate: "2016-06-30"
+    url: http://accentarkitekter.se/
+    summary: Four week full-time internship in 2016 and an additional four weeks in 2017.
+
+  # - name: Suzzle
+  #   startDate: "2013-01-31"
+  #   endDate: "2014-05-31"
+  #   highlights: []
+  #   location: London, UK
+  #   position: Barista
+
+projects:
+  - name: Clay Rotunda / SEMusicLab
+    type: indoor circular clay wall
+    description: >-
+      A circular undulating clay wall 5 m high with a 6 m radius built using a
+      method of robotic clay aggregation developed at MAS DFAB and in my thesis
+      project Adaptive Clay Formations. The project was preceded by the
+      construction of a full scale prototype of a quarter of final design in
+      Brunnen, Switzerland. The wall is built to surround a acoustic lab built
+      in a new co-working space in the Gurtenbrauerei in Bern.
+    startDate: "2020-10-15"
+    endDate: "2021-01-01"
+    entity: "Gramazio Kohler Research. Project partners: Gotham Design, Lehmag & Seforb"
+    # url:
+    location: Gurtenbrauerei, Bern, Switzerland
+    roles:
+      - "research & development"
+      - "programming lead"
+      - "on site construction"
+
+  - name: Adaptive Clay Formations
+    type: clay wall segment
+    description: >-
+      MAS DFAB thesis project where a robotic clay aggregation method developed
+      at MAS DFAB were further explored and refined. The project resulted in a
+      3.2 m long and 1.2 m high wall segment built using a six axis industrial
+      robot mounted on a movable platform, and built with the robot re-localized
+      three times. In this project we refined robot end effector, we
+      experimented with feedback driven fabrication and trajectory planning for
+      the robotic arm. The project was undertaken by Edurne Morales Zúñiga and
+      myself with tutors David Jenny, Coralie Ming, Nicolas Feihl & Gonzalo
+      Casas at Gramazio Kohler Research, ETH Zürich.
+    startDate: "2020-06-01"
+    endDate: "2020-09-01"
+    entity: "MAS DFAB 19/20, ETH Zürich"
+    url: https://tetov.se/adaptive-clay-formations
+    location: Robotic Fabrication Lab, ETH Zürich
+    roles:
+      - "research & development"
+      - "programming lead"
+      - "on site construction"
+
+  - name: Digital Bamboo Pavilion
+    type: bamboo outdoor structure
+    description: >-
+      40 m² pavilion made out of straight bamboo members and bespoke 3D-printed
+      nylon joints. Designed and built by the whole class of MAS DFAB 19/20,
+      project led by Marirena Kladeftira at Digital Building Technologies, ETH
+      Zürich.
+    startDate: "2020-01-01"
+    endDate: "2020-01-01"
+    entity: "MAS DFAB 19/20, ETH Zürich"
+    url: https://tetov.se/digital-bamboo-pavilion
+    location: Zentrum Architektur Zürich, Zürich, Switzerland
+    roles:
+      - "team member in design team"
+
+  - name: Swallows’ Nest
+    type: clay model
+    description: >-
+      Research project into bio-mimetics and clay printing where a method of
+      discrete depositions of clay globules using an off-the-shelf 3D printer
+      was developed. With Erik Hildorsson at Spatial Experiments, a studio led
+      by David Andréen & Ana Goidea.
+    startDate: "2018-01-01"
+    endDate: "2018-01-01"
+    entity: Spatial Experiments, School of Architecture, LTH
+    location: School of Architecture, LTH, Lund
+    roles:
+      - "design studio student"
+
+publications: # use https://resource.citationstyles.org/schema/latest/input/json/csl-citation.json
+  - id: johanssonAdaptiveClayFormations2021
+    abstract: >-
+      Rapid Clay Formations (RCF) is an ongoing research project investigating
+      robotic aggregation of soft clay elements. This thesis presents our research
+      into RCF construction on an architectural scale.
+
+
+      It outlines our development of a fabrication process suitable for the
+      construction of tall and slender structures made out of clay. This
+      fabrication process is evaluated through a series of prototypes and
+      preparations for a three week building workshop.
+
+
+      In our development we have evaluated and tested material behaviour and
+      optimization, geometric sensing, robot trajectory planning and mobile
+      robotic localization. These explorations are combined with design studies
+      for large monolithic clay structures aimed at a rapid construction on site.
+    accessed:
+      - year: 2021
+        month: 3
+        day: 17
+    author:
+      - family: Johansson
+        given: Anton
+      - family: Morales Zúñiga
+        given: Edurne
+    citation-key: johanssonAdaptiveClayFormations2021
+    event-place: Lund, Sweden
+    issued:
+      - year: 2021
+    language: eng
+    license: info:eu-repo/semantics/openAccess
+    publisher: Lund University
+    publisher-place: Lund, Sweden
+    source: lup.lub.lu.se
+    title: Adaptive Clay Formations
+    type: thesis
+    URL: http://lup.lub.lu.se/student-papers/record/9041159
+
+  - id: andreenSwarmMaterializationDiscrete2019
+    abstract: >-
+      Biological design is able to achieve remarkable functionality, resilience
+      and adaptability without relying on centralized coordination or
+      resource-intense materials. Agent-based construction seeks to emulate
+      these advantages, but the two common approaches - swarm robotics and fully
+      virtual agent simulations - are held back by limitations that are
+      difficult to overcome in isolation. Here we demonstrate initial steps
+      towards the application of biological design principles, particularly the
+      so-called Bernard Machine. 3D printing is used to materialize the actions
+      of virtual agents in a physical environment. Such an arena requires a
+      shift from monolithic printing processes to interactive ones: assemblage
+      printing. We demonstrate an alternative to conventional slicer-controlled
+      printing that is discrete and to an extent nonsequential and which forms
+      the foundation for assemblage printing. In its extension it allows for the
+      exploration of a fully agent-based construction process.
+    author:
+      - family: Andréen
+        given: David
+      - family: Goidea
+        given: Ana
+      - family: Johansson
+        given: Anton
+      - family: Hildorsson
+        given: Erik
+    citation-key: andreenSwarmMaterializationDiscrete2019
+    container-title: >-
+      2019 IEEE 4th International Workshops on Foundations and Applications of
+      Self* Systems (FAS*W)
+    DOI: 10.1109/FAS-W.2019.00059
+    event-title: >-
+      2019 IEEE 4th International Workshops on Foundations and Applications of
+      Self* Systems (FAS*W)
+    issued:
+      - year: 2019
+        month: 6
+    license: All rights reserved
+    page: 225-230
+    source: IEEE Xplore
+    title: Swarm Materialization Through Discrete, Nonsequential Additive Fabrication
+    type: paper-conference
+
+references: []
+skills:
+  - name: Fabrication
+    keywords:
+      - Material extrusion 3D printers (FDM & clay)
+      - CNC milling
+      - laser cutting
+      - cutting plotter
+      - robotic arms (ABB, UR, Stäubli, ROS-I)
+
+  - name: DevOps
+    keywords:
+      - Containerization (Docker, Podman)
+      - Continuous Integration (GitHub Actions, Travis CI, GitLab Runners)
+      - Automated server management (Ansible)
+      - Cloud computing (Amazon AWS, DigitalOcean)
+      - LAMP/LEMP stacks
+
+  - name: 3D-modeling
+    keywords:
+      - Architectural (Rhino3D, Autodesk Revit, Autodesk AutoCAD)
+      - Solid modeling (Autodesk Fusion 360, OpenSCAD, FreeCAD)
+      - Animation and rendering (Blender, Houdini, VRay)
+      - Electrical circuit design (KiCAD)
+
+  - name: Programmering
+    keywords:
+      - Python (NumPy, SciPy, OpenCV)
+      - C
+      - C++ (ROS, CGAL)
+      - C# (Rhino.Common)
+      - SQL
+      - JavaScript (TypeScript, React)
+      - GraphQL
+      - Bash & Posix SH
+
+  - name: Graphic design
+    keywords:
+      - Image manipulation (Adobe PhotoShop)
+      - UI & vector graphics (Adobe Illustrator, InkScape, Figma)
+      - Print layout (Adobe Indesign)
+      - Web design (CSS, SCSS, CSS-in-JS)
+
+volunteer: []
+certificates: []

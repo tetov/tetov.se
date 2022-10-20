@@ -65,5 +65,83 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       username: String
       icon: String
       rel: String
+    }
+
+    type CvYaml implements Node {
+      basics: CvYamlBasics!
+      work: [CvYamlWork!]!
+      education: [CvYamlEducation!]!
+      skills: [CvYamlSkills!]!
+      languages: [CvYamlLanguages!]!
+      projects: [CvYamlProjects!]!
+    }
+      
+    type CvYamlBasics {
+      name: String!
+      label: String
+      image: String
+      email: String!
+      phone: String!
+      url: String!
+      summary: String
+      location: CvYamlBasicsLocation!
+      profiles: [CvYamlBasicsProfiles!]!
+    }
+      
+    type CvYamlBasicsLocation {
+      countryCode: String!
+      address: String!
+    }
+    
+    type CvYamlBasicsProfiles {
+      network: String!
+      username: String
+      url: String!
+    }
+    
+    type CvYamlWork {
+      name: String!
+      position: String!
+      startDate: Date @dateformat
+      endDate: Date @dateformat
+      url: String
+      location: String!
+      summary: String!
+      description: String
+    }
+    
+    type CvYamlEducation {
+      institution: String!
+      institutionUrl: String
+      area: String!
+      studyType: String!
+      startDate: Date @dateformat
+      endDate: Date @dateformat
+      score: String
+    }
+
+    type CvYamlProjects {
+      name: String!
+      description: String!
+      startDate: Date @dateformat
+      endDate: Date! @dateformat
+      entity: String!
+      roles: [String!]!
+      type: String!
+      url: String
+      location: String!
+    }
+    
+    type CvYamlSkills {
+      name: String!
+      level: String
+      keywords: [String!]!
+    }
+    
+    type CvYamlLanguages {
+      language: String!
+      fluency: String!
+    }
+
   `);
   };
