@@ -1,6 +1,108 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ContactDetail renders correctly with hand converted data 1`] = `
+exports[`HCard HCard renders correctly with hand converted data 1`] = `
+<div
+  aria-hidden={true}
+  className="h-card hidden"
+>
+  <span
+    className="p-name"
+  >
+    Anton Tetov Johansson
+  </span>
+  <a
+    className="p-gender-identity"
+    href="https://en.wikipedia.org/wiki/Non-binary_gender"
+    rel="external"
+  >
+    (they/them)
+  </a>
+  <a
+    className="u-email"
+    href="mailto:anton@tetov.se"
+    rel="me"
+  >
+    email
+  </a>
+  <a
+    className="u-key"
+    href="/key.txt"
+    rel="pgpkey authn key me"
+  >
+    openpgp public key
+  </a>
+</div>
+`;
+
+exports[`HCard PureHCard renders correctly with hand converted data 1`] = `
+<div
+  aria-hidden={true}
+  className="h-card hidden"
+>
+  <span
+    className="p-name"
+  >
+    Anton Tetov Johansson
+  </span>
+  <a
+    className="p-gender-identity"
+    href="https://en.wikipedia.org/wiki/Non-binary_gender"
+    rel="external"
+  >
+    (they/them)
+  </a>
+  <a
+    className="u-email"
+    href="mailto:anton@tetov.se"
+    rel="me"
+  >
+    email
+  </a>
+  <a
+    className="u-key"
+    href="/key.txt"
+    rel="pgpkey authn key me"
+  >
+    openpgp public key
+  </a>
+</div>
+`;
+
+exports[`HCard\` HCard renders correctly with hand converted data 1`] = `
+<div
+  aria-hidden={true}
+  className="h-card hidden"
+>
+  <span
+    className="p-name"
+  >
+    Anton Tetov Johansson
+  </span>
+  <a
+    className="p-gender-identity"
+    href="https://en.wikipedia.org/wiki/Non-binary_gender"
+    rel="external"
+  >
+    (they/them)
+  </a>
+  <a
+    className="u-email"
+    href="mailto:anton@tetov.se"
+    rel="me"
+  >
+    email
+  </a>
+  <a
+    className="u-key"
+    href="/key.txt"
+    rel="pgpkey authn key me"
+  >
+    openpgp public key
+  </a>
+</div>
+`;
+
+exports[`HCard\` PureHCard renders correctly with hand converted data 1`] = `
 <div
   aria-hidden={true}
   className="h-card hidden"

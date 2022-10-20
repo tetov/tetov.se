@@ -58,12 +58,10 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
 
     type ContactDataYamlContactDataList {
       hcard: String
-      icon: String
       label: String!
       text: String!
       url: String
       username: String
-      icon: String
       rel: String
     }
 

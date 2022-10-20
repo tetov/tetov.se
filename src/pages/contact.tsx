@@ -27,7 +27,6 @@ const Contact = ({
               "hover:text-purple": Boolean(n.url),
             })}
             iconProp={{ size: "2em", className: "p-2 inline-block" }}
-            icon={n.icon ?? undefined}
             text={n.text}
             url={n.url ?? undefined}
             hcard={n.hcard ?? undefined}
@@ -59,7 +58,6 @@ export const query = graphql`
           url
           hcard
           text
-          icon
           rel
           label
         }
