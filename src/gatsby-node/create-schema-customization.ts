@@ -12,6 +12,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
     type Site {
       siteMetadata: SiteMetadata!
     }
+
     type SiteMetadata {
       title: String!
       description: String!
@@ -19,16 +20,20 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       lang: String!
       image: String!
       author: String!
-      navigation: [Navigation]!
+      twitterUsername: String!
+      navigation: [Navigation!]!
     }
+
     type Navigation {
-      test: String! 
+      text: String!
       url: String!
     }
+
     type MarkdownRemark {
       frontmatter: MarkdownRemarkFrontmatter!
       fields: MarkdownRemarkFields!
     }
+
     type MarkdownRemarkFrontmatter {
       title: String!
       description: String
@@ -41,6 +46,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       imageCaption: String
       author: String
     }
+
     type MarkdownRemarkFields {
       slug: String!
       category: String!

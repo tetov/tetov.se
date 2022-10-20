@@ -1,9 +1,9 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-const querySiteMetadata = () => {
-  const { site } = useStaticQuery<Queries.SiteMetaDataQuery>(
+const querySiteMetadata = (): Queries.SiteMetadata => {
+  const data = useStaticQuery<Queries.SiteMetadataQuery>(
     graphql`
-      query SiteMetaData {
+      query SiteMetadata {
         site {
           siteMetadata {
             title
@@ -12,6 +12,7 @@ const querySiteMetadata = () => {
             description
             image
             author
+            twitterUsername
             navigation {
               text
               url
@@ -21,7 +22,11 @@ const querySiteMetadata = () => {
       }
     `
   );
-  return site.siteMetadata;
+
+  if (!data?.site?.siteMetadata) {
+    throw new TypeError("useStaticQuery didn't return siteMetadata");
+  }
+  return data.site.siteMetadata;
 };
 
 export default querySiteMetadata;

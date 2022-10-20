@@ -10,7 +10,6 @@ const Projects: React.FC<PageProps<Queries.ProjectsQuery>> = ({
   location: { pathname },
   data: {
     allMarkdownRemark: { nodes: mdNodes },
-    allContactData: { nodes: contactDataNodes },
   },
 }) => {
   const [heroProj, ...projNodes] = mdNodes;
@@ -42,11 +41,6 @@ export const query = graphql`
         id
         ...ArticlePreview
         ...HeroProjPreview
-      }
-    }
-    allContactData {
-      nodes {
-        ...HCard
       }
     }
   }

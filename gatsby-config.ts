@@ -4,15 +4,16 @@ import path from "path";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `tetov's hideout`,
-    author: `Anton Tetov`,
+    author: `Anton Tetov Johansson`, // also in resume.yaml & contact-data.yaml
     description: `Projects in architecture, digital fabrication and robotics.`,
     siteURL: `https://tetov.se`,
     lang: `en`,
     image: `/logo.png`,
+    twitterUsername: "antontetov", // also in resume.yaml & contact-data.yaml
     navigation: [
-      { text: "projects", url: "/projects" },
-      { text: "posts", url: "/posts" },
-      { text: "contact", url: "/contact" },
+      { text: "projects", url: "/projects/" },
+      { text: "posts", url: "/posts/" },
+      { text: "contact", url: "/contact/" },
     ],
   },
   graphqlTypegen: { typesOutputPath: `gatsby-types.d.ts` },

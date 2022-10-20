@@ -1,6 +1,5 @@
 import * as React from "react";
 import querySiteMetadata from "src/hooks/query-site-metadata";
-import queryTwitterUname from "src/hooks/query-twitter-uname";
 
 const HeadComponent: React.FC<
   React.PropsWithChildren<{
@@ -15,8 +14,8 @@ const HeadComponent: React.FC<
     description: defaultDescription,
     image: defaultImage,
     siteURL,
+    twitterUsername,
   } = querySiteMetadata();
-  const twitterUsername = queryTwitterUname();
 
   const metaDescription = description || defaultDescription;
   const metaImage = `${siteURL}${imageUrl || defaultImage}`;

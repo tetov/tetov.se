@@ -1,6 +1,6 @@
 ---
 title: "Adding network routes on Windows, OS X and GNU/Linux"
-author: ["Anton Tetov Johansson"]
+author: "Anton Tetov Johansson"
 date: 2022-10-16
 draft: false
 image: "taylor-vick-M5tzZtFCOfs-unsplash.jpg"

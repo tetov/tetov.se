@@ -11,7 +11,7 @@ const PageTitle: React.FC<React.PropsWithChildren<PageTitleProp>> = ({
   itemProp = "headline",
   mfClass = "p-name",
 }) => (
-  <div className="my-4">
+  <div className="mt-4 mb-8">
     <h1
       itemProp={itemProp}
       className={classNames(

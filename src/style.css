@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 @layer utilities {
-  .link-style {
+  a.link-style {
     @apply text-purple hover:text-light-text dark:hover:text-dark-text;
   }
-  .link-style-alt {
+  a.link-style-alt a {
     @apply text-light-text dark:text-dark-text hover:text-purple;
   }
 }
