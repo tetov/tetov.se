@@ -1,14 +1,12 @@
-name: Test repo
+name: Build, test and deploy
 
 on:
   push:
     branches-ignore:
       - "gh-pages"
-  schedule:
-    - cron: "* * * * 1" # every tuesday
 
 jobs:
-  build:
+  build-test-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -55,3 +53,13 @@ jobs:
 
       - name: Test
         run: npm test
+
+      - name: Deploy on gh-pages
+        if: github.ref == 'refs/heads/main'
+        uses: crazy-max/ghaction-github-pages@eb08c35b9fab86751edfff4e55cd5cde35ff0e52
+        with:
+          target_branch: gh-pages
+          build_dir: public
+          keep_history: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
