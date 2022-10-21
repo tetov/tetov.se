@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set up node
         uses: actions/setup-node@v3
@@ -25,13 +25,13 @@ jobs:
       - name: Get npm cache directory
         id: npm-cache-dir
         run: |
-          echo "::set-output name=dir::$(npm config get cache)"
+          echo "npm_cache_dir=$(npm config get cache)" >> $GITHUB_OUTPUT
 
       - name: Restore NPM cache
         uses: actions/cache@v3
         id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
         with:
-          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          path: ${{ env.npm_cache_dir }}
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
