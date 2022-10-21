@@ -25,7 +25,7 @@ jobs:
       - name: Get npm cache directory
         id: npm-cache-dir
         run: |
-          echo "npm_cache_dir=$(npm config get cache)" >> $GITHUB_OUTPUT
+          echo "npm_cache_dir=$(npm config get cache)" >> $GITHUB_ENV
 
       - name: Restore NPM cache
         uses: actions/cache@v3
