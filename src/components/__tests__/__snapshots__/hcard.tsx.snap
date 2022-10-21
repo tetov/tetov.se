@@ -5,32 +5,48 @@ exports[`HCard HCard renders correctly with hand converted data 1`] = `
   aria-hidden={true}
   className="h-card hidden"
 >
-  <span
-    className="p-name"
+  <div
+    className="inline-block group"
   >
-    Anton Tetov Johansson
-  </span>
-  <a
-    className="p-gender-identity"
-    href="https://en.wikipedia.org/wiki/Non-binary_gender"
-    rel="external"
+    <span
+      className="p-name"
+    >
+      Anton Tetov Johansson
+    </span>
+  </div>
+  <div
+    className="inline-block group"
   >
-    (they/them)
-  </a>
-  <a
-    className="u-email"
-    href="mailto:anton@tetov.se"
-    rel="me"
+    <a
+      className="p-gender-identity"
+      href="https://en.wikipedia.org/wiki/Non-binary_gender"
+      rel="external"
+    >
+      (they/them)
+    </a>
+  </div>
+  <div
+    className="inline-block group"
   >
-    email
-  </a>
-  <a
-    className="u-key"
-    href="/key.txt"
-    rel="pgpkey authn key me"
+    <a
+      className="u-email"
+      href="mailto:anton@tetov.se"
+      rel="me"
+    >
+      email
+    </a>
+  </div>
+  <div
+    className="inline-block group"
   >
-    openpgp public key
-  </a>
+    <a
+      className="u-key"
+      href="/key.txt"
+      rel="pgpkey authn key me"
+    >
+      openpgp public key
+    </a>
+  </div>
 </div>
 `;
 
@@ -39,31 +55,47 @@ exports[`HCard PureHCard renders correctly with hand converted data 1`] = `
   aria-hidden={true}
   className="h-card hidden"
 >
-  <span
-    className="p-name"
+  <div
+    className="inline-block group"
   >
-    Anton Tetov Johansson
-  </span>
-  <a
-    className="p-gender-identity"
-    href="https://en.wikipedia.org/wiki/Non-binary_gender"
-    rel="external"
+    <span
+      className="p-name"
+    >
+      Anton Tetov Johansson
+    </span>
+  </div>
+  <div
+    className="inline-block group"
   >
-    (they/them)
-  </a>
-  <a
-    className="u-email"
-    href="mailto:anton@tetov.se"
-    rel="me"
+    <a
+      className="p-gender-identity"
+      href="https://en.wikipedia.org/wiki/Non-binary_gender"
+      rel="external"
+    >
+      (they/them)
+    </a>
+  </div>
+  <div
+    className="inline-block group"
   >
-    email
-  </a>
-  <a
-    className="u-key"
-    href="/key.txt"
-    rel="pgpkey authn key me"
+    <a
+      className="u-email"
+      href="mailto:anton@tetov.se"
+      rel="me"
+    >
+      email
+    </a>
+  </div>
+  <div
+    className="inline-block group"
   >
-    openpgp public key
-  </a>
+    <a
+      className="u-key"
+      href="/key.txt"
+      rel="pgpkey authn key me"
+    >
+      openpgp public key
+    </a>
+  </div>
 </div>
 `;

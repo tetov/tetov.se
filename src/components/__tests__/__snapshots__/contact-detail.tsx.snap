@@ -1,87 +1,113 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ContactDetail renders correctly with icon & url 1`] = `
-<a
-  className="u-url where-is-he-now where-did-he-go"
-  href="https://myspace.tk/tom"
-  rel="me external"
+<div
+  className="inline-block group"
 >
-  <svg
-    aria-hidden={true}
-    fill="currentColor"
-    height="1em"
-    stroke="currentColor"
-    strokeWidth="0"
-    style={
-      {
-        "color": undefined,
-      }
-    }
-    viewBox="0 0 24 24"
-    width="1em"
-    xmlns="http://www.w3.org/2000/svg"
+  <a
+    className="u-url where-is-he-now where-did-he-go"
+    href="https://myspace.tk/tom"
+    rel="me external"
   >
-    <g>
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
-      />
-      <path
-        d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zM7 12a5 5 0 0 0 10 0h-2a3 3 0 0 1-6 0H7z"
-      />
-    </g>
-  </svg>
-  MySpace
-</a>
+    <div
+      className="motion-safe:group-hover:animate-pulse inline-block"
+    >
+      <svg
+        aria-hidden={true}
+        className="p-2 inline-block"
+        fill="currentColor"
+        height="2em"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 24 24"
+        width="2em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zM7 12a5 5 0 0 0 10 0h-2a3 3 0 0 1-6 0H7z"
+          />
+        </g>
+      </svg>
+    </div>
+    MySpace
+  </a>
+</div>
 `;
 
 exports[`ContactDetail renders correctly with icon but without url 1`] = `
-<span
-  className="u-url where-is-he-now where-did-he-go"
+<div
+  className="inline-block group"
 >
-  <svg
-    aria-hidden={true}
-    fill="currentColor"
-    height="1em"
-    stroke="currentColor"
-    strokeWidth="0"
-    style={
-      {
-        "color": undefined,
-      }
-    }
-    viewBox="0 0 24 24"
-    width="1em"
-    xmlns="http://www.w3.org/2000/svg"
+  <span
+    className="u-url where-is-he-now where-did-he-go"
   >
-    <g>
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
-      />
-      <path
-        d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zM7 12a5 5 0 0 0 10 0h-2a3 3 0 0 1-6 0H7z"
-      />
-    </g>
-  </svg>
-  MySpace
-</span>
+    <div
+      className="motion-safe:group-hover:animate-pulse inline-block"
+    >
+      <svg
+        aria-hidden={true}
+        className="p-2 inline-block"
+        fill="currentColor"
+        height="2em"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 24 24"
+        width="2em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zM7 12a5 5 0 0 0 10 0h-2a3 3 0 0 1-6 0H7z"
+          />
+        </g>
+      </svg>
+    </div>
+    MySpace
+  </span>
+</div>
 `;
 
 exports[`ContactDetail renders correctly without icon and without url 1`] = `
-<span
-  className="u-url where-is-he-now where-did-he-go"
+<div
+  className="inline-block group"
 >
-  MySpace
-</span>
+  <span
+    className="u-url where-is-he-now where-did-he-go"
+  >
+    MySpace
+  </span>
+</div>
 `;
 
 exports[`ContactDetail renders correctly without icon but with url 1`] = `
-<a
-  className="u-url where-is-he-now where-did-he-go"
-  href="https://myspace.tk/tom"
-  rel="me external"
+<div
+  className="inline-block group"
 >
-  MySpace
-</a>
+  <a
+    className="u-url where-is-he-now where-did-he-go"
+    href="https://myspace.tk/tom"
+    rel="me external"
+  >
+    MySpace
+  </a>
+</div>
 `;
