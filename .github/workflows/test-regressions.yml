@@ -2,8 +2,7 @@ name: Test website for regressions
 
 on:
   schedule:
-    - cron: "* * * * 1" # every Tuesday
-    - cron: "* * * * 4" # every Friday
+    - cron: "0 12 * * 0,2,5"
 
 jobs:
   build:
