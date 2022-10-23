@@ -68,6 +68,7 @@
             "https://twitter.com/antontetov",
             "https://www.linkedin.com/in/tetov",
             "https://matrix.to/#/@tetov:matrix.org",
+            "https://signal.me/#p/+46703635667",
             "https://vis.social/@tetov",
             "https://tetov.se"
         ],
@@ -199,6 +200,12 @@
             "text": "matrix",
             "rels": [
                 "external",
+                "me"
+            ]
+        },
+        "https://signal.me/#p/+46703635667": {
+            "text": "signal",
+            "rels": [
                 "me"
             ]
         },
