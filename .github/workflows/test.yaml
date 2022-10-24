@@ -56,7 +56,7 @@ jobs:
 
       - name: Deploy on gh-pages
         if: github.ref == 'refs/heads/main'
-        uses: crazy-max/ghaction-github-pages@eb08c35b9fab86751edfff4e55cd5cde35ff0e52
+        uses: crazy-max/ghaction-github-pages@c0d7ff0487ee0415efb7f32dab10ea880330b1dd
         with:
           target_branch: gh-pages
           build_dir: public
