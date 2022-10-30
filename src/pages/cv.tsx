@@ -110,7 +110,7 @@ const CVPropTable = ({
               <td
                 className={classNames(
                   sharedTableCellClassNames,
-                  "font-medium border-r-2 border-gray-500 text-right"
+                  "font-medium border-r-2 border-gray-500 text-right",
                 )}
               >
                 {key}

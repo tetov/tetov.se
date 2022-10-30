@@ -8,7 +8,7 @@ describe("PageTitle", () => {
       .create(
         <PageTitle itemProp="testline" mfClass="p-name">
           Title
-        </PageTitle>
+        </PageTitle>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
@@ -22,7 +22,7 @@ describe("PageTitle", () => {
       .create(
         <PageTitle itemProp="JSX" mfClass="JSX">
           <a href="https://example.com/">Test</a>
-        </PageTitle>
+        </PageTitle>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
@@ -32,7 +32,7 @@ describe("PageTitle", () => {
       .create(
         <PageTitle>
           <div className="header">Header</div>
-        </PageTitle>
+        </PageTitle>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
