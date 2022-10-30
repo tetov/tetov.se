@@ -72,6 +72,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       skills: [CvYamlSkills!]!
       languages: [CvYamlLanguages!]!
       projects: [CvYamlProjects!]!
+      publications: [CvYamlPublications!]!
     }
       
     type CvYamlBasics {
@@ -115,7 +116,6 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       studyType: String!
       startDate: Date @dateformat
       endDate: Date @dateformat
-      score: String
     }
 
     type CvYamlProjects {
@@ -140,6 +140,40 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       language: String!
       fluency: String!
     }
-
+    
+    type CSLName {
+      family: String!
+      given: String!
+    }
+    
+    type CLSDate {
+      year: Int!
+      month: Int
+      day: Int
+    }
+    
+    type CvYamlPublications {
+      abstract: String
+      accessed: CLSDate
+      author: [CSLName!]!
+      citation_key: String
+      event_place: String
+      issued: CLSDate!
+      language: String
+      license: String
+      publisher: String
+      publisher_place: String
+      source: String
+      title: String!
+      type: String!
+      URL: String
+      citation_key: String!
+      container_title: String
+      event_title: String
+      page: String
+      DOI: String       
+      language: String
+      license: String
+    }
   `);
   };

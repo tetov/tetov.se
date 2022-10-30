@@ -239,7 +239,10 @@ projects:
     roles:
       - "design studio student"
 
-# use https://resource.citationstyles.org/schema/latest/input/json/csl-citation.json
+# use
+# https://resource.citationstyles.org/schema/latest/input/json/csl-citation.json
+# but! check date object (should be {year, month, day}) and change dash to
+# underscore to make graphql happy
 publications:
   - id: johanssonAdaptiveClayFormations2021
     abstract: >-
@@ -258,23 +261,25 @@ publications:
       optimization, geometric sensing, robot trajectory planning and mobile
       robotic localization. These explorations are combined with design studies
       for large monolithic clay structures aimed at a rapid construction on site.
-    accessed:
-      - year: 2021
-        month: 3
-        day: 17
+    accessed: 
+      year: 2021
+      month: 03
+      day: 17
     author:
       - family: Johansson
         given: Anton
       - family: Morales Zúñiga
         given: Edurne
-    citation-key: johanssonAdaptiveClayFormations2021
-    event-place: Lund, Sweden
-    issued:
-      - year: 2021
+    citation_key: johanssonAdaptiveClayFormations2021
+    event_place: Lund, Sweden
+    issued: 
+      year: 2021
+      month: 03
+      day: 17
     language: eng
     license: info:eu-repo/semantics/openAccess
     publisher: Lund University
-    publisher-place: Lund, Sweden
+    publisher_place: Lund, Sweden
     source: lup.lub.lu.se
     title: Adaptive Clay Formations
     type: thesis
@@ -305,17 +310,17 @@ publications:
         given: Anton
       - family: Hildorsson
         given: Erik
-    citation-key: andreenSwarmMaterializationDiscrete2019
-    container-title: >-
+    citation_key: andreenSwarmMaterializationDiscrete2019
+    container_title: >-
       2019 IEEE 4th International Workshops on Foundations and Applications of
       Self* Systems (FAS*W)
     DOI: 10.1109/FAS-W.2019.00059
-    event-title: >-
+    event_title: >-
       2019 IEEE 4th International Workshops on Foundations and Applications of
       Self* Systems (FAS*W)
-    issued:
-      - year: 2019
-        month: 6
+    issued: 
+      year: 2019
+      month: 06
     license: All rights reserved
     page: 225-230
     source: IEEE Xplore

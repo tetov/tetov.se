@@ -2,6 +2,7 @@ import classNames from "classnames";
 import { graphql, HeadFC, PageProps } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import React, { PropsWithChildren } from "react";
+import { createPublicationHTML } from "src/citations";
 import { cvFormatTimespan } from "src/components/cv";
 import HeadComponent from "src/components/head";
 import Layout from "src/components/layout";
@@ -106,7 +107,7 @@ const CVPropTable = ({
       <table className="table-auto">
         <tbody className="border-t-0 divide-y-0 border-gray-500">
           {tuples.map(([key, value]) => (
-            <tr className="border-gray-500">
+            <tr key={key} className="border-gray-500">
               <td
                 className={classNames(
                   sharedTableCellClassNames,
@@ -190,24 +191,24 @@ const CVEducation: React.FC<Queries.CvYamlEducation> = ({
     />
   </CVTimeSpanKeyedEntry>
 );
-const CVSkills = ({ name, keywords }: Queries.CvYamlSkills) => (
+const CVSkill = ({ name, keywords }: Queries.CvYamlSkills) => (
   <CVTimeSpanKeyedEntry heading={name}>
     <div className="flex flex-row w-full font-light text-m">
       <ul className="list-inside list-disc marker:text-purple">
         {keywords.map((k) => (
-          <li>{k}</li>
+          <li key={k}>{k}</li>
         ))}
       </ul>
     </div>
   </CVTimeSpanKeyedEntry>
 );
-const CVLanguages = ({ language, fluency }: Queries.CvYamlLanguages) => (
+const CVLanguage = ({ language, fluency }: Queries.CvYamlLanguages) => (
   <CVTimeSpanKeyedEntry heading={language}>
     <CVEntryBody description={fluency} />
   </CVTimeSpanKeyedEntry>
 );
 
-const CVProjects: React.FC<Queries.CvYamlProjects> = ({
+const CVProject: React.FC<Queries.CvYamlProjects> = ({
   name,
   url,
   startDate,
@@ -241,7 +242,7 @@ const CVProjects: React.FC<Queries.CvYamlProjects> = ({
             roles.length > 1 ? (
               <ul className="list-inside list-disc marker:text-purple">
                 {roles.map((role) => (
-                  <li>{role}</li>
+                  <li key={role}>{role}</li>
                 ))}
               </ul>
             ) : (
@@ -255,17 +256,33 @@ const CVProjects: React.FC<Queries.CvYamlProjects> = ({
   </CVTimeSpanKeyedEntry>
 );
 
-const CV: React.FC<PageProps<Queries.CvQuery>> = ({
+const CVPublication = (publication: Queries.CvYamlPublications) => (
+  <CVTimeSpanKeyedEntry heading="">
+    <CVEntryBody
+      description={
+        <span
+          dangerouslySetInnerHTML={{
+            __html: createPublicationHTML(publication),
+          }}
+        />
+      }
+    ></CVEntryBody>
+  </CVTimeSpanKeyedEntry>
+);
+
+const CV = ({
   location: { pathname },
   data: {
     allCvYaml: { nodes },
   },
-}) => {
+}: PageProps<Queries.CvQuery>) => {
   if (nodes.length !== 1) {
     throw new Error("More or less than one CV node found");
   }
 
-  const { basics, work, education, languages, skills, projects } = nodes[0];
+  const { basics, work, education, languages, skills, projects, publications } =
+    nodes[0];
+
 
   return (
     <Layout pathname={pathname}>
@@ -293,29 +310,34 @@ const CV: React.FC<PageProps<Queries.CvQuery>> = ({
             </p>
           </div>
         </header>
-        <CVSection title="Work experience">
+        <CVSection title="Work experience" key="work">
           {work.map((w) => (
-            <CVWork key={w.name + w.position} {...w} />
+            <CVWork key={w.name + w.position + w.startDate} {...w} />
           ))}
         </CVSection>
-        <CVSection title={"Academic achievements"}>
+        <CVSection title={"Academic achievements"} key="education">
           {education.map((e) => (
             <CVEducation key={e.studyType} {...e} />
           ))}
         </CVSection>
-        <CVSection title={"Work samples"}>
+        <CVSection title={"Work samples"} key="projects">
           {projects.map((p) => (
-            <CVProjects key={p.name} {...p} />
+            <CVProject key={p.name} {...p} />
           ))}
         </CVSection>
-        <CVSection title="Skills">
+        <CVSection title="Publications" key="publications">
+          {publications.map((p) => (
+            <CVPublication key={p.citation_key} {...p} />
+          ))}
+        </CVSection>
+        <CVSection title="Skills" key="skills">
           {skills.map((s) => (
-            <CVSkills key={s.name} {...s} />
+            <CVSkill key={s.name} {...s} />
           ))}
         </CVSection>
-        <CVSection title="Languages">
+        <CVSection title="Languages" key="languages">
           {languages?.map((l) => (
-            <CVLanguages {...l} />
+            <CVLanguage key={l.language} {...l} />
           ))}
         </CVSection>
       </article>
@@ -373,6 +395,7 @@ export const query = graphql`
           studyType
           startDate(formatString: "YYYY")
           endDate(formatString: "YYYY")
+          score
         }
         projects {
           name
@@ -393,6 +416,38 @@ export const query = graphql`
         languages {
           language
           fluency
+        }
+        publications {
+          accessed {
+            year
+            month
+            day
+          }
+          author {
+            given
+            family
+          }
+          abstract
+          citation_key
+          event_place
+          publisher
+          publisher_place
+          container_title
+          event_title
+          URL
+          type
+          page
+          source
+          title
+          DOI
+          issued {
+            year
+            month
+            day
+          }
+          language
+          license
+          page
         }
       }
     }
