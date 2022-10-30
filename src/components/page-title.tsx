@@ -16,7 +16,7 @@ const PageTitle = ({
       itemProp={itemProp}
       className={classNames(
         mfClass,
-        "text-4xl font-semibold leading-relaxed text-center"
+        "text-4xl font-semibold leading-relaxed text-center",
       )}
     >
       {children}

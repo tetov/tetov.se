@@ -21,7 +21,7 @@ const NavBar = ({ pathname, className }: NavBarProp) => {
       as="nav"
       className={classNames(
         "text-center md:justify-between mb-8 border-b-2 border-purple",
-        className
+        className,
       )}
     >
       {({ open }) => (
@@ -80,7 +80,7 @@ const NavBar = ({ pathname, className }: NavBarProp) => {
                           "bg-purple": pathname === url,
                           "hover:bg-transparent": pathname === url,
                         },
-                        commonNavLinkClassNames
+                        commonNavLinkClassNames,
                       )}
                       aria-current={url === pathname ? "page" : undefined}
                     >
@@ -113,7 +113,7 @@ const NavBar = ({ pathname, className }: NavBarProp) => {
                           "bg-purple": pathname === url,
                           "hover:bg-transparent": pathname === url,
                         },
-                        commonNavLinkClassNames
+                        commonNavLinkClassNames,
                       )}
                       aria-current={url === pathname ? "page" : undefined}
                     >

@@ -60,7 +60,6 @@ contactDataList:
     text: signal
     url: https://signal.me/#p/+46703635667
     username: "+46703635667"
-    rel: me
 
   - label: mastodon # also in cv/index.yaml
     text: mastodon
