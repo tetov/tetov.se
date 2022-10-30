@@ -76,7 +76,7 @@ const NavBar = ({ pathname }: NavBarProp) => {
                           "bg-purple": pathname === url,
                           "hover:bg-transparent": pathname === url,
                         },
-                        commonNavLinkClassNames
+                        commonNavLinkClassNames,
                       )}
                       aria-current={url === pathname ? "page" : undefined}
                     >
@@ -109,7 +109,7 @@ const NavBar = ({ pathname }: NavBarProp) => {
                           "bg-purple": pathname === url,
                           "hover:bg-transparent": pathname === url,
                         },
-                        commonNavLinkClassNames
+                        commonNavLinkClassNames,
                       )}
                       aria-current={url === pathname ? "page" : undefined}
                     >

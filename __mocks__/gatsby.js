@@ -20,7 +20,7 @@ module.exports = {
         ...rest,
         href: to,
       }),
-    ...gatsby
+    ...gatsby,
   ),
   StaticQuery: jest.fn(),
   useStaticQuery: jest.fn().mockImplementation(() => ({
