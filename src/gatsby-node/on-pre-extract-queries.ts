@@ -35,7 +35,7 @@ const onPreExtractQueries: GatsbyNode["onPreExtractQueries"] = async ({
     if (candidates.length === 0) {
       if (category === "projs") {
         throw new Error(
-          "No image candidates found for hero image for proj node.",
+          "No image candidates found for hero image for proj node."
         );
       }
       // if not projs we just ditch
@@ -44,7 +44,7 @@ const onPreExtractQueries: GatsbyNode["onPreExtractQueries"] = async ({
 
     if (candidates.length > 1)
       throw new Error(
-        `More than one matching hero image. Matches: ${candidates}`,
+        `More than one matching hero image. Matches: ${candidates}`
       );
 
     createNodeField({ node: docNode, name: "heroImg", value: candidates[0] });

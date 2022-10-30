@@ -12,7 +12,7 @@ const HCard = ({
   }
 
   const filteredNodes = nodes[0].contactDataList.filter(
-    ({ url, hcard }) => url || hcard,
+    ({ url, hcard }) => url || hcard
   ) as PureHCardProp[];
 
   return <PureHCard contactDetails={filteredNodes} />;

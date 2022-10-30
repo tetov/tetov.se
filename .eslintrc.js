@@ -7,6 +7,13 @@ module.exports = {
     },
   },
   ignorePatterns: ["public/"],
+  env: {
+    es6: true,
+  },
+  parser: "@babel/eslint-parser",
+  parserOptions: {
+    requireConfigFile: false,
+  },
   overrides: [
     {
       files: ["*.ts", "*.tsx"],

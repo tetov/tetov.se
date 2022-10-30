@@ -17,7 +17,7 @@ describe("HeadComponent", () => {
             property="og:article:published_time"
             content="2022-03-22T12:57:14Z"
           />
-        </HeadComponent>,
+        </HeadComponent>
       )
       .toJSON();
     expect(tree).toMatchSnapshot();

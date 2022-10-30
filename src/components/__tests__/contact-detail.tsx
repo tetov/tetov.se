@@ -13,7 +13,7 @@ describe("ContactDetail", () => {
           useIcon
           className="where-is-he-now where-did-he-go"
           hcard="u-url"
-        />,
+        />
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
@@ -28,7 +28,7 @@ describe("ContactDetail", () => {
           hcard="u-url"
           label="name"
           useIcon={false}
-        />,
+        />
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
@@ -42,7 +42,7 @@ describe("ContactDetail", () => {
           hcard="u-url"
           useIcon
           label="name"
-        />,
+        />
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
@@ -56,7 +56,7 @@ describe("ContactDetail", () => {
           hcard="u-url"
           label="name"
           useIcon={false}
-        />,
+        />
       )
       .toJSON();
     expect(tree).toMatchSnapshot();

@@ -12,7 +12,7 @@ describe("Layout", () => {
           pathname="/"
         >
           Some content
-        </Layout>,
+        </Layout>
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
