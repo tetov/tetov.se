@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: [
     "./src/pages/*.{js,jsx,ts,tsx}",
@@ -19,6 +22,9 @@ module.exports = {
         "dark-alt": "#666",
         "light-alt": "#DDD",
         purple: "#988ADE",
+      },
+      fontFamily: {
+        sans: ["Noto Sans", ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
         "5xl": "2.5rem",
