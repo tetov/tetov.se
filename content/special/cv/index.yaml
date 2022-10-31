@@ -142,6 +142,7 @@ work:
     location: Lund, Sweden
     position: Teaching assistant
     summary: Assisting and teaching in digital tool courses for architecture students in year 1–3.
+    url: https://abm.lth.se/
 
   # - name: Library of Architecture & Design, LTH
   #   startDate: "2016-09-30"
@@ -203,7 +204,7 @@ projects:
     startDate: "2020-06-01"
     endDate: "2020-09-01"
     entity: "MAS DFAB 19/20, ETH Zürich"
-    url: https://tetov.se/adaptive-clay-formations
+    url: https://tetov.se/adaptive-clay-formations/
     location: Robotic Fabrication Lab, ETH Zürich
     roles:
       - "research & development"
@@ -220,7 +221,7 @@ projects:
     startDate: "2020-01-01"
     endDate: "2020-01-01"
     entity: "MAS DFAB 19/20, ETH Zürich"
-    url: https://tetov.se/digital-bamboo-pavilion
+    url: https://tetov.se/digital-bamboo-pavilion/
     location: Zentrum Architektur Zürich, Zürich, Switzerland
     roles:
       - "team member in design team"
@@ -235,6 +236,7 @@ projects:
     startDate: "2018-01-01"
     endDate: "2018-01-01"
     entity: Spatial Experiments, School of Architecture, LTH
+    url: https://tetov.se/swallows-nest/
     location: School of Architecture, LTH, Lund
     roles:
       - "design studio student"
