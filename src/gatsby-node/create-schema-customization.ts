@@ -141,6 +141,14 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       fluency: String!
     }
     
+    type CvYamlTeaching {
+      name: String!
+      institution: String
+      summary: String
+      startDate: Date @dateformat
+      endDate: Date @dateformat
+    }
+    
     type CSLName {
       family: String!
       given: String!
@@ -157,23 +165,23 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       accessed: CLSDate
       author: [CSLName!]!
       citation_key: String
+      citation_key: String!
+      container_title: String
+      DOI: String       
       event_place: String
+      event_title: String
       issued: CLSDate!
       language: String
+      language: String
       license: String
-      publisher: String
+      license: String
+      page: String
       publisher_place: String
+      publisher: String
       source: String
       title: String!
       type: String!
       URL: String
-      citation_key: String!
-      container_title: String
-      event_title: String
-      page: String
-      DOI: String       
-      language: String
-      license: String
     }
   `);
   };

@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { graphql, HeadFC, PageProps } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren, ReactNode } from "react";
 import { createPublicationHTML } from "src/citations";
 import { cvFormatTimespan } from "src/components/cv";
 import HeadComponent from "src/components/head";
@@ -11,107 +11,90 @@ import querySiteMetadata from "src/hooks/query-site-metadata";
 
 /* COMPONENTS */
 
+const LEFT_COL_WIDTH = "w-[15%]";
+
+const CVUnorderedList = ({ children }: PropsWithChildren) => (
+  <ul className="list-inside list-disc marker:text-purple print:marker:text-light-text">
+    {children}
+  </ul>
+);
+
 const CVSection = ({
   title,
   children,
 }: PropsWithChildren<{ title: string }>) => (
   <section>
-    <div className="my-4 flex-row flex">
-      <div className="flex w-1/4"></div>
+    <div className="mt-8 mb-2 flex-row flex [page-break-inside:avoid]">
+      {/* width set up like CVEntry */}
+      <div className={classNames("flex", LEFT_COL_WIDTH)} />
       <div className="flex ml-2 w-full max-w-prose">
-        {" "}
-        {/* width set up like Keyed entry type*/}
-        <h2 className="text-3xl">{title}</h2>
+        <h2 className="text-2xl">{title}</h2>
       </div>
     </div>
-    <hr className="my-2 border-gray-500" />
+    <hr className="gray-border border-y-2" />
     <div className="border-collapse">{children}</div>
   </section>
 );
-
-type CVTimeSpanKeyedEntryType = {
+type CVEntryProp = {
   startDate?: string;
   endDate?: string;
-  heading: React.ReactNode;
+  heading?: React.ReactNode;
   url?: string;
 };
 
-const CVTimeSpanKeyedEntry = ({
+const CVEntry = ({
   startDate,
   endDate,
   heading,
   children,
-}: PropsWithChildren<CVTimeSpanKeyedEntryType>) => (
-  <div className="my-8 flex-row flex">
-    <div className="flex w-1/4 text-xs tracking-tight pt-1 mr-2">
+}: PropsWithChildren<CVEntryProp>) => (
+  <div className="mt-6 mb-4 flex-row flex">
+    <div
+      className={classNames(
+        "flex text-sm tracking-tight pt-1 mr-2",
+        LEFT_COL_WIDTH,
+      )}
+    >
       {cvFormatTimespan({ startDate, endDate })}
     </div>
-    <div className="flex w-full flex-col max-w-prose">
-      <div className="flex">
-        <h3 className="mb-1 font-bold tracking-widest text-lg">{heading}</h3>
+    {(heading && (
+      <div className="flex w-full flex-col max-w-prose">
+        <div className="flex">
+          <h3 className="mb-1 font-bold tracking-widest text-md">{heading}</h3>
+        </div>
+        <div className="flex flex-col">{children}</div>
       </div>
-      <div className="flex flex-col">{children}</div>
-    </div>
+    )) || <div className="w-full max-w-prose">{children}</div>}
   </div>
 );
 
 const CVEntryBody = ({
   children,
   description,
-}: PropsWithChildren<{ description: JSX.Element | string }>) => (
+}: PropsWithChildren<{ description: ReactNode }>) => (
   <>
     <div className="flex max-w-prose font-light">{description}</div>
-    <div className="flex min-w-full">{children}</div>
+    <div className="pt-2 flex min-w-full">{children}</div>
   </>
 );
 
-/* const CVPropTable: React.FC<{
- *   tuples: [key: string, value: JSX.Element | string][];
- * }> = ({ tuples }) => {
- *   const sharedTableCellClassNames = "flex p-2 text-sm";
- *
- *   return (
- *     <div className="flex flex-col pt-2 w-full">
- *       {tuples.map(([key, value]) => (
- *         <div className="flex flex-row border-b border-gray-500 last:border-b-0 justify-between">
- *           <div className={classNames(sharedTableCellClassNames, "font-medium")}>
- *             {key}
- *           </div>
- *           <div
- *             className={classNames(
- *               sharedTableCellClassNames,
- *               "font-light w-3/5"
- *             )}
- *           >
- *             {value}
- *           </div>
- *         </div>
- *       ))}
- *     </div>
- *   );
- * }; */
-
-{
-  /* <div className="prose dark:prose-invert w-full"> */
-}
 const CVPropTable = ({
   tuples,
 }: {
-  tuples: [key: string, value: JSX.Element | string][];
+  tuples: [key: string, value: ReactNode][];
 }) => {
-  /* const sharedTableCellClassNames = "flex p-2 text-sm"; */
-  const sharedTableCellClassNames = "text-sm px-2 py-2";
+  const sharedTableCellClassNames = "text-sm px-2 py-1 gray-border";
 
   return (
-    <div className="pt-4">
+    <div className="py-1">
       <table className="table-auto">
-        <tbody className="border-t-0 divide-y-0 border-gray-500">
+        <tbody className="border-t-0 divide-y-0">
           {tuples.map(([key, value]) => (
-            <tr key={key} className="border-gray-500">
+            <tr key={key} className="gray-border">
               <td
                 className={classNames(
                   sharedTableCellClassNames,
-                  "font-medium border-r-2 border-gray-500 text-right",
+                  "font-medium border-r-2 text-right",
                 )}
               >
                 {key}
@@ -131,7 +114,7 @@ const CVPropTable = ({
 
 /* Resume section components */
 
-const CVWork: React.FC<Queries.CvYamlWork> = ({
+const CVWork = ({
   name,
   location,
   /* description, */
@@ -140,8 +123,8 @@ const CVWork: React.FC<Queries.CvYamlWork> = ({
   startDate,
   summary,
   url,
-}) => (
-  <CVTimeSpanKeyedEntry
+}: Queries.CvYamlWork) => (
+  <CVEntry
     startDate={startDate ?? undefined}
     endDate={endDate ?? undefined}
     url={url ?? undefined}
@@ -164,17 +147,17 @@ const CVWork: React.FC<Queries.CvYamlWork> = ({
         ]}
       />
     </CVEntryBody>
-  </CVTimeSpanKeyedEntry>
+  </CVEntry>
 );
 
-const CVEducation: React.FC<Queries.CvYamlEducation> = ({
+const CVEducation = ({
   startDate,
   endDate,
   studyType,
   institution,
   institutionUrl,
-}) => (
-  <CVTimeSpanKeyedEntry
+}: Queries.CvYamlEducation) => (
+  <CVEntry
     heading={<span>{studyType}</span>}
     startDate={startDate ?? ""}
     endDate={endDate ?? undefined}
@@ -189,23 +172,25 @@ const CVEducation: React.FC<Queries.CvYamlEducation> = ({
         )
       }
     />
-  </CVTimeSpanKeyedEntry>
+  </CVEntry>
 );
+
 const CVSkill = ({ name, keywords }: Queries.CvYamlSkills) => (
-  <CVTimeSpanKeyedEntry heading={name}>
+  <CVEntry heading={name}>
     <div className="flex flex-row w-full font-light text-m">
-      <ul className="list-inside list-disc marker:text-purple">
+      <CVUnorderedList>
         {keywords.map((k) => (
           <li key={k}>{k}</li>
         ))}
-      </ul>
+      </CVUnorderedList>
     </div>
-  </CVTimeSpanKeyedEntry>
+  </CVEntry>
 );
+
 const CVLanguage = ({ language, fluency }: Queries.CvYamlLanguages) => (
-  <CVTimeSpanKeyedEntry heading={language}>
+  <CVEntry heading={language}>
     <CVEntryBody description={fluency} />
-  </CVTimeSpanKeyedEntry>
+  </CVEntry>
 );
 
 const CVProject: React.FC<Queries.CvYamlProjects> = ({
@@ -219,10 +204,10 @@ const CVProject: React.FC<Queries.CvYamlProjects> = ({
   type,
   location,
 }) => (
-  <CVTimeSpanKeyedEntry
+  <CVEntry
     heading={
       <span>
-        <a href={url ?? undefined} className="link-style-alt">
+        <a href={url ?? undefined} className="link-style">
           {name}
         </a>
         {`, ${type}`}
@@ -240,11 +225,11 @@ const CVProject: React.FC<Queries.CvYamlProjects> = ({
           [
             roles.length > 1 ? "Roles" : "Role",
             roles.length > 1 ? (
-              <ul className="list-inside list-disc marker:text-purple">
+              <CVUnorderedList>
                 {roles.map((role) => (
                   <li key={role}>{role}</li>
                 ))}
-              </ul>
+              </CVUnorderedList>
             ) : (
               roles[0]
             ),
@@ -253,21 +238,38 @@ const CVProject: React.FC<Queries.CvYamlProjects> = ({
         ]}
       />
     </CVEntryBody>
-  </CVTimeSpanKeyedEntry>
+  </CVEntry>
 );
 
 const CVPublication = (publication: Queries.CvYamlPublications) => (
-  <CVTimeSpanKeyedEntry heading="">
+  <CVEntry>
     <CVEntryBody
       description={
         <span
+          className="first-line:indent-6 -indent-4"
           dangerouslySetInnerHTML={{
             __html: createPublicationHTML(publication),
           }}
         />
       }
-    ></CVEntryBody>
-  </CVTimeSpanKeyedEntry>
+    />
+  </CVEntry>
+);
+
+const CVTeaching = ({
+  startDate,
+  endDate,
+  institution,
+  name,
+  summary,
+}: Queries.CvYamlTeaching) => (
+  <CVEntry
+    startDate={startDate ?? undefined}
+    endDate={endDate ?? undefined}
+    heading={`${name}, ${institution}`}
+  >
+    <CVEntryBody description={<span>{summary}</span>} />
+  </CVEntry>
 );
 
 const CV = ({
@@ -280,9 +282,16 @@ const CV = ({
     throw new Error("More or less than one CV node found");
   }
 
-  const { basics, work, education, languages, skills, projects, publications } =
-    nodes[0];
-
+  const {
+    basics,
+    work,
+    education,
+    languages,
+    skills,
+    projects,
+    publications,
+    teaching,
+  } = nodes[0];
 
   return (
     <Layout pathname={pathname}>
@@ -329,6 +338,11 @@ const CV = ({
           {publications.map((p) => (
             <CVPublication key={p.citation_key} {...p} />
           ))}
+          <CVSection title="Teaching experience" key="teaching">
+            {teaching.map((t) => (
+              <CVTeaching key={t.name} {...t} />
+            ))}
+          </CVSection>
         </CVSection>
         <CVSection title="Skills" key="skills">
           {skills.map((s) => (
@@ -417,7 +431,15 @@ export const query = graphql`
           language
           fluency
         }
+        teaching {
+          name
+          startDate(formatString: "YYYY")
+          endDate(formatString: "YYYY")
+          summary
+          institution
+        }
         publications {
+          abstract
           accessed {
             year
             month
@@ -427,19 +449,11 @@ export const query = graphql`
             given
             family
           }
-          abstract
           citation_key
-          event_place
-          publisher
-          publisher_place
           container_title
-          event_title
-          URL
-          type
-          page
-          source
-          title
           DOI
+          event_place
+          event_title
           issued {
             year
             month
@@ -448,6 +462,13 @@ export const query = graphql`
           language
           license
           page
+          page
+          publisher
+          publisher_place
+          source
+          title
+          type
+          URL
         }
       }
     }

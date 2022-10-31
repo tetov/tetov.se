@@ -7,8 +7,7 @@ basics:
   name: Anton Tetov Johansson
   phone: "+46703635667"
   summary:
-    Architecture, design and digital fabrication. Ask me about 3D-printing,
-    scripting or how to manage loads of data!
+    Architecture, design and digital fabrication.
   url: https://tetov.se/ # also in gatsby-config.ts
 
   location:
@@ -64,9 +63,9 @@ work:
   - name: Dept. of Architecture & Built Environment, LTH, Lund University.
     startDate: "2021-05-31"
     description:
-      a collaboration between the Department of Architecture & Built Environment
+      A collaboration between the Department of Architecture & Built Environment
       Department of Automatic Control and the Construction Robotics lab.
-    highlights: []
+    highlights: [ 3d-printing, ROS, 3d-scanning, academic writing ]
     location: Lund, Sweden
     position: Project Assistant
     summary:
@@ -77,7 +76,7 @@ work:
   - name: Dept. of Automatic Control, LTH, Lund University
     startDate: "2022"
     description:
-      a collaboration between the Department of Automatic Control and Proxima
+      A collaboration between the Department of Automatic Control and Proxima
       Centauri ApS.
     highlights: []
     location: Lund, Sweden
@@ -87,7 +86,7 @@ work:
 
   - name: Dept. of Automatic Control, LTH, Lund University
     description:
-      a collaboration between the Department of Automatic Control, IUC Syd/IUC
+      A collaboration between the Department of Automatic Control, IUC Syd/IUC
       lab and SWEP international.
     startDate: "2021-06-01"
     endDate: "2022-01-31"
@@ -106,7 +105,7 @@ work:
     location: Bern, Switzerland
     position: Trainee
     url: https://gramaziokohler.arch.ethz.ch/
-    summary: Full scale on site construction of clay wall for SEMusicLab in Bern
+    summary: Full scale on site construction of clay wall for SEMusicLab in Bern.
 
   - name: "Gramazio Kohler Research, ETH Zürich"
     endDate: "2020-09-30"
@@ -371,6 +370,24 @@ skills:
       - UI & vector graphics (Adobe Illustrator, InkScape, Figma)
       - Print layout (Adobe Indesign)
       - Web design (CSS, SCSS, CSS-in-JS)
+
+teaching:
+  - name: Spatial Experiments I
+    institution: School of Architecture, LTH, Lund University
+    summary: >-
+      Design studio at the Masters programme at the School of Architecture. 
+      Mainly technical assistance (e.g. 3D-printing, robotics).
+    startDate: "2021-01-01"
+  - name: Creative Tools I
+    institution: School of Architecture, LTH, Lund University
+    summary: >-
+      Course in computational design and digital fabrication. Mainly technical assistance (e.g. robot control).
+    startDate: "2021-01-01"
+  - name: Digital Tools 2
+    institution: School of Architecture, LTH, Lund University
+    startDate: "2017-01-01"
+    endDate: "2019-01-01"
+    summary: Teaching assistant.
 
 volunteer: []
 certificates: []
