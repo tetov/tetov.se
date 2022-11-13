@@ -42,7 +42,7 @@
     "csl-json": "^0.1.0",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
-    "gatsby": "^4.24.5",
+    "gatsby": "^4.24.8",
     "gatsby-plugin-catch-links": "^4.24.0",
     "gatsby-plugin-feed": "^4.24.0",
     "gatsby-plugin-image": "^2.24.0",
