@@ -1,36 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PageTitle PageTitle with custom prop and JSX child renders correctly 1`] = `
-<div
-  className="mt-4 mb-8"
->
-  <h1
-    className="JSX text-4xl font-semibold leading-relaxed text-center"
-    itemProp="JSX"
-  >
-    <a
-      href="https://example.com/"
-    >
-      Test
-    </a>
-  </h1>
-</div>
-`;
-
-exports[`PageTitle PageTitle with custom prop and string child renders correctly 1`] = `
-<div
-  className="mt-4 mb-8"
->
-  <h1
-    className="p-name text-4xl font-semibold leading-relaxed text-center"
-    itemProp="testline"
-  >
-    Title
-  </h1>
-</div>
-`;
-
-exports[`PageTitle PageTitle with default prop and JSX child renders correctly 1`] = `
+exports[`PageTitle PageTitle with articleHeader set to false renders a div 1`] = `
 <div
   className="mt-4 mb-8"
 >
@@ -47,8 +17,72 @@ exports[`PageTitle PageTitle with default prop and JSX child renders correctly 1
 </div>
 `;
 
+exports[`PageTitle PageTitle with articleHeader set to true renders header 1`] = `
+<header
+  className="mt-4 mb-8"
+>
+  <h1
+    className="p-name text-4xl font-semibold leading-relaxed text-center"
+    itemProp="headline"
+  >
+    <div
+      className="header"
+    >
+      Header
+    </div>
+  </h1>
+</header>
+`;
+
+exports[`PageTitle PageTitle with custom prop and JSX child renders correctly 1`] = `
+<header
+  className="mt-4 mb-8"
+>
+  <h1
+    className="JSX text-4xl font-semibold leading-relaxed text-center"
+    itemProp="JSX"
+  >
+    <a
+      href="https://example.com/"
+    >
+      Test
+    </a>
+  </h1>
+</header>
+`;
+
+exports[`PageTitle PageTitle with custom prop and string child renders correctly 1`] = `
+<header
+  className="mt-4 mb-8"
+>
+  <h1
+    className="p-name text-4xl font-semibold leading-relaxed text-center"
+    itemProp="testline"
+  >
+    Title
+  </h1>
+</header>
+`;
+
+exports[`PageTitle PageTitle with default prop and JSX child renders correctly 1`] = `
+<header
+  className="mt-4 mb-8"
+>
+  <h1
+    className="p-name text-4xl font-semibold leading-relaxed text-center"
+    itemProp="headline"
+  >
+    <div
+      className="header"
+    >
+      Header
+    </div>
+  </h1>
+</header>
+`;
+
 exports[`PageTitle PageTitle with default prop and string child renders correctly 1`] = `
-<div
+<header
   className="mt-4 mb-8"
 >
   <h1
@@ -57,5 +91,5 @@ exports[`PageTitle PageTitle with default prop and string child renders correctl
   >
     Title
   </h1>
-</div>
+</header>
 `;

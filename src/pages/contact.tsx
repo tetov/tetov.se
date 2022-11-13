@@ -17,13 +17,15 @@ const Contact = ({
   }
   const { contactDataList } = nodes[0];
 
+  const contactDataListWOUrl = contactDataList.filter((c) => c.label !== "url");
+
   return (
     <Layout pathname={pathname}>
       <PageTitle>Want to say hi?</PageTitle>
-      <div className="h-card text-center text-lg">
-        {contactDataList.map((n) => (
+      <div className="h-card text-lg flex flex-row flex-wrap justify-around">
+        {contactDataListWOUrl.map((n) => (
           <ContactDetail
-            className={classNames("inline-block mx-4 whitespace-nowrap", {
+            className={classNames("mx-4 whitespace-nowrap", {
               "hover:text-purple": Boolean(n.url),
             })}
             text={n.text}
@@ -32,6 +34,7 @@ const Contact = ({
             rel={n.rel ?? undefined}
             key={n.label}
             label={n.label}
+            printFriendlyText={n.printFriendlyText ?? undefined}
           />
         ))}
       </div>
@@ -59,6 +62,7 @@ export const query = graphql`
           text
           rel
           label
+          printFriendlyText
         }
       }
     }

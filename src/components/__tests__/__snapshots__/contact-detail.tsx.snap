@@ -2,7 +2,7 @@
 
 exports[`ContactDetail renders correctly with icon & url 1`] = `
 <div
-  className="inline-block group"
+  className="flex group p-2"
 >
   <a
     className="u-url where-is-he-now where-did-he-go"
@@ -14,9 +14,9 @@ exports[`ContactDetail renders correctly with icon & url 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="p-2 inline-block"
+        className="inline"
         fill="currentColor"
-        height="2em"
+        height="1em"
         stroke="currentColor"
         strokeWidth="0"
         style={
@@ -25,7 +25,7 @@ exports[`ContactDetail renders correctly with icon & url 1`] = `
           }
         }
         viewBox="0 0 24 24"
-        width="2em"
+        width="1em"
         xmlns="http://www.w3.org/2000/svg"
       >
         <g>
@@ -39,14 +39,18 @@ exports[`ContactDetail renders correctly with icon & url 1`] = `
         </g>
       </svg>
     </div>
-    MySpace
+    <span
+      className="pl-1"
+    >
+      MySpace
+    </span>
   </a>
 </div>
 `;
 
 exports[`ContactDetail renders correctly with icon but without url 1`] = `
 <div
-  className="inline-block group"
+  className="flex group p-2"
 >
   <span
     className="u-url where-is-he-now where-did-he-go"
@@ -56,9 +60,9 @@ exports[`ContactDetail renders correctly with icon but without url 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="p-2 inline-block"
+        className="inline"
         fill="currentColor"
-        height="2em"
+        height="1em"
         stroke="currentColor"
         strokeWidth="0"
         style={
@@ -67,7 +71,7 @@ exports[`ContactDetail renders correctly with icon but without url 1`] = `
           }
         }
         viewBox="0 0 24 24"
-        width="2em"
+        width="1em"
         xmlns="http://www.w3.org/2000/svg"
       >
         <g>
@@ -81,33 +85,45 @@ exports[`ContactDetail renders correctly with icon but without url 1`] = `
         </g>
       </svg>
     </div>
-    MySpace
+    <span
+      className="pl-1"
+    >
+      MySpace
+    </span>
   </span>
 </div>
 `;
 
 exports[`ContactDetail renders correctly without icon and without url 1`] = `
 <div
-  className="inline-block group"
+  className="flex group p-2"
 >
   <span
     className="u-url where-is-he-now where-did-he-go"
   >
-    MySpace
+    <span
+      className=""
+    >
+      MySpace
+    </span>
   </span>
 </div>
 `;
 
 exports[`ContactDetail renders correctly without icon but with url 1`] = `
 <div
-  className="inline-block group"
+  className="flex group p-2"
 >
   <a
     className="u-url where-is-he-now where-did-he-go"
     href="https://myspace.tk/tom"
     rel="me external"
   >
-    MySpace
+    <span
+      className=""
+    >
+      MySpace
+    </span>
   </a>
 </div>
 `;

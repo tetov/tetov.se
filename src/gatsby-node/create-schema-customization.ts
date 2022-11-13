@@ -63,6 +63,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       url: String
       username: String
       rel: String
+      printFriendlyText: String
     }
 
     type CvYaml implements Node {
@@ -73,6 +74,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       languages: [CvYamlLanguages!]!
       projects: [CvYamlProjects!]!
       publications: [CvYamlPublications!]!
+      teaching: [CvYamlTeaching!]!
     }
       
     type CvYamlBasics {
@@ -105,8 +107,8 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       endDate: Date @dateformat
       url: String
       location: String!
-      summary: String!
-      description: String
+      summary: String
+      description: String!
     }
     
     type CvYamlEducation {

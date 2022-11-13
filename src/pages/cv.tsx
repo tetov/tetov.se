@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import { graphql, HeadFC, PageProps } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 import React, { PropsWithChildren, ReactNode } from "react";
 import { createPublicationHTML } from "src/citations";
+import ContactDetail from "src/components/contact-detail";
 import { cvFormatTimespan } from "src/components/cv";
 import HeadComponent from "src/components/head";
 import Layout from "src/components/layout";
@@ -11,7 +11,7 @@ import querySiteMetadata from "src/hooks/query-site-metadata";
 
 /* COMPONENTS */
 
-const LEFT_COL_WIDTH = "w-[15%]";
+const LEFT_COL_WIDTH = "w-[15%] md:w-1/4";
 
 const CVUnorderedList = ({ children }: PropsWithChildren) => (
   <ul className="list-inside list-disc marker:text-purple print:marker:text-light-text">
@@ -51,7 +51,7 @@ const CVEntry = ({
   <div className="mt-6 mb-4 flex-row flex">
     <div
       className={classNames(
-        "flex text-sm tracking-tight pt-1 mr-2",
+        "flex text-base tracking-tight pt-1 mr-2",
         LEFT_COL_WIDTH,
       )}
     >
@@ -73,7 +73,9 @@ const CVEntryBody = ({
   description,
 }: PropsWithChildren<{ description: ReactNode }>) => (
   <>
-    <div className="flex max-w-prose font-light">{description}</div>
+    <div className="flex max-w-prose font-light whitespace-pre-line">
+      {description}
+    </div>
     <div className="pt-2 flex min-w-full">{children}</div>
   </>
 );
@@ -116,12 +118,10 @@ const CVPropTable = ({
 
 const CVWork = ({
   name,
-  location,
-  /* description, */
   endDate,
   position,
   startDate,
-  summary,
+  description,
   url,
 }: Queries.CvYamlWork) => (
   <CVEntry
@@ -129,24 +129,21 @@ const CVWork = ({
     endDate={endDate ?? undefined}
     url={url ?? undefined}
     heading={
-      url ? (
-        <a href={url} className="link-style">
-          {name}
-        </a>
-      ) : (
-        <span>{name}</span>
-      )
+      <span>
+        {`${position} `}
+        <span className="font-normal">at </span>
+        {url ? (
+          <a href={url} className="link-style">
+            {name}
+          </a>
+        ) : (
+          <span>{name}</span>
+        )}
+      </span>
     }
     key={name}
   >
-    <CVEntryBody description={summary}>
-      <CVPropTable
-        tuples={[
-          ["Position", position],
-          ["Location", location],
-        ]}
-      />
-    </CVEntryBody>
+    <CVEntryBody description={description} />
   </CVEntry>
 );
 
@@ -276,14 +273,19 @@ const CV = ({
   location: { pathname },
   data: {
     allCvYaml: { nodes },
+    allContactDataYaml: { nodes: contactDataNodes },
   },
 }: PageProps<Queries.CvQuery>) => {
   if (nodes.length !== 1) {
     throw new Error("More or less than one CV node found");
   }
 
+  if (contactDataNodes.length !== 1) {
+    throw new Error("More or less than one ContactData node found");
+  }
+
   const {
-    basics,
+    // basics, // contact details used
     work,
     education,
     languages,
@@ -293,6 +295,23 @@ const CV = ({
     teaching,
   } = nodes[0];
 
+  const { contactDataList } = contactDataNodes[0];
+
+  const contactDetailProps = [
+    contactDataList.find((c) => c.label === "name"),
+    contactDataList.find((c) => c.label === "email"),
+    contactDataList.find((c) => c.label === "telephone"),
+    contactDataList.find((c) => c.label === "url"),
+    contactDataList.find((c) => c.label === "github"),
+    contactDataList.find((c) => c.label === "linkedin"),
+  ];
+
+  if (contactDetailProps.filter((p) => p === undefined).length > 0) {
+    throw new Error(
+      `One or more items in list of contact details props is undefined (not found): ${contactDetailProps}`,
+    );
+  }
+
   return (
     <Layout pathname={pathname}>
       <article
@@ -300,25 +319,12 @@ const CV = ({
         itemScope
         itemType="http://schema.org/Person"
       >
-        <PageTitle>CV</PageTitle>
-        <header className="flex items-center mb-8 md:mb-11">
-          <StaticImage
-            src="../headshot.jpg"
-            alt={`Photo of ${basics.name}`}
-            width={80}
-            height={80}
-            objectFit="cover"
-            objectPosition="top"
-          />
-          <div className="ml-3">
-            <p className="text-2xl font-semibold text-gray-750 pb-px">
-              {basics.name}
-            </p>
-            <p className="leading-normal text-md text-gray-650 -mt-0.5">
-              {basics.summary}
-            </p>
-          </div>
-        </header>
+        <PageTitle articleHeader>CV</PageTitle>
+        <div className="flex flex-row mb-8 md:mb-11 justify-between flex-wrap">
+          {contactDetailProps.map((c) => (
+            <ContactDetail {...c} />
+          ))}
+        </div>
         <CVSection title="Work experience" key="work">
           {work.map((w) => (
             <CVWork key={w.name + w.position + w.startDate} {...w} />
@@ -371,6 +377,17 @@ export default CV;
 
 export const query = graphql`
   query Cv {
+    allContactDataYaml {
+      nodes {
+        contactDataList {
+          label
+          text
+          url
+          username
+          printFriendlyText
+        }
+      }
+    }
     allCvYaml {
       nodes {
         id

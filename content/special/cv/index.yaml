@@ -59,87 +59,95 @@ languages:
     fluency: Fluent
 
 work:
-  - name: Dept. of Architecture & Built Environment, LTH, Lund University.
+  - name: Dept. of Architecture & Built Environment, LTH
     startDate: "2021-05-31"
-    description:
-      A collaboration between the Department of Architecture & Built Environment
-      Department of Automatic Control and the Construction Robotics lab.
+    description: >-
+      Working with the research project Biomimetic fabrication through robotic
+      3D-printing. Research conducted in a collaboration between the Department 
+      of Architecture & Built Environment, the Department of Automatic Control 
+      and the Construction Robotics lab.
+
+
+      Responsibilities included project management, software and hardware
+      prototyping and development, academic writing and experimentation.
     highlights: [3d-printing, ROS, 3d-scanning, academic writing]
     location: Lund, Sweden
     position: Project Assistant
-    summary:
-      Working with the research project Biomimetic fabrication through robotic
-      3D-printing
     url: https://abm.lth.se
 
   - name: Dept. of Automatic Control, LTH, Lund University
     startDate: "2022"
-    description:
-      A collaboration between the Department of Automatic Control and Proxima
-      Centauri ApS.
     highlights: []
     location: Lund, Sweden
     position: Project Assistant
-    summary: Project assistant in the research project Eurostars SelectiCa
+    description: >-
+      In the research project Eurostars SelectiCa, a collaboration between the 
+      LTH Robot Lab and Proxima Centauri ApS.
+
+
+      Responsibilities included project management, software and hardware
+      prototyping and development, academic writing and experimentation.
     url: https://control.lth.se
 
   - name: Dept. of Automatic Control, LTH, Lund University
-    description:
-      A collaboration between the Department of Automatic Control, IUC Syd/IUC
-      lab and SWEP international.
+    description: >-
+      In the research project Digitalisation and Standardisation
+      for Customized Mass Production, a collaboration between the Department of
+      Automatic Control, IUC Syd/IUC lab and SWEP international.
+
+
+      Responsibilities included project management, software and hardware
+      prototyping and development, academic writing and experimentation.
     startDate: "2021-06-01"
     endDate: "2022-01-31"
     highlights: []
     location: Lund, Sweden
     position: Project Assistant
-    summary:
-      Project assistant in the research project Digitalisation and Standardisation
-      for Customized Mass Production
     url: https://control.lth.se
 
-  - name: "Gramazio Kohler Research, ETH Zürich"
+  - name: Gramazio Kohler Research, ETH Zürich
     startDate: "2020-10-31"
     endDate: "2020-12-31"
     highlights: []
     location: Bern, Switzerland
     position: Trainee
     url: https://gramaziokohler.arch.ethz.ch/
-    summary: Full scale on site construction of clay wall for SEMusicLab in Bern.
+    description: Full scale on site construction of clay wall for SEMusicLab in Bern.
 
-  - name: "Gramazio Kohler Research, ETH Zürich"
+  - name: Gramazio Kohler Research, ETH Zürich
     endDate: "2020-09-30"
     highlights: []
     location: "Zürich, Switzerland"
     position: Student assistant
     startDate: "2020-01-31"
     url: https://gramaziokohler.arch.ethz.ch
-    summary: Code documentation and testing, assistance in acoustic experiments.
+    description: Code documentation and testing, assistance in acoustic experiments.
 
-  - name: "Digital Building Technologies, ETH Zürich"
+  - name: Digital Building Technologies, ETH Zürich
     startDate: "2020-03-31"
     endDate: "2020-09-30"
     highlights: []
     location: "Zürich, Switzerland"
     position: Student assistant
     url: https://dbt.arch.ethz.ch/
-    summary: 3D-printer repair and maintenance.
+    description: 3D-printer repair and maintenance.
 
-  - name: Sesam Arkitektkontor
+  - name: Sesam Arkitektkontor, Kristianstad
     startDate: "2017-09-30"
     endDate: "2018-07-31"
     highlights: []
     location: Kristianstad, Sweden
     position: Architect
     url: https://sesam-ark.se
-    summary: Ten month internship working mostly in residential projects from proposal to tender.
+    description: Ten month internship working mostly in residential projects from proposal to tender.
 
-  - name: Dept. of Architecture & Built Environment, LTH Lund.
+  - name: Dept. of Architecture & Built Environment, LTH, Lund University
     startDate: "2017-01-01"
     endDate: "2019-01-01"
     highlights: []
     location: Lund, Sweden
     position: Teaching assistant
-    summary: Assisting and teaching in digital tool courses for architecture students in year 1–3.
+    description: Assisting and teaching in digital tool courses for architecture students in year 1–3.
     url: https://abm.lth.se/
 
   # - name: Library of Architecture & Design, LTH
@@ -151,14 +159,14 @@ work:
   #   summary:
   #   url: https://www.lth.se/english/library/
 
-  - name: Accent Arkitekter
+  - name: Accent Arkitekter, Värnamo
     endDate: "2016-07-31"
     highlights: []
     location: "Värnamo, Sweden"
     position: Architect trainee
     startDate: "2016-06-30"
     url: http://accentarkitekter.se/
-    summary: Four week full-time internship in 2016 and an additional four weeks in 2017.
+    description: Four week full-time internship in 2016 and an additional four weeks in 2017.
 
   # - name: Suzzle
   #   startDate: "2013-01-31"
@@ -382,11 +390,11 @@ teaching:
     summary: >-
       Course in computational design and digital fabrication. Mainly technical assistance (e.g. robot control).
     startDate: "2021-01-01"
-  - name: Digital Tools 2
+  - name: Digital Tools II
     institution: School of Architecture, LTH, Lund University
     startDate: "2017-01-01"
     endDate: "2019-01-01"
-    summary: Teaching assistant.
+    summary: Teaching assistant
 
 volunteer: []
 certificates: []

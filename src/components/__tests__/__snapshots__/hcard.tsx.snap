@@ -6,45 +6,61 @@ exports[`HCard HCard renders correctly with hand converted data 1`] = `
   className="h-card hidden"
 >
   <div
-    className="inline-block group"
+    className="flex group p-2"
   >
     <span
       className="p-name"
     >
-      Anton Tetov Johansson
+      <span
+        className=""
+      >
+        Anton Tetov Johansson
+      </span>
     </span>
   </div>
   <div
-    className="inline-block group"
+    className="flex group p-2"
   >
     <a
       className="p-gender-identity"
       href="https://en.wikipedia.org/wiki/Non-binary_gender"
       rel="external"
     >
-      (they/them)
+      <span
+        className=""
+      >
+        (they/them)
+      </span>
     </a>
   </div>
   <div
-    className="inline-block group"
+    className="flex group p-2"
   >
     <a
       className="u-email"
       href="mailto:anton@tetov.se"
       rel="me"
     >
-      email
+      <span
+        className=""
+      >
+        email
+      </span>
     </a>
   </div>
   <div
-    className="inline-block group"
+    className="flex group p-2"
   >
     <a
       className="u-key"
       href="/key.txt"
       rel="pgpkey authn key me"
     >
-      openpgp public key
+      <span
+        className=""
+      >
+        openpgp public key
+      </span>
     </a>
   </div>
 </div>
@@ -56,45 +72,61 @@ exports[`HCard PureHCard renders correctly with hand converted data 1`] = `
   className="h-card hidden"
 >
   <div
-    className="inline-block group"
+    className="flex group p-2"
   >
     <span
       className="p-name"
     >
-      Anton Tetov Johansson
+      <span
+        className=""
+      >
+        Anton Tetov Johansson
+      </span>
     </span>
   </div>
   <div
-    className="inline-block group"
+    className="flex group p-2"
   >
     <a
       className="p-gender-identity"
       href="https://en.wikipedia.org/wiki/Non-binary_gender"
       rel="external"
     >
-      (they/them)
+      <span
+        className=""
+      >
+        (they/them)
+      </span>
     </a>
   </div>
   <div
-    className="inline-block group"
+    className="flex group p-2"
   >
     <a
       className="u-email"
       href="mailto:anton@tetov.se"
       rel="me"
     >
-      email
+      <span
+        className=""
+      >
+        email
+      </span>
     </a>
   </div>
   <div
-    className="inline-block group"
+    className="flex group p-2"
   >
     <a
       className="u-key"
       href="/key.txt"
       rel="pgpkey authn key me"
     >
-      openpgp public key
+      <span
+        className=""
+      >
+        openpgp public key
+      </span>
     </a>
   </div>
 </div>

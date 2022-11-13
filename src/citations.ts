@@ -21,7 +21,6 @@ const addLinksToHTML = (text: string): string => {
     DOI_REGEX,
     `<a href="https://doi.org/$2" class="link-style">$1$2</a>`,
   );
-  console.log(returnText);
   return returnText;
 };
 

@@ -16,6 +16,7 @@ contactDataList:
     url: mailto:anton@tetov.se
     username: anton@tetov.se
     rel: me
+    printFriendlyText: anton@tetov.se
 
   - hcard: u-key
     label: openpgp
@@ -35,6 +36,7 @@ contactDataList:
     text: github
     url: https://github.com/tetov
     username: tetov
+    printFriendlyText: github.com/tetov
 
   - label: instagram # also in cv/index.yaml
     text: instagram
@@ -50,6 +52,7 @@ contactDataList:
     text: linkedin
     url: https://www.linkedin.com/in/tetov
     username: tetov
+    printFriendlyText: linkedin.com/in/tetov
 
   - label: matrix
     text: matrix
@@ -63,11 +66,13 @@ contactDataList:
 
   - label: mastodon # also in cv/index.yaml
     text: mastodon
-    url: https://vis.social/@tetov
-    username: tetov@vis.social
+    url: https://fosstodon.org/@tetov
+    username: "@tetov@fosstodon.org"
+    rel: me
+    printFriendlyText: "@tetov@fosstodon.org"
 
   - hcard: u-url u-uid # also in cv/index.yaml & gatsby-config.ts
     label: url
     url: https://tetov.se
     rel: me
-    text: ""
+    text: "tetov.se"

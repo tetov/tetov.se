@@ -37,4 +37,24 @@ describe("PageTitle", () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it("PageTitle with articleHeader set to false renders a div", () => {
+    const tree = renderer
+      .create(
+        <PageTitle articleHeader={false}>
+          <div className="header">Header</div>
+        </PageTitle>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it("PageTitle with articleHeader set to true renders header", () => {
+    const tree = renderer
+      .create(
+        <PageTitle articleHeader>
+          <div className="header">Header</div>
+        </PageTitle>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
