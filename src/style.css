@@ -4,9 +4,17 @@
 
 @layer utilities {
   a.link-style {
-    @apply text-purple hover:text-light-text dark:hover:text-dark-text;
+    @apply text-purple hover:text-light-text dark:hover:text-dark-text print:hover:text-light-text print:text-light-text;
   }
   a.link-style-alt a {
-    @apply text-light-text dark:text-dark-text hover:text-purple;
+    @apply text-light-text dark:text-dark-text hover:text-purple print:hover:text-light-text;
   }
+  .gray-border {
+    @apply border-gray-300 dark:border-gray-600;
+  }
+}
+
+@page {
+  margin: 1cm;
+  size: A4;
 }

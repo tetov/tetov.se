@@ -1,5 +1,5 @@
 contactDataList:
-  - hcard: p-name # also in resume.yaml & gatsby-config.ts
+  - hcard: p-name # also in cv/index.yaml & gatsby-config.ts
     label: name
     text: Anton Tetov Johansson
     rel: me
@@ -10,12 +10,13 @@ contactDataList:
     url: https://en.wikipedia.org/wiki/Non-binary_gender
     rel: external
 
-  - hcard: u-email # also in resume.yaml & gatsby-config.ts
+  - hcard: u-email # also in cv/index.yaml & gatsby-config.ts
     label: email
     text: email
     url: mailto:anton@tetov.se
     username: anton@tetov.se
     rel: me
+    printFriendlyText: anton@tetov.se
 
   - hcard: u-key
     label: openpgp
@@ -24,50 +25,54 @@ contactDataList:
     username: anton@tetov.se
     rel: pgpkey authn key me
 
-  - hcard: u-tel # also in resume.yaml
+  - hcard: u-tel # also in cv/index.yaml
     label: telephone
     text: "+46 70-363 56 67"
     url: tel:+46703635667
     username: "+46703635667"
     rel: me
 
-  - label: github # also in resume.yaml
+  - label: github # also in cv/index.yaml
     text: github
     url: https://github.com/tetov
     username: tetov
+    printFriendlyText: github.com/tetov
 
-  - label: instagram # also in resume.yaml
+  - label: instagram # also in cv/index.yaml
     text: instagram
     url: https://www.instagram.com/antontetov
     username: antontetov
 
-  - label: twitter # also in resume.yaml & gastby-config.ts
+  - label: twitter # also in cv/index.yaml & gastby-config.ts
     text: twitter
     url: https://twitter.com/antontetov
     username: antontetov
 
-  - label: linkedin # also in resume.yaml
+  - label: linkedin # also in cv/index.yaml
     text: linkedin
     url: https://www.linkedin.com/in/tetov
     username: tetov
+    printFriendlyText: linkedin.com/in/tetov
 
   - label: matrix
     text: matrix
     url: https://matrix.to/#/@tetov:matrix.org
     username: "@tetov:matrix.org"
 
-  - label: signal # also in resume.yaml
+  - label: signal # also in cv/index.yaml
     text: signal
     url: https://signal.me/#p/+46703635667
     username: "+46703635667"
 
-  - label: mastodon # also in resume.yaml
+  - label: mastodon # also in cv/index.yaml
     text: mastodon
-    url: https://vis.social/@tetov
-    username: tetov@vis.social
+    url: https://fosstodon.org/@tetov
+    username: "@tetov@fosstodon.org"
+    rel: me
+    printFriendlyText: "@tetov@fosstodon.org"
 
-  - hcard: u-url u-uid # also in resume.yaml & gatsby-config.ts
+  - hcard: u-url u-uid # also in cv/index.yaml & gatsby-config.ts
     label: url
     url: https://tetov.se
     rel: me
-    text: ""
+    text: "tetov.se"

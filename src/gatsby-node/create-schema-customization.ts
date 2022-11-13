@@ -58,13 +58,132 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
 
     type ContactDataYamlContactDataList {
       hcard: String
-      icon: String
       label: String!
       text: String!
       url: String
       username: String
-      icon: String
       rel: String
+      printFriendlyText: String
+    }
+
+    type CvYaml implements Node {
+      basics: CvYamlBasics!
+      work: [CvYamlWork!]!
+      education: [CvYamlEducation!]!
+      skills: [CvYamlSkills!]!
+      languages: [CvYamlLanguages!]!
+      projects: [CvYamlProjects!]!
+      publications: [CvYamlPublications!]!
+      teaching: [CvYamlTeaching!]!
+    }
+      
+    type CvYamlBasics {
+      name: String!
+      label: String
+      image: String
+      email: String!
+      phone: String!
+      url: String!
+      summary: String
+      location: CvYamlBasicsLocation!
+      profiles: [CvYamlBasicsProfiles!]!
+    }
+      
+    type CvYamlBasicsLocation {
+      countryCode: String!
+      address: String!
+    }
+    
+    type CvYamlBasicsProfiles {
+      network: String!
+      username: String
+      url: String!
+    }
+    
+    type CvYamlWork {
+      name: String!
+      position: String!
+      startDate: Date @dateformat
+      endDate: Date @dateformat
+      url: String
+      location: String!
+      summary: String
+      description: String!
+    }
+    
+    type CvYamlEducation {
+      institution: String!
+      institutionUrl: String
+      area: String!
+      studyType: String!
+      startDate: Date @dateformat
+      endDate: Date @dateformat
+    }
+
+    type CvYamlProjects {
+      name: String!
+      description: String!
+      startDate: Date @dateformat
+      endDate: Date! @dateformat
+      entity: String!
+      roles: [String!]!
+      type: String!
+      url: String
+      location: String!
+    }
+    
+    type CvYamlSkills {
+      name: String!
+      level: String
+      keywords: [String!]!
+    }
+    
+    type CvYamlLanguages {
+      language: String!
+      fluency: String!
+    }
+    
+    type CvYamlTeaching {
+      name: String!
+      institution: String
+      summary: String
+      startDate: Date @dateformat
+      endDate: Date @dateformat
+    }
+    
+    type CSLName {
+      family: String!
+      given: String!
+    }
+    
+    type CLSDate {
+      year: Int!
+      month: Int
+      day: Int
+    }
+    
+    type CvYamlPublications {
+      abstract: String
+      accessed: CLSDate
+      author: [CSLName!]!
+      citation_key: String
+      citation_key: String!
+      container_title: String
+      DOI: String       
+      event_place: String
+      event_title: String
+      issued: CLSDate!
+      language: String
+      language: String
+      license: String
+      license: String
+      page: String
+      publisher_place: String
+      publisher: String
+      source: String
+      title: String!
+      type: String!
+      URL: String
     }
   `);
   };

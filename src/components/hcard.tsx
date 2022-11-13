@@ -24,6 +24,7 @@ export type PureHCardProp = {
   hcard?: string;
   text: string;
   rel?: string;
+  username?: string;
 };
 
 export const PureHCard = ({

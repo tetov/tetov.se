@@ -7,9 +7,10 @@ import Logo from "src/logo.inline.svg";
 
 export type NavBarProp = {
   pathname?: string;
+  className?: string;
 };
 
-const NavBar = ({ pathname }: NavBarProp) => {
+const NavBar = ({ pathname, className }: NavBarProp) => {
   const { title, navigation } = querySiteMetadata();
 
   const commonNavLinkClassNames =
@@ -18,7 +19,10 @@ const NavBar = ({ pathname }: NavBarProp) => {
   return (
     <Disclosure
       as="nav"
-      className="text-center md:justify-between mb-8 border-b-2 border-purple"
+      className={classNames(
+        "text-center md:justify-between mb-8 border-b-2 border-purple",
+        className,
+      )}
     >
       {({ open }) => (
         <>

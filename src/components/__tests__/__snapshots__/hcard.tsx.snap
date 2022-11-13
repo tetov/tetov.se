@@ -1,35 +1,133 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ContactDetail renders correctly with hand converted data 1`] = `
+exports[`HCard HCard renders correctly with hand converted data 1`] = `
 <div
   aria-hidden={true}
   className="h-card hidden"
 >
-  <span
-    className="p-name"
+  <div
+    className="flex group p-2"
   >
-    Anton Tetov Johansson
-  </span>
-  <a
-    className="p-gender-identity"
-    href="https://en.wikipedia.org/wiki/Non-binary_gender"
-    rel="external"
+    <span
+      className="p-name"
+    >
+      <span
+        className=""
+      >
+        Anton Tetov Johansson
+      </span>
+    </span>
+  </div>
+  <div
+    className="flex group p-2"
   >
-    (they/them)
-  </a>
-  <a
-    className="u-email"
-    href="mailto:anton@tetov.se"
-    rel="me"
+    <a
+      className="p-gender-identity"
+      href="https://en.wikipedia.org/wiki/Non-binary_gender"
+      rel="external"
+    >
+      <span
+        className=""
+      >
+        (they/them)
+      </span>
+    </a>
+  </div>
+  <div
+    className="flex group p-2"
   >
-    email
-  </a>
-  <a
-    className="u-key"
-    href="/key.txt"
-    rel="pgpkey authn key me"
+    <a
+      className="u-email"
+      href="mailto:anton@tetov.se"
+      rel="me"
+    >
+      <span
+        className=""
+      >
+        email
+      </span>
+    </a>
+  </div>
+  <div
+    className="flex group p-2"
   >
-    openpgp public key
-  </a>
+    <a
+      className="u-key"
+      href="/key.txt"
+      rel="pgpkey authn key me"
+    >
+      <span
+        className=""
+      >
+        openpgp public key
+      </span>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`HCard PureHCard renders correctly with hand converted data 1`] = `
+<div
+  aria-hidden={true}
+  className="h-card hidden"
+>
+  <div
+    className="flex group p-2"
+  >
+    <span
+      className="p-name"
+    >
+      <span
+        className=""
+      >
+        Anton Tetov Johansson
+      </span>
+    </span>
+  </div>
+  <div
+    className="flex group p-2"
+  >
+    <a
+      className="p-gender-identity"
+      href="https://en.wikipedia.org/wiki/Non-binary_gender"
+      rel="external"
+    >
+      <span
+        className=""
+      >
+        (they/them)
+      </span>
+    </a>
+  </div>
+  <div
+    className="flex group p-2"
+  >
+    <a
+      className="u-email"
+      href="mailto:anton@tetov.se"
+      rel="me"
+    >
+      <span
+        className=""
+      >
+        email
+      </span>
+    </a>
+  </div>
+  <div
+    className="flex group p-2"
+  >
+    <a
+      className="u-key"
+      href="/key.txt"
+      rel="pgpkey authn key me"
+    >
+      <span
+        className=""
+      >
+        openpgp public key
+      </span>
+    </a>
+  </div>
 </div>
 `;

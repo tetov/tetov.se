@@ -13,6 +13,7 @@ const config: GatsbyConfig = {
     navigation: [
       { text: "projects", url: "/projects/" },
       { text: "posts", url: "/posts/" },
+      { text: "cv", url: "/cv/" },
       { text: "contact", url: "/contact/" },
     ],
   },

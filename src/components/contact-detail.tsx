@@ -9,6 +9,7 @@ import {
   RiInstagramFill,
   RiKey2Fill,
   RiLinkedinBoxFill,
+  RiLinksFill,
   RiMailFill,
   RiMastodonFill,
   RiSmartphoneFill,
@@ -32,7 +33,7 @@ const iconMapping = new Map([
   ["name", RiUserSmileFill],
   ["gender-identity", RiGenderlessFill],
   ["email", RiMailFill],
-  ["opengpg", RiKey2Fill],
+  ["openpgp", RiKey2Fill],
   ["telephone", RiSmartphoneFill],
   ["github", RiGithubFill],
   ["instagram", RiInstagramFill],
@@ -41,6 +42,7 @@ const iconMapping = new Map([
   ["matrix", SiMatrix],
   ["signal", SiSignal],
   ["mastodon", RiMastodonFill],
+  ["url", RiLinksFill],
 ]);
 
 export type ContactDetailProp = {
@@ -52,6 +54,7 @@ export type ContactDetailProp = {
   rel?: string;
   className?: classNamesArgument;
   iconProp?: Partial<IconBaseProps>;
+  printFriendlyText?: string;
   useIcon?: boolean;
 };
 
@@ -62,26 +65,44 @@ const ContactDetail = ({
   hcard,
   rel,
   className,
-  iconProp = {},
+  printFriendlyText,
   useIcon = true,
 }: ContactDetailProp) => {
   const Icon = iconMapping.get(label);
 
-  const prop: JSXA | JSXSpan = {
+  const prop: React.PropsWithChildren<JSXA | JSXSpan> = {
     className: classNames(hcard, className) || undefined,
     href: url ?? undefined,
     rel: rel ?? "me external",
     children: (
       <>
-        {useIcon && Icon && <Icon {...iconProp} aria-hidden />}
-        {text}
+        {useIcon && Icon && (
+          <div className="motion-safe:group-hover:animate-pulse inline-block">
+            <Icon size="1em" className="inline" aria-hidden />
+          </div>
+        )}
+        <span
+          className={classNames({
+            "print:hidden": printFriendlyText,
+            "pl-1": useIcon,
+          })}
+        >
+          {text}
+        </span>
+        {printFriendlyText && (
+          <span className="hidden print:inline pl 1">{printFriendlyText}</span>
+        )}
       </>
     ),
   };
 
   const Component = url ? LinkedDetail : Detail;
 
-  return <Component {...prop} />;
+  return (
+    <div className="flex group p-2">
+      <Component {...prop} />
+    </div>
+  );
 };
 
 export default ContactDetail;
