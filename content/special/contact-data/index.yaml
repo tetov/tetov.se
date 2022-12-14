@@ -37,38 +37,44 @@ contactDataList:
     url: https://github.com/tetov
     username: tetov
     printFriendlyText: github.com/tetov
+    rel: me external
 
   - label: instagram # also in cv/index.yaml
     text: instagram
     url: https://www.instagram.com/antontetov
     username: antontetov
+    rel: me external
 
   - label: twitter # also in cv/index.yaml & gastby-config.ts
     text: twitter
     url: https://twitter.com/antontetov
     username: antontetov
+    rel: me external
 
   - label: linkedin # also in cv/index.yaml
     text: linkedin
     url: https://www.linkedin.com/in/tetov
     username: tetov
     printFriendlyText: linkedin.com/in/tetov
+    rel: me external
 
   - label: matrix
     text: matrix
     url: https://matrix.to/#/@tetov:matrix.org
     username: "@tetov:matrix.org"
+    rel: me external
 
   - label: signal # also in cv/index.yaml
     text: signal
     url: https://signal.me/#p/+46703635667
     username: "+46703635667"
+    rel: me external
 
   - label: mastodon # also in cv/index.yaml
     text: mastodon
     url: https://fosstodon.org/@tetov
     username: "@tetov@fosstodon.org"
-    rel: me
+    rel: me external
     printFriendlyText: "@tetov@fosstodon.org"
 
   - hcard: u-url u-uid # also in cv/index.yaml & gatsby-config.ts
