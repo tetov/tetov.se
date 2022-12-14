@@ -63,8 +63,8 @@ work:
     startDate: "2021-05-31"
     description: >-
       Working with the research project Biomimetic fabrication through robotic
-      3D-printing. Research conducted in a collaboration between the Department 
-      of Architecture & Built Environment, the Department of Automatic Control 
+      3D-printing. Research conducted in a collaboration between the Department
+      of Architecture & Built Environment, the Department of Automatic Control
       and the Construction Robotics lab.
 
 
@@ -81,7 +81,7 @@ work:
     location: Lund, Sweden
     position: Project Assistant
     description: >-
-      In the research project Eurostars SelectiCa, a collaboration between the 
+      In the research project Eurostars SelectiCa, a collaboration between the
       LTH Robot Lab and Proxima Centauri ApS.
 
 
@@ -382,13 +382,14 @@ teaching:
   - name: Spatial Experiments I
     institution: School of Architecture, LTH, Lund University
     summary: >-
-      Design studio at the Masters programme at the School of Architecture. 
+      Design studio at the Masters programme at the School of Architecture.
       Mainly technical assistance (e.g. 3D-printing, robotics).
     startDate: "2021-01-01"
   - name: Creative Tools I
     institution: School of Architecture, LTH, Lund University
     summary: >-
-      Course in computational design and digital fabrication. Mainly technical assistance (e.g. robot control).
+      Course in computational design and digital fabrication. Mainly technical
+      assistance (e.g. robot control).
     startDate: "2021-01-01"
   - name: Digital Tools II
     institution: School of Architecture, LTH, Lund University
