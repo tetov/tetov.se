@@ -176,6 +176,30 @@ work:
   #   position: Barista
 
 projects:
+  - name: Meristem Wall
+    type: binder-jet sand 3D-printed prototype for building envelope
+    description: >-
+      Meristem Wall is a prototype of a fully 3d printed building envelope. It
+      is made using sand binder jetting by Voxeljet and Sandhelden, complemented
+      by a custom CNC knitted fabric developed and fabricated in collaboration
+      with Dr. Mariana Popescu of Block Research Group at ETH Zürich.
+
+
+      The wall is designed using an interdependent model that negotiates the
+      space and relationship between a wide range of functions including
+      utilities such as electric wiring, aesthetic preferences, structural
+      performance, and bioclimatic considerations. This self-organising
+      simulation is capable of creating unique compositions of space to fit a
+      wide range of context and functional needs.
+    startDate: "2020-01-01"
+    endDate: "2021-01-01"
+    entity: >-
+      bioDigital Matter, Department of Architecture and Built Environment,
+      LTH & Block Research Group, ETH Zürich
+    location: Biodigital Futures, part of the Venice Biennale collateral event Time Space Existence
+    roles:
+      - development of digital workflow
+      - performance optimization of volumetric modeling tools
   - name: Clay Rotunda / SEMusicLab
     type: indoor circular clay wall
     description: >-
