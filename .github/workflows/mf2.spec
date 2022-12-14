@@ -57,7 +57,8 @@
             "https://twitter.com/antontetov",
             "https://www.linkedin.com/in/tetov",
             "https://matrix.to/#/@tetov:matrix.org",
-            "https://vis.social/@tetov"
+            "https://signal.me/#p/+46703635667",
+            "https://fosstodon.org/@tetov"
         ],
         "me": [
             "https://tetov.se/cdn-cgi/l/",
@@ -69,7 +70,7 @@
             "https://www.linkedin.com/in/tetov",
             "https://matrix.to/#/@tetov:matrix.org",
             "https://signal.me/#p/+46703635667",
-            "https://vis.social/@tetov",
+            "https://fosstodon.org/@tetov",
             "https://tetov.se"
         ],
         "pgpkey": [
@@ -206,10 +207,11 @@
         "https://signal.me/#p/+46703635667": {
             "text": "signal",
             "rels": [
+                "external",
                 "me"
             ]
         },
-        "https://vis.social/@tetov": {
+        "https://fosstodon.org/@tetov": {
             "text": "mastodon",
             "rels": [
                 "external",
@@ -217,6 +219,7 @@
             ]
         },
         "https://tetov.se": {
+            "text": "tetov.se",
             "rels": [
                 "me"
             ]
