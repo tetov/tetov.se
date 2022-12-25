@@ -65,3 +65,7 @@ public
 !.vscode/settings.json
 
 gatsby-types.d.ts
+
+# composer (for regression test)
+composer.phar
+/vendor/

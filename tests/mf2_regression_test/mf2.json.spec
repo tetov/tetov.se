@@ -26,8 +26,7 @@
                 "uid": [
                     "https://tetov.se"
                 ]
-            },
-            "lang": "en"
+            }
         }
     ],
     "rels": {
@@ -224,15 +223,5 @@
                 "me"
             ]
         }
-    },
-    "debug": {
-        "package": "https://packagist.org/packages/mf2/mf2",
-        "source": "https://github.com/indieweb/php-mf2",
-        "version": "v0.5.0",
-        "note": [
-            "This output was generated from the php-mf2 library available at https://github.com/indieweb/php-mf2",
-            "Please file any issues with the parser at https://github.com/indieweb/php-mf2/issues",
-            "Using the Masterminds HTML5 parser"
-        ]
     }
 }

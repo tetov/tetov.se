@@ -11,16 +11,22 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Cache Composer dependencies
+        uses: actions/cache@v3
+        with:
+          path: /tmp/composer-cache
+          key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
+
+      - uses: php-actions/composer@v6
+
+      - run: composer install
+
       - name: Test if microformat 2 looks the same on live page.
         # To create new output if anything changes run:
 
-        # curl "http://pin13.net/mf2/?url=tetov.se" | \
-        # sed -E -e 's/\?v=[0-9a-z]+//' -e 's/email-protection#[0-9a-z]+//' \
-        # > mf2.spec
+        # composer install && php tests/mf2_regression_test/fetch_mf2.php > \
+        #   tests/mf2_regression_test/mf2.json.spec
         shell: bash
         run: |
-          diff                                            \
-            <(curl "http://pin13.net/mf2/?url=tetov.se" | \
-              sed -E -e 's/\?v=[0-9a-z]+//'               \
-                     -e 's/email-protection#[0-9a-z]+//') \
-            .github/workflows/mf2.spec
+          diff <(php tests/mf2_regression_test/fetch_mf2.php) \
+            tests/mf2_regression_test/mf2.json.spec
