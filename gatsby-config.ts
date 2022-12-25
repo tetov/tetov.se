@@ -17,7 +17,10 @@ const config: GatsbyConfig = {
       { text: "contact", url: "/contact/" },
     ],
   },
-  graphqlTypegen: { typesOutputPath: `gatsby-types.d.ts` },
+  graphqlTypegen: {
+    generateOnBuild: true, // for ci
+    typesOutputPath: `gatsby-types.d.ts`,
+  },
   plugins: [
     `gatsby-plugin-catch-links`,
     {

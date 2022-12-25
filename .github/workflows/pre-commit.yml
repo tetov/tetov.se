@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - uses: actions/setup-python@v3
-      
+
       - name: Set up node
         uses: actions/setup-node@v3
         with:
-          node-version: "16"
+          node-version-file: ".nvmrc"
 
       - name: Update npm
         run: npm install -g npm@latest
@@ -23,7 +23,7 @@ jobs:
         id: npm-cache-dir
         run: |
           echo "npm_cache_dir=$(npm config get cache)" >> $GITHUB_ENV
-          
+
       - name: Restore NPM cache
         uses: actions/cache@v3
         id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
@@ -32,7 +32,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-            
+
       - name: Restore Gatsby cache
         uses: actions/cache@v3
         id: gatsby-cache
@@ -43,11 +43,11 @@ jobs:
           key: ${{ runner.os }}-gatsby-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-gatsby-
-            
+
       - name: Install
         run: npm ci
 
       - name: Build
         run: npm run build
-        
+
       - uses: pre-commit/action@v3.0.0
