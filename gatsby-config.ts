@@ -18,7 +18,7 @@ const config: GatsbyConfig = {
     ],
   },
   graphqlTypegen: {
-    // generateOnBuild: true,
+    generateOnBuild: true,
     typesOutputPath: `gatsby-types.d.ts`,
   },
   plugins: [
