@@ -56,7 +56,7 @@ const config: GatsbyConfig = {
               }),
             query: `
               {
-                allMarkdownRemark(sort: { frontmatter { date: DESC}}) {
+                allMarkdownRemark(sort: { frontmatter: { date: DESC}}) {
                   nodes {
                     excerpt
                     html
