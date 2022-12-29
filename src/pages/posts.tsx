@@ -15,7 +15,7 @@ const Posts = ({
   return (
     <Layout pathname={pathname}>
       <PageTitle>Posts</PageTitle>
-      <ArticleListing nodes={postNodes as Queries.MarkdownRemark[]} />
+      <ArticleListing nodes={postNodes as Queries.ArticlePreviewFragment[]} />
     </Layout>
   );
 };
@@ -31,8 +31,7 @@ export const query = graphql`
   query Posts {
     allMarkdownRemark(
       filter: { fields: { category: { eq: "posts" } } }
-      sort: { frontmatter {date: DESC }}
-      limit: 10
+      sort: { frontmatter: { date: DESC } }
     ) {
       nodes {
         id
