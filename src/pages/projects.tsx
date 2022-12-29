@@ -35,7 +35,7 @@ export const query = graphql`
   query Projects {
     allMarkdownRemark(
       filter: { fields: { category: { eq: "projs" } } }
-      sort: { fields: [frontmatter___weight], order: DESC }
+      sort: { frontmatter: { weight: DESC } }
       limit: 7
     ) {
       nodes {

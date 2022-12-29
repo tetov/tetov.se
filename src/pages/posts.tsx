@@ -31,7 +31,7 @@ export const query = graphql`
   query Posts {
     allMarkdownRemark(
       filter: { fields: { category: { eq: "posts" } } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter {date: DESC }}
       limit: 10
     ) {
       nodes {
