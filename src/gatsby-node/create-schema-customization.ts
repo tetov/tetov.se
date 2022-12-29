@@ -1,7 +1,7 @@
 import { GatsbyNode } from "gatsby";
 
 export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
-  async ({ actions: { createTypes } }) => {
+  ({ actions: { createTypes } }) => {
     // Explicitly define the siteMetadata {} object
     // This way those will always be defined even if removed from gatsby-config.js
 

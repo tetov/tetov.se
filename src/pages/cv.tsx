@@ -263,7 +263,7 @@ const CVTeaching = ({
   <CVEntry
     startDate={startDate ?? undefined}
     endDate={endDate ?? undefined}
-    heading={`${name}, ${institution}`}
+    heading={institution ? `${name}, ${institution}` : name}
   >
     <CVEntryBody description={<span>{summary}</span>} />
   </CVEntry>
@@ -308,7 +308,7 @@ const CV = ({
 
   if (contactDetailProps.filter((p) => p === undefined).length > 0) {
     throw new Error(
-      `One or more items in list of contact details props is undefined (not found): ${contactDetailProps}`,
+      `One or more items in list of contact details props is undefined (not found): ${contactDetailProps}`, // eslint-disable-line @typescript-eslint/restrict-template-expressions
     );
   }
 
@@ -322,12 +322,12 @@ const CV = ({
         <PageTitle articleHeader>CV</PageTitle>
         <div className="flex flex-row mb-8 md:mb-11 justify-between flex-wrap">
           {contactDetailProps.map((c) => (
-            <ContactDetail {...c} />
+            <ContactDetail key={c.label} {...c} />
           ))}
         </div>
         <CVSection title="Work experience" key="work">
           {work.map((w) => (
-            <CVWork key={w.name + w.position + w.startDate} {...w} />
+            <CVWork key={`${w.name}${w.position}${w.startDate ?? ""}`} {...w} />
           ))}
         </CVSection>
         <CVSection title={"Academic achievements"} key="education">
@@ -418,6 +418,7 @@ export const query = graphql`
           location
           summary
           description
+          highlights
         }
         education {
           institution

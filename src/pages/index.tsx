@@ -17,8 +17,8 @@ const Index = ({
     pathname={pathname}
   >
     <PageTitle>
-      Hi! I'm Anton Tetov, I'm an architect, programmer and maker. These are
-      some of my{" "}
+      Hi! I&apos;m Anton Tetov, I&apos;m an architect, programmer and maker.
+      These are some of my{" "}
       <Link to="/projects" className="link-style">
         projects
       </Link>

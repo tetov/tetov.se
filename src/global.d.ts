@@ -25,3 +25,5 @@ declare module "*.svg" {
 
 // CSS modules
 declare module "*.css";
+
+declare module "citation-js";

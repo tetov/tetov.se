@@ -18,7 +18,7 @@ const config: GatsbyConfig = {
     ],
   },
   graphqlTypegen: {
-    generateOnBuild: true, // for ci
+    // generateOnBuild: true,
     typesOutputPath: `gatsby-types.d.ts`,
   },
   plugins: [
@@ -37,6 +37,11 @@ const config: GatsbyConfig = {
             }
           }
         `,
+        /* eslint-disable @typescript-eslint/no-unsafe-assignment,
+                          @typescript-eslint/no-unsafe-call,
+                          @typescript-eslint/no-unsafe-member-access,
+                          @typescript-eslint/no-unsafe-return,
+                          @typescript-eslint/restrict-plus-operands */
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) =>
@@ -73,6 +78,11 @@ const config: GatsbyConfig = {
             output: "/rss.xml",
           },
         ],
+        /* eslint-enable @typescript-eslint/no-unsafe-assignment,
+                         @typescript-eslint/no-unsafe-call,
+                         @typescript-eslint/no-unsafe-member-access,
+                         @typescript-eslint/no-unsafe-return,
+                         @typescript-eslint/restrict-plus-operands */
       },
     },
     `gatsby-plugin-image`,
@@ -122,10 +132,6 @@ const config: GatsbyConfig = {
         excerpt_separator: `<!-- more -->`,
         footnotes: true,
         gfm: true,
-        tableOfContents: {
-          heading: null,
-          maxDepth: 3,
-        },
         plugins: [
           {
             resolve: `gatsby-remark-autolink-headers`,

@@ -1,5 +1,4 @@
 {
-  // https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
   "compilerOptions": {
     "baseUrl": "./",
     "esModuleInterop": true,
@@ -12,5 +11,5 @@
     "strict": true,
     "target": "ESNext"
   },
-  "include": ["./src/**/*", "./gatsby-*.ts"]
+  "include": ["./**/*.ts", "./**/*.tsx"]
 }

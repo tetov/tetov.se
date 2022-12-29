@@ -63,13 +63,19 @@ export const createPublicationHTML = (
 ): string => {
   const cslObject = coerceCSLObjectFromNode(publication);
 
+  /* eslint-disable @typescript-eslint/no-unsafe-assignment,
+                    @typescript-eslint/no-unsafe-call,
+                    @typescript-eslint/no-unsafe-member-access */
   const cite = Cite(cslObject, { forceType: "@csl/object" });
 
-  const htmlString = cite.format("bibliography", {
+  const htmlString: string = cite.format("bibliography", {
     template: "apa",
     format: "html",
   });
 
+  /* eslint-enable @typescript-eslint/no-unsafe-assignment,
+                   @typescript-eslint/no-unsafe-call,
+                   @typescript-eslint/no-unsafe-member-access */
   const parsedHtml = htmlParse(htmlString);
   const innerDiv = parsedHtml.querySelector(".csl-entry");
 

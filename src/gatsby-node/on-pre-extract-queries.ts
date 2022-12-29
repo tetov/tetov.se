@@ -15,7 +15,7 @@ type PreQueryMarkdownRemark = Node & {
   };
 };
 
-const onPreExtractQueries: GatsbyNode["onPreExtractQueries"] = async ({
+const onPreExtractQueries: GatsbyNode["onPreExtractQueries"] = ({
   actions: { createNodeField },
   getNode,
   getNodesByType,
@@ -44,7 +44,7 @@ const onPreExtractQueries: GatsbyNode["onPreExtractQueries"] = async ({
 
     if (candidates.length > 1)
       throw new Error(
-        `More than one matching hero image. Matches: ${candidates}`,
+        `More than one matching hero image. Matches: ${candidates}`, // eslint-disable-line @typescript-eslint/restrict-template-expressions
       );
 
     createNodeField({ node: docNode, name: "heroImg", value: candidates[0] });

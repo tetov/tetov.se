@@ -1,7 +1,7 @@
 import type { GatsbyNode } from "gatsby";
 import { parseNodeFilePath } from "./utils";
 
-const onCreateNode: GatsbyNode["onCreateNode"] = async ({
+const onCreateNode: GatsbyNode["onCreateNode"] = ({
   actions: { createNodeField },
   node,
   getNode,

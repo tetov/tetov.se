@@ -14,15 +14,17 @@ const cvFormatTimespan = ({
     return `${startDate} – ${endDate}`;
   }
 
-  // if none are present
-  if (!startDate && !endDate) {
-    return "";
+  // if startDate is present, return it with a dash after
+  if (startDate) {
+    return `${startDate} –`;
   }
 
-  // one is missing
   // if endDate is present, return it
-  // if startDate is present, return it with a dash after
-  return endDate ?? `${startDate} –`;
+  if (endDate) {
+    return endDate;
+  }
+
+  return "";
 };
 
 export default cvFormatTimespan;

@@ -1,4 +1,5 @@
 import { graphql, HeadFC, PageProps } from "gatsby";
+import type { ImageDataLike } from "gatsby-plugin-image";
 import { getSrc } from "gatsby-plugin-image";
 import * as React from "react";
 import type { ArticleProp } from "src/components/article";
@@ -90,15 +91,15 @@ export const Head: HeadFC<Queries.MarkdownPageQuery> = ({
 }) => (
   <HeadComponent
     pathname={pathname}
-    imageUrl={getSrc(image)}
-    pageTitle={title}
-    description={description || excerpt || ""}
+    imageUrl={getSrc(image as ImageDataLike)}
+    pageTitle={title as string}
+    description={(description || excerpt || "") as string}
   >
     <meta property="og:type" content="article" id="og:type" />
     {machineReadableDate && (
       <meta
         property="og:article:published_time"
-        content={machineReadableDate}
+        content={machineReadableDate as string}
       />
     )}
   </HeadComponent>
