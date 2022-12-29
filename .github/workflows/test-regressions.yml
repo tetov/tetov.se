@@ -19,8 +19,6 @@ jobs:
 
       - uses: php-actions/composer@v6
 
-      - run: composer install
-
       - name: Test if microformat 2 looks the same on live page.
         # To create new output if anything changes run:
 
