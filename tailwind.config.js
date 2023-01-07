@@ -4,7 +4,10 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@headlessui/tailwindcss"),
+    require("@tailwindcss/typography"),
+  ],
   theme: {
     extend: {
       boxShadow: {

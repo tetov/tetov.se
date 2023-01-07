@@ -29,6 +29,7 @@
     "@fontsource/noto-sans": "^4.5.11",
     "@graphql-eslint/eslint-plugin": "^3.14.3",
     "@headlessui/react": "^1.7.7",
+    "@headlessui/tailwindcss": "^0.1.2",
     "@heroicons/react": "^2.0.13",
     "@tailwindcss/typography": "^0.5.8",
     "@types/jest": "^29.2.5",

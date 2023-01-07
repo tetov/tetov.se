@@ -54,19 +54,19 @@ exports[`Layout renders correctly 1`] = `
             Open navigation menu
           </span>
           <div
-            className="block w-5 left-1/2 top-1/2   transform  -translate-x-1/2 -translate-y-1/2"
+            className="block w-5 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
           >
             <span
               aria-hidden="true"
-              className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out -translate-y-1.5"
+              className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out ui-open:rotate-45 ui-not-open:-translate-y-1.5"
             />
             <span
               aria-hidden="true"
-              className="block absolute  h-0.5 w-5 bg-current   transform transition duration-500 ease-in-out  "
+              className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out ui-open:opacity-0"
             />
             <span
               aria-hidden="true"
-              className="block absolute  h-0.5 w-5 bg-current transform  transition duration-500 ease-in-out translate-y-1.5"
+              className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out ui-open:-rotate-45 ui-not-open:translate-y-1.5"
             />
           </div>
         </button>
@@ -76,31 +76,51 @@ exports[`Layout renders correctly 1`] = `
           <div
             className="flex space-x-4"
           >
-            <a
-              aria-current="page"
-              className="bg-purple hover:bg-transparent px-3 py-2 font-medium link-style-alt text-base"
-              href="/"
+            <ul
+              className="flex font-medium link-style-alt text-base"
             >
-              Projects
-            </a>
-            <a
-              className="px-3 py-2 font-medium link-style-alt text-base"
-              href="/posts"
-            >
-              Posts
-            </a>
-            <a
-              className="px-3 py-2 font-medium link-style-alt text-base"
-              href="/about"
-            >
-              About
-            </a>
-            <a
-              className="px-3 py-2 font-medium link-style-alt text-base"
-              href="/contact"
-            >
-              Contact
-            </a>
+              <li
+                className="flex px-3 py-2"
+              >
+                <a
+                  aria-current="page"
+                  className="bg-purple hover:bg-transparent px-3 py-2"
+                  href="/"
+                >
+                  Projects
+                </a>
+              </li>
+              <li
+                className="flex px-3 py-2"
+              >
+                <a
+                  className="px-3 py-2"
+                  href="/posts"
+                >
+                  Posts
+                </a>
+              </li>
+              <li
+                className="flex px-3 py-2"
+              >
+                <a
+                  className="px-3 py-2"
+                  href="/about"
+                >
+                  About
+                </a>
+              </li>
+              <li
+                className="flex px-3 py-2"
+              >
+                <a
+                  className="px-3 py-2"
+                  href="/contact"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
