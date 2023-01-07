@@ -1,14 +1,15 @@
 import { GatsbyNode } from "gatsby";
 
-export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
-  ({ actions: { createTypes } }) => {
-    // Explicitly define the siteMetadata {} object
-    // This way those will always be defined even if removed from gatsby-config.js
+const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
+  actions: { createTypes },
+}) => {
+  // Explicitly define the siteMetadata {} object
+  // This way those will always be defined even if removed from gatsby-config.js
 
-    // Also explicitly define the Markdown frontmatter
-    // This way the "MarkdownRemark" queries will return `null` even when no
-    // blog posts are stored inside "content/blog" instead of returning an error
-    createTypes(`
+  // Also explicitly define the Markdown frontmatter
+  // This way the "MarkdownRemark" queries will return `null` even when no
+  // blog posts are stored inside "content/blog" instead of returning an error
+  createTypes(`
     type Site {
       siteMetadata: SiteMetadata!
     }
@@ -186,4 +187,6 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       URL: String
     }
   `);
-  };
+};
+
+export default createSchemaCustomization;
