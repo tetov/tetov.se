@@ -3,7 +3,7 @@ import { GatsbyNode } from "gatsby";
 import { IGatsbyImageData } from "gatsby-plugin-image";
 import { parseNodeFilePath } from "./utils";
 
-type PreQueryMdx= Node & {
+type PreQueryMdx = Node & {
   fields: {
     slug: string;
     category: string;

@@ -12,7 +12,7 @@ type GatsbyMarkdownPage = React.FC<PageProps<Queries.MarkdownPageQuery>>;
 const MarkdownPage: GatsbyMarkdownPage = ({
   data: { mdx },
   location: { pathname },
-  children
+  children,
 }) => {
   if (!mdx) {
     throw new TypeError("MarkdownRemark null on node.");
@@ -67,9 +67,7 @@ const MarkdownPage: GatsbyMarkdownPage = ({
         pathname={pathname}
         body={children}
         title={mdx.frontmatter.title}
-        bannerImageData={
-          mdx.frontmatter.image?.childImageSharp?.bannerImgData
-        }
+        bannerImageData={mdx.frontmatter.image?.childImageSharp?.bannerImgData}
         imageAlt={mdx.frontmatter.imageAlt || undefined}
         imageCaption={mdx.frontmatter.imageCaption || undefined}
         machineReadableDate={mdx.frontmatter.machineReadableDate}
