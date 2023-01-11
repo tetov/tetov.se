@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Anton Tetov's projects]]></title><description><![CDATA[Projects in architecture, digital fabrication and robotics.]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 07 Jan 2023 10:41:36 GMT</lastBuildDate><item><title><![CDATA[Adding network routes on Windows, OS X and GNU/Linux]]></title><description><![CDATA[Sometimes a route needs to be manually configured in order to reach network nodes behind gateways/firewalls. To do this you specify that to…]]></description><link>https://tetov.senetwork-routes</link><guid isPermaLink="false">https://tetov.senetwork-routes</guid><pubDate>Sun, 16 Oct 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Sometimes a route needs to be manually configured in order to reach network nodes behind gateways/firewalls.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Anton Tetov's projects]]></title><description><![CDATA[Projects in architecture, digital fabrication and robotics.]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 11 Jan 2023 21:30:07 GMT</lastBuildDate><item><title><![CDATA[Adding network routes on Windows, OS X and GNU/Linux]]></title><description><![CDATA[Sometimes a route needs to be manually configured in order to reach network nodes behind gateways/firewalls. To do this you specify that to…]]></description><link>https://tetov.senetwork-routes</link><guid isPermaLink="false">https://tetov.senetwork-routes</guid><pubDate>Sun, 16 Oct 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Sometimes a route needs to be manually configured in order to reach network nodes behind gateways/firewalls.&lt;/p&gt;
 &lt;p&gt;To do this you specify that to reach a certain subnet you need to go through a certain gateway.&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;In the following sections &lt;code class=&quot;language-text&quot;&gt;$SUBNET&lt;/code&gt; should be replaced with subnet (ip range) using either CIDR notation or subnet mask.&lt;/p&gt;
@@ -600,4 +600,83 @@ depositions of clay globules using an off-the-shelf 3D printer was developed.&lt
 &lt;td&gt;David Andréen &amp;#x26; Ana Goidea, School of Architecture, Lund University&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</content:encoded></item></channel></rss>
+&lt;/table&gt;</content:encoded></item><item><title><![CDATA[Meristem Wall]]></title><description><![CDATA[Meristem Wall is a prototype of a fully 3D printed building envelope made using
+sand binder jetting and complemented with a custom CNC knitted fabric. The wall incorporates a
+system of transient and controllable airflows modeled on the physiology of
+termite mounds, allowing it to act as a climate modulator and provide a habitat
+for urban wildlife.]]></description><link>https://tetov.semeristem-wall</link><guid isPermaLink="false">https://tetov.semeristem-wall</guid><pubDate>Fri, 01 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Meristem Wall is a prototype of a fully 3D printed building envelope made using
+sand binder jetting and complemented with a custom CNC knitted fabric. The wall incorporates a
+system of transient and controllable airflows modeled on the physiology of
+termite mounds, allowing it to act as a climate modulator and provide a habitat
+for urban wildlife.&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;The wall’s geometry and the integrated airflow enables it to function as a
+biological habitat, taking the concept of the green wall beyond a monocultural
+garden. The wall is designed using an interdependent model that negotiates the
+space and relationship between a wide range of functions including utilities,
+aesthetic preferences, structural performance, and bioclimatic considerations.
+This self-organizing simulation is capable of creating unique compositions of
+space to fit a wide range of context and functional needs.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Year&lt;/td&gt;
+&lt;td&gt;2021&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Location&lt;/td&gt;
+&lt;td&gt;Time Space Existence exhibition at European Culture Center during the Venice Biennale of Architecture 2021&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Role&lt;/td&gt;
+&lt;td&gt;Development and performance optimization of voxel based workflow&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Collaborators&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://anagoidea.com/&quot;&gt;Ana Goidea&lt;/a&gt; &amp;#x26; &lt;a href=&quot;https://portal.research.lu.se/en/persons/david-andr%C3%A9en&quot;&gt;David Andréen&lt;/a&gt; at &lt;a href=&quot;https://www.abm.lth.se/biodigitalmatter/&quot;&gt;bioDigitalMatter at ABM LTH&lt;/a&gt; &amp;#x26; &lt;a href=&quot;https://www.block.arch.ethz.ch/brg/people/mariana-popescu&quot;&gt;Mariana Popescu&lt;/a&gt; at &lt;a href=&quot;https://block.arch.ethz.ch/&quot;&gt;Block Research group, ETH Zürich&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Industry partners&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.voxeljet.com/&quot;&gt;voxeljet&lt;/a&gt; &amp;#x26; &lt;a href=&quot;https://www.sandhelden.de/&quot;&gt;Sandhelden&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/10761aa55c7aa64e276b8bf00d9156ba/e44b7/knit.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.5%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAQCAwUB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgD/2gAMAwEAAhADEAAAAcvSS0jBIkjymDDJQC//xAAdEAACAgIDAQAAAAAAAAAAAAABAgADERIhMTJC/9oACAEBAAEFArRhlXIU8X90NrNNpaQCWhul3r4f1//EABgRAAIDAAAAAAAAAAAAAAAAAAABAhAS/9oACAEDAQE/AYmRV//EABkRAAEFAAAAAAAAAAAAAAAAAAABAhASIf/aAAgBAgEBPwF+FhY//8QAHBAAAgICAwAAAAAAAAAAAAAAAAERIQIQMUFR/9oACAEBAAY/Air0iX4TJj0VxpCGf//EABoQAAMBAQEBAAAAAAAAAAAAAAABESExQRD/2gAIAQEAAT8ho0bgfpwouGmK8NDklKH6KLlNbNEx1YG3kMqXEjw+b//aAAwDAQACAAMAAAAQ3C3/AP/EABcRAAMBAAAAAAAAAAAAAAAAAAABERD/2gAIAQMBAT8QS4crP//EABgRAQEBAQEAAAAAAAAAAAAAAAEAESEx/9oACAECAQE/EFjY4geSN//EAB4QAQEBAAEEAwAAAAAAAAAAAAERADEhUWFxgZGx/9oACAEBAAE/EFFESj43EcAB1Lr6jx2ykAUaP80i6wF5wO4bSaEe571Rysd0EEEjgBp0J8uV7BY/eAEBBnG//9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;knit&quot;
+        title=&quot;knit&quot;
+        src=&quot;/static/10761aa55c7aa64e276b8bf00d9156ba/4b190/knit.jpg&quot;
+        srcset=&quot;/static/10761aa55c7aa64e276b8bf00d9156ba/e07e9/knit.jpg 200w,
+/static/10761aa55c7aa64e276b8bf00d9156ba/066f9/knit.jpg 400w,
+/static/10761aa55c7aa64e276b8bf00d9156ba/4b190/knit.jpg 800w,
+/static/10761aa55c7aa64e276b8bf00d9156ba/e5166/knit.jpg 1200w,
+/static/10761aa55c7aa64e276b8bf00d9156ba/b17f8/knit.jpg 1600w,
+/static/10761aa55c7aa64e276b8bf00d9156ba/e44b7/knit.jpg 3888w&quot;
+        sizes=&quot;(max-width: 800px) 100vw, 800px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item></channel></rss>
