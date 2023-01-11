@@ -62,7 +62,6 @@
     "gatsby-remark-smartypants": "^6.3.0",
     "gatsby-remark-video": "^1.2.5",
     "gatsby-source-filesystem": "^5.3.1",
-    "gatsby-transformer-remark": "^6.3.2",
     "gatsby-transformer-sharp": "^5.3.1",
     "gatsby-transformer-yaml": "^5.3.0",
     "jest": "^29.3.1",
@@ -80,5 +79,9 @@
     "tailwindcss": "^3.2.4",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@mdx-js/react": "^2.2.1",
+    "gatsby-plugin-mdx": "^5.4.0"
   }
 }

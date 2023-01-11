@@ -44,8 +44,8 @@ const config: GatsbyConfig = {
                           @typescript-eslint/restrict-plus-operands */
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) =>
-              allMarkdownRemark.nodes.map((node) => {
+            serialize: ({ query: { site, allMdx } }) =>
+              allMdx.nodes.map((node) => {
                 return Object.assign({}, node.frontmatter, {
                   description: node.frontmatter.description || node.excerpt,
                   date: node.frontmatter.date,
@@ -56,7 +56,7 @@ const config: GatsbyConfig = {
               }),
             query: `
               {
-                allMarkdownRemark(sort: { frontmatter: { date: DESC}}) {
+                allMdx(sort: { frontmatter: { date: DESC}}) {
                   nodes {
                     excerpt
                     html
@@ -125,12 +125,13 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
+        extensions: [`.md`, `.mdx`],
         excerpt_separator: `<!-- more -->`,
         footnotes: true,
         gfm: true,
-        plugins: [
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {

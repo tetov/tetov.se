@@ -6,7 +6,7 @@ const onCreateNode: GatsbyNode["onCreateNode"] = ({
   node,
   getNode,
 }) => {
-  if (!(node.internal.type === "MarkdownRemark")) {
+  if (!(node.internal.type === "Mdx")) {
     return;
   }
 

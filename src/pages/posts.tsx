@@ -9,7 +9,7 @@ const Posts = ({
   location: { pathname },
 
   data: {
-    allMarkdownRemark: { nodes: postNodes },
+    allMdx: { nodes: postNodes },
   },
 }: PageProps<Queries.PostsQuery>) => {
   return (
@@ -29,7 +29,7 @@ export const Head: HeadFC = ({ location }) => (
 // Query with /(DIR)/
 export const query = graphql`
   query Posts {
-    allMarkdownRemark(
+    allMdx(
       filter: { fields: { category: { eq: "posts" } } }
       sort: { frontmatter: { date: DESC } }
     ) {

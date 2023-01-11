@@ -10,16 +10,16 @@ const Projects = ({
   location: { pathname },
 
   data: {
-    allMarkdownRemark: { nodes: mdNodes },
+    allMdx: { nodes: mdxNodes },
   },
 }: PageProps<Queries.ProjectsQuery>) => {
-  const [heroProj, ...projNodes] = mdNodes;
+  const [heroProj, ...projNodes] = mdxNodes;
 
   return (
     <Layout pathname={pathname}>
       <PageTitle>Projects</PageTitle>
       <HeroProj {...heroProj} />
-      <ArticleListing nodes={projNodes as Queries.MarkdownRemark[]} />
+      <ArticleListing nodes={projNodes as Queries.Mdx[]} />
     </Layout>
   );
 };
@@ -33,7 +33,7 @@ export const Head: HeadFC = ({ location }) => (
 // Query with /(DIR)/
 export const query = graphql`
   query Projects {
-    allMarkdownRemark(
+    allMdx(
       filter: { fields: { category: { eq: "projs" } } }
       sort: { frontmatter: { weight: DESC } }
       limit: 7

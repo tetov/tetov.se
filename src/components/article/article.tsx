@@ -28,7 +28,7 @@ export type ArticleProp = {
 export const Article = ({
   pathname,
   className = "",
-  html,
+  body,
   title,
   date,
   machineReadableDate,

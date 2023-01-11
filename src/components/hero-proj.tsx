@@ -43,7 +43,7 @@ const HeroProjPreview = ({
 export default HeroProjPreview;
 
 export const fragment = graphql`
-  fragment HeroProjPreview on MarkdownRemark {
+  fragment HeroProjPreview on Mdx{
     excerpt(pruneLength: 160, format: HTML)
     frontmatter {
       title

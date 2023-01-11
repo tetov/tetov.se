@@ -7,7 +7,7 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
   // This way those will always be defined even if removed from gatsby-config.js
 
   // Also explicitly define the Markdown frontmatter
-  // This way the "MarkdownRemark" queries will return `null` even when no
+  // This way the "Mdx" queries will return `null` even when no
   // blog posts are stored inside "content/blog" instead of returning an error
   createTypes(`
     type Site {
@@ -30,12 +30,12 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
       url: String!
     }
 
-    type MarkdownRemark {
-      frontmatter: MarkdownRemarkFrontmatter!
-      fields: MarkdownRemarkFields!
+    type Mdx {
+      frontmatter: MdxFrontmatter!
+      fields: MdxFields!
     }
 
-    type MarkdownRemarkFrontmatter {
+    type MdxFrontmatter {
       title: String!
       description: String
       date: Date! @dateformat
@@ -48,7 +48,7 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
       author: String
     }
 
-    type MarkdownRemarkFields {
+    type MdxFields {
       slug: String!
       category: String!
     }

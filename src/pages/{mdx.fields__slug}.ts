@@ -10,22 +10,23 @@ import Layout from "src/components/layout";
 type GatsbyMarkdownPage = React.FC<PageProps<Queries.MarkdownPageQuery>>;
 
 const MarkdownPage: GatsbyMarkdownPage = ({
-  data: { markdownRemark },
+  data: { mdx },
   location: { pathname },
+  children
 }) => {
-  if (!markdownRemark) {
+  if (!mdx) {
     throw new TypeError("MarkdownRemark null on node.");
   }
 
-  if (!markdownRemark.fields || !markdownRemark.frontmatter) {
+  if (!mdx.fields || !mdx.frontmatter) {
     throw new TypeError("Fields or FrontMatter null on node");
   }
 
-  if (!markdownRemark.html) {
+  if (!children) {
     throw new Error("Content contains no HTML content.");
   }
 
-  const category = markdownRemark.fields.category;
+  const category = mdx.fields.category;
 
   if (!category) {
     throw new Error("No category set on node's fields.");
@@ -33,20 +34,20 @@ const MarkdownPage: GatsbyMarkdownPage = ({
 
   const prop: Partial<ArticleProp> = {};
 
-  if (category === "special" && markdownRemark.fields.slug === "cv") {
+  if (category === "special" && mdx.fields.slug === "cv") {
     prop["className"] = "cv-screen prose dark:prose-invert prose-a:link-style";
     prop["articleMarkup"] = {
       articleMF2Class: "h-resume",
       articleType: "Person",
     };
-    prop["date"] = markdownRemark.frontmatter.date;
+    prop["date"] = mdx.frontmatter.date;
   } else if (category === "posts") {
     prop["articleMarkup"] = {
       articleMF2Class: "h-entry",
       articleType: "BlogEntry",
       bodyItemProp: "articleBody",
     };
-    prop["date"] = markdownRemark.frontmatter.date;
+    prop["date"] = mdx.frontmatter.date;
   } else if (category === "projs") {
     prop["articleMarkup"] = {
       articleMF2Class: "h-entry",
@@ -64,14 +65,14 @@ const MarkdownPage: GatsbyMarkdownPage = ({
     <Layout pathname={pathname}>
       <Article
         pathname={pathname}
-        html={markdownRemark.html ?? ""}
-        title={markdownRemark.frontmatter.title}
+        body={children}
+        title={mdx.frontmatter.title}
         bannerImageData={
-          markdownRemark.frontmatter.image?.childImageSharp?.bannerImgData
+          mdx.frontmatter.image?.childImageSharp?.bannerImgData
         }
-        imageAlt={markdownRemark.frontmatter.imageAlt || undefined}
-        imageCaption={markdownRemark.frontmatter.imageCaption || undefined}
-        machineReadableDate={markdownRemark.frontmatter.machineReadableDate}
+        imageAlt={mdx.frontmatter.imageAlt || undefined}
+        imageCaption={mdx.frontmatter.imageCaption || undefined}
+        machineReadableDate={mdx.frontmatter.machineReadableDate}
         {...prop}
       />
     </Layout>
@@ -83,7 +84,7 @@ export default MarkdownPage;
 export const Head: HeadFC<Queries.MarkdownPageQuery> = ({
   location: { pathname },
   data: {
-    markdownRemark: {
+    mdx: {
       frontmatter: { title, description, image, machineReadableDate },
       excerpt,
     },
@@ -107,7 +108,7 @@ export const Head: HeadFC<Queries.MarkdownPageQuery> = ({
 
 export const query = graphql`
   query MarkdownPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    mdx(id: { eq: $id }) {
       ...Article
     }
   }

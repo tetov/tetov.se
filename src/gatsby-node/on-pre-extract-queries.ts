@@ -3,7 +3,7 @@ import { GatsbyNode } from "gatsby";
 import { IGatsbyImageData } from "gatsby-plugin-image";
 import { parseNodeFilePath } from "./utils";
 
-type PreQueryMarkdownRemark = Node & {
+type PreQueryMdx= Node & {
   fields: {
     slug: string;
     category: string;
@@ -21,7 +21,7 @@ const onPreExtractQueries: GatsbyNode["onPreExtractQueries"] = ({
   getNodesByType,
 }) => {
   const allImgNodes = getNodesByType("ImageSharp");
-  const docNodes = getNodesByType("MarkdownRemark") as PreQueryMarkdownRemark[];
+  const docNodes = getNodesByType("Mdx") as PreQueryMdx[];
 
   docNodes.forEach((docNode) => {
     const heroName = docNode.frontmatter.hero || "hero";
