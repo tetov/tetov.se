@@ -213,7 +213,7 @@ projects:
     startDate: "2020-10-15"
     endDate: "2021-01-01"
     entity: "Gramazio Kohler Research. Project partners: Gotham Design, Lehmag & Seforb"
-    # url:
+    url: https://tetov.se/clay-rotunda/
     location: Gurtenbrauerei, Bern, Switzerland
     roles:
       - "research & development"
