@@ -200,6 +200,7 @@ projects:
     roles:
       - development of digital workflow
       - performance optimization of volumetric modeling tools
+    url: https://tetov.se/meristem-wall/
   - name: Clay Rotunda / SEMusicLab
     type: indoor circular clay wall
     description: >-
