@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Anton Tetov's projects]]></title><description><![CDATA[Projects in architecture, digital fabrication and robotics.]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 11 Jan 2023 21:40:18 GMT</lastBuildDate><item><title><![CDATA[Adding network routes on Windows, OS X and GNU/Linux]]></title><description><![CDATA[Sometimes a route needs to be manually configured in order to reach network nodes behind gateways/firewalls. To do this you specify that to…]]></description><link>https://tetov.senetwork-routes</link><guid isPermaLink="false">https://tetov.senetwork-routes</guid><pubDate>Sun, 16 Oct 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Sometimes a route needs to be manually configured in order to reach network nodes behind gateways/firewalls.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Anton Tetov's projects]]></title><description><![CDATA[Projects in architecture, digital fabrication and robotics.]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 30 Jan 2023 08:31:10 GMT</lastBuildDate><item><title><![CDATA[Adding network routes on Windows, OS X and GNU/Linux]]></title><description><![CDATA[Sometimes a route needs to be manually configured in order to reach network nodes behind gateways/firewalls. To do this you specify that to…]]></description><link>https://tetov.senetwork-routes</link><guid isPermaLink="false">https://tetov.senetwork-routes</guid><pubDate>Sun, 16 Oct 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Sometimes a route needs to be manually configured in order to reach network nodes behind gateways/firewalls.&lt;/p&gt;
 &lt;p&gt;To do this you specify that to reach a certain subnet you need to go through a certain gateway.&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;In the following sections &lt;code class=&quot;language-text&quot;&gt;$SUBNET&lt;/code&gt; should be replaced with subnet (ip range) using either CIDR notation or subnet mask.&lt;/p&gt;
@@ -115,7 +115,7 @@ construction height and openings. The structure was built by a small team in
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Loading of material at Brauchli Ziegelei. Photo by Jomana Baddad&quot;
-        title=&quot;Loading of material at Brauchli Ziegelei. Photo by Jomana Baddad&quot;
+        title=&quot;&quot;
         src=&quot;/static/c4bb184ba540c4a1642ac7eba8c4c572/4b190/loading_jb.jpg&quot;
         srcset=&quot;/static/c4bb184ba540c4a1642ac7eba8c4c572/e07e9/loading_jb.jpg 200w,
 /static/c4bb184ba540c4a1642ac7eba8c4c572/066f9/loading_jb.jpg 400w,
@@ -148,7 +148,7 @@ construction height and openings. The structure was built by a small team in
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Site overview. Photo by David Jenny&quot;
-        title=&quot;Site overview. Photo by David Jenny&quot;
+        title=&quot;&quot;
         src=&quot;/static/e0a149ed05fbe7d67d4074b0c889b717/4b190/site_dj.jpg&quot;
         srcset=&quot;/static/e0a149ed05fbe7d67d4074b0c889b717/e07e9/site_dj.jpg 200w,
 /static/e0a149ed05fbe7d67d4074b0c889b717/066f9/site_dj.jpg 400w,
@@ -181,7 +181,7 @@ construction height and openings. The structure was built by a small team in
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Placing. Photo by Indra Santosa&quot;
-        title=&quot;Placing. Photo by Indra Santosa&quot;
+        title=&quot;&quot;
         src=&quot;/static/1c3ac3ea16fec9961b085535a0959124/4b190/placing_is.jpg&quot;
         srcset=&quot;/static/1c3ac3ea16fec9961b085535a0959124/e07e9/placing_is.jpg 200w,
 /static/1c3ac3ea16fec9961b085535a0959124/066f9/placing_is.jpg 400w,
@@ -214,7 +214,7 @@ construction height and openings. The structure was built by a small team in
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Placing closeup. Ping-Hsun Tsai in background. Photo by Indra Santosa&quot;
-        title=&quot;Placing closeup. Ping-Hsun Tsai in background. Photo by Indra Santosa&quot;
+        title=&quot;&quot;
         src=&quot;/static/21298ee8e4a98bc23e9bf38e84164649/4b190/tsai_is.jpg&quot;
         srcset=&quot;/static/21298ee8e4a98bc23e9bf38e84164649/e07e9/tsai_is.jpg 200w,
 /static/21298ee8e4a98bc23e9bf38e84164649/066f9/tsai_is.jpg 400w,
@@ -247,7 +247,7 @@ construction height and openings. The structure was built by a small team in
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Closeup of material. Photo by Jomana Baddad&quot;
-        title=&quot;Closeup of material. Photo by Jomana Baddad&quot;
+        title=&quot;&quot;
         src=&quot;/static/d549a6c475e3955ca372335f8ae3a819/4b190/closeup_jb.jpg&quot;
         srcset=&quot;/static/d549a6c475e3955ca372335f8ae3a819/e07e9/closeup_jb.jpg 200w,
 /static/d549a6c475e3955ca372335f8ae3a819/066f9/closeup_jb.jpg 400w,
@@ -280,7 +280,7 @@ construction height and openings. The structure was built by a small team in
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Placing pattern. Photo by Coralie Ming&quot;
-        title=&quot;Placing pattern. Photo by Coralie Ming&quot;
+        title=&quot;&quot;
         src=&quot;/static/b1560b5a6323411c11e8a68a893ebb2c/4b190/pattern_cm.jpg&quot;
         srcset=&quot;/static/b1560b5a6323411c11e8a68a893ebb2c/e07e9/pattern_cm.jpg 200w,
 /static/b1560b5a6323411c11e8a68a893ebb2c/066f9/pattern_cm.jpg 400w,
@@ -350,7 +350,7 @@ Technologies, ETH Zürich.&lt;/p&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Photo by Marirena Kladeftira&quot;
-        title=&quot;Photo by Marirena Kladeftira&quot;
+        title=&quot;&quot;
         src=&quot;/static/9e29fb0c436b3e60a7a034c6ed8c5c08/4b190/MarirenaKladeftira.jpg&quot;
         srcset=&quot;/static/9e29fb0c436b3e60a7a034c6ed8c5c08/e07e9/MarirenaKladeftira.jpg 200w,
 /static/9e29fb0c436b3e60a7a034c6ed8c5c08/066f9/MarirenaKladeftira.jpg 400w,
@@ -464,7 +464,7 @@ elements, built on Ana Anton’s (DBT) research into robotic concrete 3D-printin
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Facade element. Photo by Axel Crettenand&quot;
-        title=&quot;Facade element. Photo by Axel Crettenand&quot;
+        title=&quot;&quot;
         src=&quot;/static/e445a787ebca8bd33471d507f62dac30/4b190/axel_crettenand1.jpg&quot;
         srcset=&quot;/static/e445a787ebca8bd33471d507f62dac30/e07e9/axel_crettenand1.jpg 200w,
 /static/e445a787ebca8bd33471d507f62dac30/066f9/axel_crettenand1.jpg 400w,
@@ -497,7 +497,7 @@ elements, built on Ana Anton’s (DBT) research into robotic concrete 3D-printin
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Facade element. Photo by Axel Crettenand&quot;
-        title=&quot;Facade element. Photo by Axel Crettenand&quot;
+        title=&quot;&quot;
         src=&quot;/static/40d26cb31c1f01953098292ea7df1b09/4b190/axel_crettenand2.jpg&quot;
         srcset=&quot;/static/40d26cb31c1f01953098292ea7df1b09/e07e9/axel_crettenand2.jpg 200w,
 /static/40d26cb31c1f01953098292ea7df1b09/066f9/axel_crettenand2.jpg 400w,
@@ -530,7 +530,7 @@ elements, built on Ana Anton’s (DBT) research into robotic concrete 3D-printin
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Concrete detail.&quot;
-        title=&quot;Concrete detail.&quot;
+        title=&quot;&quot;
         src=&quot;/static/05f3090406966f51e372cf4b6d77a83b/ef9e5/concrete_detail1.png&quot;
         srcset=&quot;/static/05f3090406966f51e372cf4b6d77a83b/772e8/concrete_detail1.png 200w,
 /static/05f3090406966f51e372cf4b6d77a83b/e17e5/concrete_detail1.png 400w,
@@ -560,7 +560,7 @@ elements, built on Ana Anton’s (DBT) research into robotic concrete 3D-printin
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Concrete detail.&quot;
-        title=&quot;Concrete detail.&quot;
+        title=&quot;&quot;
         src=&quot;/static/4b77431dca1ffe913c06522c663a6484/ef9e5/concrete_detail2.png&quot;
         srcset=&quot;/static/4b77431dca1ffe913c06522c663a6484/772e8/concrete_detail2.png 200w,
 /static/4b77431dca1ffe913c06522c663a6484/e17e5/concrete_detail2.png 400w,
@@ -571,36 +571,7 @@ elements, built on Ana Anton’s (DBT) research into robotic concrete 3D-printin
         decoding=&quot;async&quot;
       /&gt;
   &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Swallow's nest]]></title><description><![CDATA[Research project into bio-mimetics and clay printing where a method of discrete
-depositions of clay globules using an off-the-shelf 3D printer was developed.]]></description><link>https://tetov.seswallows-nest</link><guid isPermaLink="false">https://tetov.seswallows-nest</guid><pubDate>Thu, 20 Dec 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Research project into bio-mimetics and clay printing where a method of discrete
-depositions of clay globules using an off-the-shelf 3D printer was developed.&lt;/p&gt;
-&lt;!-- more --&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Year&lt;/td&gt;
-&lt;td&gt;2018&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Context&lt;/td&gt;
-&lt;td&gt;Spatial Experiments, School of Architecture, Lund University, Sweden&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Collaborator&lt;/td&gt;
-&lt;td&gt;Erik Hildorsson&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Tutors&lt;/td&gt;
-&lt;td&gt;David Andréen &amp;#x26; Ana Goidea, School of Architecture, Lund University&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</content:encoded></item><item><title><![CDATA[Meristem Wall]]></title><description><![CDATA[Meristem Wall is a prototype of a fully 3D printed building envelope made using
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Meristem Wall]]></title><description><![CDATA[Meristem Wall is a prototype of a fully 3D printed building envelope made using
 sand binder jetting and complemented with a custom CNC knitted fabric. The wall incorporates a
 system of transient and controllable airflows modeled on the physiology of
 termite mounds, allowing it to act as a climate modulator and provide a habitat
@@ -665,7 +636,7 @@ space to fit a wide range of context and functional needs.&lt;/p&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;knit&quot;
-        title=&quot;knit&quot;
+        title=&quot;&quot;
         src=&quot;/static/10761aa55c7aa64e276b8bf00d9156ba/4b190/knit.jpg&quot;
         srcset=&quot;/static/10761aa55c7aa64e276b8bf00d9156ba/e07e9/knit.jpg 200w,
 /static/10761aa55c7aa64e276b8bf00d9156ba/066f9/knit.jpg 400w,
@@ -679,4 +650,33 @@ space to fit a wide range of context and functional needs.&lt;/p&gt;
         decoding=&quot;async&quot;
       /&gt;
   &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;</content:encoded></item></channel></rss>
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Swallow's nest]]></title><description><![CDATA[Research project into bio-mimetics and clay printing where a method of discrete
+depositions of clay globules using an off-the-shelf 3D printer was developed.]]></description><link>https://tetov.seswallows-nest</link><guid isPermaLink="false">https://tetov.seswallows-nest</guid><pubDate>Thu, 20 Dec 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Research project into bio-mimetics and clay printing where a method of discrete
+depositions of clay globules using an off-the-shelf 3D printer was developed.&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Year&lt;/td&gt;
+&lt;td&gt;2018&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Context&lt;/td&gt;
+&lt;td&gt;Spatial Experiments, School of Architecture, Lund University, Sweden&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Collaborator&lt;/td&gt;
+&lt;td&gt;Erik Hildorsson&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tutors&lt;/td&gt;
+&lt;td&gt;David Andréen &amp;#x26; Ana Goidea, School of Architecture, Lund University&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</content:encoded></item></channel></rss>
