@@ -62,7 +62,7 @@
     "gatsby-remark-smartypants": "^6.5.0",
     "gatsby-remark-video": "^1.2.5",
     "gatsby-source-filesystem": "^5.5.0",
-    "gatsby-transformer-remark": "^6.5.0",
+    "gatsby-transformer-remark": "^6.6.0",
     "gatsby-transformer-sharp": "^5.5.0",
     "gatsby-transformer-yaml": "^5.6.0",
     "jest": "^29.4.1",
