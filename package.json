@@ -63,7 +63,7 @@
     "gatsby-remark-video": "^1.2.5",
     "gatsby-source-filesystem": "^5.6.0",
     "gatsby-transformer-remark": "^6.7.0",
-    "gatsby-transformer-sharp": "^5.6.0",
+    "gatsby-transformer-sharp": "^5.7.0",
     "gatsby-transformer-yaml": "^5.7.0",
     "jest": "^29.4.3",
     "node-html-parser": "^6.1.4",
