@@ -67,7 +67,7 @@
     "gatsby-transformer-yaml": "^5.7.0",
     "jest": "^29.4.3",
     "node-html-parser": "^6.1.5",
-    "npm-check-updates": "^16.7.10",
+    "npm-check-updates": "^16.7.12",
     "postcss": "^8.4.21",
     "prettier": "2.8.4",
     "prettier-plugin-organize-imports": "^3.2.2",
