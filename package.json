@@ -55,7 +55,7 @@
     "gatsby-plugin-root-import": "^2.0.9",
     "gatsby-plugin-sharp": "^5.7.0",
     "gatsby-remark-autolink-headers": "^6.7.0",
-    "gatsby-remark-copy-linked-files": "^6.7.0",
+    "gatsby-remark-copy-linked-files": "^6.8.0",
     "gatsby-remark-images": "^7.7.0",
     "gatsby-remark-prismjs": "^7.7.0",
     "gatsby-remark-responsive-iframe": "^6.7.0",
