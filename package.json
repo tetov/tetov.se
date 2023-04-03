@@ -46,7 +46,7 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "gatsby": "^5.7.0",
-    "gatsby-plugin-catch-links": "^5.7.0",
+    "gatsby-plugin-catch-links": "^5.8.0",
     "gatsby-plugin-feed": "^5.7.0",
     "gatsby-plugin-image": "^3.8.0",
     "gatsby-plugin-manifest": "^5.8.0",
