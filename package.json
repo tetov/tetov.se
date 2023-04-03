@@ -27,7 +27,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.21.3",
     "@fontsource/noto-sans": "^4.5.11",
-    "@graphql-eslint/eslint-plugin": "^3.16.2",
+    "@graphql-eslint/eslint-plugin": "^3.18.0",
     "@headlessui/react": "^1.7.13",
     "@headlessui/tailwindcss": "^0.1.2",
     "@heroicons/react": "^2.0.16",
