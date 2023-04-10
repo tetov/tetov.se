@@ -30,7 +30,7 @@
     "@graphql-eslint/eslint-plugin": "^3.18.0",
     "@headlessui/react": "^1.7.13",
     "@headlessui/tailwindcss": "^0.1.2",
-    "@heroicons/react": "^2.0.16",
+    "@heroicons/react": "^2.0.17",
     "@tailwindcss/typography": "^0.5.9",
     "@types/jest": "^29.5.0",
     "@types/react-test-renderer": "^18.0.0",
