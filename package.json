@@ -56,7 +56,7 @@
     "gatsby-plugin-sharp": "^5.8.1",
     "gatsby-remark-autolink-headers": "^6.8.0",
     "gatsby-remark-copy-linked-files": "^6.8.0",
-    "gatsby-remark-images": "^7.8.0",
+    "gatsby-remark-images": "^7.9.0",
     "gatsby-remark-prismjs": "^7.8.0",
     "gatsby-remark-responsive-iframe": "^6.8.0",
     "gatsby-remark-smartypants": "^6.8.0",
