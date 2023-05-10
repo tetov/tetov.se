@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <atom:link href="http://tetov.se/gem002f_micro/pod.xml" rel="self"
+      type="application/rss+xml" />
+    <title>Teaching with pleasure before pressure</title>
+    <description>An educational podcast focused on teaching and learning in
+      higher education.</description>
+    <copyright>Copyright 2023
+      Kristi Ajazi, Virgilio Efrain Martinez Caliva, Anton Tetov Johansson, Kunal
+      Sharma, David Wenander
+    </copyright>
+    <language>en</language>
+    <pubDate>Thur, 11 May 2023 07:00:00 GMT</pubDate>
+    <lastBuildDate>Thur, 11 May 2023 07:00:00 GMT</lastBuildDate>
+    <image>
+      <link>https://tetov.se</link>
+      <title>Teaching with pleasure before pressure</title>
+      <url>https://tetov.se/gem002f_micro/pod.jpg</url>
+    </image>
+    <link>https://tetov.se</link>
+    <itunes:type>episodic</itunes:type>
+    <itunes:summary>An educational podcast focused on teaching and learning in higher education</itunes:summary>
+    <itunes:author>Kristi Ajazi, Virgilio Efrain Martinez Caliva, Anton Tetov Johansson, Kunal
+      Sharma, David Wenander</itunes:author>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:image href="https://tetov.se/gem002f_micro/pod.png" />
+    <itunes:keywords>education, teaching, learning</itunes:keywords>
+    <itunes:owner>
+      <itunes:name>Kristi Ajazi, Virgilio Efrain Martinez Caliva, Anton Tetov Johansson, Kunal
+        Sharma, David Wenander</itunes:name>
+      <itunes:email>gem002f_micro@tetov.se</itunes:email>
+    </itunes:owner>
+    <itunes:category text="Educational" />
+    <item>
+      <guid isPermaLink="true">http://tetov.se/gem003f_micro/pod.mp3</guid>
+      <title>Title of Episode One</title>
+      <link>http://tetov.se</link>
+      <description>Podcast about podcasts for teaching and learning</description>
+      <pubDate>Thur, 11 May 2023 07:00:00 GMT</pubDate>
+      <author>Kristi Ajazi, Virgilio Efrain Martinez Caliva, Anton Tetov Johansson, Kunal
+        Sharma, David Wenander</author>
+      <content:encoded><![CDATA[<p>Podcast about podcasts for teaching and
+      learning, an episode of the podcast Teaching with pleasure before pressure.</p>]]></content:encoded>
+      <enclosure length="8014397" type="audio/mpeg"
+        url="https://tetov.se/gem002f_micro/pod.mp3" />
+      <itunes:title>Podcast about podcasts for teaching and learning.</itunes:title>
+      <itunes:author>Kristi Ajazi, Virgilio Efrain Martinez Caliva, Anton Tetov Johansson, Kunal
+        Sharma, David Wenander</itunes:author>
+      <itunes:image href="https://tetov.se/gem002f_micro/pod.jpg" />
+      <itunes:duration>00:05:33</itunes:duration>
+      <itunes:summary>Podcast about podcasts for teaching and learning</itunes:summary>
+      <itunes:keywords>education, teaching, learning</itunes:keywords>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>1</itunes:episode>
+    </item>
+  </channel>
+</rss>
