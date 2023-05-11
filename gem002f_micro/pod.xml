@@ -1,18 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"
-  xmlns:atom="http://www.w3.org/2005/Atom"
-  xmlns:content="http://purl.org/rss/1.0/modules/content/"
-  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+xmlns:content="http://purl.org/rss/1.0/modules/content/"
+xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
-    <atom:link href="http://tetov.se/gem002f_micro/pod.xml" rel="self"
-      type="application/rss+xml" />
+    <atom:link href="http://tetov.se/gem002f_micro/pod.xml"
+    rel="self" type="application/rss+xml" />
     <title>Teaching with pleasure before pressure</title>
-    <description>An educational podcast focused on teaching and learning in
-      higher education.</description>
-    <copyright>Copyright 2023
-      Kristi Ajazi, Virgilio Efrain Martinez Caliva, Anton Tetov Johansson, Kunal
-      Sharma, David Wenander
-    </copyright>
+    <description>An educational podcast focused on teaching and
+    learning in higher education.</description>
+    <copyright>Copyright 2023 Kristi Ajazi, Virgilio Efrain
+    Martinez Caliva, Anton Tetov Johansson, Kunal Sharma, David
+    Wenander</copyright>
     <language>en</language>
     <pubDate>Thur, 11 May 2023 07:00:00 GMT</pubDate>
     <lastBuildDate>Thur, 11 May 2023 07:00:00 GMT</lastBuildDate>
@@ -23,37 +21,101 @@
     </image>
     <link>https://tetov.se</link>
     <itunes:type>episodic</itunes:type>
-    <itunes:summary>An educational podcast focused on teaching and learning in higher education</itunes:summary>
-    <itunes:author>Kristi Ajazi, Virgilio Efrain Martinez Caliva, Anton Tetov Johansson, Kunal
-      Sharma, David Wenander</itunes:author>
+    <itunes:summary>An educational podcast focused on teaching and
+    learning in higher education</itunes:summary>
+    <itunes:author>Kristi Ajazi, Virgilio Efrain Martinez Caliva,
+    Anton Tetov Johansson, Kunal Sharma, David
+    Wenander</itunes:author>
     <itunes:explicit>no</itunes:explicit>
     <itunes:image href="https://tetov.se/gem002f_micro/pod.jpg" />
-    <itunes:keywords>education, teaching, learning</itunes:keywords>
+    <itunes:keywords>education, teaching,
+    learning</itunes:keywords>
     <itunes:owner>
-      <itunes:name>Kristi Ajazi, Virgilio Efrain Martinez Caliva, Anton Tetov Johansson, Kunal
-        Sharma, David Wenander</itunes:name>
+      <itunes:name>Kristi Ajazi, Virgilio Efrain Martinez Caliva,
+      Anton Tetov Johansson, Kunal Sharma, David
+      Wenander</itunes:name>
       <itunes:email>gem002f_micro@tetov.se</itunes:email>
     </itunes:owner>
     <itunes:category text="Educational" />
     <item>
-      <guid isPermaLink="true">http://tetov.se/gem003f_micro/pod.mp3</guid>
-      <title>Podcast about podcasts for teaching and learning</title>
+      <guid isPermaLink="true">
+      http://tetov.se/gem003f_micro/pod.mp3</guid>
+      <title>Podcast about podcasts for teaching and
+      learning</title>
       <link>https://tetov.se</link>
-      <description>Podcast about podcasts for teaching and learning</description>
+      <description>Podcast about podcasts for teaching and
+      learning</description>
       <pubDate>Thur, 11 May 2023 07:00:00 GMT</pubDate>
-      <author>Kristi Ajazi, Virgilio Efrain Martinez Caliva, Anton Tetov Johansson, Kunal
-        Sharma, David Wenander</author>
-      <content:encoded><![CDATA[<p>Podcast about podcasts for teaching and
-      learning, an episode of the podcast Teaching with pleasure before pressure.</p>]]></content:encoded>
+      <author>Kristi Ajazi, Virgilio Efrain Martinez Caliva, Anton
+      Tetov Johansson, Kunal Sharma, David Wenander</author>
+      <content:encoded>
+<![CDATA[
+<p>References and relevant literature</p>
+
+<p>The word podcasting originates from the combination of iPod and broadcasting,
+and poddies is a term used to define listeners of podcasts. In 2004 the word
+podcast resulted in 24 hits according to a Google search, however by 2007 this
+number rose up to 124 million.%5B1%5D</p>
+
+<p>Podcasts have the benefit of allowing anytime, anywhere learning. Students can
+access the material when travelling, commuting, or even at home. The recordings
+can be played at a convenient for them time.</p>
+
+<p>Podcasts are not interactive it is a one-way learning model which can be
+supplemented by other teaching techniques and reinforce the learning process.
+Early career students transition from a more on-on-one approach in high school
+to university where this style of teaching is not easily obtained. In those
+cases, podcasts can be used as supplements to aid in more study material outside
+of the given teaching times.</p>
+
+<p>In this study, 53% of the students that used podcasts said it helped their
+understanding of the topics.</p>
+
+<p>International students that struggled with the language of instruction said it
+helped them understand better and also enhanced their language skills in the
+field.</p>
+
+<p>Some students preferred text or transcripts as they simply do not enjoy audio
+stimulation and find it less informative which shows that they have a different
+learning technique.</p>
+
+<p>Active listeners according to %5B2%5D are more likely to use this tool and use it as
+a way to engage in the subject with their preferred learning technique.</p>
+
+<p>Instead of enhancing learning these tools allow for a different approach that
+might help students become more engaged in the topic and supply more
+conversation topics between the teacher and students.</p>
+
+<p>Using podcasts as a cognitive tool might help students become more engaged in a
+deeper learning context.</p>
+
+<p>Supplying condensed summaries might deter some students from attending lectures
+and create an assumption that listening to the summaries is enough to obtain all
+the relevant information.<p>
+
+<p>--</p>
+<p>%5B1%5D G. Campbell, “There’s something in the Air: Podcasting in Education,”
+Educause review, November/December 2005. Retrieved on November 6, 2007, from
+http://www.educause.edu/ir/library/pdf/erm0561.pdf</p>
+
+<p>%5B2%5D Berry R (2016) Podcasting: Considering the evolution of the medium and its
+association with the word ‘radio’. Radio Journal: International Studies in
+Broadcast & Audio Media 14(1): 7–22.</p>
+]]>
+      </content:encoded>
       <enclosure length="8014397" type="audio/mpeg"
-        url="https://tetov.se/gem002f_micro/pod.mp3" />
-      <itunes:title>Podcast about podcasts for teaching and learning.</itunes:title>
-      <itunes:author>Kristi Ajazi, Virgilio Efrain Martinez Caliva, Anton Tetov Johansson, Kunal
-        Sharma, David Wenander</itunes:author>
+      url="https://tetov.se/gem002f_micro/pod.mp3" />
+      <itunes:title>Podcast about podcasts for teaching and
+      learning.</itunes:title>
+      <itunes:author>Kristi Ajazi, Virgilio Efrain Martinez Caliva,
+      Anton Tetov Johansson, Kunal Sharma, David
+      Wenander</itunes:author>
       <itunes:image href="https://tetov.se/gem002f_micro/pod.jpg" />
       <itunes:duration>00:05:33</itunes:duration>
-      <itunes:summary>Podcast about podcasts for teaching and learning</itunes:summary>
-      <itunes:keywords>education, teaching, learning</itunes:keywords>
+      <itunes:summary>Podcast about podcasts for teaching and
+      learning</itunes:summary>
+      <itunes:keywords>education, teaching,
+      learning</itunes:keywords>
       <itunes:explicit>no</itunes:explicit>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>1</itunes:episode>
