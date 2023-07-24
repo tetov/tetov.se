@@ -44,7 +44,7 @@
     "csl-json": "^0.1.0",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-prettier": "^5.0.0",
     "gatsby": "^5.11.0",
     "gatsby-plugin-catch-links": "^5.11.0",
     "gatsby-plugin-feed": "^5.11.0",
