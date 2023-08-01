@@ -77,7 +77,7 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
       publications: [CvYamlPublications!]!
       teaching: [CvYamlTeaching!]!
     }
-      
+
     type CvYamlBasics {
       name: String!
       label: String
@@ -89,18 +89,18 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
       location: CvYamlBasicsLocation!
       profiles: [CvYamlBasicsProfiles!]!
     }
-      
+
     type CvYamlBasicsLocation {
       countryCode: String!
       address: String!
     }
-    
+
     type CvYamlBasicsProfiles {
       network: String!
       username: String
       url: String!
     }
-    
+
     type CvYamlWork {
       name: String!
       position: String!
@@ -111,7 +111,7 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
       summary: String
       description: String!
     }
-    
+
     type CvYamlEducation {
       institution: String!
       institutionUrl: String
@@ -132,18 +132,18 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
       url: String
       location: String!
     }
-    
+
     type CvYamlSkills {
       name: String!
       level: String
       keywords: [String!]!
     }
-    
+
     type CvYamlLanguages {
       language: String!
       fluency: String!
     }
-    
+
     type CvYamlTeaching {
       name: String!
       institution: String
@@ -151,18 +151,18 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
       startDate: Date @dateformat
       endDate: Date @dateformat
     }
-    
+
     type CSLName {
       family: String!
       given: String!
     }
-    
+
     type CLSDate {
       year: Int!
       month: Int
       day: Int
     }
-    
+
     type CvYamlPublications {
       abstract: String
       accessed: CLSDate
@@ -170,7 +170,7 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
       citation_key: String
       citation_key: String!
       container_title: String
-      DOI: String       
+      DOI: String
       event_place: String
       event_title: String
       issued: CLSDate!

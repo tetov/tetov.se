@@ -356,9 +356,7 @@ const CV = ({
           ))}
         </CVSection>
         <CVSection title="Languages" key="languages">
-          {languages?.map((l) => (
-            <CVLanguage key={l.language} {...l} />
-          ))}
+          {languages?.map((l) => <CVLanguage key={l.language} {...l} />)}
         </CVSection>
       </article>
     </Layout>

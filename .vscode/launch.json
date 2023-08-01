@@ -27,26 +27,5 @@
       "runtimeArgs": ["--nolazy"],
       "console": "integratedTerminal"
     }
-    // {
-
-    //   "name": "Gatsby develop",
-    //   "type": "node",
-    //   "request": "launch",
-    //   "runtimeExecutable": "npm",
-    //   "runtimeArgs": ["run-script", "build"],
-    //   "skipFiles": ["<node_internals>/**"],
-    //   "nodeVersionHint": 16,
-    //   "console": "integratedTerminal"
-    // },
-    // {
-    //   "name": "Gatsby build",
-    //   "type": "node",
-    //   "request": "launch",
-    //   "runtimeExecutable": "npm",
-    //   "runtimeArgs": ["run-script", "build"],
-    //   "skipFiles": ["<node_internals>/**"],
-    //   "nodeVersionHint": 16,
-    //   "console": "integratedTerminal"
-    // }
   ]
 }
