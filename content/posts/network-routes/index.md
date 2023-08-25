@@ -3,9 +3,12 @@ title: "Adding network routes on Windows, OS X and GNU/Linux"
 author: "Anton Tetov Johansson"
 date: 2022-10-16
 draft: false
-image: "taylor-vick-M5tzZtFCOfs-unsplash.jpg"
-imageAlt: "Photo of datacenter by Taylor Vick on Unsplashed"
-imageCaption: 'Photo by <a href="https://unsplash.com/photos/M5tzZtFCOfs">Taylor Vick</a> on <a href="https://unsplash.com/">Unsplash</a>.'
+image: "midjourney-network-poster.png"
+imageAlt: "AI generated image using MidJourney and the prompt: Networks, routes, gateways, firewalls and internet described by a poster in a cyber punk style with Soviet era influencees."
+imageCaption: "AI generated image using <a href="https://www.midjourney.com">MidJourney</a> (under a <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> license) and the prompt: Networks, routes, gateways, firewalls and internet described by a poster in a cyber punk style with Soviet era influencees."
+# image: "taylor-vick-M5tzZtFCOfs-unsplash.jpg"
+# imageAlt: "Photo of datacenter by Taylor Vick on Unsplashed"
+# imageCaption: 'Photo by <a href="https://unsplash.com/photos/M5tzZtFCOfs">Taylor Vick</a> on <a href="https://unsplash.com/">Unsplash</a>.'
 ---
 
 Sometimes a route needs to be manually configured in order to reach network nodes behind gateways/firewalls.
