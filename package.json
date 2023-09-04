@@ -35,7 +35,7 @@
     "@types/jest": "^29.5.4",
     "@types/react-test-renderer": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^6.5.0",
-    "@typescript-eslint/parser": "^6.4.1",
+    "@typescript-eslint/parser": "^6.5.0",
     "autoprefixer": "^10.4.15",
     "babel-jest": "^29.6.4",
     "babel-preset-gatsby": "^3.12.0",
