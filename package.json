@@ -25,7 +25,7 @@
     "node": "18"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.22.11",
+    "@babel/eslint-parser": "^7.22.15",
     "@fontsource/noto-sans": "^5.0.12",
     "@graphql-eslint/eslint-plugin": "^3.20.1",
     "@headlessui/react": "^1.7.17",
