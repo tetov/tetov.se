@@ -33,7 +33,7 @@
     "@heroicons/react": "^2.0.18",
     "@tailwindcss/typography": "^0.5.10",
     "@types/jest": "^29.5.5",
-    "@types/react-test-renderer": "^18.0.1",
+    "@types/react-test-renderer": "^18.0.2",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.2",
     "autoprefixer": "^10.4.16",
