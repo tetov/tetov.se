@@ -1,6 +1,6 @@
 ---
 title: Clay Rotunda - SE MusicLab
-date: 2020
+date: 2020-01-01
 weight: 130
 image: ./hero.jpg
 ---
