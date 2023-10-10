@@ -177,6 +177,7 @@ const config: GatsbyConfig = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-transformer-yaml`,
+    `gatsby-plugin-client-side-redirect`, // keep last in list
   ],
 };
 
