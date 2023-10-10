@@ -1,0 +1,35 @@
+---
+image: fedora/38
+oauth: pages.sr.ht/PAGES:RW
+packages:
+  - tar
+  - hut
+
+sources:
+  - https://github.com/nvm-sh/nvm.git
+
+environment:
+  site: tetov.se
+
+tasks:
+  - nvm: |
+      cd nvm
+      git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
+
+  - build: |
+      . nvm/nvm.sh
+      cd tetov.se
+      nvm install
+      nvm use
+      npm ci
+      npm test
+      npm run build
+      tar -C public -cvz . > ../site.tar.gz
+
+  - publish: |
+      hut pages publish -d $site site.tar.gz
+
+triggers:
+  - action: email
+    condition: failure
+    to: Anton Tetov <build.sr.ht@tetov.se>
