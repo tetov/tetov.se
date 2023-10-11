@@ -20,26 +20,26 @@ export const ArticlePreview = ({
   }
 
   return (
-    <div>
-      <Link to={`/${slug}/`} className="link-style">
+    <section>
+      <Link to={`/${slug}/`} className="link-style group">
         {/* Add fallback image for future */}
         {previewImg && (
           <GatsbyImage
             alt={imageAlt || `Cover image for ${title}`}
             image={previewImg}
             loading="lazy"
-            className="mb-5"
+            className="mb-5 group-hover:opacity-80"
           />
         )}
         <h2 className="text-xl mb-3 leading-snug">{title}</h2>
       </Link>
       <div className="mb-4">
         <p
-          className="text-lg leading-relaxed mb-4"
+          className="text-md leading-relaxed mb-4"
           dangerouslySetInnerHTML={{ __html: description || excerpt || "" }}
         />
       </div>
-    </div>
+    </section>
   );
 };
 

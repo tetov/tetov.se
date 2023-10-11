@@ -22,6 +22,7 @@ module.exports = {
         "dark-alt": "#666",
         "light-alt": "#DDD",
         purple: "#988ADE",
+        "dark-purple": "#502a76",
       },
       fontFamily: {
         sans: ["Noto Sans", ...defaultTheme.fontFamily.sans],

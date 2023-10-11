@@ -1,30 +1,6 @@
 {
   "editor.formatOnSave": true,
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "typescript.implementationsCodeLens.enabled": true,
-  "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#41cad4",
-    "activityBar.activeBorder": "#d02fc5",
-    "activityBar.background": "#41cad4",
-    "activityBar.foreground": "#15202b",
-    "activityBar.inactiveForeground": "#15202b99",
-    "activityBarBadge.background": "#d02fc5",
-    "activityBarBadge.foreground": "#e7e7e7",
-    "statusBar.background": "#2aafb8",
-    "statusBar.foreground": "#15202b",
-    "statusBarItem.hoverBackground": "#21878e",
-    "titleBar.activeBackground": "#2aafb8",
-    "titleBar.activeForeground": "#15202b",
-    "titleBar.inactiveBackground": "#2aafb899",
-    "titleBar.inactiveForeground": "#15202b99"
-  },
-  "peacock.color": "#2aafb8",
-  "cSpell.words": [
-    "hcard",
-    "iframe",
-    "JSXA",
-    "playsinline",
-    "prismjs",
-    "Typegen"
-  ]
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
 }

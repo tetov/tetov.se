@@ -1,6 +1,6 @@
 import type { GatsbyNode } from "gatsby";
 
-const createPages: GatsbyNode["createPages"] = async ({
+const createPages: GatsbyNode["createPages"] = ({
   actions: { createRedirect },
 }) => {
   const redirects = [

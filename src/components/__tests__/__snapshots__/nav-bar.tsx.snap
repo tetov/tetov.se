@@ -2,7 +2,7 @@
 
 exports[`NavBar renders correctly 1`] = `
 <nav
-  className="text-center md:justify-between mb-8 border-b-2 border-purple"
+  className="text-center md:justify-between mb-8 border-b-2 border-dark-purple"
   data-headlessui-state=""
 >
   <div
@@ -15,6 +15,7 @@ exports[`NavBar renders correctly 1`] = `
         className="flex flex-shrink-0"
       >
         <a
+          aria-hidden={true}
           href="/"
         >
           <test-file-stub
@@ -37,7 +38,7 @@ exports[`NavBar renders correctly 1`] = `
       </div>
       <button
         aria-expanded={false}
-        className="sm:hidden ml-auto rounded-md p-2 text-gray-400 hover:text-purple text-opacity-100"
+        className="sm:hidden ml-auto rounded-md p-2 text-gray-700 dark:text-gray-400 "
         data-headlessui-state=""
         id="headlessui-disclosure-button-:r0:"
         onClick={[Function]}
@@ -51,18 +52,16 @@ exports[`NavBar renders correctly 1`] = `
           Open navigation menu
         </span>
         <div
+          aria-hidden={true}
           className="block w-5 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
         >
           <span
-            aria-hidden="true"
             className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out ui-open:rotate-45 ui-not-open:-translate-y-1.5"
           />
           <span
-            aria-hidden="true"
             className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out ui-open:opacity-0"
           />
           <span
-            aria-hidden="true"
             className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out ui-open:-rotate-45 ui-not-open:translate-y-1.5"
           />
         </div>
@@ -74,14 +73,14 @@ exports[`NavBar renders correctly 1`] = `
           className="flex space-x-4"
         >
           <ul
-            className="flex font-medium link-style-alt text-base"
+            className="flex font-medium"
           >
             <li
               className="flex px-3 py-2"
             >
               <a
                 aria-current="page"
-                className="bg-purple hover:bg-transparent px-3 py-2"
+                className="bg-dark-purple text-dark-text px-3 py-2"
                 href="/"
               >
                 Projects
@@ -91,7 +90,7 @@ exports[`NavBar renders correctly 1`] = `
               className="flex px-3 py-2"
             >
               <a
-                className="px-3 py-2"
+                className="hover:text-purple px-3 py-2"
                 href="/posts"
               >
                 Posts
@@ -101,7 +100,7 @@ exports[`NavBar renders correctly 1`] = `
               className="flex px-3 py-2"
             >
               <a
-                className="px-3 py-2"
+                className="hover:text-purple px-3 py-2"
                 href="/about"
               >
                 About
@@ -111,7 +110,7 @@ exports[`NavBar renders correctly 1`] = `
               className="flex px-3 py-2"
             >
               <a
-                className="px-3 py-2"
+                className="hover:text-purple px-3 py-2"
                 href="/contact"
               >
                 Contact
@@ -127,13 +126,13 @@ exports[`NavBar renders correctly 1`] = `
 
 exports[`NavLinks renders correctly horizontal 1`] = `
 <ul
-  className="flex font-medium link-style-alt text-base"
+  className="flex font-medium"
 >
   <li
     className="flex px-3 py-2"
   >
     <a
-      className="px-3 py-2"
+      className="hover:text-purple px-3 py-2"
       href="https://test1.test"
     >
       test1
@@ -143,7 +142,7 @@ exports[`NavLinks renders correctly horizontal 1`] = `
     className="flex px-3 py-2"
   >
     <a
-      className="px-3 py-2"
+      className="hover:text-purple px-3 py-2"
       href="https://test2.test"
     >
       test2
@@ -154,13 +153,13 @@ exports[`NavLinks renders correctly horizontal 1`] = `
 
 exports[`NavLinks renders correctly vertical 1`] = `
 <ul
-  className="font-medium link-style-alt text-base"
+  className="font-medium"
 >
   <li
     className="px-3 py-2"
   >
     <a
-      className="px-3 py-2"
+      className="hover:text-purple px-3 py-2"
       href="https://test1.test"
     >
       test1
@@ -170,7 +169,7 @@ exports[`NavLinks renders correctly vertical 1`] = `
     className="px-3 py-2"
   >
     <a
-      className="px-3 py-2"
+      className="hover:text-purple px-3 py-2"
       href="https://test2.test"
     >
       test2

@@ -17,23 +17,18 @@ const NavLinks = ({
   navigation,
 }: NavLinksProp) => {
   return (
-    <ul
-      className={classNames(
-        { flex: horizontal },
-        "font-medium link-style-alt text-base",
-      )}
-    >
+    <ul className={classNames({ flex: horizontal }, "font-medium")}>
       {navigation.map(({ text, url }) => (
         <li
           key={text}
           className={classNames({ flex: horizontal }, "px-3 py-2")}
         >
           <Link
-            key={text}
             to={url}
             className={classNames(
               {
-                "bg-purple hover:bg-transparent": pathname === url,
+                "bg-dark-purple text-dark-text": pathname === url,
+                "hover:text-purple": pathname !== url,
               },
               "px-3 py-2",
             )}
@@ -59,14 +54,14 @@ const NavBar = ({ pathname, className }: NavBarProp) => {
     <Disclosure
       as="nav"
       className={classNames(
-        "text-center md:justify-between mb-8 border-b-2 border-purple",
+        "text-center md:justify-between mb-8 border-b-2 border-dark-purple",
         className,
       )}
     >
       <div className="mx-auto px-6 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-start gap-x-6">
           <div className="flex flex-shrink-0">
-            <Link to="/">
+            <Link to="/" aria-hidden>
               <Logo className="h-8 w-auto flex flex-shrink-0" />
             </Link>
           </div>
@@ -80,23 +75,17 @@ const NavBar = ({ pathname, className }: NavBarProp) => {
           {/* Mobile menu button */}
           <Disclosure.Button
             className={
-              "sm:hidden ml-auto rounded-md p-2 text-gray-400 hover:text-purple text-opacity-100"
+              "sm:hidden ml-auto rounded-md p-2 text-gray-700 dark:text-gray-400 "
             }
           >
             <span className="sr-only">Open navigation menu</span>
-            <div className="block w-5 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <span
-                aria-hidden="true"
-                className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out ui-open:rotate-45 ui-not-open:-translate-y-1.5"
-              />
-              <span
-                aria-hidden="true"
-                className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out ui-open:opacity-0"
-              />
-              <span
-                aria-hidden="true"
-                className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out ui-open:-rotate-45 ui-not-open:translate-y-1.5"
-              />
+            <div
+              className="block w-5 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              aria-hidden
+            >
+              <span className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out ui-open:rotate-45 ui-not-open:-translate-y-1.5" />
+              <span className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out ui-open:opacity-0" />
+              <span className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out ui-open:-rotate-45 ui-not-open:translate-y-1.5" />
             </div>
           </Disclosure.Button>
           {/* Regular nav menu */}

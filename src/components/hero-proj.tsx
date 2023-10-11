@@ -15,18 +15,18 @@ const HeroProjPreview = ({
 
   return (
     <>
-      <div>
+      <section className="group">
         <Link to={`/${slug}/`} className="link-style">
           <GatsbyImage
             alt={imageAlt || `Banner image for ${title}`}
             image={bannerImgData}
             loading="eager"
-            className="mb-8 md:mb-16"
+            className="mb-8 md:mb-16 group-hover:opacity-80"
           />
         </Link>
         <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
           <h2 className="mb-4 text-4xl lg:text-6xl leading-tight">
-            <Link to={`/${slug}/`} className="link-style-alt">
+            <Link to={`/${slug}/`} className="link-style">
               {title}
             </Link>
           </h2>
@@ -35,7 +35,7 @@ const HeroProjPreview = ({
             dangerouslySetInnerHTML={{ __html: description || excerpt || "" }}
           />
         </div>
-      </div>
+      </section>
     </>
   );
 };
