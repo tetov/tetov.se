@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Anton Tetov's projects]]></title><description><![CDATA[Projects in architecture, digital fabrication and robotics.]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 09 Oct 2023 13:37:03 GMT</lastBuildDate><item><title><![CDATA[Adding network routes on Windows, OS X and GNU/Linux]]></title><description><![CDATA[Sometimes a route needs to be manually configured in order to reach network nodes behind gateways/firewalls. To do this you specify that to…]]></description><link>https://tetov.senetwork-routes</link><guid isPermaLink="false">https://tetov.senetwork-routes</guid><pubDate>Sun, 16 Oct 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Sometimes a route needs to be manually configured in order to reach network nodes behind gateways/firewalls.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Anton Tetov's projects]]></title><description><![CDATA[Projects in architecture, digital fabrication and robotics.]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 19 Oct 2023 11:31:47 GMT</lastBuildDate><item><title><![CDATA[Adding network routes on Windows, OS X and GNU/Linux]]></title><description><![CDATA[Sometimes a route needs to be manually configured in order to reach network nodes behind gateways/firewalls. To do this you specify that to…]]></description><link>https://tetov.senetwork-routes</link><guid isPermaLink="false">https://tetov.senetwork-routes</guid><pubDate>Sun, 16 Oct 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Sometimes a route needs to be manually configured in order to reach network nodes behind gateways/firewalls.&lt;/p&gt;
 &lt;p&gt;To do this you specify that to reach a certain subnet you need to go through a certain gateway.&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;In the following sections &lt;code class=&quot;language-text&quot;&gt;$SUBNET&lt;/code&gt; should be replaced with subnet (ip range) using either CIDR notation or subnet mask.&lt;/p&gt;
@@ -58,7 +58,86 @@
       &lt;span class=&quot;token key atrule&quot;&gt;routes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
         &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $SUBNET
           &lt;span class=&quot;token key atrule&quot;&gt;via&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $GATEWAY&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Then run &lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; netplan apply&lt;/code&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[SEMusicLab clay wall mockup]]></title><description><![CDATA[Gramazio Kohler Research’s MAS DFAB pavilion project 2019/2020. Quarter of circular undulating clay wall 5 m high with a 6 m radius built using
+&lt;p&gt;Then run &lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; netplan apply&lt;/code&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Meristem Wall]]></title><description><![CDATA[Meristem Wall is a prototype of a fully 3D printed building envelope made using
+sand binder jetting and complemented with a custom CNC knitted fabric. The wall incorporates a
+system of transient and controllable airflows modeled on the physiology of
+termite mounds, allowing it to act as a climate modulator and provide a habitat
+for urban wildlife.]]></description><link>https://tetov.semeristem-wall</link><guid isPermaLink="false">https://tetov.semeristem-wall</guid><pubDate>Fri, 01 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Meristem Wall is a prototype of a fully 3D printed building envelope made using
+sand binder jetting and complemented with a custom CNC knitted fabric. The wall incorporates a
+system of transient and controllable airflows modeled on the physiology of
+termite mounds, allowing it to act as a climate modulator and provide a habitat
+for urban wildlife.&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;The wall’s geometry and the integrated airflow enables it to function as a
+biological habitat, taking the concept of the green wall beyond a monocultural
+garden. The wall is designed using an interdependent model that negotiates the
+space and relationship between a wide range of functions including utilities,
+aesthetic preferences, structural performance, and bioclimatic considerations.
+This self-organizing simulation is capable of creating unique compositions of
+space to fit a wide range of context and functional needs.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Year&lt;/td&gt;
+&lt;td&gt;2021&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Location&lt;/td&gt;
+&lt;td&gt;Time Space Existence exhibition at European Culture Center during the Venice Biennale of Architecture 2021&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Role&lt;/td&gt;
+&lt;td&gt;Development and performance optimization of voxel based workflow&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Collaborators&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://anagoidea.com/&quot;&gt;Ana Goidea&lt;/a&gt; &amp;#x26; &lt;a href=&quot;https://portal.research.lu.se/en/persons/david-andr%C3%A9en&quot;&gt;David Andréen&lt;/a&gt; at &lt;a href=&quot;https://www.abm.lth.se/biodigitalmatter/&quot;&gt;bioDigitalMatter at ABM LTH&lt;/a&gt; &amp;#x26; &lt;a href=&quot;https://www.block.arch.ethz.ch/brg/people/mariana-popescu&quot;&gt;Mariana Popescu&lt;/a&gt; at &lt;a href=&quot;https://block.arch.ethz.ch/&quot;&gt;Block Research group, ETH Zürich&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Industry partners&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.voxeljet.com/&quot;&gt;voxeljet&lt;/a&gt; &amp;#x26; &lt;a href=&quot;https://www.sandhelden.de/&quot;&gt;Sandhelden&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/10761aa55c7aa64e276b8bf00d9156ba/e44b7/knit.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.5%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAQCAwUB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgD/2gAMAwEAAhADEAAAAcvSS0jBIkjymDDJQC//xAAdEAACAgIDAQAAAAAAAAAAAAABAgADERIhMTJC/9oACAEBAAEFArRhlXIU8X90NrNNpaQCWhul3r4f1//EABgRAAIDAAAAAAAAAAAAAAAAAAABAhAS/9oACAEDAQE/AYmRV//EABkRAAEFAAAAAAAAAAAAAAAAAAABAhASIf/aAAgBAgEBPwF+FhY//8QAHBAAAgICAwAAAAAAAAAAAAAAAAERIQIQMUFR/9oACAEBAAY/Air0iX4TJj0VxpCGf//EABoQAAMBAQEBAAAAAAAAAAAAAAABESExQRD/2gAIAQEAAT8ho0bgfpwouGmK8NDklKH6KLlNbNEx1YG3kMqXEjw+b//aAAwDAQACAAMAAAAQ3C3/AP/EABcRAAMBAAAAAAAAAAAAAAAAAAABERD/2gAIAQMBAT8QS4crP//EABgRAQEBAQEAAAAAAAAAAAAAAAEAESEx/9oACAECAQE/EFjY4geSN//EAB4QAQEBAAEEAwAAAAAAAAAAAAERADEhUWFxgZGx/9oACAEBAAE/EFFESj43EcAB1Lr6jx2ykAUaP80i6wF5wO4bSaEe571Rysd0EEEjgBp0J8uV7BY/eAEBBnG//9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;knit&quot;
+        title=&quot;&quot;
+        src=&quot;/static/10761aa55c7aa64e276b8bf00d9156ba/4b190/knit.jpg&quot;
+        srcset=&quot;/static/10761aa55c7aa64e276b8bf00d9156ba/e07e9/knit.jpg 200w,
+/static/10761aa55c7aa64e276b8bf00d9156ba/066f9/knit.jpg 400w,
+/static/10761aa55c7aa64e276b8bf00d9156ba/4b190/knit.jpg 800w,
+/static/10761aa55c7aa64e276b8bf00d9156ba/e5166/knit.jpg 1200w,
+/static/10761aa55c7aa64e276b8bf00d9156ba/b17f8/knit.jpg 1600w,
+/static/10761aa55c7aa64e276b8bf00d9156ba/e44b7/knit.jpg 3888w&quot;
+        sizes=&quot;(max-width: 800px) 100vw, 800px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[SEMusicLab clay wall mockup]]></title><description><![CDATA[Gramazio Kohler Research’s MAS DFAB pavilion project 2019/2020. Quarter of circular undulating clay wall 5 m high with a 6 m radius built using
 a method of robotic clay aggregation developed at MAS DFAB. Built to test
 construction height and openings. The structure was built by a small team in
 3 weeks.]]></description><link>https://tetov.sercf-brunnen</link><guid isPermaLink="false">https://tetov.sercf-brunnen</guid><pubDate>Sun, 30 Aug 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Gramazio Kohler Research’s MAS DFAB pavilion project 2019/2020.&lt;/p&gt;
@@ -525,7 +604,7 @@ elements, built on Ana Anton’s (DBT) research into robotic concrete 3D-printin
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 133.5%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAbCAYAAAB836/YAAAACXBIWXMAAAsTAAALEwEAmpwYAAAF2klEQVR42kVWaVcaZxidH9OvPadpT8+pbexJoiYqMiwDDMwMw764xbjFuAaVRUBFUVBkUYwxa9uky++7ve9r0n7gDIPM5T53eV6Vt799hnx9/IR3v/+JZvcKKytryMQjyMbDCAe9yCRsxCwdsXBQvsIhH6JWALVaGcVCDrs7WyiXdnCwX4TyFVCA3bz7DUfNC2y+zCFq6ojbQT6oIxkxeB+QILZ597J0D2r7eZQIWN3bRv2wiL1i7g7wDdm9/+MvnHX7aLR7WF/fIDM/4pEQomH9DjRqwAi4YJKxoXsR4vv8ziqqlQKOayXUa3uolvP/MxSgh41ztK9eYzKTQTIWRsTQJKtkzCIrP3TNKa8BXn3ucaytzOHoUICV0KhXcEyWyld23etbHJ+1eX0NywwhRQ1DfpcEEwwFWJg/YIU0Xv1wO5/gxYslVCol7BZ2eC1gv/pFQ6FfnWC9m7c4b19CczuRjtvUzY/JdEwCC2a24ZMjCw1dE4+xsblOsF3kdrdRqZZweFiGIsCu335A7fQMHz79g4OjOgG8iNmGBLDJRrgq3kcsP2JCV5o1/OAnJJNRVPb3kKPL+WIeR7UKlM71G5ycd1BrtHDz8TOWV1YR9Hn+M0MwE2OHOWrMDiBIMxK8//WXH6By7IvzOnUs4qReRU0wbFx0USWrY4J2bt4hm80gwpHSzKDF8SQY2VkhL0xqqHnGEY+aeDj4IwYHvsNV9xTd1hGapweocmyl0WqhdnKC7uUV+jevMDNFQDpr6m45okUwASLMsBlqlzoKt2scoyODuPftN2g0DtFpn6Bxso9ymYCV2jHDfI6z3hUaFx1mzyCYh6P6ZO4EaITj+7wO+H0qfJoKj9sBg7reH/geudwaWq0GTSkzkxxZjNvoXOG8f4sagZ3jj2Q8QgE+6BxCKmGRpQizmwwDcmyTrBOUxO18jOXlBewWi9jM5VAoFKAcNVtoM3uXt++R4wcjj36GTmbBgBMedQgmtQtoE5h/moXucyIkmiJAOYFJGbKZOHLb21hhu3I7O1CanR5HbeGkdYF0JomxkfuMRpCGqAh4Rwk2TldNGhFESHexRTFEbB3ppI2nM1mmIYh8PodWu41mow6lzNnzxQJK5T1+MQSX4yGWFp+yGeMS0DY1GpWQo8/PZfB0OinZLi/OYnF+BlMM/vz8LC66XZydErBQKqBId7Zym3TTwQB7MDeTZlefwD0xhDSBYhEd05NxJKIhRkqT4JEwQ86Ai+YkuDhOm01c9LpQRA+3d3ewsDiPADUSX1IdQxhiEyZokHBXfK6zfn7NwauKoN8pnbcZfJFV8bfKQRXdfh/K2uYGHXqJublpjA4PQp0YhmP0Aes3IQHMoIcaGnJ0AWIF3bJFIlZxSpSIWvAzp4LU1c1rKOsb67KHccZgcOAegVRWjl+OiOWqyQjpdFmAipiITnvdY/zMQaMM+L13q2x9Yw2XAnArt0W6B4yKGyMPB5Cio5m4IZth6uodIEcW7dGoa4RZ9KiPeRQE5DN+SuJRx7C0tEDAWyjC3f3aAdfRMLws+8xkiouVQnOreJ0jDLSLuupSW793nN0m04kR2SChZ4xjq1xls7NT6L26gXJwVMPh8TGNGOba9zAS0zAoujhP/HQ9KlYWAQWQSEAqbvLzMbpvym0u1pzGkaen0uj0r6nhdgFLXFkhvxvTmSg2V5dhsx1Rii6uMcZDgAuAGMETEXH6+SiNIacQp6D44XQqjlb3Ekr31Ru8WF2V22V+JsNzYkE+KNiaYlwCivwJAGFWxORKY2tS0aBkH7WC0Lh9YnS72e5A+fD5bzx/viR/5dlsBqsCMKxLZ02xTMkom7Kl69YXxl+ZR7h8TZ6AXgKaho4mt5XSv+VSZX1EXxefTbNek5KhANTUEeomDnpTAoZDzKQtsuiR90IKg06L8yVMpudtNuWi15f/HUyx7Kvs8PNnU0had/pprF6SALPZGA97AjFGceqX5FFwd++Rp6GmjsqDq0dT/gXOZ8DapGmCiQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 133.5%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,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&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -566,85 +645,6 @@ elements, built on Ana Anton’s (DBT) research into robotic concrete 3D-printin
 /static/4b77431dca1ffe913c06522c663a6484/e17e5/concrete_detail2.png 400w,
 /static/4b77431dca1ffe913c06522c663a6484/ef9e5/concrete_detail2.png 607w&quot;
         sizes=&quot;(max-width: 607px) 100vw, 607px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Meristem Wall]]></title><description><![CDATA[Meristem Wall is a prototype of a fully 3D printed building envelope made using
-sand binder jetting and complemented with a custom CNC knitted fabric. The wall incorporates a
-system of transient and controllable airflows modeled on the physiology of
-termite mounds, allowing it to act as a climate modulator and provide a habitat
-for urban wildlife.]]></description><link>https://tetov.semeristem-wall</link><guid isPermaLink="false">https://tetov.semeristem-wall</guid><pubDate>Fri, 01 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Meristem Wall is a prototype of a fully 3D printed building envelope made using
-sand binder jetting and complemented with a custom CNC knitted fabric. The wall incorporates a
-system of transient and controllable airflows modeled on the physiology of
-termite mounds, allowing it to act as a climate modulator and provide a habitat
-for urban wildlife.&lt;/p&gt;
-&lt;!-- more --&gt;
-&lt;p&gt;The wall’s geometry and the integrated airflow enables it to function as a
-biological habitat, taking the concept of the green wall beyond a monocultural
-garden. The wall is designed using an interdependent model that negotiates the
-space and relationship between a wide range of functions including utilities,
-aesthetic preferences, structural performance, and bioclimatic considerations.
-This self-organizing simulation is capable of creating unique compositions of
-space to fit a wide range of context and functional needs.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Year&lt;/td&gt;
-&lt;td&gt;2021&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Location&lt;/td&gt;
-&lt;td&gt;Time Space Existence exhibition at European Culture Center during the Venice Biennale of Architecture 2021&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Role&lt;/td&gt;
-&lt;td&gt;Development and performance optimization of voxel based workflow&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Collaborators&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://anagoidea.com/&quot;&gt;Ana Goidea&lt;/a&gt; &amp;#x26; &lt;a href=&quot;https://portal.research.lu.se/en/persons/david-andr%C3%A9en&quot;&gt;David Andréen&lt;/a&gt; at &lt;a href=&quot;https://www.abm.lth.se/biodigitalmatter/&quot;&gt;bioDigitalMatter at ABM LTH&lt;/a&gt; &amp;#x26; &lt;a href=&quot;https://www.block.arch.ethz.ch/brg/people/mariana-popescu&quot;&gt;Mariana Popescu&lt;/a&gt; at &lt;a href=&quot;https://block.arch.ethz.ch/&quot;&gt;Block Research group, ETH Zürich&lt;/a&gt;)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Industry partners&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://www.voxeljet.com/&quot;&gt;voxeljet&lt;/a&gt; &amp;#x26; &lt;a href=&quot;https://www.sandhelden.de/&quot;&gt;Sandhelden&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/10761aa55c7aa64e276b8bf00d9156ba/e44b7/knit.jpg&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 133.5%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAQCAwUB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgD/2gAMAwEAAhADEAAAAcvSS0jBIkjymDDJQC//xAAdEAACAgIDAQAAAAAAAAAAAAABAgADERIhMTJC/9oACAEBAAEFArRhlXIU8X90NrNNpaQCWhul3r4f1//EABgRAAIDAAAAAAAAAAAAAAAAAAABAhAS/9oACAEDAQE/AYmRV//EABkRAAEFAAAAAAAAAAAAAAAAAAABAhASIf/aAAgBAgEBPwF+FhY//8QAHBAAAgICAwAAAAAAAAAAAAAAAAERIQIQMUFR/9oACAEBAAY/Air0iX4TJj0VxpCGf//EABoQAAMBAQEBAAAAAAAAAAAAAAABESExQRD/2gAIAQEAAT8ho0bgfpwouGmK8NDklKH6KLlNbNEx1YG3kMqXEjw+b//aAAwDAQACAAMAAAAQ3C3/AP/EABcRAAMBAAAAAAAAAAAAAAAAAAABERD/2gAIAQMBAT8QS4crP//EABgRAQEBAQEAAAAAAAAAAAAAAAEAESEx/9oACAECAQE/EFjY4geSN//EAB4QAQEBAAEEAwAAAAAAAAAAAAERADEhUWFxgZGx/9oACAEBAAE/EFFESj43EcAB1Lr6jx2ykAUaP80i6wF5wO4bSaEe571Rysd0EEEjgBp0J8uV7BY/eAEBBnG//9k=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;knit&quot;
-        title=&quot;&quot;
-        src=&quot;/static/10761aa55c7aa64e276b8bf00d9156ba/4b190/knit.jpg&quot;
-        srcset=&quot;/static/10761aa55c7aa64e276b8bf00d9156ba/e07e9/knit.jpg 200w,
-/static/10761aa55c7aa64e276b8bf00d9156ba/066f9/knit.jpg 400w,
-/static/10761aa55c7aa64e276b8bf00d9156ba/4b190/knit.jpg 800w,
-/static/10761aa55c7aa64e276b8bf00d9156ba/e5166/knit.jpg 1200w,
-/static/10761aa55c7aa64e276b8bf00d9156ba/b17f8/knit.jpg 1600w,
-/static/10761aa55c7aa64e276b8bf00d9156ba/e44b7/knit.jpg 3888w&quot;
-        sizes=&quot;(max-width: 800px) 100vw, 800px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
