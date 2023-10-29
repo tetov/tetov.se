@@ -11,7 +11,7 @@ import querySiteMetadata from "src/hooks/query-site-metadata";
 
 /* COMPONENTS */
 
-const LEFT_COL_WIDTH = "w-[15%] md:w-1/4";
+const LEFT_COL_WIDTH = "w-1/4";
 
 const CVUnorderedList = ({ children }: PropsWithChildren) => (
   <ul className="list-inside list-disc marker:text-purple print:marker:text-light-text">
@@ -174,7 +174,7 @@ const CVEducation = ({
 
 const CVSkill = ({ name, keywords }: Queries.CvYamlSkills) => (
   <CVEntry heading={name}>
-    <div className="flex flex-row w-full font-light text-m">
+    <div className="flex flex-row w-full font-light text-base">
       <CVUnorderedList>
         {keywords.map((k) => (
           <li key={k}>{k}</li>

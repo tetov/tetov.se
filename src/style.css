@@ -11,7 +11,15 @@
   }
 }
 
-@page {
-  margin: 1cm;
-  size: A4;
+@media print {
+  * {
+    font-size: 14px;
+  }
+  @page {
+    margin-right: 25.4mm;
+    margin-left: 25.4mm;
+    margin-top: 12.7mm;
+    margin-bottom: 12.7mm;
+    size: A4 portrait;
+  }
 }

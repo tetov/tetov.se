@@ -27,7 +27,7 @@ basics:
       url: https://twitter.com/antontetov
       username: antontetov
     - network: mastodon # also in contact-data.yaml
-      url: https://vis.social/@tetov
+      url: https://fosstodon.org/@tetov
       username: tetov@vis.social
     - network: signal # also in contact-data.yaml
       url: https://signal.me/#p/+46703635667
@@ -385,7 +385,7 @@ skills:
       - Animation and rendering (Blender, Houdini, VRay)
       - Electrical circuit design (KiCAD)
 
-  - name: Programmering
+  - name: Programming
     keywords:
       - Python (NumPy, SciPy, OpenCV)
       - C
