@@ -12,7 +12,7 @@
                     "(they/them)"
                 ],
                 "email": [
-                    "https://tetov.se/cdn-cgi/l/"
+                    "mailto:anton@tetov.se"
                 ],
                 "key": [
                     "https://tetov.se/key.txt"
@@ -60,7 +60,7 @@
             "https://fosstodon.org/@tetov"
         ],
         "me": [
-            "https://tetov.se/cdn-cgi/l/",
+            "mailto:anton@tetov.se",
             "https://tetov.se/key.txt",
             "tel:+46703635667",
             "https://github.com/tetov",
@@ -147,7 +147,7 @@
                 "external"
             ]
         },
-        "https://tetov.se/cdn-cgi/l/": {
+        "mailto:anton@tetov.se": {
             "text": "email",
             "rels": [
                 "me"
