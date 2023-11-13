@@ -7,7 +7,7 @@
     "name": "Anton Tetov"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.22.15",
+    "@babel/eslint-parser": "^7.23.3",
     "@fontsource/noto-sans": "^5.0.17",
     "@graphql-eslint/eslint-plugin": "^3.20.1",
     "@headlessui/react": "^1.7.17",
