@@ -14,10 +14,10 @@
     "@headlessui/tailwindcss": "^0.2.0",
     "@heroicons/react": "^2.0.18",
     "@tailwindcss/typography": "^0.5.10",
-    "@types/jest": "^29.5.8",
-    "@types/react-test-renderer": "^18.0.6",
-    "@typescript-eslint/eslint-plugin": "^6.11.0",
-    "@typescript-eslint/parser": "^6.11.0",
+    "@types/jest": "^29.5.10",
+    "@types/react-test-renderer": "^18.0.7",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
     "autoprefixer": "^10.4.16",
     "babel-jest": "^29.7.0",
     "babel-preset-gatsby": "^3.12.1",
@@ -27,7 +27,7 @@
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
-    "gatsby": "^5.12.9",
+    "gatsby": "^5.12.11",
     "gatsby-plugin-catch-links": "^5.12.0",
     "gatsby-plugin-client-side-redirect": "^1.1.0",
     "gatsby-plugin-feed": "^5.12.3",
@@ -63,7 +63,7 @@
     "source-map-support": "^0.5.21",
     "tailwindcss": "^3.3.5",
     "ts-node": "^10.9.1",
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.2"
   },
   "engines": {
     "node": "18"
