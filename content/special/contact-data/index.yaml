@@ -1,3 +1,4 @@
+---
 contactDataList:
   - hcard: p-name # also in cv/index.yaml & gatsby-config.ts
     label: name

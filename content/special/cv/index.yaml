@@ -28,7 +28,7 @@ basics:
       username: antontetov
     - network: mastodon # also in contact-data.yaml
       url: https://fosstodon.org/@tetov
-      username: tetov@vis.social
+      username: "@tetov@fosstodon.org"
     - network: signal # also in contact-data.yaml
       url: https://signal.me/#p/+46703635667
       username: "+46703635667"
@@ -60,23 +60,26 @@ languages:
 
 work:
   - name: Dept. of Architecture & Built Environment, LTH
-    startDate: "2021-05-31"
+    startDate: "2023-03-01"
     description: >-
-      Working with the research project Biomimetic fabrication through robotic
-      3D-printing. Research conducted in a collaboration between the Department
-      of Architecture & Built Environment, the Department of Automatic Control
-      and the Construction Robotics lab.
-
-
-      Responsibilities included project management, software and hardware
-      prototyping and development, academic writing and experimentation.
-    highlights: [3d-printing, ROS, 3d-scanning, academic writing]
+      PhD student working with projects in robotics and digital fabrication with
+      a focus on non-linear (feedback driven) fabrication processes.
+    highlights:
+      [
+        non-linear fabrication,
+        3d-printing,
+        robotics,
+        ROS,
+        3d-scanning,
+        research,
+      ]
     location: Lund, Sweden
-    position: Project Assistant
+    position: Doctoral student
     url: https://abm.lth.se
 
   - name: Dept. of Automatic Control, LTH, Lund University
-    startDate: "2022"
+    startDate: "2022-02-01"
+    endDate: "2023-02-28"
     highlights: []
     location: Lund, Sweden
     position: Project Assistant
@@ -88,6 +91,23 @@ work:
       Responsibilities included project management, software and hardware
       prototyping and development, academic writing and experimentation.
     url: https://control.lth.se
+
+  - name: Dept. of Architecture & Built Environment, LTH
+    startDate: "2021-05-31"
+    endDate: "2023-02-28"
+    description: >-
+      Working with the research project Biomimetic fabrication through robotic
+      3D-printing. Research conducted in a collaboration between the Department
+      of Architecture & Built Environment, the Department of Automatic Control
+      and the Construction Robotics lab.
+
+
+      Responsibilities included project management, software and hardware
+      prototyping and development, academic writing and experimentation.
+    highlights: [3d-printing, ROS, 3d-scanning, academic writing]
+    location: Lund, Sweden
+    position: Project assistant
+    url: https://abm.lth.se
 
   - name: Dept. of Automatic Control, LTH, Lund University
     description: >-
@@ -102,7 +122,7 @@ work:
     endDate: "2022-01-31"
     highlights: []
     location: Lund, Sweden
-    position: Project Assistant
+    position: Project assistant
     url: https://control.lth.se
 
   - name: Gramazio Kohler Research, ETH Zürich
