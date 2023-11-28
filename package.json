@@ -6,7 +6,7 @@
     "email": "anton@tetov.se",
     "name": "Anton Tetov"
   },
-  "devDependencies": {
+ "devDependencies": {
     "@babel/eslint-parser": "^7.23.3",
     "@fontsource/noto-sans": "^5.0.17",
     "@graphql-eslint/eslint-plugin": "^3.20.1",
@@ -16,8 +16,8 @@
     "@tailwindcss/typography": "^0.5.10",
     "@types/jest": "^29.5.10",
     "@types/react-test-renderer": "^18.0.7",
-    "@typescript-eslint/eslint-plugin": "^6.12.0",
-    "@typescript-eslint/parser": "^6.12.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
     "autoprefixer": "^10.4.16",
     "babel-jest": "^29.7.0",
     "babel-preset-gatsby": "^3.12.1",
