@@ -2,13 +2,19 @@
     "notFound": "404.html",
     "fileConfigs": [
         {
-            "glob": "*.html",
+            "glob": "page-data/app-data.json",
             "options": {
                 "cacheControl": "cache-control: public, max-age=0, must-revalidate"
             }
         },
         {
-            "glob": "page-data/app-data.json",
+            "glob": "sw.js",
+            "options": {
+                "cacheControl": "cache-control: public, max-age=0, must-revalidate"
+            }
+        },
+        {
+            "glob": "*.html",
             "options": {
                 "cacheControl": "cache-control: public, max-age=0, must-revalidate"
             }
@@ -26,15 +32,15 @@
             }
         },
         {
-            "glob": "*.{js,css}",
+            "glob": "**/*.js",
             "options": {
                 "cacheControl": "cache-control: public, max-age=31536000, immutable"
             }
         },
         {
-            "glob": "sw.js",
+            "glob": "**/*.css",
             "options": {
-                "cacheControl": "cache-control: public, max-age=0, must-revalidate"
+                "cacheControl": "cache-control: public, max-age=31536000, immutable"
             }
         }
     ]
