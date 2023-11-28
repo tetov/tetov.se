@@ -12,15 +12,18 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
   - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: "v8.51.0"
+    rev: "v8.54.0"
     hooks:
       - id: eslint
         files: \.[jt]sx?$ # *.js, *.jsx, *.ts and *.tsx
         types: [file]
         additional_dependencies:
-          - "@babel/eslint-parser@7.19.1"
-          - "@graphql-eslint/eslint-plugin@3.12.0"
-          - "@typescript-eslint/eslint-plugin@5.41.0"
-          - "@typescript-eslint/parser@5.41.0"
-          - "eslint@8.26.0"
-          - "eslint-config-prettier@8.5.0"
+          - "@babel/eslint-parser@7.23.3"
+          - "@graphql-eslint/eslint-plugin@3.20.1"
+          - "@typescript-eslint/eslint-plugin@6.12.0"
+          - "@typescript-eslint/parser@6.12.0"
+          - "eslint-config-prettier@9.0.0"
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: "v1.29.0"
+    hooks:
+      - id: yamllint
