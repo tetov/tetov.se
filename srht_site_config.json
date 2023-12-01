@@ -4,43 +4,43 @@
         {
             "glob": "page-data/app-data.json",
             "options": {
-                "cacheControl": "cache-control: public, max-age=0, must-revalidate"
+                "cacheControl": "public, max-age=0, must-revalidate"
             }
         },
         {
             "glob": "sw.js",
             "options": {
-                "cacheControl": "cache-control: public, max-age=0, must-revalidate"
+                "cacheControl": "public, max-age=0, must-revalidate"
             }
         },
         {
             "glob": "*.html",
             "options": {
-                "cacheControl": "cache-control: public, max-age=0, must-revalidate"
+                "cacheControl": "public, max-age=0, must-revalidate"
             }
         },
         {
             "glob": "page-data/**/page-data.json",
             "options": {
-                "cacheControl": "cache-control: public, max-age=0, must-revalidate"
+                "cacheControl": "public, max-age=0, must-revalidate"
             }
         },
         {
             "glob": "static/**",
             "options": {
-                "cacheControl": "cache-control: public, max-age=31536000, immutable"
+                "cacheControl": "public, max-age=31536000, immutable"
             }
         },
         {
             "glob": "**/*.js",
             "options": {
-                "cacheControl": "cache-control: public, max-age=31536000, immutable"
+                "cacheControl": "public, max-age=31536000, immutable"
             }
         },
         {
             "glob": "**/*.css",
             "options": {
-                "cacheControl": "cache-control: public, max-age=31536000, immutable"
+                "cacheControl": "public, max-age=31536000, immutable"
             }
         }
     ]
