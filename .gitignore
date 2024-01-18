@@ -52,6 +52,9 @@ typings/
 # dotenv environment variable files
 .env*
 
+# not envrc / direnv files
+!.envrc
+
 # gatsby files
 .cache/
 public
@@ -69,3 +72,4 @@ gatsby-types.d.ts
 # composer (for regression test)
 composer.phar
 /vendor/
+.direnv/
