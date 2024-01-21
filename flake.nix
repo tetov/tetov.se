@@ -22,7 +22,10 @@
         # module parameters provide easy access to attributes of the same
         # system.
         devShells.default = pkgs.mkShell {
-          buildInputs = [pkgs.nodejs_20];
+          buildInputs = with pkgs; [nodejs_20 pre-commit];
+          shellHook = ''
+            ${pkgs.pre-commit}/bin/pre-commit install
+          '';
         };
         formatter = pkgs.alejandra;
       };
