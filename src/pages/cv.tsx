@@ -499,6 +499,7 @@ export const query = graphql`
           url
         }
         publications {
+          id
           abstract
           accessed {
             year
