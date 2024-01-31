@@ -1,40 +1,33 @@
 ---
-image: fedora/39
+image: nixos/latest
 oauth: pages.sr.ht/PAGES:RW
-packages:
-  - tar
-  - hut
-  - chromium # for puppeter
-  - composer
-
-sources:
-  - https://github.com/nvm-sh/nvm.git
 
 environment:
+  NIX_CONFIG: "experimental-features = nix-command flakes"
   SITE: tetov.se
   PUBLISH_REF: refs/heads/main
 
 tasks:
-  - nvm: |
-      cd nvm
-      git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
+  - install: |
+      cd tetov.se
+      nix develop --command npm ci
+
+  - test: |
+      cd tetov.se
+      nix develop --command npm test
 
   - build: |
-      . nvm/nvm.sh
       cd tetov.se
-      nvm install
-      nvm use
-      npm ci
-      npm test
-      npm run build
+      nix develop --command npm run build
       tar -C public -cvz . > ../site.tar.gz
 
-  - publish: >
-      test "$GIT_REF" = "$PUBLISH_REF" &&
-        hut pages publish
-          -d "$SITE"
-          --site-config tetov.se/srht_site_config.json
-          site.tar.gz
+  - publish: |
+      if [ "$GIT_REF" = "$PUBLISH_REF" ] ; then
+        cd tetov.se
+        nix develop --command hut pages publish -d "$SITE" ../site.tar.gz --site-config srht_site_config.json
+      else
+        echo 'Not publishing, because $GIT_REF != $PUBLISH_REF'
+      fi
 
 triggers:
   - action: email
