@@ -1,16 +1,18 @@
 ---
-image: fedora/38
+image: fedora/39
 oauth: pages.sr.ht/PAGES:RW
 packages:
   - tar
   - hut
   - chromium # for puppeter
+  - composer
 
 sources:
   - https://github.com/nvm-sh/nvm.git
 
 environment:
-  site: tetov.se
+  SITE: tetov.se
+  PUBLISH_REF: refs/heads/main
 
 tasks:
   - nvm: |
@@ -27,8 +29,12 @@ tasks:
       npm run build
       tar -C public -cvz . > ../site.tar.gz
 
-  - publish: |
-      hut pages publish -d $site site.tar.gz --site-config tetov.se/srht_site_config.json
+  - publish: >
+      test "$GIT_REF" = "$PUBLISH_REF" &&
+        hut pages publish
+          -d "$SITE"
+          --site-config tetov.se/srht_site_config.json
+          site.tar.gz
 
 triggers:
   - action: email
