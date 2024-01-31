@@ -7,17 +7,19 @@ environment:
   NIX_CONFIG: "experimental-features = nix-command flakes"
 
 tasks:
-  - build: |
-      nix develop tetov.se
+  - install: |
       cd tetov.se
-      npm ci
-      npm test
-      npm run build
+      nix develop --command npm ci
+  - test: |
+      cd tetov.se
+      nix develop --command npm test
+  - build: |
+      cd tetov.se
+      nix develop --command npm run build
       tar -C public -cvz . > ../site.tar.gz
-
   - publish: |
-      nix develop tetov.se
-      hut pages publish -d $site site.tar.gz --site-config tetov.se/srht_site_config.json
+      cd tetov.se
+      nix develop --command hut pages publish -d $site site.tar.gz --site-config tetov.se/srht_site_config.json
 
 triggers:
   - action: email
