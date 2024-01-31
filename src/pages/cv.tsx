@@ -281,8 +281,9 @@ const CVTeaching = ({
   </CVEntry>
 );
 
-// check if null or array len 0, accept any object
-const notNullOrZeroLength = (obj: any): boolean => (Array.isArray(obj) && obj.length > 0) || obj;
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const notNullOrZeroLength = (obj: any[] | object | null): boolean =>
+  (Array.isArray(obj) && obj.length > 0) || (obj !== null && obj !== undefined);
 
 const CV = ({
   location: { pathname },
@@ -342,53 +343,64 @@ const CV = ({
           ))}
         </div>
 
-        { notNullOrZeroLength(work) && (
-        <CVSection title="Work experience" key="work">
-          {work.map((w) => (
-            <CVWork key={`${w.name}${w.position}${w.startDate ?? ""}`} {...w} />
-          ))}
-        </CVSection> )}
+        {notNullOrZeroLength(work) && (
+          <CVSection title="Work experience" key="work">
+            {work.map((w) => (
+              <CVWork
+                key={`${w.name}${w.position}${w.startDate ?? ""}`}
+                {...w}
+              />
+            ))}
+          </CVSection>
+        )}
 
-        { notNullOrZeroLength(education) && (
-        <CVSection title={"Academic achievements"} key="education">
-          {education.map((e) => (
-            <CVEducation key={e.studyType} {...e} />
-          ))}
-        </CVSection>)}
+        {notNullOrZeroLength(education) && (
+          <CVSection title={"Academic achievements"} key="education">
+            {education.map((e) => (
+              <CVEducation key={e.studyType} {...e} />
+            ))}
+          </CVSection>
+        )}
 
-        { notNullOrZeroLength(projects) && (
-        <CVSection title={"Work samples"} key="projects">
-          {projects.map((p) => (
-            <CVProject key={p.name} {...p} />
-          ))}
-        </CVSection> )}
+        {notNullOrZeroLength(projects) && (
+          <CVSection title={"Work samples"} key="projects">
+            {projects.map((p) => (
+              <CVProject key={p.name} {...p} />
+            ))}
+          </CVSection>
+        )}
 
-        { notNullOrZeroLength(publications) && (
-        <CVSection title="Publications" key="publications">
-          {publications.map((p) => (
-            <CVPublication key={p.citation_key} {...p} />
-          ))}
-          </CVSection>)}
+        {notNullOrZeroLength(publications) && (
+          <CVSection title="Publications" key="publications">
+            {publications.map((p) => (
+              <CVPublication key={p.citation_key} {...p} />
+            ))}
+          </CVSection>
+        )}
 
-        { notNullOrZeroLength(teaching) && (
+        {notNullOrZeroLength(teaching) && (
           <CVSection title="Teaching experience" key="teaching">
             {teaching.map((t) => (
               <CVTeaching key={t.name} {...t} />
             ))}
-        </CVSection>)}
+          </CVSection>
+        )}
 
-        { notNullOrZeroLength(skills) && (
-        <CVSection title="Skills" key="skills">
-          {skills.map((s) => (
-            <CVSkill key={s.name} {...s} />
-          ))}
-        </CVSection>)}
+        {notNullOrZeroLength(skills) && (
+          <CVSection title="Skills" key="skills">
+            {skills.map((s) => (
+              <CVSkill key={s.name} {...s} />
+            ))}
+          </CVSection>
+        )}
 
-        { notNullOrZeroLength(languages) && (
-        <CVSection title="Languages" key="languages">
-          {languages.map((l) => <CVLanguage key={l.language} {...l} />)}
-        </CVSection>)}
-
+        {notNullOrZeroLength(languages) && (
+          <CVSection title="Languages" key="languages">
+            {languages.map((l) => (
+              <CVLanguage key={l.language} {...l} />
+            ))}
+          </CVSection>
+        )}
       </article>
     </Layout>
   );
