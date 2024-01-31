@@ -150,6 +150,7 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
       summary: String
       startDate: Date @dateformat
       endDate: Date @dateformat
+      url: String
     }
 
     type CSLName {
