@@ -25,6 +25,8 @@ tasks:
       if [ "$GIT_REF" = "$PUBLISH_REF" ] ; then
         cd tetov.se
         nix develop --command hut pages publish -d "$SITE" ../site.tar.gz --site-config srht_site_config.json
+      else
+        echo 'Not publishing, because $GIT_REF != $PUBLISH_REF'
       fi
 
 triggers:
