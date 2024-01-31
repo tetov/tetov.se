@@ -29,6 +29,7 @@
             php
             phpPackages.composer
             pre-commit
+            vips
           ];
           shellHook = ''
             ${pkgs.pre-commit}/bin/pre-commit install
