@@ -22,9 +22,10 @@
         # module parameters provide easy access to attributes of the same
         # system.
         devShells.default = pkgs.mkShell {
-          buildInputs = with pkgs; [nodejs_20 pre-commit];
+          buildInputs = with pkgs; [nodejs_20 pre-commit chromium];
           shellHook = ''
             ${pkgs.pre-commit}/bin/pre-commit install
+            export PUPPETEER_SKIP_DOWNLOAD=true
           '';
         };
         formatter = pkgs.alejandra;
