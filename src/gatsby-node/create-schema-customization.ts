@@ -150,6 +150,7 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
       summary: String
       startDate: Date @dateformat
       endDate: Date @dateformat
+      url: String
     }
 
     type CSLName {
@@ -163,7 +164,7 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
       day: Int
     }
 
-    type CvYamlPublications {
+    type CvYamlPublications implements Node {
       abstract: String
       accessed: CLSDate
       author: [CSLName!]!

@@ -3,23 +3,29 @@ image: nixos/latest
 oauth: pages.sr.ht/PAGES:RW
 
 environment:
-  site: tetov.se
   NIX_CONFIG: "experimental-features = nix-command flakes"
+  SITE: tetov.se
+  PUBLISH_REF: refs/heads/main
 
 tasks:
   - install: |
       cd tetov.se
       nix develop --command npm ci
+
   - test: |
       cd tetov.se
       nix develop --command npm test
+
   - build: |
       cd tetov.se
       nix develop --command npm run build
       tar -C public -cvz . > ../site.tar.gz
+
   - publish: |
-      cd tetov.se
-      nix develop --command hut pages publish -d $site site.tar.gz --site-config tetov.se/srht_site_config.json
+      if [ "$GIT_REF" = "$PUBLISH_REF" ] ; then
+        cd tetov.se
+        nix develop --command hut pages publish -d "$SITE" ../site.tar.gz --site-config srht_site_config.json
+      fi
 
 triggers:
   - action: email

@@ -259,15 +259,31 @@ const CVTeaching = ({
   institution,
   name,
   summary,
+  url,
 }: Queries.CvYamlTeaching) => (
   <CVEntry
     startDate={startDate ?? undefined}
     endDate={endDate ?? undefined}
-    heading={institution ? `${name}, ${institution}` : name}
+    heading={
+      <span>
+        {url ? (
+          <a href={url} className="link-style">
+            {name}
+          </a>
+        ) : (
+          <span className="font-normal">{name}</span>
+        )}
+        {institution && `, ${institution}`}
+      </span>
+    }
   >
     <CVEntryBody description={<span>{summary}</span>} />
   </CVEntry>
 );
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const notNullOrZeroLength = (obj: any[] | object | null): boolean =>
+  (Array.isArray(obj) && obj.length > 0) || (obj !== null && obj !== undefined);
 
 const CV = ({
   location: { pathname },
@@ -320,44 +336,71 @@ const CV = ({
         itemType="http://schema.org/Person"
       >
         <PageTitle articleHeader>CV</PageTitle>
+
         <div className="flex flex-row mb-8 md:mb-11 justify-between flex-wrap">
           {contactDetailProps.map((c) => (
             <ContactDetail key={c.label} {...c} />
           ))}
         </div>
-        <CVSection title="Work experience" key="work">
-          {work.map((w) => (
-            <CVWork key={`${w.name}${w.position}${w.startDate ?? ""}`} {...w} />
-          ))}
-        </CVSection>
-        <CVSection title={"Academic achievements"} key="education">
-          {education.map((e) => (
-            <CVEducation key={e.studyType} {...e} />
-          ))}
-        </CVSection>
-        <CVSection title={"Work samples"} key="projects">
-          {projects.map((p) => (
-            <CVProject key={p.name} {...p} />
-          ))}
-        </CVSection>
-        <CVSection title="Publications" key="publications">
-          {publications.map((p) => (
-            <CVPublication key={p.citation_key} {...p} />
-          ))}
+
+        {notNullOrZeroLength(work) && (
+          <CVSection title="Work experience" key="work">
+            {work.map((w) => (
+              <CVWork
+                key={`${w.name}${w.position}${w.startDate ?? ""}`}
+                {...w}
+              />
+            ))}
+          </CVSection>
+        )}
+
+        {notNullOrZeroLength(education) && (
+          <CVSection title={"Academic achievements"} key="education">
+            {education.map((e) => (
+              <CVEducation key={e.studyType} {...e} />
+            ))}
+          </CVSection>
+        )}
+
+        {notNullOrZeroLength(projects) && (
+          <CVSection title={"Work samples"} key="projects">
+            {projects.map((p) => (
+              <CVProject key={p.name} {...p} />
+            ))}
+          </CVSection>
+        )}
+
+        {notNullOrZeroLength(publications) && (
+          <CVSection title="Publications" key="publications">
+            {publications.map((p) => (
+              <CVPublication key={p.citation_key} {...p} />
+            ))}
+          </CVSection>
+        )}
+
+        {notNullOrZeroLength(teaching) && (
           <CVSection title="Teaching experience" key="teaching">
             {teaching.map((t) => (
               <CVTeaching key={t.name} {...t} />
             ))}
           </CVSection>
-        </CVSection>
-        <CVSection title="Skills" key="skills">
-          {skills.map((s) => (
-            <CVSkill key={s.name} {...s} />
-          ))}
-        </CVSection>
-        <CVSection title="Languages" key="languages">
-          {languages?.map((l) => <CVLanguage key={l.language} {...l} />)}
-        </CVSection>
+        )}
+
+        {notNullOrZeroLength(skills) && (
+          <CVSection title="Skills" key="skills">
+            {skills.map((s) => (
+              <CVSkill key={s.name} {...s} />
+            ))}
+          </CVSection>
+        )}
+
+        {notNullOrZeroLength(languages) && (
+          <CVSection title="Languages" key="languages">
+            {languages.map((l) => (
+              <CVLanguage key={l.language} {...l} />
+            ))}
+          </CVSection>
+        )}
       </article>
     </Layout>
   );
@@ -453,6 +496,7 @@ export const query = graphql`
           endDate(formatString: "YYYY")
           summary
           institution
+          url
         }
         publications {
           abstract
