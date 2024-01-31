@@ -22,7 +22,7 @@
         # module parameters provide easy access to attributes of the same
         # system.
         devShells.default = pkgs.mkShell {
-          buildInputs = with pkgs; [nodejs_20 pre-commit];
+          buildInputs = with pkgs; [hut php phpPackages.composer nodejs_20 pre-commit];
           shellHook = ''
             ${pkgs.pre-commit}/bin/pre-commit install
           '';

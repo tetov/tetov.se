@@ -1,33 +1,22 @@
 ---
-image: fedora/38
+image: nixos/latest
 oauth: pages.sr.ht/PAGES:RW
-packages:
-  - tar
-  - hut
-  - chromium # for puppeter
-
-sources:
-  - https://github.com/nvm-sh/nvm.git
 
 environment:
   site: tetov.se
+  NIX_CONFIG: "experimental-features = nix-command flakes"
 
 tasks:
-  - nvm: |
-      cd nvm
-      git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
-
   - build: |
-      . nvm/nvm.sh
+      nix develop tetov.se
       cd tetov.se
-      nvm install
-      nvm use
       npm ci
       npm test
       npm run build
       tar -C public -cvz . > ../site.tar.gz
 
   - publish: |
+      nix develop tetov.se
       hut pages publish -d $site site.tar.gz --site-config tetov.se/srht_site_config.json
 
 triggers:
