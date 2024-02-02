@@ -3,16 +3,23 @@ exclude: "\\.spec$"
 repos:
   - repo: local
     hooks:
-      - id: lint
-        name: lint
+      - id: eslint
+        name: eslint
         language: system
         files: '\.[jt]sx?$'
         entry: npm run lint:fix
+        require_serial: true
+      - id: prettier
+        name: prettier
+        language: system
+        entry: npm run format
+        pass_filenames: false
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: "v4.5.0"
     hooks:
       - id: check-added-large-files
       - id: check-json
+        exclude: tsconfig.json
       - id: check-merge-conflict
       - id: check-yaml
       - id: end-of-file-fixer

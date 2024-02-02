@@ -189,11 +189,11 @@ work:
     description: Four week full-time internship in 2016 and an additional four weeks in 2017.
 
 # - name: Suzzle
-  #   startDate: "2013-01-31"
-  #   endDate: "2014-05-31"
-  #   highlights: []
-  #   location: London, UK
-  #   position: Barista
+#   startDate: "2013-01-31"
+#   endDate: "2014-05-31"
+#   highlights: []
+#   location: London, UK
+#   position: Barista
 
 projects:
   - name: Meristem Wall
