@@ -78,7 +78,7 @@
     "clean": "gatsby clean",
     "dev": "GATSBY_GRAPHQL_IDE=playground PARCEL_WORKERS=0 GATSBY_CPU_COUNT=1 node --nolazy --inspect=127.0.0.1:9232 node_modules/.bin/gatsby develop --verbose",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,yml,yaml}\"",
-    "lint": "eslint --ignore-path .gitignore .",
+    "lint": "npm run build && eslint --ignore-path .gitignore",
     "lint:fix": "npm run lint -- --fix",
     "serve": "gatsby serve",
     "test:jest": "jest --coverage --collectCoverageFrom=\"src/**/*.{ts,tsx}\"",
