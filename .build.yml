@@ -16,6 +16,10 @@ tasks:
       cd tetov.se
       nix develop --command npm test
 
+  - pre-commit-hooks: |
+      cd tetov.se
+      pre-commit run --all
+
   - build: |
       cd tetov.se
       nix develop --command npm run build
