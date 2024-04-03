@@ -9,7 +9,7 @@
     "moduleResolution": "node",
     "skipLibCheck": true,
     "strict": true,
-    "target": "ESNext",
+    "target": "ESNext"
   },
-  "include": ["./**/*.ts", "./**/*.tsx"],
+  "include": ["./**/*.ts", "./**/*.tsx"]
 }
