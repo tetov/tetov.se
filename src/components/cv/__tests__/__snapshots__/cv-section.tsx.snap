@@ -31,7 +31,7 @@ exports[`renders correctly with children 1`] = `
         Test 1
       </li>
       <li>
-        Test
+        Test 
         <b>
           2
         </b>
