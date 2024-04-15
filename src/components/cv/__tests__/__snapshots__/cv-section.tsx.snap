@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CVPropTable renders correctly with minimum props 1`] = `null`;
+
+exports[`renders correctly with children 1`] = `
+<section>
+  <div
+    className="mt-8 mb-2 flex-row flex [page-break-inside:avoid]"
+  >
+    <div
+      className="flex w-1/4"
+    />
+    <div
+      className="flex ml-2 w-full max-w-prose"
+    >
+      <h2
+        className="text-2xl"
+      >
+        Test
+      </h2>
+    </div>
+  </div>
+  <hr
+    className="gray-border border-y-2"
+  />
+  <div
+    className="border-collapse"
+  >
+    <ul>
+      <li>
+        Test 1
+      </li>
+      <li>
+        Test
+        <b>
+          2
+        </b>
+      </li>
+    </ul>
+  </div>
+</section>
+`;

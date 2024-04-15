@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CVPropTable renders correctly when no tuples are provided 1`] = `
+<div
+  className="py-1"
+>
+  <table
+    className="table-auto"
+  >
+    <tbody
+      className="border-t-0 divide-y-0"
+    />
+  </table>
+</div>
+`;
+
+exports[`CVPropTable renders correctly with provided tuples 1`] = `[Function]`;

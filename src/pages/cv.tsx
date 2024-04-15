@@ -1,121 +1,18 @@
-import classNames from "classnames";
 import { graphql, HeadFC, PageProps } from "gatsby";
-import React, { PropsWithChildren, ReactNode } from "react";
+import React from "react";
+
 import { createPublicationHTML } from "src/citations";
 import ContactDetail from "src/components/contact-detail";
-import { cvFormatTimespan } from "src/components/cv";
 import HeadComponent from "src/components/head";
 import Layout from "src/components/layout";
-import PageTitle from "src/components/page-title";
 import querySiteMetadata from "src/hooks/query-site-metadata";
-
-/* COMPONENTS */
-
-const LEFT_COL_WIDTH = "w-1/4";
-
-const CVUnorderedList = ({ children }: PropsWithChildren) => (
-  <ul className="list-inside list-disc marker:text-purple print:marker:text-light-text">
-    {children}
-  </ul>
-);
-
-const CVSection = ({
-  title,
-  children,
-}: PropsWithChildren<{ title: string }>) => (
-  <section>
-    <div className="mt-8 mb-2 flex-row flex [page-break-inside:avoid]">
-      {/* width set up like CVEntry */}
-      <div className={classNames("flex", LEFT_COL_WIDTH)} />
-      <div className="flex ml-2 w-full max-w-prose">
-        <h2 className="text-2xl">{title}</h2>
-      </div>
-    </div>
-    <hr className="gray-border border-y-2" />
-    <div className="border-collapse">{children}</div>
-  </section>
-);
-type CVEntryProp = {
-  startDate?: string;
-  endDate?: string;
-  heading?: React.ReactNode;
-  url?: string;
-};
-
-const CVEntry = ({
-  startDate,
-  endDate,
-  heading,
-  children,
-}: PropsWithChildren<CVEntryProp>) => (
-  <div className="mt-6 mb-4 flex-row flex">
-    <div
-      className={classNames(
-        "flex text-base tracking-tight pt-1 mr-2",
-        LEFT_COL_WIDTH,
-      )}
-    >
-      {cvFormatTimespan({ startDate, endDate })}
-    </div>
-    {(heading && (
-      <div className="flex w-full flex-col max-w-prose">
-        <div className="flex">
-          <h3 className="mb-1 font-bold tracking-widest text-md">{heading}</h3>
-        </div>
-        <div className="flex flex-col">{children}</div>
-      </div>
-    )) || <div className="w-full max-w-prose">{children}</div>}
-  </div>
-);
-
-const CVEntryBody = ({
-  children,
-  description,
-}: PropsWithChildren<{ description: ReactNode }>) => (
-  <>
-    <div className="flex max-w-prose font-light whitespace-pre-line">
-      {description}
-    </div>
-    <div className="pt-2 flex min-w-full">{children}</div>
-  </>
-);
-
-const CVPropTable = ({
-  tuples,
-}: {
-  tuples: [key: string, value: ReactNode][];
-}) => {
-  const sharedTableCellClassNames = "text-sm px-2 py-1 gray-border";
-
-  return (
-    <div className="py-1">
-      <table className="table-auto">
-        <tbody className="border-t-0 divide-y-0">
-          {tuples.map(([key, value]) => (
-            <tr key={key} className="gray-border">
-              <td
-                className={classNames(
-                  sharedTableCellClassNames,
-                  "font-medium border-r-2 text-right",
-                )}
-              >
-                {key}
-              </td>
-              <td
-                className={classNames(sharedTableCellClassNames, "font-light")}
-              >
-                {value}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-};
+import PageTitle from "src/components/page-title";
+import { CVEntry, CVEntryBody } from "src/components/cv";
+import { CVSection } from "src/components/cv";
+import { CVUnorderedList } from "src/components/cv";
+import { CVPropTable } from "src/components/cv";
 
 /* Resume section components */
-
 const CVWork = ({
   name,
   endDate,
@@ -281,10 +178,6 @@ const CVTeaching = ({
   </CVEntry>
 );
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
-const notNullOrZeroLength = (obj: any[] | object | null): boolean =>
-  (Array.isArray(obj) && obj.length > 0) || (obj !== null && obj !== undefined);
-
 const CV = ({
   location: { pathname },
   data: {
@@ -338,69 +231,56 @@ const CV = ({
         <PageTitle articleHeader>CV</PageTitle>
 
         <div className="flex flex-row mb-8 md:mb-11 justify-between flex-wrap">
-          {contactDetailProps.map((c) => (
-            <ContactDetail key={c.label} {...c} />
-          ))}
+          {contactDetailProps.map((c) => {
+            if (!c) throw new Error("contactDetailProp is undefined");
+
+            const key = c.label ?? contactDetailProps.indexOf(c);
+
+            return <ContactDetail key={key} {...c} />;
+          })}
         </div>
 
-        {notNullOrZeroLength(work) && (
-          <CVSection title="Work experience" key="work">
-            {work.map((w) => (
-              <CVWork
-                key={`${w.name}${w.position}${w.startDate ?? ""}`}
-                {...w}
-              />
-            ))}
-          </CVSection>
-        )}
+        <CVSection title="Work experience" key="work">
+          {work.map((w) => (
+            <CVWork key={`${w.name}${w.position}${w.startDate ?? ""}`} {...w} />
+          ))}
+        </CVSection>
 
-        {notNullOrZeroLength(education) && (
-          <CVSection title={"Academic achievements"} key="education">
-            {education.map((e) => (
-              <CVEducation key={e.studyType} {...e} />
-            ))}
-          </CVSection>
-        )}
+        <CVSection title={"Academic achievements"} key="education">
+          {education.map((e) => (
+            <CVEducation key={e.studyType} {...e} />
+          ))}
+        </CVSection>
 
-        {notNullOrZeroLength(projects) && (
-          <CVSection title={"Work samples"} key="projects">
-            {projects.map((p) => (
-              <CVProject key={p.name} {...p} />
-            ))}
-          </CVSection>
-        )}
+        <CVSection title={"Work samples"} key="projects">
+          {projects.map((p) => (
+            <CVProject key={p.name} {...p} />
+          ))}
+        </CVSection>
 
-        {notNullOrZeroLength(publications) && (
-          <CVSection title="Publications" key="publications">
-            {publications.map((p) => (
-              <CVPublication key={p.citation_key} {...p} />
-            ))}
-          </CVSection>
-        )}
+        <CVSection title="Publications" key="publications">
+          {publications.map((p) => (
+            <CVPublication key={p.citation_key} {...p} />
+          ))}
+        </CVSection>
 
-        {notNullOrZeroLength(teaching) && (
-          <CVSection title="Teaching experience" key="teaching">
-            {teaching.map((t) => (
-              <CVTeaching key={t.name} {...t} />
-            ))}
-          </CVSection>
-        )}
+        <CVSection title="Teaching experience" key="teaching">
+          {teaching.map((t) => (
+            <CVTeaching key={t.name} {...t} />
+          ))}
+        </CVSection>
 
-        {notNullOrZeroLength(skills) && (
-          <CVSection title="Skills" key="skills">
-            {skills.map((s) => (
-              <CVSkill key={s.name} {...s} />
-            ))}
-          </CVSection>
-        )}
+        <CVSection title="Skills" key="skills">
+          {skills.map((s) => (
+            <CVSkill key={s.name} {...s} />
+          ))}
+        </CVSection>
 
-        {notNullOrZeroLength(languages) && (
-          <CVSection title="Languages" key="languages">
-            {languages.map((l) => (
-              <CVLanguage key={l.language} {...l} />
-            ))}
-          </CVSection>
-        )}
+        <CVSection title="Languages" key="languages">
+          {languages.map((l) => (
+            <CVLanguage key={l.language} {...l} />
+          ))}
+        </CVSection>
       </article>
     </Layout>
   );

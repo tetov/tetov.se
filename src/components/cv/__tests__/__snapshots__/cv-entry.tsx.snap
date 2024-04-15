@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CVEntry renders correctly with all fields 1`] = `
+<div
+  className="mt-6 mb-4 flex-row flex"
+>
+  <div
+    className="flex text-base tracking-tight pt-1 mr-2 w-1/4"
+  >
+    2018-10-02 – 2020-10-02
+  </div>
+  <div
+    className="flex w-full flex-col max-w-prose"
+  >
+    <div
+      className="flex"
+    >
+      <h3
+        className="mb-1 font-bold tracking-widest text-md"
+      >
+        Farmhand in Stardew Valley
+      </h3>
+    </div>
+    <div
+      className="flex flex-col"
+    >
+      Hard work!
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CVEntry renders correctly without enddate 1`] = `
+<div
+  className="mt-6 mb-4 flex-row flex"
+>
+  <div
+    className="flex text-base tracking-tight pt-1 mr-2 w-1/4"
+  >
+    2018-10-02 –
+  </div>
+  <div
+    className="flex w-full flex-col max-w-prose"
+  >
+    <div
+      className="flex"
+    >
+      <h3
+        className="mb-1 font-bold tracking-widest text-md"
+      >
+        Farmhand in Stardew Valley
+      </h3>
+    </div>
+    <div
+      className="flex flex-col"
+    >
+      Hard work!
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CVEntry renders correctly without props 1`] = `
+<div
+  className="mt-6 mb-4 flex-row flex"
+>
+  <div
+    className="flex text-base tracking-tight pt-1 mr-2 w-1/4"
+  />
+  <div
+    className="w-full max-w-prose"
+  />
+</div>
+`;
+
+exports[`CVEntryBody renders correctly with html child 1`] = `
+[
+  <div
+    className="flex max-w-prose font-light whitespace-pre-line"
+  >
+    Test
+  </div>,
+  <div
+    className="pt-2 flex min-w-full"
+  >
+    <ul>
+      <li>
+        Test 1
+      </li>
+      <li>
+        Test 2
+      </li>
+    </ul>
+  </div>,
+]
+`;
+
+exports[`CVEntryBody renders correctly with html description 1`] = `
+[
+  <div
+    className="flex max-w-prose font-light whitespace-pre-line"
+  >
+    <b>
+      test
+    </b>
+  </div>,
+  <div
+    className="pt-2 flex min-w-full"
+  >
+    <ul>
+      <li>
+        Test 1
+      </li>
+      <li>
+        Test 2
+      </li>
+    </ul>
+  </div>,
+]
+`;
+
+exports[`CVEntryBody renders correctly with text child 1`] = `
+[
+  <div
+    className="flex max-w-prose font-light whitespace-pre-line"
+  >
+    Test
+  </div>,
+  <div
+    className="pt-2 flex min-w-full"
+  >
+    Test
+  </div>,
+]
+`;
+
+exports[`Combined CVEntry & CVEntryBody renders correctly with CVEntry props 1`] = `
+<div
+  className="mt-6 mb-4 flex-row flex"
+>
+  <div
+    className="flex text-base tracking-tight pt-1 mr-2 w-1/4"
+  >
+    2018-10-02 – 2020-10-02
+  </div>
+  <div
+    className="flex w-full flex-col max-w-prose"
+  >
+    <div
+      className="flex"
+    >
+      <h3
+        className="mb-1 font-bold tracking-widest text-md"
+      >
+        Farmhand in Stardew Valley
+      </h3>
+    </div>
+    <div
+      className="flex flex-col"
+    >
+      <div
+        className="flex max-w-prose font-light whitespace-pre-line"
+      >
+        Test
+      </div>
+      <div
+        className="pt-2 flex min-w-full"
+      >
+        Test
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Combined CVEntry & CVEntryBody renders correctly with text child 1`] = `
+<div
+  className="mt-6 mb-4 flex-row flex"
+>
+  <div
+    className="flex text-base tracking-tight pt-1 mr-2 w-1/4"
+  />
+  <div
+    className="w-full max-w-prose"
+  >
+    <div
+      className="flex max-w-prose font-light whitespace-pre-line"
+    >
+      Test
+    </div>
+    <div
+      className="pt-2 flex min-w-full"
+    >
+      Test
+    </div>
+  </div>
+</div>
+`;

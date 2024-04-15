@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Integration of CV components renders correctly 1`] = `
+<section>
+  <div
+    className="mt-8 mb-2 flex-row flex [page-break-inside:avoid]"
+  >
+    <div
+      className="flex w-1/4"
+    />
+    <div
+      className="flex ml-2 w-full max-w-prose"
+    >
+      <h2
+        className="text-2xl"
+      >
+        Test
+      </h2>
+    </div>
+  </div>
+  <hr
+    className="gray-border border-y-2"
+  />
+  <div
+    className="border-collapse"
+  >
+    <div
+      className="mt-6 mb-4 flex-row flex"
+    >
+      <div
+        className="flex text-base tracking-tight pt-1 mr-2 w-1/4"
+      >
+        2023-12-11 – 2023-12-12
+      </div>
+      <div
+        className="flex w-full flex-col max-w-prose"
+      >
+        <div
+          className="flex"
+        >
+          <h3
+            className="mb-1 font-bold tracking-widest text-md"
+          >
+            <span>
+              Heading
+            </span>
+          </h3>
+        </div>
+        <div
+          className="flex flex-col"
+        >
+          <div
+            className="flex max-w-prose font-light whitespace-pre-line"
+          >
+            Desc
+          </div>
+          <div
+            className="pt-2 flex min-w-full"
+          >
+            <div
+              className="py-1"
+            >
+              <table
+                className="table-auto"
+              >
+                <tbody
+                  className="border-t-0 divide-y-0"
+                >
+                  <tr
+                    className="gray-border"
+                  >
+                    <td
+                      className="text-sm px-2 py-1 gray-border font-medium border-r-2 text-right"
+                    >
+                      Location
+                    </td>
+                    <td
+                      className="text-sm px-2 py-1 gray-border font-light"
+                    >
+                      Twin Peaks
+                    </td>
+                  </tr>
+                  <tr
+                    className="gray-border"
+                  >
+                    <td
+                      className="text-sm px-2 py-1 gray-border font-medium border-r-2 text-right"
+                    >
+                      list
+                    </td>
+                    <td
+                      className="text-sm px-2 py-1 gray-border font-light"
+                    >
+                      <ul
+                        className="list-inside list-disc marker:text-purple print:marker:text-light-text"
+                      >
+                        <li>
+                          listitem1
+                        </li>
+                        <li>
+                          lisritem2
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="mt-6 mb-4 flex-row flex"
+    >
+      <div
+        className="flex text-base tracking-tight pt-1 mr-2 w-1/4"
+      />
+      <div
+        className="w-full max-w-prose"
+      >
+        <div
+          className="flex max-w-prose font-light whitespace-pre-line"
+        >
+          Desc 2
+        </div>
+        <div
+          className="pt-2 flex min-w-full"
+        >
+          <ul
+            className="list-inside list-disc marker:text-purple print:marker:text-light-text"
+          >
+            <li>
+              keyword
+            </li>
+            <li>
+              another keyword
+            </li>
+            <li>
+              3
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
