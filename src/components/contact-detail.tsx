@@ -48,13 +48,13 @@ const iconMapping = new Map([
 export type ContactDetailProp = {
   label: string;
   text: string;
-  url?: string;
-  icon?: string;
-  hcard?: string;
-  rel?: string;
+  url?: string | null;
+  icon?: string | null;
+  hcard?: string | null;
+  rel?: string | null;
   className?: classNamesArgument;
   iconProp?: Partial<IconBaseProps>;
-  printFriendlyText?: string;
+  printFriendlyText?: string | null;
   useIcon?: boolean;
 };
 
