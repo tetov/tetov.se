@@ -9,6 +9,7 @@ repos:
         files: '\.[jt]sx?$'
         entry: npm run lint:fix
         require_serial: true
+        pass_filenames: false
       - id: prettier
         name: prettier
         language: system
