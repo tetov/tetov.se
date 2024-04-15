@@ -30,6 +30,7 @@
             phpPackages.composer
             pre-commit
             pkg-config # for sharp to find vips
+            python3 # for node-gyp (sharp)
             vips
           ];
           shellHook = with pkgs; ''
