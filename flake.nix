@@ -29,11 +29,13 @@
             php
             phpPackages.composer
             pre-commit
+            pkg-config # for sharp to find vips
             vips
           ];
-          shellHook = ''
-            ${pkgs.pre-commit}/bin/pre-commit install
+          shellHook = with pkgs; ''
+            ${pre-commit}/bin/pre-commit install
             export PUPPETEER_SKIP_DOWNLOAD=true
+            export PUPPETEER_EXECUTABLE_PATH=${lib.getExe chromium}
           '';
         };
         formatter = pkgs.alejandra;
