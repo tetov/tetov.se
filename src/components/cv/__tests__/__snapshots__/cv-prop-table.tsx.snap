@@ -14,4 +14,63 @@ exports[`CVPropTable renders correctly when no tuples are provided 1`] = `
 </div>
 `;
 
-exports[`CVPropTable renders correctly with provided tuples 1`] = `[Function]`;
+exports[`CVPropTable renders correctly with provided tuples 1`] = `
+<div
+  className="py-1"
+>
+  <table
+    className="table-auto"
+  >
+    <tbody
+      className="border-t-0 divide-y-0"
+    >
+      <tr
+        className="gray-border"
+      >
+        <td
+          className="text-sm px-2 py-1 gray-border font-medium border-r-2 text-right"
+        >
+          Name
+        </td>
+        <td
+          className="text-sm px-2 py-1 gray-border font-light"
+        >
+          <b>
+            John Doe
+          </b>
+        </td>
+      </tr>
+      <tr
+        className="gray-border"
+      >
+        <td
+          className="text-sm px-2 py-1 gray-border font-medium border-r-2 text-right"
+        >
+          Age
+        </td>
+        <td
+          className="text-sm px-2 py-1 gray-border font-light"
+        >
+          30
+        </td>
+      </tr>
+      <tr
+        className="gray-border"
+      >
+        <td
+          className="text-sm px-2 py-1 gray-border font-medium border-r-2 text-right"
+        >
+          Location
+        </td>
+        <td
+          className="text-sm px-2 py-1 gray-border font-light"
+        >
+          <span>
+            New York
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
