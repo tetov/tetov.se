@@ -68,6 +68,13 @@
   "engines": {
     "node": "20"
   },
+  "overrides": {
+    "gatsby-plugin-react-svg": {
+      "svg-react-loader": {
+        "loader-utils": "^1.4.2"
+      }
+    }
+  },
   "private": true,
   "repository": {
     "type": "git",
