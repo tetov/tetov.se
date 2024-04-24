@@ -34,9 +34,10 @@
             vips
           ];
           shellHook = with pkgs; ''
-            ${pre-commit}/bin/pre-commit install
+            ${lib.getExe pre-commit} install
             export PUPPETEER_SKIP_DOWNLOAD=true
-            export PUPPETEER_EXECUTABLE_PATH=${chromium}/bin/chromium-browser
+            export PUPPETEER_EXECUTABLE_PATH=${lib.getExe chromium}
+            export GATSBY_TELEMETRY_DISABLED=1
           '';
         };
         formatter = pkgs.alejandra;
