@@ -7,6 +7,7 @@
     "name": "Anton Tetov"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.7.3",
     "@fontsource/noto-sans": "^5.0.22",
     "@headlessui/react": "^1.7.19",
     "@headlessui/tailwindcss": "^0.2.0",
@@ -75,6 +76,7 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "dev": "GATSBY_GRAPHQL_IDE=playground PARCEL_WORKERS=0 GATSBY_CPU_COUNT=1 node --nolazy --inspect=127.0.0.1:9232 node_modules/.bin/gatsby develop --verbose",
+    "fix": "biome check --apply .",
     "serve": "gatsby serve",
     "test:jest": "jest --coverage --collectCoverageFrom=\"src/**/*.{ts,tsx}\"",
     "test:mf2": "composer install && php tests/mf2_regression_test/test_mf2.php",
