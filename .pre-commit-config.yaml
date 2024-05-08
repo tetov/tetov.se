@@ -1,20 +1,6 @@
 ---
 exclude: "\\.(snap|spec)$"
 repos:
-  - repo: local
-    hooks:
-      - id: eslint
-        name: eslint
-        language: system
-        files: '\.[jt]sx?$'
-        entry: npm run lint:fix
-        require_serial: true
-        pass_filenames: false
-      - id: prettier
-        name: prettier
-        language: system
-        entry: npm run format
-        pass_filenames: false
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: "v4.5.0"
     hooks:
