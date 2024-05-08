@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import Footer from "src/components/footer";
 import type { NavBarProp } from "src/components/nav-bar";
 import NavBar from "src/components/nav-bar";

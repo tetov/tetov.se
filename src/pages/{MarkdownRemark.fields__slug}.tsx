@@ -1,7 +1,7 @@
-import { graphql, HeadFC, PageProps } from "gatsby";
+import { type HeadFC, type PageProps, graphql } from "gatsby";
 import type { ImageDataLike } from "gatsby-plugin-image";
 import { getSrc } from "gatsby-plugin-image";
-import * as React from "react";
+import React from "react";
 import type { ArticleProp } from "src/components/article";
 import { Article } from "src/components/article";
 import HeadComponent from "src/components/head";
@@ -34,21 +34,21 @@ const MarkdownPage: GatsbyMarkdownPage = ({
   const prop: Partial<ArticleProp> = {};
 
   if (category === "special" && markdownRemark.fields.slug === "cv") {
-    prop["className"] = "cv-screen prose dark:prose-invert prose-a:link-style";
-    prop["articleMarkup"] = {
+    prop.className = "cv-screen prose dark:prose-invert prose-a:link-style";
+    prop.articleMarkup = {
       articleMF2Class: "h-resume",
       articleType: "Person",
     };
-    prop["date"] = markdownRemark.frontmatter.date;
+    prop.date = markdownRemark.frontmatter.date;
   } else if (category === "posts") {
-    prop["articleMarkup"] = {
+    prop.articleMarkup = {
       articleMF2Class: "h-entry",
       articleType: "BlogEntry",
       bodyItemProp: "articleBody",
     };
-    prop["date"] = markdownRemark.frontmatter.date;
+    prop.date = markdownRemark.frontmatter.date;
   } else if (category === "projs") {
-    prop["articleMarkup"] = {
+    prop.articleMarkup = {
       articleMF2Class: "h-entry",
       articleType: "CreativeWork",
       bodyItemProp: "about",
@@ -57,8 +57,8 @@ const MarkdownPage: GatsbyMarkdownPage = ({
     throw new Error("Node doesn't match any prop templates.");
   }
 
-  prop["className"] =
-    prop["className"] ?? "prose dark:prose-invert prose-a:link-style";
+  prop.className =
+    prop.className ?? "prose dark:prose-invert prose-a:link-style";
 
   return (
     <Layout pathname={pathname}>

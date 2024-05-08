@@ -1,7 +1,7 @@
+import fs from "node:fs";
+import path from "node:path";
 import type { GatsbyNode } from "gatsby";
 import puppeteer from "puppeteer";
-import path from "path";
-import fs from "fs";
 
 const PATH = "public/cv/index.html";
 const OUT_PATH = "public/cv.pdf";

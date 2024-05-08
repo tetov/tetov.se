@@ -1,4 +1,4 @@
-import { GatsbyNode } from "gatsby";
+import type { GatsbyNode } from "gatsby";
 
 const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
   actions: { createTypes },

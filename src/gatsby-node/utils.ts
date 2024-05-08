@@ -1,11 +1,11 @@
+import path from "node:path";
 import type { CreateFilePathArgs } from "gatsby-source-filesystem";
 import { createFilePath } from "gatsby-source-filesystem";
-import path from "path";
 
 export const parseNodeFilePath = ({
   node,
   getNode,
-  basePath = `content`,
+  basePath = "content",
   trailingSlash = false,
 }: CreateFilePathArgs): path.ParsedPath => {
   const filePath = createFilePath({

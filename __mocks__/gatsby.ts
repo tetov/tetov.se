@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import * as React from "react";
+import React from "react";
 const gatsby = jest.requireActual("gatsby");
 
 module.exports = {
@@ -8,7 +7,6 @@ module.exports = {
   Link: jest.fn().mockImplementation(
     // these props are invalid for an `a` tag
     ({
-      /* eslint-disable @typescript-eslint/no-unused-vars */
       activeClassName,
       activeStyle,
       getProps,
@@ -17,7 +15,6 @@ module.exports = {
       ref,
       replace,
       to,
-      /* eslint-enable @typescript-eslint/no-unused-vars */
       ...rest
     }) =>
       React.createElement("a", {
@@ -29,11 +26,11 @@ module.exports = {
   useStaticQuery: jest.fn().mockImplementation(() => ({
     site: {
       siteMetadata: {
-        title: `Iðunn Gunda`,
-        description: `Bechley Industries personnel manager, Jim Johnston.`,
-        siteURL: `https://uiuc.edu`,
-        lang: `fi`,
-        image: `/logo.png`,
+        title: "Iðunn Gunda",
+        description: "Bechley Industries personnel manager, Jim Johnston.",
+        siteURL: "https://uiuc.edu",
+        lang: "fi",
+        image: "/logo.png",
         twitterUsername: "twttr",
         navigation: [
           { text: "Projects", url: "/" },

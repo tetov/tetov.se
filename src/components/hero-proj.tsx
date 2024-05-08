@@ -1,6 +1,6 @@
-import { graphql, Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import * as React from "react";
+import React from "react";
 
 const HeroProjPreview = ({
   excerpt,
@@ -32,6 +32,7 @@ const HeroProjPreview = ({
           </h2>
           <p
             className="text-lg leading-relaxed mb-4"
+            // biome-ignore lint/security/noDangerouslySetInnerHtml: trust me
             dangerouslySetInnerHTML={{ __html: description || excerpt || "" }}
           />
         </div>

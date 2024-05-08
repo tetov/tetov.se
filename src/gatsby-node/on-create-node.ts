@@ -22,13 +22,13 @@ const onCreateNode: GatsbyNode["onCreateNode"] = ({
 
   createNodeField({
     node: node,
-    name: `slug`,
+    name: "slug",
     value: slug,
   });
 
   createNodeField({
     node: node,
-    name: `category`,
+    name: "category",
     value: category,
   });
 };

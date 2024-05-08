@@ -1,6 +1,6 @@
-import { graphql, Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import * as React from "react";
+import React from "react";
 
 export const ArticlePreview = ({
   excerpt,
@@ -36,6 +36,7 @@ export const ArticlePreview = ({
       <div className="mb-4">
         <p
           className="text-md leading-relaxed mb-4"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: trust me
           dangerouslySetInnerHTML={{ __html: description || excerpt || "" }}
         />
       </div>

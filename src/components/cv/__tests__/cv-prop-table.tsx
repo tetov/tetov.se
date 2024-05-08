@@ -6,7 +6,7 @@ describe("CVPropTable", () => {
   it("renders correctly with provided tuples", () => {
     const tuples = [
       ["Name", <b key="test">John Doe</b>],
-      ["Age", <>30</>],
+      ["Age", "30"],
       ["Location", <span key="test">New York</span>],
     ];
 

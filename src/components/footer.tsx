@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 
 const Footer = ({ children }: React.PropsWithChildren) => (
   <footer className="pt-8 pb-16 items-center">

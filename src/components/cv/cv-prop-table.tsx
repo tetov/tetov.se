@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { ReactNode } from "react";
+import React, { type ReactNode } from "react";
 
 export const CVPropTable = ({
   tuples,

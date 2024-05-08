@@ -1,10 +1,10 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import {
-  CVSection,
   CVEntry,
   CVEntryBody,
   CVPropTable,
+  CVSection,
   CVUnorderedList,
 } from "src/components/cv";
 

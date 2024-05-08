@@ -6,7 +6,7 @@ const cvFormatTimespan = ({
   endDate?: string;
 }): string => {
   // if both are present and same
-  if (startDate && endDate && startDate == endDate) {
+  if (startDate && endDate && startDate === endDate) {
     return startDate;
   }
   // if both are present and unique

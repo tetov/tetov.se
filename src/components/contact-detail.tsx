@@ -1,6 +1,6 @@
 import type { Argument as classNamesArgument } from "classnames";
 import classNames from "classnames";
-import * as React from "react";
+import React from "react";
 import type { IconBaseProps } from "react-icons/lib";
 
 import {

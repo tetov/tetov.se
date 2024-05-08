@@ -1,6 +1,6 @@
 import classNames from "classnames";
-import { graphql, HeadFC, PageProps } from "gatsby";
-import * as React from "react";
+import { type HeadFC, type PageProps, graphql } from "gatsby";
+import React from "react";
 import ContactDetail from "src/components/contact-detail";
 import HeadComponent from "src/components/head";
 import Layout from "src/components/layout";

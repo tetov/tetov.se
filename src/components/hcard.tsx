@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import * as React from "react";
+import React from "react";
 import ContactDetail from "src/components/contact-detail";
 
 const HCard = ({

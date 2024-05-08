@@ -2,9 +2,9 @@ import PageTitle from "src/components/page-title";
 import Logo from "src/logo.inline.svg";
 
 import classNames from "classnames";
-import { graphql, Link } from "gatsby";
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
-import * as React from "react";
+import { Link, graphql } from "gatsby";
+import { GatsbyImage, type IGatsbyImageData } from "gatsby-plugin-image";
+import React from "react";
 
 type ArticleMarkup = {
   articleMF2Class?: string;
@@ -61,6 +61,7 @@ export const Article = ({
         {imageCaption && (
           <figcaption
             className="mt-2 mb-4 italic"
+            // biome-ignore lint/security/noDangerouslySetInnerHtml: trust me
             dangerouslySetInnerHTML={{ __html: imageCaption }}
           />
         )}
@@ -68,6 +69,7 @@ export const Article = ({
     )}
     <div
       className="e-content max-w-2xl mx-auto"
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: trust me
       dangerouslySetInnerHTML={{ __html: html }}
       itemProp={articleMarkup?.bodyItemProp}
     />

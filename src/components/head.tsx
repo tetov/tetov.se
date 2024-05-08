@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import querySiteMetadata from "src/hooks/query-site-metadata";
 
 const HeadComponent = ({
@@ -45,7 +45,7 @@ const HeadComponent = ({
 
       <meta property="og:image" content={metaImage} />
 
-      <meta property="og:url" content={`${siteURL}${pathname || ``}`} />
+      <meta property="og:url" content={`${siteURL}${pathname || ""}`} />
 
       {/* TODO: Overwrite this in posts and projs etc */}
       <meta property="og:type" content="website" id="og:type" />

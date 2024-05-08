@@ -1,6 +1,6 @@
 import type { Node } from "gatsby";
-import { GatsbyNode } from "gatsby";
-import { IGatsbyImageData } from "gatsby-plugin-image";
+import type { GatsbyNode } from "gatsby";
+import type { IGatsbyImageData } from "gatsby-plugin-image";
 import { parseNodeFilePath } from "./utils";
 
 type PreQueryMarkdownRemark = Node & {
@@ -23,7 +23,7 @@ const onPreExtractQueries: GatsbyNode["onPreExtractQueries"] = ({
   const allImgNodes = getNodesByType("ImageSharp");
   const docNodes = getNodesByType("MarkdownRemark") as PreQueryMarkdownRemark[];
 
-  docNodes.forEach((docNode) => {
+  for (const docNode of docNodes) {
     const heroName = docNode.frontmatter.hero || "hero";
 
     const { category, slug } = docNode.fields;
@@ -44,11 +44,11 @@ const onPreExtractQueries: GatsbyNode["onPreExtractQueries"] = ({
 
     if (candidates.length > 1)
       throw new Error(
-        `More than one matching hero image. Matches: ${candidates}`, // eslint-disable-line @typescript-eslint/restrict-template-expressions
+        `More than one matching hero image. Matches: ${candidates}`,
       );
 
     createNodeField({ node: docNode, name: "heroImg", value: candidates[0] });
-  });
+  }
 };
 
 export default onPreExtractQueries;

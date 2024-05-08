@@ -1,14 +1,14 @@
+import path from "node:path";
 import type { GatsbyConfig } from "gatsby";
-import path from "path";
 
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `tetov's hideout`,
-    author: `Anton Tetov Johansson`, // also in resume.yaml & contact-data.yaml
-    description: `Projects in architecture, digital fabrication and robotics.`,
-    siteURL: `https://tetov.se`,
-    lang: `en`,
-    image: `/logo.png`,
+    author: "Anton Tetov Johansson", // also in resume.yaml & contact-data.yaml
+    description: "Projects in architecture, digital fabrication and robotics.",
+    siteURL: "https://tetov.se",
+    lang: "en",
+    image: "/logo.png",
     twitterUsername: "antontetov", // also in resume.yaml & contact-data.yaml
     navigation: [
       { text: "projects", url: "/projects/" },
@@ -19,12 +19,12 @@ const config: GatsbyConfig = {
   },
   graphqlTypegen: {
     generateOnBuild: true,
-    typesOutputPath: `gatsby-types.d.ts`,
+    typesOutputPath: "gatsby-types.d.ts",
   },
   plugins: [
-    `gatsby-plugin-catch-links`,
+    "gatsby-plugin-catch-links",
     {
-      resolve: `gatsby-plugin-feed`,
+      resolve: "gatsby-plugin-feed",
       options: {
         query: `
           {
@@ -37,11 +37,6 @@ const config: GatsbyConfig = {
             }
           }
         `,
-        /* eslint-disable @typescript-eslint/no-unsafe-assignment,
-                          @typescript-eslint/no-unsafe-call,
-                          @typescript-eslint/no-unsafe-member-access,
-                          @typescript-eslint/no-unsafe-return,
-                          @typescript-eslint/restrict-plus-operands */
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) =>
@@ -76,45 +71,40 @@ const config: GatsbyConfig = {
             output: "/rss.xml",
           },
         ],
-        /* eslint-enable @typescript-eslint/no-unsafe-assignment,
-                         @typescript-eslint/no-unsafe-call,
-                         @typescript-eslint/no-unsafe-member-access,
-                         @typescript-eslint/no-unsafe-return,
-                         @typescript-eslint/restrict-plus-operands */
       },
     },
-    `gatsby-plugin-image`,
+    "gatsby-plugin-image",
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-manifest",
       options: {
         name: `Anton Tetov's projects & more`,
-        short_name: `tetov`,
-        start_url: `/`,
-        background_color: `#111111`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `./static/logo.png`,
+        short_name: "tetov",
+        start_url: "/",
+        background_color: "#111111",
+        theme_color: "#663399",
+        display: "minimal-ui",
+        icon: "./static/logo.png",
       },
     },
-    `gatsby-plugin-postcss`, // required by tailwind css
-    `gatsby-plugin-root-import`, // setup absolute imports for webpack
+    "gatsby-plugin-postcss", // required by tailwind css
+    "gatsby-plugin-root-import", // setup absolute imports for webpack
     {
-      resolve: `gatsby-plugin-sharp`,
+      resolve: "gatsby-plugin-sharp",
       options: {
         useMozJpeg: true,
         defaultQuality: 50,
       },
     },
     {
-      resolve: `gatsby-plugin-react-svg`,
+      resolve: "gatsby-plugin-react-svg",
       options: { rule: { include: /\.inline\.svg$/ } },
     },
-    `gatsby-plugin-typescript`,
+    "gatsby-plugin-typescript",
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `content`,
-        path: path.resolve(`content`),
+        name: "content",
+        path: path.resolve("content"),
         //  string, regex or function matching any part of abs/rel path
         // https://github.com/micromatch/anymatch
         ignore: [
@@ -125,40 +115,40 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: "gatsby-transformer-remark",
       options: {
-        excerpt_separator: `<!-- more -->`,
+        excerpt_separator: "<!-- more -->",
         footnotes: true,
         gfm: true,
         plugins: [
           {
-            resolve: `gatsby-remark-autolink-headers`,
+            resolve: "gatsby-remark-autolink-headers",
             options: {
               enableCustomId: true,
               icon: false,
             },
           },
-          `gatsby-remark-copy-linked-files`,
+          "gatsby-remark-copy-linked-files",
           {
-            resolve: `gatsby-remark-images`,
+            resolve: "gatsby-remark-images",
             options: {
               maxWidth: 800,
             },
           },
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: "gatsby-remark-prismjs",
             options: {
               inlineCodeMarker: "›",
               aliases: { sh: "bash" },
             },
           },
           {
-            resolve: `gatsby-remark-responsive-iframe`,
+            resolve: "gatsby-remark-responsive-iframe",
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
+              wrapperStyle: "margin-bottom: 1.0725rem",
             },
           },
-          `gatsby-remark-smartypants`,
+          "gatsby-remark-smartypants",
           {
             resolve: "gatsby-remark-video",
             options: {
@@ -175,9 +165,9 @@ const config: GatsbyConfig = {
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-transformer-yaml`,
-    `gatsby-plugin-client-side-redirect`, // keep last in list
+    "gatsby-transformer-sharp",
+    "gatsby-transformer-yaml",
+    "gatsby-plugin-client-side-redirect", // keep last in list
   ],
 };
 

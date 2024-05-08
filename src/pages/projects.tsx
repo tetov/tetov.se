@@ -1,5 +1,5 @@
-import { graphql, HeadFC, PageProps } from "gatsby";
-import * as React from "react";
+import { type HeadFC, type PageProps, graphql } from "gatsby";
+import React from "react";
 import { ArticleListing } from "src/components/article";
 import HeadComponent from "src/components/head";
 import HeroProj from "src/components/hero-proj";

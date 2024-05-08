@@ -1,16 +1,16 @@
-import { graphql, HeadFC, PageProps } from "gatsby";
+import { type HeadFC, type PageProps, graphql } from "gatsby";
 import React from "react";
 
 import { createPublicationHTML } from "src/citations";
 import ContactDetail from "src/components/contact-detail";
-import HeadComponent from "src/components/head";
-import Layout from "src/components/layout";
-import querySiteMetadata from "src/hooks/query-site-metadata";
-import PageTitle from "src/components/page-title";
 import { CVEntry, CVEntryBody } from "src/components/cv";
 import { CVSection } from "src/components/cv";
 import { CVUnorderedList } from "src/components/cv";
 import { CVPropTable } from "src/components/cv";
+import HeadComponent from "src/components/head";
+import Layout from "src/components/layout";
+import PageTitle from "src/components/page-title";
+import querySiteMetadata from "src/hooks/query-site-metadata";
 
 /* Resume section components */
 const CVWork = ({
@@ -141,6 +141,7 @@ const CVPublication = (publication: Queries.CvYamlPublications) => (
       description={
         <span
           className="first-line:indent-6 -indent-4"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: trust me
           dangerouslySetInnerHTML={{
             __html: createPublicationHTML(publication),
           }}
@@ -217,7 +218,7 @@ const CV = ({
 
   if (contactDetailProps.filter((p) => p === undefined).length > 0) {
     throw new Error(
-      `One or more items in list of contact details props is undefined (not found): ${contactDetailProps}`, // eslint-disable-line @typescript-eslint/restrict-template-expressions
+      `One or more items in list of contact details props is undefined (not found): ${contactDetailProps}`,
     );
   }
 

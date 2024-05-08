@@ -23,7 +23,7 @@ const createPages: GatsbyNode["createPages"] = ({
     { fromPath: "/swallows_nest", toPath: "/swallows-nest", isPermanent: true },
   ];
 
-  redirects.forEach((redirect) => createRedirect(redirect));
+  for (const redirect of redirects) createRedirect(redirect);
 };
 
 export default createPages;

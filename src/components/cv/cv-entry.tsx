@@ -1,5 +1,6 @@
 import classNames from "classnames";
-import React, { PropsWithChildren, ReactNode } from "react";
+import React from "react";
+import type { PropsWithChildren, ReactNode } from "react";
 import { cvFormatTimespan } from "src/components/cv";
 import { LEFT_COL_WIDTH } from "./";
 
