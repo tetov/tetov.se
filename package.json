@@ -21,7 +21,7 @@
     "autoprefixer": "^10.4.19",
     "babel-jest": "^29.7.0",
     "babel-preset-gatsby": "^3.13.2",
-    "citation-js": "^0.7.10",
+    "citation-js": "^0.7.14",
     "classnames": "^2.5.1",
     "csl-json": "^0.1.0",
     "eslint": "^8.57.0",
