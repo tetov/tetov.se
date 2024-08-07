@@ -119,7 +119,7 @@ const CVProject: React.FC<Queries.CvYamlProjects> = ({
           [
             roles.length > 1 ? "Roles" : "Role",
             roles.length > 1 ? (
-              <CVUnorderedList>
+              <CVUnorderedList key="role_list">
                 {roles.map((role) => (
                   <li key={role}>{role}</li>
                 ))}

@@ -1,5 +1,5 @@
 import Cite from "citation-js";
-import { Data, Date, ItemType, Person } from "csl-json";
+import { Date as CslDate, Data, ItemType, Person } from "csl-json";
 import { parse as htmlParse } from "node-html-parser";
 
 const URL_REGEX =
@@ -24,7 +24,7 @@ const addLinksToHTML = (text: string): string => {
   return returnText;
 };
 
-const coerceCLSDateFromNode = (date: Queries.CLSDate): Date => {
+const coerceCSLDateFromNode = (date: Queries.CSLDate): CslDate => {
   return { "date-parts": [[date.year, date.month ?? 1, date.day ?? 1]] };
 };
 
@@ -42,9 +42,9 @@ const coerceCSLObjectFromNode = (
   DOI: node.DOI ?? undefined,
   accessed:
     node.accessed !== undefined
-      ? coerceCLSDateFromNode(node.accessed)
+      ? coerceCSLDateFromNode(node.accessed)
       : undefined,
-  issued: coerceCLSDateFromNode(node.issued),
+  issued: coerceCSLDateFromNode(node.issued),
   author: node.author as Person[],
   URL: node.URL ?? undefined,
   abstract: node.abstract ?? undefined,
