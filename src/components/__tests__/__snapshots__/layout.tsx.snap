@@ -41,12 +41,20 @@ exports[`Layout renders correctly 1`] = `
         </div>
         <button
           aria-expanded={false}
+          autoFocus={false}
           className="sm:hidden ml-auto rounded-md p-2 text-gray-700 dark:text-gray-400 "
           data-headlessui-state=""
           id="headlessui-disclosure-button-:r0:"
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onPointerDown={[Function]}
+          onPointerUp={[Function]}
+          onTouchStart={[Function]}
           type="button"
         >
           <span
