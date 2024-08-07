@@ -41,7 +41,7 @@ const coerceCSLObjectFromNode = (
   type: node.type as ItemType,
   DOI: node.DOI ?? undefined,
   accessed:
-    node.accessed != undefined
+    node.accessed !== undefined
       ? coerceCLSDateFromNode(node.accessed)
       : undefined,
   issued: coerceCLSDateFromNode(node.issued),
