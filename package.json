@@ -9,7 +9,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
     "@fontsource/noto-sans": "^5.0.22",
-    "@headlessui/react": "^2.1.6",
+    "@headlessui/react": "^2.1.8",
     "@headlessui/tailwindcss": "^0.2.1",
     "@heroicons/react": "^2.1.5",
     "@tailwindcss/typography": "^0.5.15",
