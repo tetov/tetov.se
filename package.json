@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
-    "@fontsource/noto-sans": "^5.0.22",
+    "@fontsource/noto-sans": "^5.1.0",
     "@headlessui/react": "^2.1.6",
     "@headlessui/tailwindcss": "^0.2.1",
     "@heroicons/react": "^2.1.5",
