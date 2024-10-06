@@ -23,14 +23,15 @@
         # system.
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
+            biome
             chromium
             hut
             nodejs_20
             php
             phpPackages.composer
             pre-commit
-            pkg-config # for sharp to find vips
-            python3 # for node-gyp (sharp)
+            # pkg-config # for sharp to find vips
+            # python3 # for node-gyp (sharp)
             vips
           ];
           shellHook = with pkgs; ''
@@ -39,6 +40,7 @@
             export PUPPETEER_EXECUTABLE_PATH=${lib.getExe chromium}
             export GATSBY_TELEMETRY_DISABLED=1
             export SHARP_FORCE_GLOBAL_LIBVIPS=1
+            export BIOME_BINARY=${lib.getExe biome}
           '';
         };
         formatter = pkgs.alejandra;
