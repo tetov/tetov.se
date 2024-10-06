@@ -41,9 +41,7 @@ const coerceCSLObjectFromNode = (
   type: node.type as ItemType,
   DOI: node.DOI ?? undefined,
   accessed:
-    node.accessed !== undefined
-      ? coerceCSLDateFromNode(node.accessed)
-      : undefined,
+    node.accessed != null ? coerceCSLDateFromNode(node.accessed) : undefined,
   issued: coerceCSLDateFromNode(node.issued),
   author: node.author as Person[],
   URL: node.URL ?? undefined,
