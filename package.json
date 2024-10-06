@@ -76,10 +76,13 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "dev": "GATSBY_GRAPHQL_IDE=playground PARCEL_WORKERS=0 GATSBY_CPU_COUNT=1 node --nolazy --inspect=127.0.0.1:9232 node_modules/.bin/gatsby develop --verbose",
-    "fix": "biome check --apply .",
+    "fix": "biome check --write .",
     "serve": "gatsby serve",
     "test:jest": "jest --coverage --collectCoverageFrom=\"src/**/*.{ts,tsx}\"",
     "test:mf2": "composer install && php tests/mf2_regression_test/test_mf2.php",
     "test": "npm run test:jest && npm run test:mf2"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
   }
 }

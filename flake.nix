@@ -38,6 +38,7 @@
             export PUPPETEER_SKIP_DOWNLOAD=true
             export PUPPETEER_EXECUTABLE_PATH=${lib.getExe chromium}
             export GATSBY_TELEMETRY_DISABLED=1
+            export SHARP_FORCE_GLOBAL_LIBVIPS=1
           '';
         };
         formatter = pkgs.alejandra;
