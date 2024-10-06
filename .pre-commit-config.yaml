@@ -9,9 +9,8 @@ repos:
         entry: npx biome check --write --files-ignore-unknown=true --no-errors-on-unmatched
         language: system
         types: [text]
-        files: "\\.(jsx?|tsx?|c(js|ts)|m(js|ts)|d\\.(ts|cts|mts)|jsonc?)$"
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: "v4.5.0"
+    rev: "v5.0.0"
     hooks:
       - id: check-added-large-files
       - id: check-json
@@ -21,7 +20,7 @@ repos:
       - id: end-of-file-fixer
       - id: mixed-line-ending
       - id: trailing-whitespace
-  - repo: https://github.com/adrienverge/yamllint.git
-    rev: "v1.29.0"
+  - repo: https://github.com/adrienverge/yamllint
+    rev: "v1.35.1"
     hooks:
       - id: yamllint
