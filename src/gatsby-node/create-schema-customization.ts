@@ -173,15 +173,18 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
       day: Int
     }
 
-    type CvYamlPublications {
+    type CvYamlPublications implements Node {
       abstract: String
       accessed: CSLDate
       author: [CSLName!]!
       citation_key: String!
       container_title: String
+      container_title_short: String
       DOI: String
       event_place: String
       event_title: String
+      ISSN: String
+      issue: String
       issued: CSLDate!
       language: String
       language: String
@@ -194,6 +197,7 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
       title: String!
       type: String!
       URL: String
+      volume: String
       metaTags: [String!]
     }
   `);
