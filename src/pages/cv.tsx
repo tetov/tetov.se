@@ -179,6 +179,15 @@ const CVTeaching = ({
   </CVEntry>
 );
 
+type shouldSkipProp = {
+  metaTags: string[] | readonly string[] | null | undefined;
+};
+
+const shouldSkip = ({ metaTags }: shouldSkipProp) => metaTags?.includes("skip");
+
+const shouldNotSkip = ({ metaTags }: shouldSkipProp) =>
+  !shouldSkip({ metaTags });
+
 const CV = ({
   location: { pathname },
   data: {
@@ -237,48 +246,48 @@ const CV = ({
 
             const key = c.label ?? contactDetailProps.indexOf(c);
 
-            return <ContactDetail key={key} {...c} />;
+            if (shouldNotSkip(c)) return <ContactDetail key={key} {...c} />;
           })}
         </div>
 
         <CVSection title="Work experience" key="work">
-          {work.map((w) => (
+          {work.filter(shouldNotSkip).map((w) => (
             <CVWork key={`${w.name}${w.position}${w.startDate ?? ""}`} {...w} />
           ))}
         </CVSection>
 
         <CVSection title={"Academic achievements"} key="education">
-          {education.map((e) => (
+          {education.filter(shouldNotSkip).map((e) => (
             <CVEducation key={e.studyType} {...e} />
           ))}
         </CVSection>
 
         <CVSection title={"Work samples"} key="projects">
-          {projects.map((p) => (
+          {projects.filter(shouldNotSkip).map((p) => (
             <CVProject key={p.name} {...p} />
           ))}
         </CVSection>
 
         <CVSection title="Publications" key="publications">
-          {publications.map((p) => (
+          {publications.filter(shouldNotSkip).map((p) => (
             <CVPublication key={p.citation_key} {...p} />
           ))}
         </CVSection>
 
         <CVSection title="Teaching experience" key="teaching">
-          {teaching.map((t) => (
+          {teaching.filter(shouldNotSkip).map((t) => (
             <CVTeaching key={t.name} {...t} />
           ))}
         </CVSection>
 
         <CVSection title="Skills" key="skills">
-          {skills.map((s) => (
+          {skills.filter(shouldNotSkip).map((s) => (
             <CVSkill key={s.name} {...s} />
           ))}
         </CVSection>
 
         <CVSection title="Languages" key="languages">
-          {languages.map((l) => (
+          {languages.filter(shouldNotSkip).map((l) => (
             <CVLanguage key={l.language} {...l} />
           ))}
         </CVSection>
@@ -307,6 +316,7 @@ export const query = graphql`
           url
           username
           printFriendlyText
+          metaTags
         }
       }
     }
@@ -341,6 +351,7 @@ export const query = graphql`
           summary
           description
           highlights
+          metaTags
         }
         education {
           institution
@@ -350,6 +361,7 @@ export const query = graphql`
           startDate(formatString: "YYYY")
           endDate(formatString: "YYYY")
           score
+          metaTags
         }
         projects {
           name
@@ -361,15 +373,18 @@ export const query = graphql`
           type
           url
           location
+          metaTags
         }
         skills {
           name
           level
           keywords
+          metaTags
         }
         languages {
           language
           fluency
+          metaTags
         }
         teaching {
           name
@@ -378,6 +393,7 @@ export const query = graphql`
           summary
           institution
           url
+          metaTags
         }
         publications {
           id
@@ -393,9 +409,12 @@ export const query = graphql`
           }
           citation_key
           container_title
+          container_title_short
           DOI
           event_place
           event_title
+          ISSN
+          issue
           issued {
             year
             month
@@ -404,13 +423,14 @@ export const query = graphql`
           language
           license
           page
-          page
           publisher
           publisher_place
           source
           title
           type
           URL
+          volume
+          metaTags
         }
       }
     }

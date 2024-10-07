@@ -10,12 +10,12 @@ basics:
   url: https://tetov.se/ # also in gatsby-config.ts
 
   location:
-    address: "Ehrensvärdsgatan 10 lgh 1101.212 13 Malmö"
+    address: "Sankt Knuts väg 15B.211 57 Malmö"
     countryCode: SE
 
   profiles:
     - network: LinkedIn # also in contact-data.yaml
-      url: https://www.linkedin.com/in/tetov/
+      url: https://www.linkedin.com/in/tetov
       username: tetov
     - network: github # also in contact-data.yaml
       url: https://github.com/tetov
@@ -76,6 +76,7 @@ work:
     location: Lund, Sweden
     position: Doctoral student
     url: https://abm.lth.se
+    metaTags: []
 
   - name: Dept. of Automatic Control, LTH, Lund University
     startDate: "2022-02-01"
@@ -91,6 +92,7 @@ work:
       Responsibilities included project management, software and hardware
       prototyping and development, academic writing and experimentation.
     url: https://control.lth.se
+    metaTags: []
 
   - name: Dept. of Architecture & Built Environment, LTH
     startDate: "2021-05-31"
@@ -108,6 +110,7 @@ work:
     location: Lund, Sweden
     position: Project assistant
     url: https://abm.lth.se
+    metaTags: []
 
   - name: Dept. of Automatic Control, LTH, Lund University
     description: >-
@@ -124,6 +127,7 @@ work:
     location: Lund, Sweden
     position: Project assistant
     url: https://control.lth.se
+    metaTags: []
 
   - name: Gramazio Kohler Research, ETH Zürich
     startDate: "2020-10-31"
@@ -142,6 +146,7 @@ work:
     startDate: "2020-01-31"
     url: https://gramaziokohler.arch.ethz.ch
     description: Code documentation and testing, assistance in acoustic experiments.
+    metaTags: []
 
   - name: Digital Building Technologies, ETH Zürich
     startDate: "2020-03-31"
@@ -151,6 +156,7 @@ work:
     position: Student assistant
     url: https://dbt.arch.ethz.ch/
     description: 3D-printer repair and maintenance.
+    metaTags: []
 
   - name: Sesam Arkitektkontor, Kristianstad
     startDate: "2017-09-30"
@@ -160,6 +166,7 @@ work:
     position: Architect
     url: https://sesam-ark.se
     description: Ten month internship working mostly in residential projects from proposal to tender.
+    metaTags: []
 
   - name: Dept. of Architecture & Built Environment, LTH, Lund University
     startDate: "2017-01-01"
@@ -169,15 +176,18 @@ work:
     position: Teaching assistant
     description: Assisting and teaching in digital tool courses for architecture students in year 1–3.
     url: https://abm.lth.se/
+    metaTags: []
 
-  # - name: Library of Architecture & Design, LTH
-  #   startDate: "2016-09-30"
-  #   endDate: "2017-06-30"
-  #   highlights: []
-  #   location: Lund, Sweden
-  #   position: Library assistant
-  #   summary:
-  #   url: https://www.lth.se/english/library/
+  - name: Library of Architecture & Design, LTH
+    startDate: "2016-09-30"
+    endDate: "2017-06-30"
+    highlights: []
+    location: Lund, Sweden
+    position: Library assistant
+    description: ""
+    summary:
+    url: https://www.lth.se/english/library/
+    metaTags: [skip]
 
   - name: Accent Arkitekter, Värnamo
     endDate: "2016-07-31"
@@ -187,13 +197,16 @@ work:
     startDate: "2016-06-30"
     url: http://accentarkitekter.se/
     description: Four week full-time internship in 2016 and an additional four weeks in 2017.
+    metaTags: [skip]
 
-# - name: Suzzle
-#   startDate: "2013-01-31"
-#   endDate: "2014-05-31"
-#   highlights: []
-#   location: London, UK
-#   position: Barista
+  - name: Suzzle
+    startDate: "2013-01-31"
+    endDate: "2014-05-31"
+    highlights: []
+    location: London, UK
+    position: Barista
+    description: ""
+    metaTags: [skip]
 
 projects:
   - name: Meristem Wall
@@ -226,7 +239,10 @@ projects:
     description: >-
       A circular undulating clay wall 5 m high with a 6 m radius built using a
       method of robotic clay aggregation developed at MAS DFAB and in my thesis
-      project Adaptive Clay Formations. The project was preceded by the
+      project Adaptive Clay Formations.
+
+
+      The project was preceded by the
       construction of a full scale prototype of a quarter of final design in
       Brunnen, Switzerland. The wall is built to surround a acoustic lab built
       in a new co-working space in the Gurtenbrauerei in Bern.
@@ -236,9 +252,9 @@ projects:
     url: https://tetov.se/clay-rotunda/
     location: Gurtenbrauerei, Bern, Switzerland
     roles:
-      - "research & development"
-      - "programming lead"
-      - "on site construction"
+      - research & development
+      - programming lead
+      - on site construction
 
   - name: Adaptive Clay Formations
     type: clay wall segment
@@ -258,9 +274,10 @@ projects:
     url: https://tetov.se/adaptive-clay-formations/
     location: Robotic Fabrication Lab, ETH Zürich
     roles:
-      - "research & development"
-      - "programming lead"
-      - "on site construction"
+      - research & development
+      - programming lead
+      - on site construction
+    metaTags: []
 
   - name: Digital Bamboo Pavilion
     type: bamboo outdoor structure
@@ -276,6 +293,7 @@ projects:
     location: Zentrum Architektur Zürich, Zürich, Switzerland
     roles:
       - "team member in design team"
+    metaTags: []
 
   - name: Swallows’ Nest
     type: clay model
@@ -291,12 +309,49 @@ projects:
     location: School of Architecture, LTH, Lund
     roles:
       - "design studio student"
+    metaTags: []
 
 # use
 # https://resource.citationstyles.org/schema/latest/input/json/csl-citation.json
 # but! check date object (should be {year, month, day}) and change dash to
 # underscore to make graphql happy
+#
+# add fields to query in cv.tsx, not all are added yet but would be helpful for
+# citation function
 publications:
+  - id: goideaAlgorithmicModelingFunctionally2024a
+    accessed:
+      year: 2024
+      month: 10
+      day: 6
+    author:
+      - family: Goidea
+        given: Ana
+      - family: Popescu
+        given: Mariana
+      - family: Johansson
+        given: Anton Tetov
+      - family: Andréen
+        given: David
+    citation_key: goideaAlgorithmicModelingFunctionally2024a
+    container_title: Architectural Intelligence
+    container_title_short: ARIN
+    DOI: 10.1007/s44223-024-00068-x
+    ISSN: 2731-6726
+    issue: '1'
+    issued:
+      year: 2024
+      month: 7
+      day: 18
+    language: en
+    page: '25'
+    source: Springer Link
+    title: "Algorithmic modeling of functionally graded metamaterials in 3D\_printed building envelopes"
+    type: article-journal
+    URL: https://doi.org/10.1007/s44223-024-00068-x
+    volume: '3'
+    metaTags: []
+
   - id: johanssonAdaptiveClayFormations2021
     abstract: >-
       Rapid Clay Formations (RCF) is an ongoing research project investigating
@@ -337,6 +392,7 @@ publications:
     title: Adaptive Clay Formations
     type: thesis
     URL: http://lup.lub.lu.se/student-papers/record/9041159
+    metaTags: []
 
   - id: andreenSwarmMaterializationDiscrete2019
     abstract: >-
@@ -379,6 +435,7 @@ publications:
     source: IEEE Xplore
     title: Swarm Materialization Through Discrete, Nonsequential Additive Fabrication
     type: paper-conference
+    metaTags: []
 
 references: []
 skills:
@@ -389,6 +446,7 @@ skills:
       - laser cutting
       - cutting plotter
       - robotic arms (ABB, UR, Stäubli, ROS-I)
+    metaTags: []
 
   - name: DevOps
     keywords:
@@ -397,6 +455,7 @@ skills:
       - Automated server management (Ansible)
       - Cloud computing (Amazon AWS, DigitalOcean)
       - LAMP/LEMP stacks
+    metaTags: []
 
   - name: 3D-modeling
     keywords:
@@ -404,6 +463,7 @@ skills:
       - Solid modeling (Autodesk Fusion 360, OpenSCAD, FreeCAD)
       - Animation and rendering (Blender, Houdini, VRay)
       - Electrical circuit design (KiCAD)
+    metaTags: []
 
   - name: Programming
     keywords:
@@ -414,7 +474,8 @@ skills:
       - SQL
       - JavaScript (TypeScript, React)
       - GraphQL
-      - Bash & Posix SH
+      - Bash & POSIX SH
+    metaTags: []
 
   - name: Graphic design
     keywords:
@@ -422,25 +483,47 @@ skills:
       - UI & vector graphics (Adobe Illustrator, InkScape, Figma)
       - Print layout (Adobe Indesign)
       - Web design (CSS, SCSS, CSS-in-JS)
+    metaTags: []
 
 teaching:
+  - name: ASEF01 Programming for Architects
+    institution: School of Architecture, LTH, Lund University
+    summary: >-
+      Course in python programming for master students with a focus on geometry and CAD.
+      Course development and teaching.
+    startDate: "2023-01-01"
+    url: https://kurser.lth.se/lot/course/ASEF01
+
+  - name: FRTN80/FRTN85 Applied Robotics
+    institution: School of Architecture & Mechanical Engineering, LTH, Lund University
+    summary: >-
+      Course in robotics for master students with a focus on robotic fabrication.
+      Course development and teaching.
+    startDate: "2023-01-01"
+    url: https://kurser.lth.se/lot/course/FRTN80
+
   - name: Spatial Experiments I
     institution: School of Architecture, LTH, Lund University
     summary: >-
       Design studio at the Masters programme at the School of Architecture.
       Mainly technical assistance (e.g. 3D-printing, robotics).
     startDate: "2021-01-01"
+    metaTags: [skip]
+
   - name: Creative Tools I
     institution: School of Architecture, LTH, Lund University
     summary: >-
       Course in computational design and digital fabrication. Mainly technical
       assistance (e.g. robot control).
     startDate: "2021-01-01"
+    metaTags: [skip]
+
   - name: Digital Tools II
     institution: School of Architecture, LTH, Lund University
     startDate: "2017-01-01"
     endDate: "2019-01-01"
     summary: Teaching assistant
+    metaTags: [skip]
 
 volunteer: []
 certificates: []

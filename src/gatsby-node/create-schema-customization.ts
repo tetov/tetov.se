@@ -65,6 +65,7 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
       username: String
       rel: String
       printFriendlyText: String
+      metaTags: [String!]
     }
 
     type CvYaml implements Node {
@@ -93,12 +94,14 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
     type CvYamlBasicsLocation {
       countryCode: String!
       address: String!
+      metaTags: [String!]
     }
 
     type CvYamlBasicsProfiles {
       network: String!
       username: String
       url: String!
+      metaTags: [String!]
     }
 
     type CvYamlWork {
@@ -110,6 +113,7 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
       location: String!
       summary: String
       description: String!
+      metaTags: [String!]
     }
 
     type CvYamlEducation {
@@ -119,6 +123,7 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
       studyType: String!
       startDate: Date @dateformat
       endDate: Date @dateformat
+      metaTags: [String!]
     }
 
     type CvYamlProjects {
@@ -131,17 +136,20 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
       type: String!
       url: String
       location: String!
+      metaTags: [String!]
     }
 
     type CvYamlSkills {
       name: String!
       level: String
       keywords: [String!]!
+      metaTags: [String!]
     }
 
     type CvYamlLanguages {
       language: String!
       fluency: String!
+      metaTags: [String!]
     }
 
     type CvYamlTeaching {
@@ -151,6 +159,7 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
       startDate: Date @dateformat
       endDate: Date @dateformat
       url: String
+      metaTags: [String!]
     }
 
     type CSLName {
@@ -164,11 +173,10 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
       day: Int
     }
 
-    type CvYamlPublications implements Node {
+    type CvYamlPublications {
       abstract: String
       accessed: CSLDate
       author: [CSLName!]!
-      citation_key: String
       citation_key: String!
       container_title: String
       DOI: String
@@ -186,6 +194,7 @@ const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
       title: String!
       type: String!
       URL: String
+      metaTags: [String!]
     }
   `);
 };
