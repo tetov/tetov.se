@@ -11,7 +11,7 @@
     "@fontsource/noto-sans": "^5.1.0",
     "@headlessui/react": "^2.2.0",
     "@headlessui/tailwindcss": "^0.2.1",
-    "@heroicons/react": "^2.1.5",
+    "@heroicons/react": "^2.2.0",
     "@tailwindcss/typography": "^0.5.15",
     "@types/jest": "^29.5.14",
     "@types/react-test-renderer": "^18.3.0",
